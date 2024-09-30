@@ -1,17 +1,50 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwe652b7ab8bp"]
+[gd_scene load_steps=11 format=3 uid="uid://bwe652b7ab8bp"]
 
-[ext_resource type="Texture2D" uid="uid://c083awl2bc1wb" path="res://art/playerGrey_up1.png" id="1_8w3ua"]
 [ext_resource type="Script" path="res://player.gd" id="1_d2o31"]
-[ext_resource type="Texture2D" uid="uid://c6ivsqek5gpp8" path="res://art/playerGrey_up2.png" id="2_tuhid"]
+[ext_resource type="Texture2D" uid="uid://q6a45r7dhvhw" path="res://art/Detective.png" id="2_hqfj5"]
+[ext_resource type="Texture2D" uid="uid://b3p3b8mlv7qh2" path="res://art/Detective_up_2.PNG" id="3_oeomu"]
+[ext_resource type="Texture2D" uid="uid://5rs6o6jb54" path="res://art/Detective _up.PNG" id="4_mj32r"]
+[ext_resource type="Texture2D" uid="uid://buoyj7rdyr0yv" path="res://art/Detective_walk_1.png" id="5_qs05t"]
+[ext_resource type="Texture2D" uid="uid://bl0kv1ilfvaty" path="res://art/Detective_walk_2.png" id="6_2v65d"]
+[ext_resource type="Texture2D" uid="uid://ci7j8nca88hfk" path="res://art/Detective_walk_3.png" id="7_omg0i"]
+[ext_resource type="Texture2D" uid="uid://ci7wk2wp2icbd" path="res://art/Detective_walk_4.png" id="8_r0opk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vnybq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_8w3ua")
+"texture": ExtResource("2_hqfj5")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_oeomu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_tuhid")
+"texture": ExtResource("2_hqfj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mj32r")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qs05t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2v65d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_omg0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r0opk")
 }],
 "loop": true,
 "name": &"walk",
@@ -19,15 +52,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbs6m"]
-size = Vector2(116, 137)
+size = Vector2(68, 187.5)
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_d2o31")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(18, -42)
 sprite_frames = SubResource("SpriteFrames_vnybq")
 animation = &"walk"
+frame_progress = 0.712303
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -0.5)
+position = Vector2(0, -10.75)
 shape = SubResource("RectangleShape2D_jbs6m")
