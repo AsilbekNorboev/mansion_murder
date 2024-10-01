@@ -11,3 +11,11 @@ script = ExtResource("1_ufin5")
 position = Vector2(576, 327)
 scale = Vector2(1.00521, 1.01543)
 texture = ExtResource("1_4waiq")
+
+[node name="InvestigateButton" type="Button" parent="."]
+offset_left = 220.0
+offset_top = 535.0
+offset_right = 380.0
+offset_bottom = 635.0
+
+[connection signal="pressed" from="InvestigateButton" to="." method="_on_investigate_button_pressed"]
