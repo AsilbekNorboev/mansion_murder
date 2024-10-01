@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddeafgqttv4tg"]
+[gd_scene load_steps=3 format=3 uid="uid://ddeafgqttv4tg"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_bjx3b"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_okf4m"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_bjx3b")
@@ -17,7 +19,27 @@ offset_right = 100.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "Start"
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -253.0
+offset_top = 62.0
+offset_right = 261.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Mansion Murder"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576.25, 325.75)
+scale = Vector2(1153.5, 652.5)
+texture = SubResource("CanvasTexture_okf4m")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
