@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn2p7yfkhaqj7"]
+[gd_scene load_steps=5 format=3 uid="uid://bn2p7yfkhaqj7"]
 
 [ext_resource type="PackedScene" uid="uid://bwe652b7ab8bp" path="res://player.tscn" id="1_dh5pg"]
 [ext_resource type="Script" path="res://main.gd" id="1_nxplu"]
-[ext_resource type="PackedScene" uid="uid://ddeafgqttv4tg" path="res://hud.tscn" id="3_mfopj"]
+[ext_resource type="PackedScene" uid="uid://defoy0ue545oq" path="res://startscreen.tscn" id="3_21j5v"]
+[ext_resource type="PackedScene" uid="uid://c2odsqnk5uwi5" path="res://general_border_ui.tscn" id="4_4sgwi"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_nxplu")
@@ -10,6 +11,6 @@ script = ExtResource("1_nxplu")
 [node name="Player" parent="." instance=ExtResource("1_dh5pg")]
 position = Vector2(611, 392)
 
-[node name="HUD" parent="." instance=ExtResource("3_mfopj")]
+[node name="StartScreen" parent="." instance=ExtResource("3_21j5v")]
 
-[connection signal="start_game" from="HUD" to="." method="new_game"]
+[node name="GeneralBorderUI" parent="." instance=ExtResource("4_4sgwi")]

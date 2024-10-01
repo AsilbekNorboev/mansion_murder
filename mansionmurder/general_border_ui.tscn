@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2odsqnk5uwi5"]
+
+[ext_resource type="Texture2D" uid="uid://crqsdke0v1ugm" path="res://art/tempborder.png" id="1_4waiq"]
+[ext_resource type="Script" path="res://general_border_ui.gd" id="1_ufin5"]
+
+[node name="GeneralBorderUI" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_ufin5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 327)
+scale = Vector2(1.00521, 1.01543)
+texture = ExtResource("1_4waiq")

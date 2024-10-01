@@ -1,11 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddeafgqttv4tg"]
+[gd_scene load_steps=3 format=3 uid="uid://defoy0ue545oq"]
 
-[ext_resource type="Script" path="res://hud.gd" id="1_bjx3b"]
+[sub_resource type="GDScript" id="GDScript_s1016"]
+script/source = "extends CanvasLayer
+
+# Notifies `Main` node that the button has been pressed
+signal start_game
+
+func _on_start_button_pressed():
+	$StartButton.hide()
+	$Title.hide()
+	$Background.hide()
+	start_game.emit()
+"
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_okf4m"]
 
-[node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_bjx3b")
+[node name="StartScreen" type="CanvasLayer"]
+layer = 3
+script = SubResource("GDScript_s1016")
 
 [node name="StartButton" type="Button" parent="."]
 anchors_preset = 8
