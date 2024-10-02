@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bn2p7yfkhaqj7"]
+[gd_scene load_steps=6 format=3 uid="uid://cjfpn8ka3087n"]
 
-[ext_resource type="PackedScene" uid="uid://bwe652b7ab8bp" path="res://player.tscn" id="1_dh5pg"]
+[ext_resource type="PackedScene" uid="uid://c4yh2d0qnyean" path="res://player.tscn" id="1_dh5pg"]
 [ext_resource type="Script" path="res://main.gd" id="1_nxplu"]
-[ext_resource type="PackedScene" uid="uid://defoy0ue545oq" path="res://startscreen.tscn" id="3_21j5v"]
-[ext_resource type="PackedScene" uid="uid://c2odsqnk5uwi5" path="res://general_border_ui.tscn" id="4_4sgwi"]
-[ext_resource type="PackedScene" uid="uid://xpb38ejd7o3y" path="res://audio.tscn" id="5_umkvk"]
+[ext_resource type="PackedScene" uid="uid://cu4graritddbh" path="res://startscreen.tscn" id="3_21j5v"]
+[ext_resource type="PackedScene" uid="uid://bvhrk42a3p58v" path="res://general_border_ui.tscn" id="4_4sgwi"]
+[ext_resource type="PackedScene" path="res://audio.tscn" id="5_umkvk"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_nxplu")

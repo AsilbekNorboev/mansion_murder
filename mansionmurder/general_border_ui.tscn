@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2odsqnk5uwi5"]
+[gd_scene load_steps=3 format=3 uid="uid://bvhrk42a3p58v"]
 
 [ext_resource type="Texture2D" uid="uid://crqsdke0v1ugm" path="res://art/tempborder.png" id="1_4waiq"]
 [ext_resource type="Script" path="res://general_border_ui.gd" id="1_ufin5"]
@@ -17,5 +17,38 @@ offset_left = 220.0
 offset_top = 535.0
 offset_right = 380.0
 offset_bottom = 635.0
+
+[node name="InventoryButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.763
+anchor_top = 0.897
+anchor_right = 0.763
+anchor_bottom = 0.897
+offset_left = -71.976
+offset_top = -46.256
+offset_right = 70.024
+offset_bottom = 57.744
+
+[node name="SettingsButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.913
+anchor_top = 0.906
+anchor_right = 0.913
+anchor_bottom = 0.906
+offset_left = -69.776
+offset_top = -57.088
+offset_right = 75.224
+offset_bottom = 59.912
+
+[node name="GunButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.086
+anchor_top = 0.908
+anchor_right = 0.086
+anchor_bottom = 0.908
+offset_left = -66.072
+offset_top = -46.384
+offset_right = 78.928
+offset_bottom = 48.616
 
 [connection signal="pressed" from="InvestigateButton" to="." method="_on_investigate_button_pressed"]

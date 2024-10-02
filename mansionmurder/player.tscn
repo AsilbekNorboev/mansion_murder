@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwe652b7ab8bp"]
+[gd_scene load_steps=11 format=3 uid="uid://c4yh2d0qnyean"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_d2o31"]
 [ext_resource type="Texture2D" uid="uid://q6a45r7dhvhw" path="res://art/Detective.png" id="2_hqfj5"]
