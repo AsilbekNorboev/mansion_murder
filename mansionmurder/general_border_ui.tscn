@@ -15,8 +15,9 @@ texture = ExtResource("1_4waiq")
 [node name="InvestigateButton" type="Button" parent="."]
 offset_left = 220.0
 offset_top = 535.0
-offset_right = 380.0
-offset_bottom = 635.0
+offset_right = 2520.0
+offset_bottom = 2006.0
+scale = Vector2(0.07, 0.07)
 
 [node name="InventoryButton" type="Button" parent="."]
 anchors_preset = -1

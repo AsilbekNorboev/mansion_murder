@@ -1,5 +1,7 @@
 extends CanvasLayer
 
 func _on_investigate_button_pressed():
-	#toggle cursor to magnifying glass. player can now interact with environment.
-	pass
+	$InvestigateButton.modulate = Color("#000000")
+	await get_tree().create_timer(0.2).timeout
+	$InvestigateButton.modulate = Color("#ffffff")
+	
