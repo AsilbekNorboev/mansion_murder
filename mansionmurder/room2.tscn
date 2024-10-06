@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1bb1iwmxu57m"]
+
+[ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="1_qrdcp"]
+
+[node name="room2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0462054, 0.20406, 0.177699, 1)
+z_index = -1
+position = Vector2(570, 324.5)
+scale = Vector2(0.436691, 0.404747)
+texture = ExtResource("1_qrdcp")

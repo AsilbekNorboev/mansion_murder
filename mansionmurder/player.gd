@@ -1,11 +1,13 @@
-extends Area2D
+extends CharacterBody2D
 
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 
 
 func _ready():
-	screen_size = get_viewport_rect().size
+	pass
+	#screen_size = get_viewport_rect().size
+	#position = Global.spawn_position
 
 
 func _process(delta):
@@ -26,4 +28,4 @@ func _process(delta):
 		$AnimatedSprite2D.stop()
 
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+	#position = position.clamp(Vector2.ZERO, screen_size)

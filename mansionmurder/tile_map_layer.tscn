@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0v3ao47an40c"]
+
+[ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="1_t7hro"]
+
+[node name="TileMapLayer" type="TileMapLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577.875, -550.625)
+scale = Vector2(0.457174, 1.54538)
+texture = ExtResource("1_t7hro")
