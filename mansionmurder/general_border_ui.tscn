@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvhrk42a3p58v"]
+[gd_scene load_steps=4 format=3 uid="uid://bvhrk42a3p58v"]
 
 [ext_resource type="Texture2D" uid="uid://crqsdke0v1ugm" path="res://art/tempborder.png" id="1_4waiq"]
 [ext_resource type="Script" path="res://general_border_ui.gd" id="1_ufin5"]
+[ext_resource type="Script" path="res://investigate_button.gd" id="3_a27rf"]
 
 [node name="GeneralBorderUI" type="CanvasLayer"]
 layer = 2
@@ -18,6 +19,7 @@ offset_top = 535.0
 offset_right = 2520.0
 offset_bottom = 2006.0
 scale = Vector2(0.07, 0.07)
+script = ExtResource("3_a27rf")
 
 [node name="InventoryButton" type="Button" parent="."]
 anchors_preset = -1
@@ -52,4 +54,5 @@ offset_top = -46.384
 offset_right = 78.928
 offset_bottom = 48.616
 
+[connection signal="investigate" from="." to="InvestigateButton" method="_on_investigate_clicked"]
 [connection signal="pressed" from="InvestigateButton" to="." method="_on_investigate_button_pressed"]
