@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://clbd2uufa8uk6"]
+[gd_scene load_steps=8 format=3 uid="uid://clbd2uufa8uk6"]
 
 [ext_resource type="Script" path="res://room.gd" id="1_aw4fj"]
 [ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="1_wi0p8"]
 [ext_resource type="PackedScene" uid="uid://dyejywinb1quf" path="res://door.tscn" id="2_vr157"]
+[ext_resource type="Texture2D" uid="uid://cuytftf65rli1" path="res://livingroom.png" id="2_y5bmt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32eqt"]
 size = Vector2(175.5, 58)
@@ -17,11 +18,14 @@ size = Vector2(52, 139.25)
 script = ExtResource("1_aw4fj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(577, 322)
-scale = Vector2(0.405331, 0.33483)
-texture = ExtResource("1_wi0p8")
+position = Vector2(579, 297)
+scale = Vector2(1.08, 0.839999)
+texture = ExtResource("2_y5bmt")
 
 [node name="Door" parent="." instance=ExtResource("2_vr157")]
+visible = false
+position = Vector2(24, 90)
+scale = Vector2(1, 2.6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2(574, 30)
@@ -40,6 +44,8 @@ position = Vector2(581, 325)
 shape = SubResource("RectangleShape2D_mddni")
 
 [node name="Door2" parent="." instance=ExtResource("2_vr157")]
+visible = false
+position = Vector2(-40, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
 position = Vector2(1126, 281.625)
