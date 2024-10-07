@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="1_wi0p8"]
 [ext_resource type="PackedScene" uid="uid://dyejywinb1quf" path="res://door.tscn" id="2_vr157"]
 [ext_resource type="Texture2D" uid="uid://cuytftf65rli1" path="res://art/livingroom.png" id="2_y5bmt"]
-[ext_resource type="PackedScene" uid="uid://by2xrxxsiebu6" path="res://clue.tscn" id="5_vpqgg"]
+[ext_resource type="PackedScene" path="res://clue.tscn" id="5_vpqgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32eqt"]
 size = Vector2(175.5, 58)
@@ -58,7 +58,7 @@ position = Vector2(1125.6, 281.165)
 scale = Vector2(-0.0200436, 0.0898877)
 texture = ExtResource("1_wi0p8")
 
-[node name="clue" parent="." instance=ExtResource("5_vpqgg")]
+[node name="clue" parent="." groups=["Clues"] instance=ExtResource("5_vpqgg")]
 position = Vector2(438, 325)
 scale = Vector2(0.7, 0.7)
 
