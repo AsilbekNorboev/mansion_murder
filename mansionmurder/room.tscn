@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://room.gd" id="1_aw4fj"]
 [ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="1_wi0p8"]
 [ext_resource type="PackedScene" uid="uid://dyejywinb1quf" path="res://door.tscn" id="2_vr157"]
-[ext_resource type="Texture2D" uid="uid://cuytftf65rli1" path="res://art/livingroom.png" id="2_y5bmt"]
+[ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/livingroom.png" id="2_y5bmt"]
 [ext_resource type="PackedScene" path="res://clue.tscn" id="5_vpqgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32eqt"]
