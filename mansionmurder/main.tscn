@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjfpn8ka3087n"]
+[gd_scene load_steps=9 format=3 uid="uid://cjfpn8ka3087n"]
 
 [ext_resource type="PackedScene" uid="uid://c4yh2d0qnyean" path="res://player.tscn" id="1_dh5pg"]
 [ext_resource type="Script" path="res://events.gd" id="1_yluwg"]
 [ext_resource type="PackedScene" uid="uid://cu4graritddbh" path="res://startscreen.tscn" id="3_21j5v"]
 [ext_resource type="PackedScene" uid="uid://bvhrk42a3p58v" path="res://general_border_ui.tscn" id="4_4sgwi"]
-[ext_resource type="PackedScene" uid="uid://xpb38ejd7o3y" path="res://audio.tscn" id="5_umkvk"]
+[ext_resource type="PackedScene" path="res://audio.tscn" id="5_umkvk"]
 [ext_resource type="PackedScene" uid="uid://clbd2uufa8uk6" path="res://room.tscn" id="6_ql6qf"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="7_dap8u"]
+[ext_resource type="PackedScene" uid="uid://bsgbmst7wprd3" path="res://InventoryUI.tscn" id="8_6rbf8"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_yluwg")
@@ -16,6 +17,7 @@ z_index = 1
 position = Vector2(575, 325)
 
 [node name="StartScreen" parent="." instance=ExtResource("3_21j5v")]
+visible = false
 
 [node name="GeneralBorderUI" parent="." instance=ExtResource("4_4sgwi")]
 
@@ -41,3 +43,9 @@ position = Vector2(560, 352)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(578, 327)
 script = ExtResource("7_dap8u")
+
+[node name="InventoryUI" parent="." instance=ExtResource("8_6rbf8")]
+offset_left = 93.0
+offset_top = 45.0
+offset_right = 133.0
+offset_bottom = 85.0

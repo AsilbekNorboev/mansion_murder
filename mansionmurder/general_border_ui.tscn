@@ -56,3 +56,4 @@ offset_bottom = 48.616
 
 [connection signal="investigate" from="." to="InvestigateButton" method="_on_investigate_clicked"]
 [connection signal="pressed" from="InvestigateButton" to="." method="_on_investigate_button_pressed"]
+[connection signal="pressed" from="InventoryButton" to="." method="_on_inventory_button_pressed"]
