@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdc7sq5jqi6jk"]
+
+[ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
+[ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/bedroom.png" id="2_c48fx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
+size = Vector2(1036, 524)
+
+[node name="Kitchen" type="Node2D"]
+script = ExtResource("1_wkt5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.709804, 0.32549, 1, 1)
+z_index = -1
+position = Vector2(643, 344)
+scale = Vector2(1.079, 1)
+texture = ExtResource("2_c48fx")
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+position = Vector2(16.0001, 18)
+scale = Vector2(1.079, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(581, 325)
+shape = SubResource("RectangleShape2D_j4bkx")
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

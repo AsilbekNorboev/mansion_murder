@@ -1,18 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://clbd2uufa8uk6"]
+[gd_scene load_steps=5 format=3 uid="uid://ct0b334pb2lmf"]
 
-[ext_resource type="Script" path="res://room.gd" id="1_aw4fj"]
-[ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/livingroom.png" id="2_y5bmt"]
-[ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="5_vpqgg"]
+[ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
+[ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/livingroom.png" id="2_xnlll"]
+[ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="3_qdrqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
 size = Vector2(1036, 524)
 
 [node name="room" type="Node2D"]
-script = ExtResource("1_aw4fj")
+script = ExtResource("1_jghax")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(579, 297)
-texture = ExtResource("2_y5bmt")
+texture = ExtResource("2_xnlll")
 
 [node name="PlayerDetector" type="Area2D" parent="."]
 
@@ -20,7 +20,7 @@ texture = ExtResource("2_y5bmt")
 position = Vector2(581, 325)
 shape = SubResource("RectangleShape2D_mddni")
 
-[node name="clue" parent="." groups=["Clues"] instance=ExtResource("5_vpqgg")]
+[node name="clue" parent="." groups=["Clues"] instance=ExtResource("3_qdrqd")]
 position = Vector2(417, 287)
 scale = Vector2(0.7, 0.7)
 
