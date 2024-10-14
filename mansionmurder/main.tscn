@@ -32,6 +32,7 @@ position = Vector2(578, 327)
 script = ExtResource("7_dap8u")
 
 [node name="InventoryUI" parent="." instance=ExtResource("8_6rbf8")]
+z_index = 2
 offset_left = 93.0
 offset_top = 45.0
 offset_right = 133.0
