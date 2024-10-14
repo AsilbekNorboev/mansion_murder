@@ -20,7 +20,6 @@ script = ExtResource("1_yluwg")
 [node name="Player" parent="." groups=["players"] instance=ExtResource("1_dh5pg")]
 z_index = 1
 position = Vector2(575, 325)
-collision_mask = 3
 
 [node name="StartScreen" parent="." instance=ExtResource("3_21j5v")]
 
