@@ -5,11 +5,6 @@ extends MarginContainer
 
 func _ready():
 	hide_textbox()
-
-func _process(delta):
-	if Input.is_action_just_pressed("dialogue_next"):
-		print("next dialogue")
-		hide_textbox()
 			
 func hide_textbox():
 	label.text = ""
