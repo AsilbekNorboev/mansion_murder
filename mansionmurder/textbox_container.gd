@@ -5,7 +5,6 @@ extends MarginContainer
 
 func _ready():
 	hide_textbox()
-	add_text("A painting of a young woman.")
 
 func _process(delta):
 	if Input.is_action_just_pressed("dialogue_next"):

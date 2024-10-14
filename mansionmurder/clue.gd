@@ -1,11 +1,16 @@
 extends Sprite2D
 
-var textbox_scene = load("res://textbox.tscn")
+var textbox_scene = preload("res://textbox.tscn").instantiate()
 
+var textappear = textbox_scene.get_node("TextboxContainer")
+
+#const lines:Array[String] = [
+	#"A painting of a young woman."
+#]
 
 func _input(event):
 	if Input.is_action_pressed("click"):
 		if get_rect().has_point(to_local(event.position)):
 			print("You clicked on Clue")
-			var textbox = textbox_scene.instantiate()
-			add_child(textbox)
+			add_child(textbox_scene)
+			textappear.add_text("A painting of a young woman.")
