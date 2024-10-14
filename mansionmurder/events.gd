@@ -1,6 +1,7 @@
 extends Node
 
 signal room_entered(room)
+signal puzzle_completed(puzzle1)
 
 func new_game():
 	print("game start")
