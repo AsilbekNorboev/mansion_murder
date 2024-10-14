@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dg4qym28b3db5"]
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_x5y1v"]
-[ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/bedroom.png" id="2_236vv"]
+[ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_236vv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
 size = Vector2(1036, 524)

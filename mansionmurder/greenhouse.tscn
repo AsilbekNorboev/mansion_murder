@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccqviw8fp855u"]
 
 [ext_resource type="Script" path="res://greenhouse.gd" id="1_ywjhk"]
-[ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/bedroom.png" id="2_4cfsy"]
+[ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_4cfsy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
 size = Vector2(1036, 524)

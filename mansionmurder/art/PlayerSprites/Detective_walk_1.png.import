@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf0kb1ehkj1m1"
-path="res://.godot/imported/testclue.png-790f2e43eba6afa3152f4c2c709f869e.ctex"
+uid="uid://buoyj7rdyr0yv"
+path="res://.godot/imported/Detective_walk_1.png-7b7d05a5c6d05d101641a93ae47c8b27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/testclue.png"
-dest_files=["res://.godot/imported/testclue.png-790f2e43eba6afa3152f4c2c709f869e.ctex"]
+source_file="res://art/PlayerSprites/Detective_walk_1.png"
+dest_files=["res://.godot/imported/Detective_walk_1.png-7b7d05a5c6d05d101641a93ae47c8b27.ctex"]
 
 [params]
 

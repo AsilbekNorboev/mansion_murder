@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://clbd2uufa8uk6"]
 
 [ext_resource type="Script" path="res://room.gd" id="1_aw4fj"]
-[ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/livingroom.png" id="2_y5bmt"]
+[ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_y5bmt"]
 [ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="5_vpqgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]

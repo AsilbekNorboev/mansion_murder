@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="1_gqlcb"]
 [ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="2_x5kkx"]
-[ext_resource type="Texture2D" uid="uid://cf0kb1ehkj1m1" path="res://art/testclue.png" id="3_xs37f"]
+[ext_resource type="Texture2D" uid="uid://cf0kb1ehkj1m1" path="res://art/Clues/testclue.png" id="3_xs37f"]
 
 [node name="InventoryUI" type="Control"]
 layout_mode = 3

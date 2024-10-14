@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://4cdr7bmsvwm4"]
 
-[ext_resource type="Texture2D" uid="uid://cf0kb1ehkj1m1" path="res://art/testclue.png" id="1_emat5"]
+[ext_resource type="Texture2D" uid="uid://cf0kb1ehkj1m1" path="res://art/Clues/testclue.png" id="1_emat5"]
 [ext_resource type="Script" path="res://clue_item.gd" id="2_cwxe1"]
 
 [resource]
