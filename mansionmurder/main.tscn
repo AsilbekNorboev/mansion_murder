@@ -17,9 +17,10 @@
 position = Vector2(1, 0)
 script = ExtResource("1_yluwg")
 
-[node name="Player" parent="." instance=ExtResource("1_dh5pg")]
+[node name="Player" parent="." groups=["players"] instance=ExtResource("1_dh5pg")]
 z_index = 1
 position = Vector2(575, 325)
+collision_mask = 3
 
 [node name="StartScreen" parent="." instance=ExtResource("3_21j5v")]
 visible = false
@@ -41,7 +42,7 @@ offset_right = 133.0
 offset_bottom = 85.0
 
 [node name="Kitchen" parent="." instance=ExtResource("9_e4tsp")]
-position = Vector2(1233, 20)
+position = Vector2(1229, 10)
 
 [node name="Marker2D" type="Marker2D" parent="Kitchen"]
 position = Vector2(560, 352)
@@ -49,7 +50,7 @@ position = Vector2(560, 352)
 [node name="LivingRoom" parent="." instance=ExtResource("9_qrmqu")]
 
 [node name="Marker2D" type="Marker2D" parent="LivingRoom"]
-position = Vector2(560, 352)
+position = Vector2(573, 325)
 
 [node name="Bedroom" parent="." instance=ExtResource("10_ev8ke")]
 position = Vector2(-1333, 0)
