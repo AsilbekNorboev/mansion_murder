@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://ct0b334pb2lmf"]
+[gd_scene load_steps=14 format=3 uid="uid://ct0b334pb2lmf"]
 
 [ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
 [ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="3_qdrqd"]
 [ext_resource type="Texture2D" uid="uid://bi1jn383cumxx" path="res://art/Clues/safe.png" id="4_0x24e"]
 [ext_resource type="Script" path="res://safe.gd" id="4_5ic8c"]
+[ext_resource type="Texture2D" uid="uid://p3ul3mrbytbh" path="res://art/Clues/knifetest.png" id="6_ogksc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
 size = Vector2(1200, 680)
@@ -79,7 +80,7 @@ shape = SubResource("RectangleShape2D_8yth5")
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(1148, 734, 1162, 565, 1248, 547, 1253, 722)
 
-[node name="clue" parent="." groups=["Clues"] instance=ExtResource("3_qdrqd")]
+[node name="painting test" parent="." groups=["Clues"] instance=ExtResource("3_qdrqd")]
 position = Vector2(444, 265)
 scale = Vector2(0.7, 0.7)
 lines = Array[String](["A painting of a young woman.", "It looks old.", "vintage!"])
@@ -89,5 +90,11 @@ position = Vector2(259, 319)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_0x24e")
 script = ExtResource("4_5ic8c")
+
+[node name="knife" parent="." instance=ExtResource("3_qdrqd")]
+position = Vector2(364, 557)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_ogksc")
+lines = Array[String](["what's this doing here?"])
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
