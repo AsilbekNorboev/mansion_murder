@@ -7,7 +7,6 @@ var current_line_index = 0
 
 var is_dialog_active = false
 
-#texdt you want to add can be now inputted through the editor! Add text by filling in the "Lines" section
 @export var lines:Array[String] = []
 
 func _input(event):
@@ -15,7 +14,8 @@ func _input(event):
 		if get_rect().has_point(to_local(event.position)):
 			_dialog_start()
 			print("You clicked on Clue")
-					
+			
+			
 			
 #on click, add text from the array to populate the textbox scene
 func _dialog_start():
@@ -41,3 +41,9 @@ func _unhandled_input(event):
 		#if there is more text left, display the next line of text
 		else:
 			textappear.add_text(lines[current_line_index])
+
+		
+	
+			
+		#_dialog_start()
+	
