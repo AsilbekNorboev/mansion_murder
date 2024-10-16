@@ -53,8 +53,8 @@ text = "Mansion Murder"
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(576.25, 325.75)
-scale = Vector2(1153.5, 652.5)
+position = Vector2(655, 432.5)
+scale = Vector2(1310, 865)
 texture = SubResource("CanvasTexture_okf4m")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

@@ -21,6 +21,8 @@ Events="*res://main.gd"
 
 [display]
 
+window/size/viewport_width=1310
+window/size/viewport_height=865
 window/stretch/mode="canvas_items"
 
 [global_group]

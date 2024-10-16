@@ -10,7 +10,7 @@ func _ready():
 	#position = Global.spawn_position
 
 
-func _process(delta):
+func _physics_process(delta: float) -> void:
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -27,5 +27,10 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.stop()
 
-	position += velocity * delta
+	#position += velocity * delta
+	self.velocity = velocity
+	move_and_slide() # No arguments required
+
+	#move_and_slide()
+
 	#position = position.clamp(Vector2.ZERO, screen_size)

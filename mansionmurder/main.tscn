@@ -14,24 +14,25 @@
 [ext_resource type="PackedScene" uid="uid://c3h24xji8o1et" path="res://garden.tscn" id="12_ikl3x"]
 
 [node name="main" type="Node2D"]
-position = Vector2(1, 0)
 script = ExtResource("1_yluwg")
 
 [node name="Player" parent="." groups=["players"] instance=ExtResource("1_dh5pg")]
 z_index = 1
-position = Vector2(575, 325)
+position = Vector2(542, 314)
 
 [node name="StartScreen" parent="." instance=ExtResource("3_21j5v")]
+visible = false
 
 [node name="GeneralBorderUI" parent="." instance=ExtResource("4_4sgwi")]
 
 [node name="Audio" parent="." instance=ExtResource("5_umkvk")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(578, 327)
+position = Vector2(655, 430)
 script = ExtResource("7_dap8u")
 
 [node name="InventoryUI" parent="." instance=ExtResource("8_6rbf8")]
+visible = false
 z_index = 2
 offset_left = 93.0
 offset_top = 45.0
@@ -39,30 +40,30 @@ offset_right = 133.0
 offset_bottom = 85.0
 
 [node name="Kitchen" parent="." instance=ExtResource("9_e4tsp")]
-position = Vector2(1229, 10)
+position = Vector2(1320, 0)
 
 [node name="Marker2D" type="Marker2D" parent="Kitchen"]
-position = Vector2(560, 352)
+position = Vector2(655, 430)
 
 [node name="LivingRoom" parent="." instance=ExtResource("9_qrmqu")]
 
 [node name="Marker2D" type="Marker2D" parent="LivingRoom"]
-position = Vector2(573, 325)
+position = Vector2(655, 430)
 
 [node name="Bedroom" parent="." instance=ExtResource("10_ev8ke")]
 position = Vector2(-1333, 0)
 
 [node name="Marker2D" type="Marker2D" parent="Bedroom"]
-position = Vector2(560, 352)
+position = Vector2(655, 430)
 
 [node name="Greenhouse" parent="." instance=ExtResource("11_don5l")]
 position = Vector2(9, -784)
 
 [node name="Marker2D" type="Marker2D" parent="Greenhouse"]
-position = Vector2(560, 352)
+position = Vector2(655, 430)
 
 [node name="Garden" parent="." instance=ExtResource("12_ikl3x")]
 position = Vector2(2, -1545)
 
 [node name="Marker2D" type="Marker2D" parent="Garden"]
-position = Vector2(560, 352)
+position = Vector2(655, 430)

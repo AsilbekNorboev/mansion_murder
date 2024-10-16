@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvhrk42a3p58v"]
 
-[ext_resource type="Texture2D" uid="uid://crqsdke0v1ugm" path="res://art/tempborder.png" id="1_4waiq"]
 [ext_resource type="Script" path="res://general_border_ui.gd" id="1_ufin5"]
+[ext_resource type="Texture2D" uid="uid://dyt0pbqdororh" path="res://art/TempBorder_updated.png" id="2_vumir"]
 [ext_resource type="Script" path="res://investigate_button.gd" id="3_a27rf"]
 
 [node name="GeneralBorderUI" type="CanvasLayer"]
@@ -9,15 +9,14 @@ layer = 2
 script = ExtResource("1_ufin5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576, 327)
-scale = Vector2(1.00521, 1.01543)
-texture = ExtResource("1_4waiq")
+texture = ExtResource("2_vumir")
+centered = false
 
 [node name="InvestigateButton" type="Button" parent="."]
-offset_left = 220.0
-offset_top = 535.0
-offset_right = 2520.0
-offset_bottom = 2006.0
+offset_left = 44.0
+offset_top = 745.0
+offset_right = 2344.0
+offset_bottom = 2216.0
 scale = Vector2(0.07, 0.07)
 script = ExtResource("3_a27rf")
 
@@ -27,10 +26,10 @@ anchor_left = 0.763
 anchor_top = 0.897
 anchor_right = 0.763
 anchor_bottom = 0.897
-offset_left = -71.976
-offset_top = -46.256
-offset_right = 70.024
-offset_bottom = 57.744
+offset_left = -45.53
+offset_top = -30.905
+offset_right = 96.47
+offset_bottom = 73.095
 
 [node name="SettingsButton" type="Button" parent="."]
 anchors_preset = -1
@@ -38,10 +37,10 @@ anchor_left = 0.913
 anchor_top = 0.906
 anchor_right = 0.913
 anchor_bottom = 0.906
-offset_left = -69.776
-offset_top = -57.088
-offset_right = 75.224
-offset_bottom = 59.912
+offset_left = -68.03
+offset_top = -38.69
+offset_right = 72.97
+offset_bottom = 71.31
 
 [connection signal="investigate" from="." to="InvestigateButton" method="_on_investigate_clicked"]
 [connection signal="pressed" from="InvestigateButton" to="." method="_on_investigate_button_pressed"]

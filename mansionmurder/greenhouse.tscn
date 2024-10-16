@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_4cfsy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
-size = Vector2(1036, 524)
+size = Vector2(1200, 680)
 
 [node name="Greenhouse" type="Node2D"]
 script = ExtResource("1_ywjhk")
@@ -12,16 +12,13 @@ script = ExtResource("1_ywjhk")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.161173, 0.364585, 0.999993, 1)
 z_index = -1
-position = Vector2(643, 344)
-scale = Vector2(1.079, 1)
+position = Vector2(655, 395)
 texture = ExtResource("2_4cfsy")
 
 [node name="PlayerDetector" type="Area2D" parent="."]
-position = Vector2(16.0001, 18)
-scale = Vector2(1.079, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
-position = Vector2(581, 325)
+position = Vector2(655, 395)
 shape = SubResource("RectangleShape2D_j4bkx")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
