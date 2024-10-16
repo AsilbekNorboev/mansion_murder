@@ -20,9 +20,9 @@ anchors_preset = -1
 anchor_right = 0.793
 anchor_bottom = 0.225
 offset_left = 109.0
-offset_top = 515.0
+offset_top = 369.0
 offset_right = 109.464
-offset_bottom = 515.2
+offset_bottom = 369.2
 script = ExtResource("1_b4rrd")
 
 [node name="Panel" type="Panel" parent="TextboxContainer"]
