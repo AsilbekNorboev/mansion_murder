@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcps0lekgmh40"]
-
-[ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="1_q1at6"]
-[ext_resource type="Script" path="res://add_clue.gd" id="2_cwgxt"]
-
-[node name="AddClue" type="Sprite2D"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_q1at6")
-script = ExtResource("2_cwgxt")

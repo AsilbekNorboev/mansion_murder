@@ -1,13 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsgbmst7wprd3"]
 
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="1_gqlcb"]
-[ext_resource type="Script" path="res://inventory_ui.gd" id="1_os42v"]
-[ext_resource type="PackedScene" uid="uid://roebyp87ybhh" path="res://clue_item.tscn" id="3_8imoa"]
+[ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="2_x5kkx"]
+[ext_resource type="Texture2D" uid="uid://cf0kb1ehkj1m1" path="res://art/Clues/testclue.png" id="3_xs37f"]
 
-[node name="InventoryUI" type="CanvasLayer"]
-script = ExtResource("1_os42v")
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 1.0
 offset_right = 810.0
@@ -18,6 +22,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 136.0
 offset_top = 15.0
 offset_right = 231.0
@@ -26,33 +31,75 @@ text = "Exit
 "
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 65.0
 offset_right = 818.0
 offset_bottom = 649.0
 
-[node name="TopLevelClueContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ClueItem" parent="ScrollContainer/TopLevelClueContainer" instance=ExtResource("3_8imoa")]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+texture = ExtResource("1_gqlcb")
+expand_mode = 4
+
+[node name="ClueItem1" type="TextureRect" parent="ScrollContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 14.0
+offset_right = 669.0
+offset_bottom = 102.0
+texture = ExtResource("2_x5kkx")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/TextureRect/ClueItem1"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 373.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0.886275, 0.482353, 0.0588235, 1)
+theme_override_font_sizes/font_size = 30
+text = "A painting of a woman"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/TextureRect/ClueItem1"]
+layout_mode = 0
+offset_left = 569.0
+offset_top = 1.0
+offset_right = 657.0
+offset_bottom = 90.0
+texture = ExtResource("3_xs37f")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 359.0
+offset_right = 673.0
+offset_bottom = 447.0
+texture = ExtResource("2_x5kkx")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="ScrollContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 463.0
+offset_right = 674.0
+offset_bottom = 551.0
+texture = ExtResource("2_x5kkx")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 128.0
 offset_top = 1.0
 offset_right = 809.0
 offset_bottom = 65.0
-texture = ExtResource("1_gqlcb")
-expand_mode = 1
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-z_index = -2
-offset_left = 130.0
-offset_top = 66.0
-offset_right = 805.0
-offset_bottom = 760.0
 texture = ExtResource("1_gqlcb")
 expand_mode = 1
