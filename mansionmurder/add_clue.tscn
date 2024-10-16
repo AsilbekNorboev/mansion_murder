@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvr2s0mu12n0t"]
+
+[ext_resource type="Texture2D" uid="uid://bi1jn383cumxx" path="res://art/Clues/safe.png" id="1_ija5p"]
+[ext_resource type="Script" path="res://add_clue.gd" id="2_ucyva"]
+
+[node name="AddClue" type="Sprite2D"]
+texture = ExtResource("1_ija5p")
+script = ExtResource("2_ucyva")
