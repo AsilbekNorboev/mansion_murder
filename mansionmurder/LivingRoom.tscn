@@ -82,6 +82,7 @@ polygon = PackedVector2Array(1148, 734, 1162, 565, 1248, 547, 1253, 722)
 [node name="clue" parent="." groups=["Clues"] instance=ExtResource("3_qdrqd")]
 position = Vector2(444, 265)
 scale = Vector2(0.7, 0.7)
+lines = Array[String](["A painting of a young woman.", "It looks old.", "vintage!"])
 
 [node name="Safe" type="Sprite2D" parent="."]
 position = Vector2(259, 319)
