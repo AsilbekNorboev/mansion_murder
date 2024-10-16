@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://clbd2uufa8uk6"]
+[gd_scene load_steps=5 format=3 uid="uid://clbd2uufa8uk6"]
 
 [ext_resource type="Script" path="res://room.gd" id="1_aw4fj"]
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_y5bmt"]
-[ext_resource type="Texture2D" path="res://art/testclue.png" id="4_ei1jw"]
 [ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="5_vpqgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
@@ -24,6 +23,6 @@ shape = SubResource("RectangleShape2D_mddni")
 [node name="clue" parent="." groups=["Clues"] instance=ExtResource("5_vpqgg")]
 position = Vector2(417, 287)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("4_ei1jw")
+texture = null
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
