@@ -9,13 +9,14 @@ var is_dialog_active = false
 
 @export var lines:Array[String] = []
 
+@export_global_file("*.png") var zoom_image
+	
+	
 func _input(event):
 	if Input.is_action_pressed("click"):
 		if get_rect().has_point(to_local(event.position)):
 			_dialog_start()
-			print("You clicked on Clue")
-			
-			
+			print("You clicked on Clue")				
 			
 #on click, add text from the array to populate the textbox scene
 func _dialog_start():
@@ -42,8 +43,6 @@ func _unhandled_input(event):
 		else:
 			textappear.add_text(lines[current_line_index])
 
-		
-	
-			
-		#_dialog_start()
-	
+func _zoom_image():
+	if (zoom_image):
+		print("zoom image exists")

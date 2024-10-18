@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="3_qdrqd"]
 [ext_resource type="Texture2D" uid="uid://bi1jn383cumxx" path="res://art/Clues/safe.png" id="4_0x24e"]
 [ext_resource type="Script" path="res://safe.gd" id="4_5ic8c"]
-[ext_resource type="Texture2D" uid="uid://p3ul3mrbytbh" path="res://art/Clues/knifetest.png" id="6_ogksc"]
+[ext_resource type="Texture2D" uid="uid://cc7cab3i3tw86" path="res://art/Clues/deadbody_temp.png" id="6_qc4ka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
 size = Vector2(1200, 680)
@@ -93,8 +93,9 @@ script = ExtResource("4_5ic8c")
 
 [node name="knife" parent="." instance=ExtResource("3_qdrqd")]
 position = Vector2(440, 549)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("6_ogksc")
-lines = Array[String](["What's this doing here?"])
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_qc4ka")
+lines = Array[String](["The victim, Mr. Moneybags..."])
+zoom_image = "res://art/Clues/deadbody_zoom_temp.png"
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
