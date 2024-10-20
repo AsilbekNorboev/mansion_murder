@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Area2D
 
 #loads textbox scene to use its functions later
 var textbox_scene = preload("res://textbox.tscn").instantiate()
@@ -10,13 +10,25 @@ var is_dialog_active = false
 @export var lines:Array[String] = []
 
 @export_global_file("*.png") var zoom_image
-	
+@onready var collision_shape = $CollisionShape2D
+
+
 	
 func _input(event):
 	if Input.is_action_pressed("click"):
-		if get_rect().has_point(to_local(event.position)):
-			_dialog_start()
-			print("You clicked on Clue")				
+		var global_mouse_position = get_viewport().get_camera_2d().get_global_mouse_position()
+		var local_mouse_position = to_local(global_mouse_position)  # Convert to local coordinates
+		#print("Mouse Position:", global_mouse_position)
+		if collision_shape.shape:
+			if collision_shape.shape is RectangleShape2D:
+				var rect = Rect2(collision_shape.position - (collision_shape.shape.extents), collision_shape.shape.extents * 2)
+				if rect.has_point(local_mouse_position):
+					print("You clicked on Clue")
+					_dialog_start()
+					print("You clicked on Clue")
+		#if get_rect().has_point(to_local(event.position)):
+			#_dialog_start()
+			#print("You clicked on Clue")				
 			
 #on click, add text from the array to populate the textbox scene
 func _dialog_start():

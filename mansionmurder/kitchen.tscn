@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdc7sq5jqi6jk"]
+[gd_scene load_steps=7 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_c48fx"]
+[ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="3_v0atg"]
+[ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="4_cc3ol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w0s"]
 size = Vector2(1200, 680)
@@ -27,5 +29,12 @@ shape = SubResource("RectangleShape2D_d0w0s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_q42pe")
+
+[node name="clue" parent="." instance=ExtResource("3_v0atg")]
+position = Vector2(970, 450)
+lines = Array[String](["adasld"])
+
+[node name="Safe" parent="." instance=ExtResource("4_cc3ol")]
+position = Vector2(607, 504)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
