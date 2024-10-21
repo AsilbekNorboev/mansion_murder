@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0tac7mqeul18"]
+[gd_scene load_steps=7 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_c48fx"]
 [ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="3_v0atg"]
 [ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="4_cc3ol"]
-[ext_resource type="PackedScene" uid="uid://dmb807gh1a4i3" path="res://chef_.tscn" id="5_7r8jn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w0s"]
 size = Vector2(1200, 680)
@@ -37,9 +36,5 @@ lines = Array[String](["adasld"])
 
 [node name="Safe" parent="." instance=ExtResource("4_cc3ol")]
 position = Vector2(607, 504)
-
-[node name="Chef_" parent="." instance=ExtResource("5_7r8jn")]
-position = Vector2(742, 412)
-scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

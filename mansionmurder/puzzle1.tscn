@@ -212,7 +212,6 @@ theme_override_font_sizes/font_size = 72
 text = "x"
 
 [node name="Menu" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Menu"]
 anchors_preset = 15
@@ -278,18 +277,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vs50p")
 text = "UNLOCK"
 
 [node name="ExitMessage" type="Label" parent="Menu"]
-offset_left = 453.0
-offset_top = 587.0
-offset_right = 929.0
-offset_bottom = 656.0
+offset_left = 345.0
+offset_top = 568.0
+offset_right = 821.0
+offset_bottom = 637.0
 theme_override_font_sizes/font_size = 40
 text = "Click ESC key to exit"
 
 [node name="Hint" type="Label" parent="."]
-offset_left = 516.0
-offset_top = -720.0
-offset_right = 930.0
-offset_bottom = -435.0
+offset_left = 490.0
+offset_top = -626.0
+offset_right = 904.0
+offset_bottom = -341.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 50
@@ -299,15 +298,5 @@ Professor's
 food"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Instructions" type="Label" parent="."]
-offset_left = 489.0
-offset_top = -372.0
-offset_right = 1104.0
-offset_bottom = -240.0
-theme_override_font_sizes/font_size = 30
-text = "Red: Letter Incorrect
-Orange: Password contains letter
-Green:Password contains letter in position"
 
 [connection signal="pressed" from="Menu/Button" to="." method="_on_button_pressed"]

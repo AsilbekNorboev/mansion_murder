@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3h24xji8o1et"]
+[gd_scene load_steps=4 format=3 uid="uid://c3h24xji8o1et"]
 
 [ext_resource type="Script" path="res://garden.gd" id="1_wpmah"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_df674"]
-[ext_resource type="PackedScene" uid="uid://7qbslwgjmfnh" path="res://gardener.tscn" id="3_65ov7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
 size = Vector2(1200, 680)
@@ -20,9 +19,5 @@ texture = ExtResource("2_df674")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2(655, 395)
 shape = SubResource("RectangleShape2D_j4bkx")
-
-[node name="Gardener" parent="." instance=ExtResource("3_65ov7")]
-position = Vector2(918, 384)
-scale = Vector2(0.75, 0.75)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

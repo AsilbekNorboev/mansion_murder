@@ -5,12 +5,13 @@ var screen_size # Size of the game window.
 
 func _ready():
 	add_to_group("players")
-	#screen_size = get_viewport_rect().size
 	pass
+	#screen_size = get_viewport_rect().size
+	#position = Global.spawn_position
+
 
 func _physics_process(delta: float) -> void:
 	var velocity = Vector2.ZERO # The player's movement vector.
-	
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 	if Input.is_action_pressed("move_left"):
@@ -22,23 +23,14 @@ func _physics_process(delta: float) -> void:
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		
-		# Determine the direction and play the corresponding animation
-		if velocity.y < 0:  # Moving up
-			$AnimatedSprite2D.play("up")  # Face right (normal scale)
-		elif velocity.y > 0:  # Moving down
-			$AnimatedSprite2D.play("up")  # Face right (normal scale)
-		elif velocity.x < 0:  # Moving left
-			$AnimatedSprite2D.play("walk")
-			$AnimatedSprite2D.scale.x = -0.18  # Flip horizontally for left
-		elif velocity.x > 0:  # Moving right
-			$AnimatedSprite2D.play("walk")
-			$AnimatedSprite2D.scale.x = 0.18  # Normal scale for right
+		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
 
+	#position += velocity * delta
 	self.velocity = velocity
 	move_and_slide() # No arguments required
 
-	# Uncomment if you want to clamp position to screen boundaries
-	# position = position.clamp(Vector2.ZERO, screen_size)
+	#move_and_slide()
+
+	#position = position.clamp(Vector2.ZERO, screen_size)
