@@ -87,6 +87,6 @@ position = Vector2(259, 322)
 position = Vector2(440, 549)
 scale = Vector2(0.7, 0.7)
 lines = Array[String](["The victim, Mr. Moneybags..."])
-zoom_image = "res://art/Clues/deadbody_zoom_temp.png"
+zoom_image = "res://art/Clues/deadbody_temp.png"
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhnffftcypf3n"]
+
+[ext_resource type="Script" path="res://zoom_container.gd" id="1_03jdt"]
+[ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="2_eg4at"]
+
+[node name="cluezoom" type="CanvasLayer"]
+
+[node name="Zoom_Container" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_right = 0.793
+anchor_bottom = 0.225
+offset_left = 109.0
+offset_top = 489.0
+offset_right = 109.464
+offset_bottom = 489.2
+script = ExtResource("1_03jdt")
+
+[node name="cluezoom_image" type="Sprite2D" parent="Zoom_Container"]
+position = Vector2(455, -93)
+scale = Vector2(1.92484, 1.32)
+texture = ExtResource("2_eg4at")
