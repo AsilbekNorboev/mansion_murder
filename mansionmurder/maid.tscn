@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://blddn8mjvxrl5"]
+
+[ext_resource type="Script" path="res://maid.gd" id="1_6df71"]
+[ext_resource type="Texture2D" uid="uid://cedcmddg1yqfc" path="res://art/NPC/maid/maid_idle-1.png" id="1_lejlh"]
+[ext_resource type="Texture2D" uid="uid://yrgmx2yg38ks" path="res://art/NPC/maid/maid_idle-2.png" id="2_rp3q8"]
+[ext_resource type="Texture2D" uid="uid://dxoahrg6683jh" path="res://art/NPC/maid/maid_idle-3.png" id="3_7t6k1"]
+[ext_resource type="Texture2D" uid="uid://bp8lucht1bbxx" path="res://art/NPC/maid/maid_idle-4.png" id="4_qea6e"]
+[ext_resource type="Texture2D" uid="uid://dvvt8makn1vf" path="res://art/NPC/maid/maid_idle-5.png" id="5_4752g"]
+[ext_resource type="Texture2D" uid="uid://bllo7p87pd1b6" path="res://art/NPC/maid/maid_idle-6.png" id="6_d13cx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hirf7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lejlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rp3q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7t6k1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qea6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4752g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d13cx")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vq0ve"]
+radius = 81.0
+height = 342.0
+
+[node name="Maid" type="Area2D"]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_6df71")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(82, -6)
+sprite_frames = SubResource("SpriteFrames_hirf7")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_vq0ve")

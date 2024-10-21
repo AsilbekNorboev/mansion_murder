@@ -1,25 +1,21 @@
 [gd_scene load_steps=14 format=3 uid="uid://cjfpn8ka3087n"]
 
 [ext_resource type="PackedScene" uid="uid://c4yh2d0qnyean" path="res://player.tscn" id="1_dh5pg"]
-[ext_resource type="Script" path="res://events.gd" id="1_yluwg"]
+[ext_resource type="Script" path="res://main.gd" id="1_gwgr2"]
 [ext_resource type="PackedScene" uid="uid://cu4graritddbh" path="res://startscreen.tscn" id="3_21j5v"]
 [ext_resource type="PackedScene" uid="uid://bvhrk42a3p58v" path="res://general_border_ui.tscn" id="4_4sgwi"]
-[ext_resource type="PackedScene" path="res://audio.tscn" id="5_umkvk"]
+[ext_resource type="PackedScene" uid="uid://xpb38ejd7o3y" path="res://audio.tscn" id="5_umkvk"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="7_dap8u"]
 [ext_resource type="PackedScene" uid="uid://bsgbmst7wprd3" path="res://InventoryUI.tscn" id="8_6rbf8"]
 [ext_resource type="PackedScene" uid="uid://b0tac7mqeul18" path="res://kitchen.tscn" id="9_e4tsp"]
 [ext_resource type="PackedScene" uid="uid://ct0b334pb2lmf" path="res://LivingRoom.tscn" id="9_qrmqu"]
 [ext_resource type="PackedScene" uid="uid://dg4qym28b3db5" path="res://bedroom.tscn" id="10_ev8ke"]
-[ext_resource type="PackedScene" path="res://greenhouse.tscn" id="11_don5l"]
-[ext_resource type="PackedScene" path="res://garden.tscn" id="12_ikl3x"]
+[ext_resource type="PackedScene" uid="uid://ccqviw8fp855u" path="res://greenhouse.tscn" id="11_don5l"]
+[ext_resource type="PackedScene" uid="uid://c3h24xji8o1et" path="res://garden.tscn" id="12_ikl3x"]
 [ext_resource type="PackedScene" uid="uid://bvr2s0mu12n0t" path="res://add_clue.tscn" id="13_slwbv"]
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_yluwg")
-
-[node name="Player" parent="." groups=["players"] instance=ExtResource("1_dh5pg")]
-z_index = 1
-position = Vector2(542, 314)
+script = ExtResource("1_gwgr2")
 
 [node name="StartScreen" parent="." instance=ExtResource("3_21j5v")]
 visible = false
@@ -49,7 +45,7 @@ position = Vector2(655, 430)
 position = Vector2(655, 430)
 
 [node name="Bedroom" parent="." instance=ExtResource("10_ev8ke")]
-position = Vector2(-1333, 0)
+position = Vector2(-1417, -10)
 
 [node name="Marker2D" type="Marker2D" parent="Bedroom"]
 position = Vector2(655, 430)
@@ -69,3 +65,7 @@ position = Vector2(655, 430)
 [node name="AddClue" parent="." instance=ExtResource("13_slwbv")]
 position = Vector2(529.5, 684.5)
 scale = Vector2(0.258333, 0.247222)
+
+[node name="Player" parent="." groups=["players"] instance=ExtResource("1_dh5pg")]
+z_index = 1
+position = Vector2(528, 465)

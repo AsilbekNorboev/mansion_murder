@@ -122,7 +122,7 @@ func check_win() -> bool:
 	
 	# Check win condition
 	if entered_text == wordle:
-		label.text = "You Won!"
+		label.text = "Unlocked!!"
 		word_label.text = "Correct Word: " + entered_text
 		menu.show()
 		return true

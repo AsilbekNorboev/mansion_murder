@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://f5uk0yvdosgm"]
+
+[ext_resource type="Texture2D" uid="uid://dd8jv7tvmicp7" path="res://art/NPC/deputy/detective_idle-1.png" id="1_hi0ho"]
+[ext_resource type="Script" path="res://deputy.gd" id="1_uk68i"]
+[ext_resource type="Texture2D" uid="uid://bmafoggu8c0qb" path="res://art/NPC/deputy/detective_idle-6.png" id="6_hmmg7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0ehg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hi0ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hmmg7")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aydbp"]
+radius = 75.0
+height = 234.0
+
+[node name="Deputy" type="Area2D"]
+script = ExtResource("1_uk68i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-78, 2)
+scale = Vector2(1.01025, 1)
+sprite_frames = SubResource("SpriteFrames_y0ehg")
+animation = &"Idle"
+frame_progress = 0.137313
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_aydbp")
