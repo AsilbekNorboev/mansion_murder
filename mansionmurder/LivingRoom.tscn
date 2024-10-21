@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ct0b334pb2lmf"]
+[gd_scene load_steps=11 format=3 uid="uid://ct0b334pb2lmf"]
 
 [ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
@@ -10,9 +10,6 @@ size = Vector2(1200, 680)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5b3ow"]
 size = Vector2(114, 135)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_81lk4"]
-size = Vector2(85, 182.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lx2a"]
 size = Vector2(1193, 19)
@@ -45,40 +42,36 @@ shape = SubResource("RectangleShape2D_mddni")
 position = Vector2(259, 321.5)
 shape = SubResource("RectangleShape2D_5b3ow")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders"]
-position = Vector2(442.5, 262.75)
-shape = SubResource("RectangleShape2D_81lk4")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders"]
+[node name="Upper Left Wall Collider" type="CollisionPolygon2D" parent="Colliders"]
 polygon = PackedVector2Array(30, 203, 72, 204, 119, 182, 185, 414, 270, 225, 578, 219, 581, 186, 577, 56, 55, 58)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Colliders"]
+[node name="Upper Right Wall Collider" type="CollisionPolygon2D" parent="Colliders"]
 polygon = PackedVector2Array(762, 49, 763, 205, 1100, 345, 1174, 366, 1222, 226, 1250, 149, 1256, 53)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Colliders"]
+[node name="Lower Wall Collider" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(652.5, 748.5)
 shape = SubResource("RectangleShape2D_6lx2a")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Colliders"]
+[node name="Left Wall Collider" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(50.75, 627)
 shape = SubResource("RectangleShape2D_sasua")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Colliders"]
+[node name="Right Wall Collider" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(1265, 603)
 shape = SubResource("RectangleShape2D_sasua")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Colliders"]
+[node name="Couch Collider 1" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(678, 518)
 shape = SubResource("RectangleShape2D_x6cs3")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Colliders"]
+[node name="Couch Collider 2" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(847, 470)
 shape = SubResource("RectangleShape2D_8yth5")
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Colliders"]
+[node name="Lower Wall Collider Right" type="CollisionPolygon2D" parent="Colliders"]
 polygon = PackedVector2Array(807, 741, 807, 692, 1231, 691, 1261, 741)
 
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Colliders"]
+[node name="Lower Wall Collider Left" type="CollisionPolygon2D" parent="Colliders"]
 position = Vector2(-791, 1)
 polygon = PackedVector2Array(807, 741, 807, 692, 1243, 688, 1261, 741)
 
