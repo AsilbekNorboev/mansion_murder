@@ -1,11 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://ct0b334pb2lmf"]
+[gd_scene load_steps=12 format=3 uid="uid://ct0b334pb2lmf"]
 
 [ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
 [ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="3_qdrqd"]
-[ext_resource type="Texture2D" uid="uid://bi1jn383cumxx" path="res://art/Clues/safe.png" id="4_0x24e"]
-[ext_resource type="Script" path="res://safe.gd" id="4_5ic8c"]
-[ext_resource type="Texture2D" uid="uid://p3ul3mrbytbh" path="res://art/Clues/knifetest.png" id="6_ogksc"]
+[ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="4_hovhj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
 size = Vector2(1200, 680)
@@ -20,18 +18,18 @@ size = Vector2(85, 182.5)
 size = Vector2(1193, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sasua"]
-size = Vector2(17, 276)
+size = Vector2(30.5, 242)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6cs3"]
 size = Vector2(160, 148)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yth5"]
-size = Vector2(64, 97.5)
+size = Vector2(246, 138)
 
 [node name="room" type="Node2D"]
 script = ExtResource("1_jghax")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(655, 395)
 texture = ExtResource("2_xnlll")
 
@@ -41,60 +39,61 @@ texture = ExtResource("2_xnlll")
 position = Vector2(655, 395)
 shape = SubResource("RectangleShape2D_mddni")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Colliders" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(259, 321.5)
 shape = SubResource("RectangleShape2D_5b3ow")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(442.5, 262.75)
 shape = SubResource("RectangleShape2D_81lk4")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(55, 175, 86, 164, 119, 182, 128, 371, 225, 270, 582, 263, 581, 186, 577, 56, 55, 58)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders"]
+polygon = PackedVector2Array(30, 203, 72, 204, 119, 182, 185, 414, 270, 225, 578, 219, 581, 186, 577, 56, 55, 58)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(762, 49, 778, 250, 1111, 267, 1171, 333, 1212, 150, 1250, 149, 1256, 53)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Colliders"]
+polygon = PackedVector2Array(762, 49, 763, 205, 1100, 345, 1174, 366, 1222, 226, 1250, 149, 1256, 53)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(652.5, 748.5)
 shape = SubResource("RectangleShape2D_6lx2a")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(44, 610)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Colliders"]
+position = Vector2(50.75, 627)
 shape = SubResource("RectangleShape2D_sasua")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(1265, 603)
 shape = SubResource("RectangleShape2D_sasua")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(818, 393)
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Colliders"]
+position = Vector2(678, 518)
 shape = SubResource("RectangleShape2D_x6cs3")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(938, 411.25)
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Colliders"]
+position = Vector2(847, 470)
 shape = SubResource("RectangleShape2D_8yth5")
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(1148, 734, 1162, 565, 1248, 547, 1253, 722)
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Colliders"]
+polygon = PackedVector2Array(807, 741, 807, 692, 1231, 691, 1261, 741)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Colliders"]
+position = Vector2(-791, 1)
+polygon = PackedVector2Array(807, 741, 807, 692, 1243, 688, 1261, 741)
 
 [node name="clue" parent="." groups=["Clues"] instance=ExtResource("3_qdrqd")]
 position = Vector2(444, 265)
 scale = Vector2(0.7, 0.7)
 lines = Array[String](["This painting looks old.", "How vintage!"])
 
-[node name="Safe" type="Sprite2D" parent="."]
-position = Vector2(259, 319)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_0x24e")
-script = ExtResource("4_5ic8c")
+[node name="Safe" parent="." instance=ExtResource("4_hovhj")]
+position = Vector2(259, 322)
 
-[node name="knife" parent="." instance=ExtResource("3_qdrqd")]
+[node name="body" parent="." instance=ExtResource("3_qdrqd")]
 position = Vector2(440, 549)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("6_ogksc")
-lines = Array[String](["What's this doing here?"])
+scale = Vector2(0.7, 0.7)
+lines = Array[String](["The victim, Mr. Moneybags..."])
+zoom_image = "res://art/Clues/deadbody_zoom_temp.png"
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
