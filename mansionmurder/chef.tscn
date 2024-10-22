@@ -1,0 +1,104 @@
+[gd_scene load_steps=19 format=3 uid="uid://n4odn18l45f1"]
+
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-1.png" id="1_gpiga"]
+[ext_resource type="Script" path="res://chef.gd" id="1_w5lga"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-2.png" id="2_hs4wa"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-3.png" id="3_eivw8"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-4.png" id="4_0fmbd"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-5.png" id="5_va8st"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-6.png" id="6_vn25y"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-7.png" id="7_1cxuq"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-8.png" id="8_n8n0q"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-9.png" id="9_gbkge"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-10.png" id="10_f4ads"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-11.png" id="11_ubkjn"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-12.png" id="12_r13wc"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-13.png" id="13_r08yq"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-14.png" id="14_olc2o"]
+[ext_resource type="Texture2D" path="res://art/NPC/Chef/Idle_Chef-15.png" id="15_sonxv"]
+[gd_scene load_steps=19 format=3 uid="uid://bdli1t7cevm7f"]
+
+[ext_resource type="Texture2D" uid="uid://crelfsgshkaxt" path="res://art/NPC/Chef/Idle_Chef-1.png" id="1_gpiga"]
+[ext_resource type="Script" path="res://chef.gd" id="1_w5lga"]
+[ext_resource type="Texture2D" uid="uid://bt4yavfgdj27d" path="res://art/NPC/Chef/Idle_Chef-2.png" id="2_hs4wa"]
+[ext_resource type="Texture2D" uid="uid://7cjnld6o2b0o" path="res://art/NPC/Chef/Idle_Chef-3.png" id="3_eivw8"]
+[ext_resource type="Texture2D" uid="uid://gcnp5fq5vrmp" path="res://art/NPC/Chef/Idle_Chef-4.png" id="4_0fmbd"]
+[ext_resource type="Texture2D" uid="uid://dyqgodho7vw47" path="res://art/NPC/Chef/Idle_Chef-5.png" id="5_va8st"]
+[ext_resource type="Texture2D" uid="uid://dodq1c5fxm001" path="res://art/NPC/Chef/Idle_Chef-6.png" id="6_vn25y"]
+[ext_resource type="Texture2D" uid="uid://dw1kdvxenyosu" path="res://art/NPC/Chef/Idle_Chef-7.png" id="7_1cxuq"]
+[ext_resource type="Texture2D" uid="uid://ba33io42b2bi2" path="res://art/NPC/Chef/Idle_Chef-8.png" id="8_n8n0q"]
+[ext_resource type="Texture2D" uid="uid://bqkbwiipgsvas" path="res://art/NPC/Chef/Idle_Chef-9.png" id="9_gbkge"]
+[ext_resource type="Texture2D" uid="uid://b85igq0eixef7" path="res://art/NPC/Chef/Idle_Chef-10.png" id="10_f4ads"]
+[ext_resource type="Texture2D" uid="uid://bxivn5q6chrhw" path="res://art/NPC/Chef/Idle_Chef-11.png" id="11_ubkjn"]
+[ext_resource type="Texture2D" uid="uid://3bajkq3h2viw" path="res://art/NPC/Chef/Idle_Chef-12.png" id="12_r13wc"]
+[ext_resource type="Texture2D" uid="uid://d1r5ob2volfi4" path="res://art/NPC/Chef/Idle_Chef-13.png" id="13_r08yq"]
+[ext_resource type="Texture2D" uid="uid://pcqv76y24h17" path="res://art/NPC/Chef/Idle_Chef-14.png" id="14_olc2o"]
+[ext_resource type="Texture2D" uid="uid://bpcivulbrmbq6" path="res://art/NPC/Chef/Idle_Chef-15.png" id="15_sonxv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xl1mi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gpiga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hs4wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eivw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0fmbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_va8st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vn25y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1cxuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_n8n0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gbkge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f4ads")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ubkjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_r13wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_r08yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_olc2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_sonxv")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bm61q"]
+radius = 81.0
+height = 320.0
+
+[node name="Chef" type="Area2D"]
+script = ExtResource("1_w5lga")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -117)
+sprite_frames = SubResource("SpriteFrames_xl1mi")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_bm61q")

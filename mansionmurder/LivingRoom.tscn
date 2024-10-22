@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://ct0b334pb2lmf"]
+[gd_scene load_steps=12 format=3 uid="uid://ct0b334pb2lmf"]
 
 [ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
 [ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="3_qdrqd"]
 [ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="4_hovhj"]
+[ext_resource type="PackedScene" uid="uid://bb3c25thht1pj" path="res://Deputy.tscn" id="5_r5o5x"]
+[ext_resource type="PackedScene" uid="uid://c2lid7xqsca0j" path="res://Deputy.tscn" id="5_r5o5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
 size = Vector2(1200, 680)
@@ -75,11 +77,6 @@ polygon = PackedVector2Array(807, 741, 807, 692, 1231, 691, 1261, 741)
 position = Vector2(-791, 1)
 polygon = PackedVector2Array(807, 741, 807, 692, 1243, 688, 1261, 741)
 
-[node name="clue" parent="." groups=["Clues"] instance=ExtResource("3_qdrqd")]
-position = Vector2(444, 265)
-scale = Vector2(0.7, 0.7)
-lines = Array[String](["This painting looks old.", "How vintage!"])
-
 [node name="Safe" parent="." instance=ExtResource("4_hovhj")]
 position = Vector2(259, 322)
 
@@ -87,6 +84,10 @@ position = Vector2(259, 322)
 position = Vector2(440, 549)
 scale = Vector2(0.7, 0.7)
 lines = Array[String](["The victim, Mr. Moneybags..."])
-zoom_image = "res://art/Clues/deadbody_temp.png"
+zoom_image = "res://art/Clues/deadbody_zoom_temp.png"
+
+[node name="Deputy" parent="." instance=ExtResource("5_r5o5x")]
+position = Vector2(927, 243)
+scale = Vector2(0.8, 0.8)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

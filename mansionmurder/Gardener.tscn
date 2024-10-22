@@ -1,0 +1,157 @@
+<<<<<<< Updated upstream
+[gd_scene load_steps=29 format=3 uid="uid://b3e2ibevnd8l6"]
+
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-1.png" id="1_nylb4"]
+[ext_resource type="Script" path="res://gardener.gd" id="1_s7a43"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-2.png" id="2_v8r2j"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-3.png" id="3_br08w"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-4.png" id="4_4rfs5"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-5.png" id="5_jb1av"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-6.png" id="6_krvi0"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-7.png" id="7_hkcqh"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-8.png" id="8_uhwql"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-9.png" id="9_pxeo3"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-10.png" id="10_otwho"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-11.png" id="11_psjja"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-12.png" id="12_prgf1"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-13.png" id="13_f5i00"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-14.png" id="14_j8ltk"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-15.png" id="15_ld4va"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-16.png" id="16_s86p7"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-17.png" id="17_y3tut"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-18.png" id="18_darnc"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-19.png" id="19_6j0vv"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-20.png" id="20_8p0al"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-21.png" id="21_ojpi5"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-22.png" id="22_kecj8"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-23.png" id="23_60okd"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-24.png" id="24_y4gt1"]
+[ext_resource type="Texture2D" path="res://art/NPC/Gardener/Gardener_idle-25.png" id="25_cdcid"]
+=======
+[gd_scene load_steps=29 format=3 uid="uid://pi12ljic2i52"]
+
+[ext_resource type="Texture2D" uid="uid://g4j0k721ui4f" path="res://art/NPC/Gardener/Gardener_idle-1.png" id="1_nylb4"]
+[ext_resource type="Script" path="res://gardener.gd" id="1_s7a43"]
+[ext_resource type="Texture2D" uid="uid://bsqa6dyfqktr7" path="res://art/NPC/Gardener/Gardener_idle-2.png" id="2_v8r2j"]
+[ext_resource type="Texture2D" uid="uid://b3txh12nnk5n" path="res://art/NPC/Gardener/Gardener_idle-3.png" id="3_br08w"]
+[ext_resource type="Texture2D" uid="uid://u1cie8xhc4q" path="res://art/NPC/Gardener/Gardener_idle-4.png" id="4_4rfs5"]
+[ext_resource type="Texture2D" uid="uid://cnowbof0en37w" path="res://art/NPC/Gardener/Gardener_idle-5.png" id="5_jb1av"]
+[ext_resource type="Texture2D" uid="uid://da2q7kf4cvi7p" path="res://art/NPC/Gardener/Gardener_idle-6.png" id="6_krvi0"]
+[ext_resource type="Texture2D" uid="uid://bpve7urqta74u" path="res://art/NPC/Gardener/Gardener_idle-7.png" id="7_hkcqh"]
+[ext_resource type="Texture2D" uid="uid://dgjv3wybk6v0w" path="res://art/NPC/Gardener/Gardener_idle-8.png" id="8_uhwql"]
+[ext_resource type="Texture2D" uid="uid://c531s0cfnkpu2" path="res://art/NPC/Gardener/Gardener_idle-9.png" id="9_pxeo3"]
+[ext_resource type="Texture2D" uid="uid://bve61tje3irbj" path="res://art/NPC/Gardener/Gardener_idle-10.png" id="10_otwho"]
+[ext_resource type="Texture2D" uid="uid://b8urkfptxx7mt" path="res://art/NPC/Gardener/Gardener_idle-11.png" id="11_psjja"]
+[ext_resource type="Texture2D" uid="uid://cw4qvqn8hq5wp" path="res://art/NPC/Gardener/Gardener_idle-12.png" id="12_prgf1"]
+[ext_resource type="Texture2D" uid="uid://d2t606p0576h8" path="res://art/NPC/Gardener/Gardener_idle-13.png" id="13_f5i00"]
+[ext_resource type="Texture2D" uid="uid://ud1g0kw7qfd0" path="res://art/NPC/Gardener/Gardener_idle-14.png" id="14_j8ltk"]
+[ext_resource type="Texture2D" uid="uid://cpqkwpwr4gj54" path="res://art/NPC/Gardener/Gardener_idle-15.png" id="15_ld4va"]
+[ext_resource type="Texture2D" uid="uid://h7ivnjobh2ts" path="res://art/NPC/Gardener/Gardener_idle-16.png" id="16_s86p7"]
+[ext_resource type="Texture2D" uid="uid://diujbr5pbodrf" path="res://art/NPC/Gardener/Gardener_idle-17.png" id="17_y3tut"]
+[ext_resource type="Texture2D" uid="uid://cnlubtodxdtjt" path="res://art/NPC/Gardener/Gardener_idle-18.png" id="18_darnc"]
+[ext_resource type="Texture2D" uid="uid://bnq6f2yey8ocn" path="res://art/NPC/Gardener/Gardener_idle-19.png" id="19_6j0vv"]
+[ext_resource type="Texture2D" uid="uid://c5n4lpk45344d" path="res://art/NPC/Gardener/Gardener_idle-20.png" id="20_8p0al"]
+[ext_resource type="Texture2D" uid="uid://bhhc0tm6om0eu" path="res://art/NPC/Gardener/Gardener_idle-21.png" id="21_ojpi5"]
+[ext_resource type="Texture2D" uid="uid://b43kq43dobhj3" path="res://art/NPC/Gardener/Gardener_idle-22.png" id="22_kecj8"]
+[ext_resource type="Texture2D" uid="uid://dwel2r3e55xvj" path="res://art/NPC/Gardener/Gardener_idle-23.png" id="23_60okd"]
+[ext_resource type="Texture2D" uid="uid://bqunf3epoan1m" path="res://art/NPC/Gardener/Gardener_idle-24.png" id="24_y4gt1"]
+[ext_resource type="Texture2D" uid="uid://c47xw2enw18tl" path="res://art/NPC/Gardener/Gardener_idle-25.png" id="25_cdcid"]
+>>>>>>> Stashed changes
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rybm3"]
+radius = 66.0
+height = 336.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3jlwp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nylb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v8r2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_br08w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4rfs5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jb1av")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_krvi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hkcqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uhwql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pxeo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_otwho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_psjja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_prgf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_f5i00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_j8ltk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ld4va")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_s86p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_y3tut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_darnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6j0vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8p0al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ojpi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_kecj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_60okd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_y4gt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cdcid")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Gardener" type="Area2D"]
+script = ExtResource("1_s7a43")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_rybm3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, -128)
+sprite_frames = SubResource("SpriteFrames_3jlwp")
+animation = &"Idle"

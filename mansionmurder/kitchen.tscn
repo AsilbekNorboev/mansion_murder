@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0tac7mqeul18"]
+[gd_scene load_steps=6 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_c48fx"]
-[ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="3_v0atg"]
-[ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="4_cc3ol"]
+[ext_resource type="PackedScene" uid="uid://n4odn18l45f1" path="res://chef.tscn" id="3_wwbrn"]
+[ext_resource type="PackedScene" uid="uid://bdli1t7cevm7f" path="res://chef.tscn" id="3_wwbrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w0s"]
 size = Vector2(1200, 680)
@@ -30,11 +30,44 @@ shape = SubResource("RectangleShape2D_d0w0s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_q42pe")
 
-[node name="clue" parent="." instance=ExtResource("3_v0atg")]
-position = Vector2(970, 450)
-lines = Array[String](["adasld"])
+[node name="Chef" parent="." instance=ExtResource("3_wwbrn")]
+position = Vector2(712, 426)
+scale = Vector2(0.5, 0.5)
 
-[node name="Safe" parent="." instance=ExtResource("4_cc3ol")]
-position = Vector2(607, 504)
+[gd_scene load_steps=6 format=3 uid="uid://b0tac7mqeul18"]
 
-[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
+[ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_c48fx"]
+[ext_resource type="PackedScene" uid="uid://n4odn18l45f1" path="res://chef.tscn" id="3_wwbrn"]
+[ext_resource type="PackedScene" uid="uid://bdli1t7cevm7f" path="res://chef.tscn" id="3_wwbrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w0s"]
+size = Vector2(1200, 680)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q42pe"]
+
+[node name="Kitchen" type="Node2D"]
+script = ExtResource("1_wkt5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.709804, 0.32549, 1, 1)
+z_index = -1
+position = Vector2(655, 395)
+texture = ExtResource("2_c48fx")
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(655, 395)
+shape = SubResource("RectangleShape2D_d0w0s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_q42pe")
+
+[node name="Chef" parent="." instance=ExtResource("3_wwbrn")]
+position = Vector2(712, 426)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"][connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
