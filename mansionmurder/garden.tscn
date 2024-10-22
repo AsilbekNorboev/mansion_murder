@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_df674"]
 [ext_resource type="PackedScene" uid="uid://b3e2ibevnd8l6" path="res://Gardener.tscn" id="3_mmm2c"]
 [ext_resource type="PackedScene" uid="uid://pi12ljic2i52" path="res://Gardener.tscn" id="3_mmm2c"]
+[ext_resource type="PackedScene" uid="uid://b3e2ibevnd8l6" path="res://Gardener.tscn" id="3_mmm2c"]
+[ext_resource type="PackedScene" uid="uid://pi12ljic2i52" path="res://Gardener.tscn" id="3_mmm2c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
 size = Vector2(1200, 680)
