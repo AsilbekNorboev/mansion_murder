@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://b6y7cpee5x8f"]
+
+[ext_resource type="Texture2D" path="res://art/NPC/Maid/maid_idle-1.png" id="1_4j3br"]
+[ext_resource type="Script" path="res://maid.gd" id="1_u4st4"]
+[ext_resource type="Texture2D" path="res://art/NPC/Maid/maid_idle-2.png" id="2_s26tn"]
+[ext_resource type="Texture2D" path="res://art/NPC/Maid/maid_idle-3.png" id="3_qo3u6"]
+[ext_resource type="Texture2D" path="res://art/NPC/Maid/maid_idle-4.png" id="4_pw4ic"]
+[ext_resource type="Texture2D" path="res://art/NPC/Maid/maid_idle-5.png" id="5_gs2ta"]
+[ext_resource type="Texture2D" path="res://art/NPC/Maid/maid_idle-6.png" id="6_n6ev2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmbag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4j3br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s26tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qo3u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pw4ic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gs2ta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n6ev2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhd15"]
+radius = 49.0
+height = 278.0
+
+[node name="Maid" type="Area2D"]
+script = ExtResource("1_u4st4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(86, -26)
+sprite_frames = SubResource("SpriteFrames_nmbag")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mhd15")

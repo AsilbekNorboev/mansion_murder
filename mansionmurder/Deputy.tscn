@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb3c25thht1pj"]
+
+[ext_resource type="Texture2D" path="res://art/NPC/Deputy/detective_idle-1.png" id="1_bvvmg"]
+[ext_resource type="Script" path="res://deputy.gd" id="1_k2j7e"]
+[ext_resource type="Texture2D" path="res://art/NPC/Deputy/detective_idle-6.png" id="6_d12o2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t7nqf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bvvmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d12o2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mmt3c"]
+radius = 59.0
+height = 214.0
+
+[node name="Deputy" type="Area2D"]
+script = ExtResource("1_k2j7e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-73, 16)
+scale = Vector2(1.00512, 1)
+sprite_frames = SubResource("SpriteFrames_t7nqf")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mmt3c")
