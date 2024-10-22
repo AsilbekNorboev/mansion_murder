@@ -2,8 +2,13 @@
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_x5y1v"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_236vv"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://b6y7cpee5x8f" path="res://maid.tscn" id="3_oct1m"]
 [ext_resource type="PackedScene" uid="uid://qjfbhnnl6qye" path="res://wife.tscn" id="4_mvc3m"]
+=======
+[ext_resource type="PackedScene" uid="uid://c2mrj27gd8gg" path="res://maid.tscn" id="3_oct1m"]
+[ext_resource type="PackedScene" uid="uid://c7lamdytbri4i" path="res://wife.tscn" id="4_mvc3m"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
 size = Vector2(1200, 680)

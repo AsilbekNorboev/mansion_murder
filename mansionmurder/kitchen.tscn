@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_c48fx"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://n4odn18l45f1" path="res://chef.tscn" id="3_wwbrn"]
+=======
+[ext_resource type="PackedScene" uid="uid://bdli1t7cevm7f" path="res://chef.tscn" id="3_wwbrn"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w0s"]
 size = Vector2(1200, 680)
