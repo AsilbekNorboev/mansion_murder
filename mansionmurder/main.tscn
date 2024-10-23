@@ -22,7 +22,6 @@ z_index = 1
 position = Vector2(542, 314)
 
 [node name="StartScreen" parent="." instance=ExtResource("3_21j5v")]
-visible = false
 
 [node name="GeneralBorderUI" parent="." instance=ExtResource("4_4sgwi")]
 
