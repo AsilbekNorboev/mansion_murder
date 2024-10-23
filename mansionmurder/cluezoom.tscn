@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhnffftcypf3n"]
+[gd_scene load_steps=2 format=3 uid="uid://dhnffftcypf3n"]
 
 [ext_resource type="Script" path="res://zoom_container.gd" id="1_03jdt"]
-[ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="2_eg4at"]
 
 [node name="cluezoom" type="CanvasLayer"]
 
@@ -18,4 +17,3 @@ script = ExtResource("1_03jdt")
 [node name="cluezoom_image" type="Sprite2D" parent="Zoom_Container"]
 position = Vector2(455, -93)
 scale = Vector2(1.92484, 1.32)
-texture = ExtResource("2_eg4at")
