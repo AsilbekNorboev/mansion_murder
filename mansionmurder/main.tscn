@@ -44,7 +44,6 @@ position = Vector2(1320, 0)
 position = Vector2(655, 430)
 
 [node name="LivingRoom" parent="." instance=ExtResource("9_qrmqu")]
-position = Vector2(-7, 25)
 
 [node name="Marker2D" type="Marker2D" parent="LivingRoom"]
 position = Vector2(655, 430)
@@ -68,5 +67,5 @@ position = Vector2(2, -1545)
 position = Vector2(655, 430)
 
 [node name="AddClue" parent="." instance=ExtResource("13_slwbv")]
-position = Vector2(502, 554)
-scale = Vector2(0.01, 0.01)
+position = Vector2(529.5, 684.5)
+scale = Vector2(0.258333, 0.247222)

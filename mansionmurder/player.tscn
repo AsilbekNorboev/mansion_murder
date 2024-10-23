@@ -1,72 +1,19 @@
-[gd_scene load_steps=34 format=3 uid="uid://c4yh2d0qnyean"]
+[gd_scene load_steps=11 format=3 uid="uid://c4yh2d0qnyean"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_d2o31"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-1.png" id="2_dyg56"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-2.png" id="3_alx1v"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-3.png" id="4_e7imq"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-4.png" id="5_lr86k"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-5.png" id="6_7yu1n"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-6.png" id="7_twwqi"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-7.png" id="8_d0f5f"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-8.png" id="9_p0u7q"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-9.png" id="10_bxsqh"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-10.png" id="11_o0rlp"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-11.png" id="12_tlqpl"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-12.png" id="13_a0no2"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-13.png" id="14_dbb7r"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-14.png" id="15_r746x"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-15.png" id="16_jxnku"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-16.png" id="17_j4egn"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-17.png" id="18_ljysm"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-18.png" id="19_l8fx7"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_up-19.png" id="20_2m4bv"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_walk-20.png" id="21_ervjc"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_walk-21.png" id="22_wtsol"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_walk-22.png" id="23_6v6cs"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_walk-23.png" id="24_6ml7u"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_walk-24.png" id="25_k672j"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_walk-25.png" id="26_ikopl"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_walk-26.png" id="27_cor3d"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_walk-27.png" id="28_cgaec"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_walk-28.png" id="29_tnyek"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_walk-29.png" id="30_3kc5b"]
-[ext_resource type="Texture2D" path="res://art/NPC/Detective/detective_walk-30.png" id="31_ev28q"]
-[ext_resource type="Texture2D" uid="uid://ldgch8xlfhi6" path="res://art/NPC/Detective/detective_up-1.png" id="2_dyg56"]
-[ext_resource type="Texture2D" uid="uid://d3jdyppnajmdb" path="res://art/NPC/Detective/detective_up-2.png" id="3_alx1v"]
-[ext_resource type="Texture2D" uid="uid://dpg552g1y3vkg" path="res://art/NPC/Detective/detective_up-3.png" id="4_e7imq"]
-[ext_resource type="Texture2D" uid="uid://cnxsrtkb13uhx" path="res://art/NPC/Detective/detective_up-4.png" id="5_lr86k"]
-[ext_resource type="Texture2D" uid="uid://bbhu4jw8nstf" path="res://art/NPC/Detective/detective_up-5.png" id="6_7yu1n"]
-[ext_resource type="Texture2D" uid="uid://de2ftcg3pyu7h" path="res://art/NPC/Detective/detective_up-6.png" id="7_twwqi"]
-[ext_resource type="Texture2D" uid="uid://cg67wqx5lwpdw" path="res://art/NPC/Detective/detective_up-7.png" id="8_d0f5f"]
-[ext_resource type="Texture2D" uid="uid://hiufg1eu01np" path="res://art/NPC/Detective/detective_up-8.png" id="9_p0u7q"]
-[ext_resource type="Texture2D" uid="uid://bnbjh15fjacpw" path="res://art/NPC/Detective/detective_up-9.png" id="10_bxsqh"]
-[ext_resource type="Texture2D" uid="uid://csb2t1714r70k" path="res://art/NPC/Detective/detective_up-10.png" id="11_o0rlp"]
-[ext_resource type="Texture2D" uid="uid://vknepxm5meln" path="res://art/NPC/Detective/detective_up-11.png" id="12_tlqpl"]
-[ext_resource type="Texture2D" uid="uid://cm1uw4qwjkjxk" path="res://art/NPC/Detective/detective_up-12.png" id="13_a0no2"]
-[ext_resource type="Texture2D" uid="uid://dhyqi82jdspeg" path="res://art/NPC/Detective/detective_up-13.png" id="14_dbb7r"]
-[ext_resource type="Texture2D" uid="uid://bwlusyktn4ean" path="res://art/NPC/Detective/detective_up-14.png" id="15_r746x"]
-[ext_resource type="Texture2D" uid="uid://b8egfaknpvolr" path="res://art/NPC/Detective/detective_up-15.png" id="16_jxnku"]
-[ext_resource type="Texture2D" uid="uid://b3tyj5k2q8h1c" path="res://art/NPC/Detective/detective_up-16.png" id="17_j4egn"]
-[ext_resource type="Texture2D" uid="uid://v81x63mkwxsv" path="res://art/NPC/Detective/detective_up-17.png" id="18_ljysm"]
-[ext_resource type="Texture2D" uid="uid://boxpdhw2xioiq" path="res://art/NPC/Detective/detective_up-18.png" id="19_l8fx7"]
-[ext_resource type="Texture2D" uid="uid://454r8yx4hjlk" path="res://art/NPC/Detective/detective_up-19.png" id="20_2m4bv"]
-[ext_resource type="Texture2D" uid="uid://chtr0nwwj0xjy" path="res://art/NPC/Detective/detective_walk-20.png" id="21_ervjc"]
-[ext_resource type="Texture2D" uid="uid://st8hqkyu6esv" path="res://art/NPC/Detective/detective_walk-21.png" id="22_wtsol"]
-[ext_resource type="Texture2D" uid="uid://gk0aks5v5fnj" path="res://art/NPC/Detective/detective_walk-22.png" id="23_6v6cs"]
-[ext_resource type="Texture2D" uid="uid://cmndjscqthigf" path="res://art/NPC/Detective/detective_walk-23.png" id="24_6ml7u"]
-[ext_resource type="Texture2D" uid="uid://inb14svkvfhm" path="res://art/NPC/Detective/detective_walk-24.png" id="25_k672j"]
-[ext_resource type="Texture2D" uid="uid://4883wf7u2tro" path="res://art/NPC/Detective/detective_walk-25.png" id="26_ikopl"]
-[ext_resource type="Texture2D" uid="uid://caoosoro075tc" path="res://art/NPC/Detective/detective_walk-26.png" id="27_cor3d"]
-[ext_resource type="Texture2D" uid="uid://bsjf0c74wnwoy" path="res://art/NPC/Detective/detective_walk-27.png" id="28_cgaec"]
-[ext_resource type="Texture2D" uid="uid://db8p60m1vb8ra" path="res://art/NPC/Detective/detective_walk-28.png" id="29_tnyek"]
-[ext_resource type="Texture2D" uid="uid://c53talxwqfjq1" path="res://art/NPC/Detective/detective_walk-29.png" id="30_3kc5b"]
-[ext_resource type="Texture2D" uid="uid://bmvaeaj0ddeyd" path="res://art/NPC/Detective/detective_walk-30.png" id="31_ev28q"]
+[ext_resource type="Texture2D" uid="uid://q6a45r7dhvhw" path="res://art/PlayerSprites/Detective.png" id="2_hqfj5"]
+[ext_resource type="Texture2D" uid="uid://b3p3b8mlv7qh2" path="res://art/PlayerSprites/Detective_up_2.PNG" id="3_oeomu"]
+[ext_resource type="Texture2D" uid="uid://5rs6o6jb54" path="res://art/PlayerSprites/Detective _up.PNG" id="4_mj32r"]
+[ext_resource type="Texture2D" uid="uid://buoyj7rdyr0yv" path="res://art/PlayerSprites/Detective_walk_1.png" id="5_qs05t"]
+[ext_resource type="Texture2D" uid="uid://bl0kv1ilfvaty" path="res://art/PlayerSprites/Detective_walk_2.png" id="6_2v65d"]
+[ext_resource type="Texture2D" uid="uid://ci7j8nca88hfk" path="res://art/PlayerSprites/Detective_walk_3.png" id="7_omg0i"]
+[ext_resource type="Texture2D" uid="uid://ci7wk2wp2icbd" path="res://art/PlayerSprites/Detective_walk_4.png" id="8_r0opk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vnybq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dyg56")
+"texture": ExtResource("2_hqfj5")
 }],
 "loop": true,
 "name": &"stand",
@@ -74,99 +21,30 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dyg56")
+"texture": ExtResource("3_oeomu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_alx1v")
+"texture": ExtResource("2_hqfj5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_e7imq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_lr86k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_7yu1n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_twwqi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_d0f5f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_p0u7q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_bxsqh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_o0rlp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_tlqpl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_a0no2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_dbb7r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_r746x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_jxnku")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_j4egn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_ljysm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_l8fx7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_2m4bv")
+"texture": ExtResource("4_mj32r")
 }],
 "loop": true,
 "name": &"up",
-"speed": 18.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("21_ervjc")
+"texture": ExtResource("5_qs05t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_wtsol")
+"texture": ExtResource("6_2v65d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_6v6cs")
+"texture": ExtResource("7_omg0i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_6ml7u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_k672j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_ikopl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_cor3d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_cgaec")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_tnyek")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_3kc5b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_ev28q")
+"texture": ExtResource("8_r0opk")
 }],
 "loop": true,
 "name": &"walk",
@@ -180,11 +58,10 @@ size = Vector2(68, 35)
 script = ExtResource("1_d2o31")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 37)
-scale = Vector2(0.15, 0.15)
+position = Vector2(18, -42)
 sprite_frames = SubResource("SpriteFrames_vnybq")
-animation = &"up"
-frame_progress = 0.536978
+animation = &"walk"
+frame_progress = 0.712303
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 65.5)
