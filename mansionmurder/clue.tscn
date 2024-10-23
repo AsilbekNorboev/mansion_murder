@@ -5,8 +5,6 @@
 [ext_resource type="Script" path="res://zoom.gd" id="3_ymd25"]
 [ext_resource type="Texture2D" path="res://art/NPC/Deadbody/Deadbody.png" id="4_rkk7w"]
 [ext_resource type="Texture2D" uid="uid://dg18gd8qkcoii" path="res://art/NPC/Deadbody/Deadbody.png" id="4_rkk7w"]
-[ext_resource type="Texture2D" path="res://art/NPC/Deadbody/Deadbody.png" id="4_rkk7w"]
-[ext_resource type="Texture2D" uid="uid://dg18gd8qkcoii" path="res://art/NPC/Deadbody/Deadbody.png" id="4_rkk7w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmq82"]
 size = Vector2(134.5, 312)

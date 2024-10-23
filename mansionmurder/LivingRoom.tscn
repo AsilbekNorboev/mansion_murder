@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="4_hovhj"]
 [ext_resource type="PackedScene" uid="uid://bb3c25thht1pj" path="res://Deputy.tscn" id="5_r5o5x"]
 [ext_resource type="PackedScene" uid="uid://c2lid7xqsca0j" path="res://Deputy.tscn" id="5_r5o5x"]
-[ext_resource type="PackedScene" uid="uid://bb3c25thht1pj" path="res://Deputy.tscn" id="5_r5o5x"]
-[ext_resource type="PackedScene" uid="uid://c2lid7xqsca0j" path="res://Deputy.tscn" id="5_r5o5x"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
 size = Vector2(1200, 680)
 

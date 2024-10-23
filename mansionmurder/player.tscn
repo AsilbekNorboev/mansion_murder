@@ -61,6 +61,7 @@
 [ext_resource type="Texture2D" uid="uid://db8p60m1vb8ra" path="res://art/NPC/Detective/detective_walk-28.png" id="29_tnyek"]
 [ext_resource type="Texture2D" uid="uid://c53talxwqfjq1" path="res://art/NPC/Detective/detective_walk-29.png" id="30_3kc5b"]
 [ext_resource type="Texture2D" uid="uid://bmvaeaj0ddeyd" path="res://art/NPC/Detective/detective_walk-30.png" id="31_ev28q"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_vnybq"]
 animations = [{
 "frames": [{
