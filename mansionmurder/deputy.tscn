@@ -1,0 +1,83 @@
+[gd_scene load_steps=18 format=3 uid="uid://dgo8xjdd5ocsn"]
+
+[ext_resource type="Script" path="res://deputy.gd" id="1_6nt3c"]
+[ext_resource type="Texture2D" uid="uid://4mefy3j2jqvf" path="res://art/NPC/Deputy/Deputy-1.png" id="1_l870x"]
+[ext_resource type="Texture2D" uid="uid://q6iqonmc2uhu" path="res://art/NPC/Deputy/Deputy-2.png" id="2_l1wiy"]
+[ext_resource type="Texture2D" uid="uid://rdiym5w3dqs0" path="res://art/NPC/Deputy/Deputy-3.png" id="3_5ye65"]
+[ext_resource type="Texture2D" uid="uid://cokhux5rrwv24" path="res://art/NPC/Deputy/Deputy-4.png" id="4_g210s"]
+[ext_resource type="Texture2D" uid="uid://c2ojptm42g1jq" path="res://art/NPC/Deputy/Deputy-5.png" id="5_wypt8"]
+[ext_resource type="Texture2D" uid="uid://cjuvotg6kisu8" path="res://art/NPC/Deputy/Deputy-6.png" id="6_1sobw"]
+[ext_resource type="Texture2D" uid="uid://4k5rqayo8njt" path="res://art/NPC/Deputy/Deputy-7.png" id="7_ae5ol"]
+[ext_resource type="Texture2D" uid="uid://cvyh8unmp6yu5" path="res://art/NPC/Deputy/Deputy-8.png" id="8_itqvt"]
+[ext_resource type="Texture2D" uid="uid://brs1ctpxyrfsk" path="res://art/NPC/Deputy/Deputy-9.png" id="9_17qai"]
+[ext_resource type="Texture2D" uid="uid://brxc3qatsmc4" path="res://art/NPC/Deputy/Deputy-10.png" id="10_ajahn"]
+[ext_resource type="Texture2D" uid="uid://bcr526xg5qjoa" path="res://art/NPC/Deputy/Deputy-11.png" id="11_coggh"]
+[ext_resource type="Texture2D" uid="uid://bcr0rxe8qn7m" path="res://art/NPC/Deputy/Deputy-12.png" id="12_bd4ps"]
+[ext_resource type="Texture2D" uid="uid://vocicb8uhbxn" path="res://art/NPC/Deputy/Deputy-13.png" id="13_pdfk7"]
+[ext_resource type="Texture2D" uid="uid://c3ahe60006bnr" path="res://art/NPC/Deputy/Deputy-14.png" id="14_btii3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_idwue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l870x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l1wiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5ye65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g210s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wypt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1sobw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ae5ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_itqvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_17qai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ajahn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_coggh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bd4ps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pdfk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_btii3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u6l7w"]
+radius = 22.0
+height = 82.0
+
+[node name="Deputy" type="Area2D"]
+script = ExtResource("1_6nt3c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(11, -2)
+sprite_frames = SubResource("SpriteFrames_idwue")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 84)
+shape = SubResource("CapsuleShape2D_u6l7w")

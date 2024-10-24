@@ -1,54 +1,228 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4yh2d0qnyean"]
+[gd_scene load_steps=54 format=3 uid="uid://c4yh2d0qnyean"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_d2o31"]
-[ext_resource type="Texture2D" uid="uid://q6a45r7dhvhw" path="res://art/PlayerSprites/Detective/Detective.png" id="2_hqfj5"]
-[ext_resource type="Texture2D" uid="uid://b3p3b8mlv7qh2" path="res://art/PlayerSprites/Detective/Detective_up_2.PNG" id="3_oeomu"]
-[ext_resource type="Texture2D" uid="uid://5rs6o6jb54" path="res://art/PlayerSprites/Detective/Detective _up.PNG" id="4_mj32r"]
-[ext_resource type="Texture2D" uid="uid://buoyj7rdyr0yv" path="res://art/PlayerSprites/Detective/Detective_walk_1.png" id="5_qs05t"]
-[ext_resource type="Texture2D" uid="uid://bl0kv1ilfvaty" path="res://art/PlayerSprites/Detective/Detective_walk_2.png" id="6_2v65d"]
-[ext_resource type="Texture2D" uid="uid://ci7j8nca88hfk" path="res://art/PlayerSprites/Detective/Detective_walk_3.png" id="7_omg0i"]
-[ext_resource type="Texture2D" uid="uid://ci7wk2wp2icbd" path="res://art/PlayerSprites/Detective/Detective_walk_4.png" id="8_r0opk"]
+[ext_resource type="Texture2D" uid="uid://c0650evfcn7al" path="res://art/PlayerSprites/Detective/Detective-8-Down.png" id="2_m4xqn"]
+[ext_resource type="Texture2D" uid="uid://6hrmfvk4p0s0" path="res://art/PlayerSprites/Detective/Detective-9-Down.png" id="3_e7rm1"]
+[ext_resource type="Texture2D" uid="uid://cq35dkrxh8nhu" path="res://art/PlayerSprites/Detective/Detective-10-Down.png" id="4_jmwm8"]
+[ext_resource type="Texture2D" uid="uid://dy6vdgtr0m66r" path="res://art/PlayerSprites/Detective/Detective-11-Down.png" id="5_b81us"]
+[ext_resource type="Texture2D" uid="uid://cyoxj0n8wqq4q" path="res://art/PlayerSprites/Detective/Detective-12-Down.png" id="6_cjali"]
+[ext_resource type="Texture2D" uid="uid://ck1nenobadrev" path="res://art/PlayerSprites/Detective/Detective-13-Down.png" id="7_78v56"]
+[ext_resource type="Texture2D" uid="uid://c2ikiir23ypba" path="res://art/PlayerSprites/Detective/Detective-14-Down.png" id="8_fggun"]
+[ext_resource type="Texture2D" uid="uid://x6vyr23iw4yv" path="res://art/PlayerSprites/Detective/Detective-15-Down.png" id="9_uf3xt"]
+[ext_resource type="Texture2D" uid="uid://cpxg5axpc8qfi" path="res://art/PlayerSprites/Detective/Detective-16-Down.png" id="10_u7n11"]
+[ext_resource type="Texture2D" uid="uid://bwy1725tb86ai" path="res://art/PlayerSprites/Detective/Detective-17-Down.png" id="11_co6wi"]
+[ext_resource type="Texture2D" uid="uid://bm7i8162tm5wk" path="res://art/PlayerSprites/Detective/Detective-18-Down.png" id="12_qgisy"]
+[ext_resource type="Texture2D" uid="uid://cmsqxion8n845" path="res://art/PlayerSprites/Detective/Detective-19-Down.png" id="13_pgkxh"]
+[ext_resource type="Texture2D" uid="uid://byts3oggr7pev" path="res://art/PlayerSprites/Detective/Detective-20-Down.png" id="14_qjn64"]
+[ext_resource type="Texture2D" uid="uid://dfyepeow655c4" path="res://art/PlayerSprites/Detective/Detective-21-Down.png" id="15_sjy8e"]
+[ext_resource type="Texture2D" uid="uid://ck12di45tabmp" path="res://art/PlayerSprites/Detective/Detective-1-Idle.png" id="16_3xvqj"]
+[ext_resource type="Texture2D" uid="uid://cijaxtmeuolpv" path="res://art/PlayerSprites/Detective/Detective-2-Idle.png" id="17_vvwpy"]
+[ext_resource type="Texture2D" uid="uid://b88lix72kqh1e" path="res://art/PlayerSprites/Detective/Detective-3-Idle.png" id="18_ris7a"]
+[ext_resource type="Texture2D" uid="uid://b4ugjdsnosiey" path="res://art/PlayerSprites/Detective/Detective-4-Idle.png" id="19_yl88p"]
+[ext_resource type="Texture2D" uid="uid://cc1e8yatvmien" path="res://art/PlayerSprites/Detective/Detective-5-Idle.png" id="20_cqgp0"]
+[ext_resource type="Texture2D" uid="uid://dofc7bjfap748" path="res://art/PlayerSprites/Detective/Detective-6-Idle.png" id="21_y4rn4"]
+[ext_resource type="Texture2D" uid="uid://dhe8xl07n7fbb" path="res://art/PlayerSprites/Detective/Detective-7-Idle.png" id="22_xjmno"]
+[ext_resource type="Texture2D" uid="uid://l07sqib1pm76" path="res://art/PlayerSprites/Detective/Detective-22-Up.png" id="23_karpo"]
+[ext_resource type="Texture2D" uid="uid://bjeqcs0ympkle" path="res://art/PlayerSprites/Detective/Detective-23-Up.png" id="24_qg123"]
+[ext_resource type="Texture2D" uid="uid://b14dw0rc0sbw8" path="res://art/PlayerSprites/Detective/Detective-24-Up.png" id="25_2pyad"]
+[ext_resource type="Texture2D" uid="uid://nljwron48f68" path="res://art/PlayerSprites/Detective/Detective-25-Up.png" id="26_jnl4x"]
+[ext_resource type="Texture2D" uid="uid://ch2h5ho3poyfn" path="res://art/PlayerSprites/Detective/Detective-26-Up.png" id="27_1oeli"]
+[ext_resource type="Texture2D" uid="uid://cwp1xdgxfhmsn" path="res://art/PlayerSprites/Detective/Detective-27-Up.png" id="28_lv51a"]
+[ext_resource type="Texture2D" uid="uid://bficu2pxtxhru" path="res://art/PlayerSprites/Detective/Detective-28-Up.png" id="29_62yx3"]
+[ext_resource type="Texture2D" uid="uid://ckx35snwgl1f5" path="res://art/PlayerSprites/Detective/Detective-29-Up.png" id="30_c14g8"]
+[ext_resource type="Texture2D" uid="uid://cr6mu6jkseldi" path="res://art/PlayerSprites/Detective/Detective-30-Up.png" id="31_a4ggk"]
+[ext_resource type="Texture2D" uid="uid://bv6c1afuevfa2" path="res://art/PlayerSprites/Detective/Detective-31-Up.png" id="32_qtcnr"]
+[ext_resource type="Texture2D" uid="uid://bcuqg3xh7nt5d" path="res://art/PlayerSprites/Detective/Detective-32-Up.png" id="33_88ks4"]
+[ext_resource type="Texture2D" uid="uid://bllxlkuwfq7ve" path="res://art/PlayerSprites/Detective/Detective-33-Up.png" id="34_7wlbl"]
+[ext_resource type="Texture2D" uid="uid://cwxm06u0nvbd8" path="res://art/PlayerSprites/Detective/Detective-34-Up.png" id="35_5kc1e"]
+[ext_resource type="Texture2D" uid="uid://c66oua64og62v" path="res://art/PlayerSprites/Detective/Detective-35-Up.png" id="36_nl7o4"]
+[ext_resource type="Texture2D" uid="uid://c3b0ene5ejfxy" path="res://art/PlayerSprites/Detective/Detective-36-Up.png" id="37_rily1"]
+[ext_resource type="Texture2D" uid="uid://c4ioctsw5x1im" path="res://art/PlayerSprites/Detective/Detective-37-Up.png" id="38_yxhcc"]
+[ext_resource type="Texture2D" uid="uid://qyox6ghkf7f6" path="res://art/PlayerSprites/Detective/Detective-39-Run.png" id="39_k7r8v"]
+[ext_resource type="Texture2D" uid="uid://edspdv4vg07w" path="res://art/PlayerSprites/Detective/Detective-40-Run.png" id="40_e2tmr"]
+[ext_resource type="Texture2D" uid="uid://dnafb5jlut045" path="res://art/PlayerSprites/Detective/Detective-41-Run.png" id="41_r0qa1"]
+[ext_resource type="Texture2D" uid="uid://dxlkbnpu66hq3" path="res://art/PlayerSprites/Detective/Detective-42-Run.png" id="42_ywo0f"]
+[ext_resource type="Texture2D" uid="uid://dqrvgsegwddda" path="res://art/PlayerSprites/Detective/Detective-43-Run.png" id="43_asds3"]
+[ext_resource type="Texture2D" uid="uid://vp2buu5w4713" path="res://art/PlayerSprites/Detective/Detective-44-Run.png" id="44_k47rl"]
+[ext_resource type="Texture2D" uid="uid://j34gg6anrvfx" path="res://art/PlayerSprites/Detective/Detective-45-Run.png" id="45_ahqdu"]
+[ext_resource type="Texture2D" uid="uid://7vciq40iw32d" path="res://art/PlayerSprites/Detective/Detective-46-Run.png" id="46_uo1oc"]
+[ext_resource type="Texture2D" uid="uid://cg1lbipuohv43" path="res://art/PlayerSprites/Detective/Detective-47-Run.png" id="47_26ndr"]
+[ext_resource type="Texture2D" uid="uid://28hajfxf2njn" path="res://art/PlayerSprites/Detective/Detective-48-Run.png" id="48_7a1tk"]
+[ext_resource type="Texture2D" uid="uid://ds6ywc2boexgu" path="res://art/PlayerSprites/Detective/Detective-49-Run.png" id="49_nxdhd"]
+[ext_resource type="Texture2D" uid="uid://p4hjhoifdewm" path="res://art/PlayerSprites/Detective/Detective-50-Run.png" id="50_1kxy6"]
+[ext_resource type="Texture2D" uid="uid://dlu1e3g3ejmm3" path="res://art/PlayerSprites/Detective/Detective-51-Run.png" id="51_rybfd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vnybq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_hqfj5")
+"texture": ExtResource("2_m4xqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e7rm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jmwm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b81us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cjali")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_78v56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fggun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uf3xt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u7n11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_co6wi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qgisy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pgkxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qjn64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_sjy8e")
 }],
 "loop": true,
-"name": &"stand",
-"speed": 5.0
+"name": &"down",
+"speed": 26.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_oeomu")
+"texture": ExtResource("16_3xvqj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_hqfj5")
+"texture": ExtResource("17_vvwpy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_mj32r")
+"texture": ExtResource("18_ris7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_yl88p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cqgp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_y4rn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xjmno")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_karpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qg123")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_2pyad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_jnl4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1oeli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_lv51a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_62yx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_c14g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_a4ggk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_qtcnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_88ks4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_7wlbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_5kc1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_nl7o4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rily1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_yxhcc")
 }],
 "loop": true,
 "name": &"up",
-"speed": 5.0
+"speed": 25.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_qs05t")
+"texture": ExtResource("39_k7r8v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_2v65d")
+"texture": ExtResource("40_e2tmr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_omg0i")
+"texture": ExtResource("41_r0qa1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_r0opk")
+"texture": ExtResource("42_ywo0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_asds3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_k47rl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ahqdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_uo1oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_26ndr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_7a1tk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_nxdhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_1kxy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_rybfd")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbs6m"]
@@ -61,7 +235,6 @@ script = ExtResource("1_d2o31")
 position = Vector2(18, -42)
 sprite_frames = SubResource("SpriteFrames_vnybq")
 animation = &"walk"
-frame_progress = 0.712303
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 65.5)

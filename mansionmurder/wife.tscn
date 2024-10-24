@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://ikqfwk553lwl"]
+
+[ext_resource type="Script" path="res://wife.gd" id="1_k54f1"]
+[ext_resource type="Texture2D" uid="uid://ctmykf6rkt7wl" path="res://art/NPC/Wife/Wife-1.png" id="1_mo3gd"]
+[ext_resource type="Texture2D" uid="uid://c4leex18va013" path="res://art/NPC/Wife/Wife-2.png" id="2_cjmus"]
+[ext_resource type="Texture2D" uid="uid://ccl3a8i1nrtp8" path="res://art/NPC/Wife/Wife-3.png" id="3_xpuyd"]
+[ext_resource type="Texture2D" uid="uid://br1lr1ad2snsi" path="res://art/NPC/Wife/Wife-4.png" id="4_c1dsl"]
+[ext_resource type="Texture2D" uid="uid://ercjt07alluc" path="res://art/NPC/Wife/Wife-5.png" id="5_d2kcp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nwtxd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mo3gd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cjmus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xpuyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c1dsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d2kcp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fosg6"]
+radius = 48.0
+height = 276.0
+
+[node name="Wife" type="Area2D"]
+script = ExtResource("1_k54f1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-48, -54)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_nwtxd")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-35, 189)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fosg6")
