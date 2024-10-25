@@ -19,7 +19,8 @@ var is_dialog_active = false
 @export_global_file("*.png") var zoom_image
 @onready var collision_shape = $CollisionShape2D
 
-#func _ready():
+func _ready():
+	_clue_image()
 	#cluezoom_image.visible = false
 	
 func _input(event):
@@ -39,13 +40,13 @@ func _input(event):
 func _dialog_start():
 	if is_dialog_active:
 		return
-	#if lines:
-		#add_child(textbox_scene)
-		#textappear.add_text(lines[current_line_index])
-		#is_dialog_active = true
+	if not lines:
+		return
 	add_child(textbox_scene)
 	textappear.add_text(lines[current_line_index])
 	is_dialog_active = true
+
+
 		
 
 func _dialog_end():

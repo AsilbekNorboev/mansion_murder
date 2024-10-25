@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
 [ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="3_qdrqd"]
 [ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="4_hovhj"]
-[ext_resource type="PackedScene" uid="uid://ikqfwk553lwl" path="res://wife.tscn" id="5_vsfb2"]
-[ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="6_wqe7p"]
+[ext_resource type="PackedScene" path="res://wife.tscn" id="5_vsfb2"]
+[ext_resource type="PackedScene" path="res://deputy.tscn" id="6_wqe7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
 size = Vector2(1200, 680)
@@ -80,7 +80,9 @@ polygon = PackedVector2Array(807, 741, 807, 692, 1243, 688, 1261, 741)
 [node name="body" parent="." groups=["Clues"] instance=ExtResource("3_qdrqd")]
 position = Vector2(436, 282)
 scale = Vector2(0.7, 0.7)
+lines = Array[String](["The victim: Mr Moneybags."])
 clue_image = "res://art/NPC/Deadbody/Dead_Body-1.png"
+zoom_image = "res://art/Clues/deadbody_zoom_temp.png"
 
 [node name="Safe" parent="." instance=ExtResource("4_hovhj")]
 position = Vector2(813, 193)
@@ -95,7 +97,8 @@ scale = Vector2(1.2, 1.2)
 
 [node name="clue" parent="." instance=ExtResource("3_qdrqd")]
 position = Vector2(453, 550)
-lines = Array[String](["cool painting1"])
+lines = Array[String](["cool painting!"])
+clue_image = ""
 zoom_image = ""
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
