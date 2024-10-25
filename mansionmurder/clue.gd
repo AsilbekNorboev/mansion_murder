@@ -5,28 +5,27 @@ var textbox_scene = preload("res://textbox.tscn").instantiate()
 var textappear = textbox_scene.get_node("TextboxContainer")
 var current_line_index = 0
 
-@onready var newclue_image = $Image
+var is_dialog_active = false
+@export var lines:Array[String] = []
 
+#loads cluezoom scene to use its functions later
 var clue_zoom = preload("res://cluezoom.tscn").instantiate()
 var cluezoom_image = clue_zoom.get_node("Zoom_Container/cluezoom_image")
 
-var is_dialog_active = false
-
-@export var lines:Array[String] = []
-
+@onready var newclue_image = $Image
 @export_global_file("*.png") var clue_image
-
 @export_global_file("*.png") var zoom_image
+
 @onready var collision_shape = $CollisionShape2D
 
 func _ready():
+	#changes the default clue sprite to sprite assigned in the room scene
 	_clue_image()
-	#cluezoom_image.visible = false
 	
 func _input(event):
 	if Input.is_action_pressed("click"):
 		var global_mouse_position = get_viewport().get_camera_2d().get_global_mouse_position()
-		var local_mouse_position = to_local(global_mouse_position)  # Convert to local coordinates
+		var local_mouse_position = to_local(global_mouse_position)
 		if collision_shape.shape:
 			if collision_shape.shape is RectangleShape2D:
 				var rect = Rect2(collision_shape.position - (collision_shape.shape.extents), collision_shape.shape.extents * 2)
@@ -45,8 +44,6 @@ func _dialog_start():
 	add_child(textbox_scene)
 	textappear.add_text(lines[current_line_index])
 	is_dialog_active = true
-
-
 		
 
 func _dialog_end():
@@ -58,7 +55,6 @@ func _dialog_end():
 	clue_zoom.hide()
 	
 func _unhandled_input(event):
-		
 	if( event.is_action_pressed("dialogue_next") && is_dialog_active):
 		current_line_index += 1
 		#if there is no more text left in array, end the dialog
@@ -68,8 +64,8 @@ func _unhandled_input(event):
 		else:
 			textappear.add_text(lines[current_line_index])
 
-
 func _clue_image():
+	#changes the default clue sprite to sprite assigned in the room scene
 	if (clue_image):
 		print(newclue_image.texture.resource_path)
 		newclue_image.texture = load(clue_image)
@@ -78,10 +74,9 @@ func _clue_image():
 		pass
 		
 func _zoom_image():
+	#if the clue has a zoom image assigned to it...
 	if (zoom_image):
 		add_child(clue_zoom)
-
-		print("zoom image exists")
 		#replace default empty texture with chosen clue-specific texture
 		print(cluezoom_image.texture.resource_path)
 		cluezoom_image.texture = load(zoom_image)
