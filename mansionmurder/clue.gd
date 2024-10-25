@@ -5,12 +5,16 @@ var textbox_scene = preload("res://textbox.tscn").instantiate()
 var textappear = textbox_scene.get_node("TextboxContainer")
 var current_line_index = 0
 
+@onready var newclue_image = $Image
+
 var clue_zoom = preload("res://cluezoom.tscn").instantiate()
 var cluezoom_image = clue_zoom.get_node("Zoom_Container/cluezoom_image")
 
 var is_dialog_active = false
 
 @export var lines:Array[String] = []
+
+@export_global_file("*.png") var clue_image
 
 @export_global_file("*.png") var zoom_image
 @onready var collision_shape = $CollisionShape2D
@@ -35,9 +39,14 @@ func _input(event):
 func _dialog_start():
 	if is_dialog_active:
 		return
+	#if lines:
+		#add_child(textbox_scene)
+		#textappear.add_text(lines[current_line_index])
+		#is_dialog_active = true
 	add_child(textbox_scene)
 	textappear.add_text(lines[current_line_index])
 	is_dialog_active = true
+		
 
 func _dialog_end():
 	#hide the textbox
@@ -57,7 +66,16 @@ func _unhandled_input(event):
 		#if there is more text left, display the next line of text
 		else:
 			textappear.add_text(lines[current_line_index])
-#
+
+
+func _clue_image():
+	if (clue_image):
+		print(newclue_image.texture.resource_path)
+		newclue_image.texture = load(clue_image)
+		print(newclue_image.texture.resource_path)
+	else:
+		pass
+		
 func _zoom_image():
 	if (zoom_image):
 		add_child(clue_zoom)

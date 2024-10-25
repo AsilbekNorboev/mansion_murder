@@ -69,3 +69,4 @@ position = Vector2(655, 430)
 [node name="AddClue" parent="." instance=ExtResource("13_slwbv")]
 position = Vector2(529.5, 684.5)
 scale = Vector2(0.258333, 0.247222)
+texture = null

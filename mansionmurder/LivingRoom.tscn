@@ -77,16 +77,13 @@ polygon = PackedVector2Array(807, 741, 807, 692, 1231, 691, 1261, 741)
 position = Vector2(-791, 1)
 polygon = PackedVector2Array(807, 741, 807, 692, 1243, 688, 1261, 741)
 
-[node name="clue" parent="." groups=["Clues"] instance=ExtResource("3_qdrqd")]
+[node name="body" parent="." groups=["Clues"] instance=ExtResource("3_qdrqd")]
 position = Vector2(436, 282)
 scale = Vector2(0.7, 0.7)
+clue_image = "res://art/NPC/Deadbody/Dead_Body-1.png"
 
 [node name="Safe" parent="." instance=ExtResource("4_hovhj")]
 position = Vector2(813, 193)
-
-[node name="body" parent="." instance=ExtResource("3_qdrqd")]
-position = Vector2(228, 811)
-scale = Vector2(0.7, 0.7)
 
 [node name="Wife" parent="." instance=ExtResource("5_vsfb2")]
 position = Vector2(448, 139)
@@ -95,5 +92,10 @@ scale = Vector2(0.4, 0.4)
 [node name="Deputy" parent="." instance=ExtResource("6_wqe7p")]
 position = Vector2(331, 115)
 scale = Vector2(1.2, 1.2)
+
+[node name="clue" parent="." instance=ExtResource("3_qdrqd")]
+position = Vector2(453, 550)
+lines = Array[String](["cool painting1"])
+zoom_image = ""
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

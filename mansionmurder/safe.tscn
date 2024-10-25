@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://daqxhsmjxx3ym"]
 
 [ext_resource type="Script" path="res://safe.gd" id="2_0ujij"]
-[ext_resource type="Texture2D" uid="uid://r54p4cvmnmw7" path="res://art/Clues/Safe-1.png" id="2_irg43"]
+[ext_resource type="Texture2D" uid="uid://r54p4cvmnmw7" path="res://art/Clues/safe.png" id="2_irg43"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af140"]
 size = Vector2(175, 100)
