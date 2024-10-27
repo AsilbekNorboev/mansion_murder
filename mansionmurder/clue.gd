@@ -68,11 +68,12 @@ func _unhandled_input(event):
 func _clue_image():
 	#changes the default clue sprite to sprite assigned in the room scene
 	if (clue_image):
+		print("clue image changed")
 		print(newclue_image.texture.resource_path)
 		newclue_image.texture = load(clue_image)
 		print(newclue_image.texture.resource_path)
 	else:
-		pass
+		print("clue image not loaded")
 		
 func _zoom_image():
 	#if the clue has a zoom image assigned to it...

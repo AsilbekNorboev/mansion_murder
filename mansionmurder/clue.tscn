@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cf0kb1ehkj1m1" path="res://art/Clues/testclue.png" id="2_g7al1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmq82"]
-size = Vector2(267, 107)
+size = Vector2(269, 114.001)
 
 [node name="clue" type="Area2D"]
 position = Vector2(716, 442)
@@ -16,6 +16,6 @@ scale = Vector2(0.888889, 0.969613)
 texture = ExtResource("2_g7al1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-25.5, 3.50003)
+position = Vector2(-18, -1.49973)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_lmq82")

@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsgbmst7wprd3"]
+[gd_scene load_steps=3 format=3 uid="uid://bsgbmst7wprd3"]
 
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="1_gqlcb"]
 [ext_resource type="Script" path="res://inventory_ui.gd" id="1_lqmkm"]
-[ext_resource type="PackedScene" uid="uid://bgd865rpwt2da" path="res://clue_item.tscn" id="2_q0px8"]
 
 [node name="InventoryUI" type="CanvasLayer"]
+layer = 3
 script = ExtResource("1_lqmkm")
 
 [node name="Title" type="Label" parent="."]
@@ -18,10 +18,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 136.0
-offset_top = 15.0
-offset_right = 231.0
-offset_bottom = 48.0
+offset_left = 132.0
+offset_top = 6.0
+offset_right = 285.0
+offset_bottom = 56.0
 text = "Exit
 "
 
@@ -36,14 +36,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ClueItem" parent="ScrollContainer/ClueContainer" instance=ExtResource("2_q0px8")]
-layout_mode = 2
-
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
 offset_left = 128.0
 offset_top = 1.0
-offset_right = 809.0
+offset_right = 826.0
 offset_bottom = 65.0
 texture = ExtResource("1_gqlcb")
 expand_mode = 1
@@ -52,7 +49,9 @@ expand_mode = 1
 z_index = -1
 offset_left = 128.0
 offset_top = 67.0
-offset_right = 809.0
+offset_right = 826.0
 offset_bottom = 729.0
 texture = ExtResource("1_gqlcb")
 expand_mode = 1
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

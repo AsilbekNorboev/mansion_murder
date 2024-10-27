@@ -7,6 +7,7 @@ signal puzzle_completed(puzzle1)
 @onready var inventory_ui = $InventoryUI
 @onready var clue_node_safe = $LivingRoom/Safe
 
+
 func new_game():
 	print("game start")
 

@@ -2,8 +2,8 @@ extends CanvasLayer
 
 
 @onready var clue_container = $ScrollContainer/ClueContainer
+@onready var exit_button = $ExitButton
 
-# Function to add a clue to the inventory UI
 func add_clue(clue_data: Dictionary):
 	print("Adding clue to inventory:", clue_data)
 
@@ -13,3 +13,8 @@ func add_clue(clue_data: Dictionary):
 	# Assuming your clue item scene has a method to set data
 	clue_item.set_data(clue_data)  # Pass c
 	clue_container.add_child(clue_item)
+
+
+func _on_exit_button_pressed() -> void:
+	print("exit button pressed")
+	$InventoryUI.visible = false
