@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://r54p4cvmnmw7" path="res://art/Clues/safe.png" id="2_irg43"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af140"]
-size = Vector2(175, 100)
+size = Vector2(207.5, 275)
 
 [node name="Safe" type="Area2D"]
 position = Vector2(-1.99997, -0.999969)
@@ -12,7 +12,7 @@ scale = Vector2(0.4, 0.4)
 script = ExtResource("2_0ujij")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-15.0001, 62.4999)
+position = Vector2(-13.7501, -22.5001)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_af140")
 
