@@ -32,8 +32,8 @@ func _input(event):
 				if rect.has_point(local_mouse_position):
 					print("You clicked on Clue")
 					_dialog_start()
-				#display zoom image if exists
-				_zoom_image()	
+					#display zoom image if exists
+					_zoom_image()	
 			
 #on click, add text from the array to populate the textbox scene
 func _dialog_start():
@@ -41,10 +41,11 @@ func _dialog_start():
 		return
 	if not lines:
 		return
-	add_child(textbox_scene)
-	textappear.add_text(lines[current_line_index])
-	is_dialog_active = true
-		
+	if (textbox_scene.find_parent("*") == null):
+		add_child(textbox_scene)
+		textappear.add_text(lines[current_line_index])
+		is_dialog_active = true
+			
 
 func _dialog_end():
 	#hide the textbox
@@ -75,7 +76,7 @@ func _clue_image():
 		
 func _zoom_image():
 	#if the clue has a zoom image assigned to it...
-	if (zoom_image):
+	if (zoom_image and clue_zoom.find_parent("*") == null):
 		add_child(clue_zoom)
 		#replace default empty texture with chosen clue-specific texture
 		print(cluezoom_image.texture.resource_path)
