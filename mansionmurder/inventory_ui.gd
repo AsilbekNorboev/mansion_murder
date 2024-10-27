@@ -5,6 +5,8 @@ extends CanvasLayer
 
 # Function to add a clue to the inventory UI
 func add_clue(clue_data: Dictionary):
+	print("Adding clue to inventory:", clue_data)
+
 	var clue_scene = preload("res://clue_item.tscn")  # Path to your clue item scene
 	var clue_item = clue_scene.instantiate()  # Instance the clue item scene
 
