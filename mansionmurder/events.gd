@@ -6,6 +6,7 @@ signal puzzle_completed(puzzle1)
 @onready var inventory_ui = $InventoryUI
 @onready var clue_node_safe = $LivingRoom/Safe
 
+var clue_scene = preload("res://clue.tscn").instantiate()
 
 func new_game():
 	print("game start")
@@ -26,6 +27,19 @@ func _on_inventory_button_pressed():
 func _on_clue_clicked(clue_data):
 	# Add the clue to the inventory UI
 	print("Clue clicked with data:", clue_data)
+	clue_scene._zoom_image()	
 	if clue_data not in InventoryManager.get_inventory():
 		InventoryManager.add_clue(clue_data)  # Add to inventory manager
 		inventory_ui.add_clue(clue_data)  # Add to UI immediately
+		
+
+#
+#func _zoom_image():
+	##if the clue has a zoom image assigned to it...
+	#if (zoom_image):
+		#_add_zoom_scene()
+	#else:
+		#print("no zoom image")
+		#pass
+#func _add_zoom_scene():
+	#clue_scene._zoom_image()	

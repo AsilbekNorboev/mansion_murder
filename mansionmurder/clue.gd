@@ -12,6 +12,8 @@ var is_dialog_active = false
 @export_global_file("*.png") var clue_image
 @export_global_file("*.tscn") var zoom_image
 
+var zoom_scene
+
 @onready var collision_shape = $CollisionShape2D
 
 func _ready():
@@ -29,7 +31,7 @@ func _input(event):
 					print("You clicked on Clue")
 					_dialog_start()
 					#display zoom image if exists
-					_zoom_image()	
+					#_zoom_image()	
 			
 #on click, add text from the array to populate the textbox scene
 func _dialog_start():
@@ -71,14 +73,20 @@ func _clue_image():
 		print(newclue_image.texture.resource_path)
 	else:
 		print("clue image not loaded")
+		pass
 		
 func _zoom_image():
 	#if the clue has a zoom image assigned to it...
 	if (zoom_image):
-		get_tree().change_scene_to_file(zoom_image)  # Load the zoom scene
+		_add_zoom_scene()
 	else:
+		print("no zoom image")
 		pass
 
+func _add_zoom_scene():
+	zoom_scene = load(zoom_image).instantiate()
+	print(zoom_scene)
+	add_child(zoom_scene)
 
 #func _zoom_image():
 	##if the clue has a zoom image assigned to it...
