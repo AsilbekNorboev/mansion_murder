@@ -3,7 +3,6 @@ extends Node
 signal room_entered(room)
 signal puzzle_completed(puzzle1)
 
-@onready var clue_node = $AddClue
 @onready var inventory_ui = $InventoryUI
 @onready var clue_node_safe = $LivingRoom/Safe
 
@@ -17,7 +16,6 @@ func _ready():
 		inventory_ui.add_clue(clue_data)
 	var general_border_ui = $GeneralBorderUI
 	general_border_ui.inventorybuttonpressed.connect(_on_inventory_button_pressed)
-	clue_node.clue_clicked.connect(self._on_clue_clicked)
 	clue_node_safe.clue_clicked.connect(self._on_clue_clicked)
 	$InventoryUI.visible = false
 
