@@ -10,11 +10,11 @@ var is_dialog_active = false
 
 #loads cluezoom scene to use its functions later
 var clue_zoom = preload("res://cluezoom.tscn").instantiate()
-var cluezoom_image = clue_zoom.get_node("Zoom_Container/cluezoom_image")
+#var cluezoom_image = clue_zoom.get_node("Zoom_Container/cluezoom_image")
 
 @onready var newclue_image = $Image
 @export_global_file("*.png") var clue_image
-@export_global_file("*.png") var zoom_image
+@export_global_file("*.tscn") var zoom_image
 
 @onready var collision_shape = $CollisionShape2D
 
@@ -78,11 +78,19 @@ func _clue_image():
 func _zoom_image():
 	#if the clue has a zoom image assigned to it...
 	if (zoom_image and clue_zoom.find_parent("*") == null):
-		add_child(clue_zoom)
-		#replace default empty texture with chosen clue-specific texture
-		print(cluezoom_image.texture.resource_path)
-		cluezoom_image.texture = load(zoom_image)
-		print(cluezoom_image.texture.resource_path)
-		cluezoom_image.visible = true
+		get_tree().change_scene_to_file(zoom_image)  # Load the zoom scene
 	else:
 		pass
+
+	#
+#func _zoom_image():
+	##if the clue has a zoom image assigned to it...
+	#if (zoom_image and clue_zoom.find_parent("*") == null):
+		#add_child(clue_zoom)
+		##replace default empty texture with chosen clue-specific texture
+		#print(cluezoom_image.texture.resource_path)
+		#cluezoom_image.texture = load(zoom_image)
+		#print(cluezoom_image.texture.resource_path)
+		#cluezoom_image.visible = true
+	#else:
+		#pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://p8q7ed24lfeq"]
+[gd_scene load_steps=9 format=3 uid="uid://pjj5rypshk1d"]
 
 [ext_resource type="Script" path="res://maid.gd" id="1_14m25"]
 [ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="1_n7tcw"]

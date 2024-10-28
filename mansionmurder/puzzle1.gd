@@ -27,7 +27,6 @@ func _input(event):
 	if menu.visible:
 		return
 	
-
 		
 	if event is InputEventKey and event.is_pressed():
 		if event.keycode >= KEY_A and event.keycode <= KEY_Z:

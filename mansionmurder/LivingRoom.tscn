@@ -82,7 +82,7 @@ position = Vector2(436, 282)
 scale = Vector2(0.7, 0.7)
 lines = Array[String](["The victim: Mr Moneybags."])
 clue_image = "res://art/Clues/deadbody_temp.png"
-zoom_image = "res://art/Clues/deadbody_zoom_temp.png"
+zoom_image = "res://Zoom Scenes/body_investigate_scene.tscn"
 
 [node name="Safe" parent="." instance=ExtResource("4_hovhj")]
 position = Vector2(813, 193)
