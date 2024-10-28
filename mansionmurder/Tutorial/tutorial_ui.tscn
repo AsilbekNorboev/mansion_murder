@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_ns475")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.439049, 0.439049, 0.439049, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,18 +38,14 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = -246.0
-offset_right = 1.0
-offset_bottom = 39.0
+offset_top = -142.5
+offset_bottom = 142.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "Welcome to Mansion Murder...
-You are the detective for the murder that has been
-committed in the Burmingham
-Mansion.."
+theme_override_font_sizes/font_size = 45
+text = "Text"
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Button_Next" type="Button" parent="."]
 layout_mode = 1
