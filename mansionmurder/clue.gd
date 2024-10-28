@@ -8,10 +8,6 @@ var current_line_index = 0
 var is_dialog_active = false
 @export var lines:Array[String] = []
 
-#loads cluezoom scene to use its functions later
-var clue_zoom = preload("res://cluezoom.tscn").instantiate()
-#var cluezoom_image = clue_zoom.get_node("Zoom_Container/cluezoom_image")
-
 @onready var newclue_image = $Image
 @export_global_file("*.png") var clue_image
 @export_global_file("*.tscn") var zoom_image
@@ -45,15 +41,16 @@ func _dialog_start():
 		add_child(textbox_scene)
 		textappear.add_text(lines[current_line_index])
 		is_dialog_active = true
+	
 			
-
 func _dialog_end():
 	#hide the textbox
 	is_dialog_active = false
 	current_line_index = 0
 	textappear.hide_textbox()
-	#hide the zoom image
-	clue_zoom.hide()
+	#remove the instantiated textbox from current room scene
+	remove_child(textbox_scene)
+
 	
 func _unhandled_input(event):
 	if( event.is_action_pressed("dialogue_next") && is_dialog_active):
@@ -77,12 +74,12 @@ func _clue_image():
 		
 func _zoom_image():
 	#if the clue has a zoom image assigned to it...
-	if (zoom_image and clue_zoom.find_parent("*") == null):
+	if (zoom_image):
 		get_tree().change_scene_to_file(zoom_image)  # Load the zoom scene
 	else:
 		pass
 
-	#
+
 #func _zoom_image():
 	##if the clue has a zoom image assigned to it...
 	#if (zoom_image and clue_zoom.find_parent("*") == null):
