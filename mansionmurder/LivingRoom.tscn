@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
 [ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="3_qdrqd"]
 [ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="4_hovhj"]
-[ext_resource type="PackedScene" path="res://wife.tscn" id="5_vsfb2"]
+[ext_resource type="PackedScene" uid="uid://ikqfwk553lwl" path="res://wife.tscn" id="5_vsfb2"]
 [ext_resource type="PackedScene" path="res://deputy.tscn" id="6_wqe7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
