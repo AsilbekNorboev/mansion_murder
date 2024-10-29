@@ -1,10 +1,10 @@
 extends Area2D
 
 # Preload the puzzle scene
-var puzzle_scene = preload("res://puzzle1.tscn")  # Make sure to use the correct path
+var puzzle_scene = preload("res://safe_puzzle.tscn")  # Make sure to use the correct path
 @onready var collision_shape = $CollisionShape2D
 var clue_name = "Safe"
-var clue_description = "A bloody safe found in the safe."
+var clue_description = "A safe, appears to be locked."
 var clue_icon = preload("res://art/Clues/safe.png") # Replace with actual path
 signal clue_clicked(clue_data)
 
@@ -25,4 +25,4 @@ func _input(event):
 				"icon": clue_icon
 			})
 					print("Clue clicked signal emitted with data:")
-					get_tree().change_scene_to_file("res://Puzzle1.tscn")  # Load the puzzle scene
+					get_tree().change_scene_to_file("res://safe_puzzle.tscn")  # Load the puzzle scene
