@@ -17,4 +17,4 @@ func add_clue(clue_data: Dictionary):
 
 func _on_exit_button_pressed() -> void:
 	print("exit button pressed")
-	$InventoryUI.visible = false
+	self.visible = false

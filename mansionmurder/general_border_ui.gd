@@ -1,6 +1,7 @@
 extends CanvasLayer
 signal investigate
 signal inventorybuttonpressed
+signal settingsbuttonpressed
 
 func _on_investigate_button_pressed():
 	$InvestigateButton.modulate = Color("#000000")
@@ -15,3 +16,10 @@ func _on_inventory_button_pressed() -> void:
 	await get_tree().create_timer(0.2).timeout
 	$InventoryButton.modulate = Color("#ffffff")
 	inventorybuttonpressed.emit()
+
+
+func _on_settings_button_pressed() -> void:
+	$SettingsButton.modulate = Color("#000000")
+	await get_tree().create_timer(0.2).timeout
+	$SettingsButton.modulate = Color("#ffffff")
+	settingsbuttonpressed.emit()

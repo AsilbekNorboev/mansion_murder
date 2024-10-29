@@ -5,6 +5,7 @@ signal puzzle_completed(puzzle1)
 
 @onready var inventory_ui = $InventoryUI
 @onready var clue_node_safe = $LivingRoom/Safe
+@onready var settings_ui = $SettingsUI
 
 var clue_scene = preload("res://clue.tscn").instantiate()
 
@@ -17,6 +18,7 @@ func _ready():
 		inventory_ui.add_clue(clue_data)
 	var general_border_ui = $GeneralBorderUI
 	general_border_ui.inventorybuttonpressed.connect(_on_inventory_button_pressed)
+	general_border_ui.settingsbuttonpressed.connect(_on_settings_button_pressed)
 	clue_node_safe.clue_clicked.connect(self._on_clue_clicked)
 	$InventoryUI.visible = false
 
@@ -24,6 +26,8 @@ func _on_inventory_button_pressed():
 	# Toggle visibility: if it's visible, hide it; if it's hidden, show it
 	$InventoryUI.visible = not $InventoryUI.visible
 
+func _on_settings_button_pressed():
+	$SettingsUI.visible = not $SettingsUI.visible
 func _on_clue_clicked(clue_data):
 	# Add the clue to the inventory UI
 	print("Clue clicked with data:", clue_data)
