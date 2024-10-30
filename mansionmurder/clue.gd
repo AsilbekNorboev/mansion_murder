@@ -6,16 +6,19 @@ var textappear = textbox_scene.get_node("TextboxContainer")
 var current_line_index = 0
 
 var is_dialog_active = false
-@export var lines:Array[String] = []
 
+@export var lines:Array[String] = []
 @onready var newclue_image = $Image
 @export_global_file("*.png") var clue_image
 @export_global_file("*.tscn") var zoom_image
+@export_multiline var clue_name = "Example Text"
 
 var zoom_scene
-
 @onready var collision_shape = $CollisionShape2D
 
+signal main_add_zoom_scene
+
+	
 func _ready():
 	#changes the default clue sprite to sprite assigned in the room scene
 	_clue_image()
@@ -30,9 +33,10 @@ func _input(event):
 				if rect.has_point(local_mouse_position):
 					print("You clicked on Clue")
 					_dialog_start()
+					
 					#display zoom image if exists
-					#_zoom_image()	
-			
+					_zoom_image()					
+					
 #on click, add text from the array to populate the textbox scene
 func _dialog_start():
 	if is_dialog_active:
@@ -68,9 +72,8 @@ func _clue_image():
 	#changes the default clue sprite to sprite assigned in the room scene
 	if (clue_image):
 		print("clue image changed")
-		print(newclue_image.texture.resource_path)
 		newclue_image.texture = load(clue_image)
-		print(newclue_image.texture.resource_path)
+		#print(newclue_image.texture.resource_path)
 	else:
 		print("clue image not loaded")
 		pass
@@ -78,9 +81,12 @@ func _clue_image():
 func _zoom_image():
 	#if the clue has a zoom image assigned to it...
 	if (zoom_image):
-		_add_zoom_scene()
+		print("zoom image present")
+		#_add_zoom_scene()
+		emit_signal("main_add_zoom_scene")
+		print("signal emitted")
 	else:
-		print("no zoom image")
+		print("no zoom image present")
 		pass
 
 func _add_zoom_scene():
