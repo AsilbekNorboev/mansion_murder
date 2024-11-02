@@ -45,6 +45,7 @@ text = "Mute
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = -40.0
 offset_top = -52.0
 offset_right = 760.0
