@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dg4qym28b3db5" path="res://bedroom.tscn" id="10_ev8ke"]
 [ext_resource type="PackedScene" uid="uid://ccqviw8fp855u" path="res://greenhouse.tscn" id="11_don5l"]
 [ext_resource type="PackedScene" uid="uid://c3h24xji8o1et" path="res://garden.tscn" id="12_ikl3x"]
-[ext_resource type="PackedScene" path="res://settings_ui.tscn" id="13_2ogmj"]
+[ext_resource type="PackedScene" uid="uid://ct67jwpeggu22" path="res://settings_ui.tscn" id="13_2ogmj"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_yluwg")
