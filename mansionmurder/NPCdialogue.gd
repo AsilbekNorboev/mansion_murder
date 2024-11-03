@@ -7,14 +7,20 @@ var current_line_index = 0
 
 var is_dialog_active = false
 
-@export var lines:Array[String] = []
+@onready var lines = $Dialogue.lines
 
+@onready var animated_sprite = $AnimatedSprite2D # Reference to the AnimatedSprite2D node
 @onready var collision_shape = $CollisionShape2D
 
+
+func _ready():
+	# Start playing the idle animation as soon as the NPC is ready
+	animated_sprite.animation = "idle"
+	animated_sprite.play()
 	
 func _input_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click"):
-		print("you clicked NPC")
+		print("you clicked the ", self.name)
 		_dialog_start()
 
 

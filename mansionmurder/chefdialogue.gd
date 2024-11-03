@@ -1,8 +1,7 @@
 extends Node
 
 @export var lines:Array[String] = [
-	"Boo hoo",
-	"My poor husband!",
+	"Do you need something from me?"
 ]
 
 		

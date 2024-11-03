@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cocv41sdm5dlh"]
 
-[ext_resource type="Script" path="res://textbox.gd" id="1_mnyn3"]
+[ext_resource type="Script" path="res://NPCdialogue.gd" id="1_mnyn3"]
 [ext_resource type="Texture2D" uid="uid://ctmykf6rkt7wl" path="res://art/NPC/Wife/Wife-1.png" id="1_mo3gd"]
 [ext_resource type="Texture2D" uid="uid://c4leex18va013" path="res://art/NPC/Wife/Wife-2.png" id="2_cjmus"]
 [ext_resource type="Texture2D" uid="uid://ccl3a8i1nrtp8" path="res://art/NPC/Wife/Wife-3.png" id="3_xpuyd"]
@@ -36,12 +36,13 @@ size = Vector2(9.90203, 14.8458)
 
 [node name="Wife" type="Area2D"]
 script = ExtResource("1_mnyn3")
-lines = Array[String](["boo hoo!", "my poor husband is dead!"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_nwtxd")
 animation = &"idle"
+frame = 1
+frame_progress = 0.684689
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, 78.1785)
