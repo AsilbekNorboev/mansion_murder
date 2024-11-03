@@ -12,16 +12,11 @@ var is_dialog_active = false
 @onready var collision_shape = $CollisionShape2D
 
 	
-func _input(event):
+func _input_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click"):
-		var global_mouse_position = get_viewport().get_camera_2d().get_global_mouse_position()
-		var local_mouse_position = to_local(global_mouse_position)
-		if collision_shape.shape:
-			if collision_shape.shape is RectangleShape2D:
-				var rect = Rect2(collision_shape.position - (collision_shape.shape.extents), collision_shape.shape.extents * 2)
-				if rect.has_point(local_mouse_position):
-					print("You clicked on Clue")
-					_dialog_start()
+		print("you clicked NPC")
+		_dialog_start()
+
 
 #on click, add text from the array to populate the textbox scene
 func _dialog_start():

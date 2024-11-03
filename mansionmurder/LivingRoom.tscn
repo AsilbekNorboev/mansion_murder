@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
 [ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="3_qdrqd"]
 [ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="4_hovhj"]
-[ext_resource type="PackedScene" uid="uid://ikqfwk553lwl" path="res://wife.tscn" id="5_vsfb2"]
-[ext_resource type="PackedScene" path="res://deputy.tscn" id="6_wqe7p"]
+[ext_resource type="PackedScene" uid="uid://cocv41sdm5dlh" path="res://wife.tscn" id="5_vsfb2"]
+[ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="6_wqe7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
 size = Vector2(1200, 680)
@@ -88,10 +88,6 @@ clue_name = "Body"
 [node name="Safe" parent="." instance=ExtResource("4_hovhj")]
 position = Vector2(813, 193)
 
-[node name="Wife" parent="." instance=ExtResource("5_vsfb2")]
-position = Vector2(448, 139)
-scale = Vector2(0.4, 0.4)
-
 [node name="Deputy" parent="." instance=ExtResource("6_wqe7p")]
 position = Vector2(331, 115)
 scale = Vector2(1.2, 1.2)
@@ -102,5 +98,9 @@ lines = Array[String](["cool painting!"])
 clue_image = ""
 zoom_image = ""
 clue_name = "Knife"
+
+[node name="Wife" parent="." instance=ExtResource("5_vsfb2")]
+position = Vector2(610, 182)
+scale = Vector2(0.43, 0.43)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
