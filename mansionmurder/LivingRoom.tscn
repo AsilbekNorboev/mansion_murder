@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
-[ext_resource type="PackedScene" uid="uid://cocv41sdm5dlh" path="res://wife.tscn" id="5_vsfb2"]
+[ext_resource type="PackedScene" uid="uid://ikqfwk553lwl" path="res://wife.tscn" id="5_vsfb2"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="6_1tmqa"]
-[ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="6_wqe7p"]
+[ext_resource type="PackedScene" path="res://deputy.tscn" id="6_wqe7p"]
 [ext_resource type="Texture2D" uid="uid://cb412322sexk3" path="res://art/Clues/Knife 2.png" id="7_jy6q6"]
-[ext_resource type="PackedScene" uid="uid://k40svbrvl8o2" path="res://deadbody.tscn" id="7_pih30"]
+[ext_resource type="PackedScene" path="res://deadbody.tscn" id="7_pih30"]
 [ext_resource type="Texture2D" uid="uid://cvmyer14dijnk" path="res://art/Clues/Deed.png" id="9_gcmtm"]
-[ext_resource type="PackedScene" uid="uid://cd1u0n0jkr1pq" path="res://wordle_safe.tscn" id="9_yyjpp"]
+[ext_resource type="PackedScene" uid="uid://b6ihdt4baecc3" path="res://wordle_safe.tscn" id="9_yyjpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
 size = Vector2(1200, 680)
@@ -91,7 +91,7 @@ scale = Vector2(0.43, 0.43)
 [node name="Knife" parent="." instance=ExtResource("6_1tmqa")]
 position = Vector2(409, 303)
 clue_name = "Knife"
-lines = Array[String](["A knife lay next to the body of the deceased."])
+lines = Array[String](["A knife lay next to the body of the deceased.", "dsadasd", "4adfasd"])
 clue_texture = ExtResource("7_jy6q6")
 clue_description = "Appears to be a knife"
 
@@ -102,8 +102,9 @@ scale = Vector2(1.5, 1.5)
 [node name="Deed" parent="." instance=ExtResource("6_1tmqa")]
 position = Vector2(803, 191)
 clue_name = "Deed"
+lines = Array[String](["Appears to be the deed"])
 clue_texture = ExtResource("9_gcmtm")
-clue_description = "ppears to be the Professors deed"
+clue_description = "Appears to be the Professors deed"
 
 [node name="WorldeSafe" parent="." instance=ExtResource("9_yyjpp")]
 position = Vector2(800, 211)

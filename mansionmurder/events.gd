@@ -6,6 +6,11 @@ signal puzzle_completed(puzzle1)
 @onready var inventory_ui = $InventoryUI
 @onready var clue_node_safe = $Rooms/Bedroom/Safe 
 @onready var settings_ui = $SettingsUI
+#CLUES:
+@onready var clue_deed = $Rooms/LivingRoom/Deed
+@onready var clue_envelope = $Rooms/Kitchen/Envelope
+@onready var clue_dirt = $Rooms/Kitchen/Dirt
+@onready var clue_knife = $Rooms/LivingRoom/Knife
 
 @onready var clue_scene = preload("res://clue.tscn").instantiate()
 
@@ -29,7 +34,10 @@ func _ready():
 	general_border_ui.settingsbuttonpressed.connect(_on_settings_button_pressed)
 	clue_node_safe.clue_clicked.connect(self._on_clue_clicked)
 	clue_scene.clue_clicked.connect(self._on_clue_clicked)
-
+	clue_deed.clue_clicked.connect(self._on_clue_clicked)
+	clue_envelope.clue_clicked.connect(self._on_clue_clicked)
+	clue_dirt.clue_clicked.connect(self._on_clue_clicked)
+	clue_knife.clue_clicked.connect(self._on_clue_clicked)
 	#clue_scene.connect("normal_clue_clicked", new_zoom_node, "_on_normal_clue_clicked")
 	
 	$InventoryUI.visible = false

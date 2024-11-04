@@ -31,6 +31,7 @@ scale = Vector2(0.66, 0.66)
 [node name="Envelope" parent="." instance=ExtResource("5_q6yu7")]
 position = Vector2(370, 162)
 clue_texture = ExtResource("6_ysihl")
+clue_description = "This seems to be an envelope"
 
 [node name="Dirt" parent="." instance=ExtResource("5_q6yu7")]
 position = Vector2(1120, 285)

@@ -72,7 +72,8 @@ func _dialog_end(textbox_instance):
 func _unhandled_input(event):
 	if event.is_action_pressed("dialogue_next") and is_dialog_active:
 		current_line_index += 1
-		var textbox_instance = get_node("TextboxContainer")
+		#var textbox_instance = get_node("TextboxContainer")
+		var textbox_instance = find_child("TextboxContainer", true, false)
 		if current_line_index >= lines.size():
 			_dialog_end(textbox_instance)
 		else:
