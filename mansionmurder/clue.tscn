@@ -1,21 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc4ndhw1yk0gt"]
+[gd_scene load_steps=4 format=3 uid="uid://blpjd2n77ejtj"]
 
-[ext_resource type="Script" path="res://clue.gd" id="1_in4xq"]
-[ext_resource type="Texture2D" uid="uid://cb412322sexk3" path="res://art/Clues/Knife 2.png" id="2_selop"]
+[ext_resource type="Script" path="res://clue.gd" id="1_0uowy"]
+[ext_resource type="Texture2D" uid="uid://b050dsyj47gf1" path="res://art/Clues/Key.png" id="2_l68xf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmq82"]
-size = Vector2(269, 114.001)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a4au"]
+size = Vector2(31, 76)
 
-[node name="clue" type="Area2D"]
-position = Vector2(716, 442)
-script = ExtResource("1_in4xq")
+[node name="Clue" type="Area2D"]
+script = ExtResource("1_0uowy")
 
-[node name="Image" type="Sprite2D" parent="."]
-position = Vector2(-20, -2.75)
-scale = Vector2(0.888889, 0.969613)
-texture = ExtResource("2_selop")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.60281, -1.27841)
+rotation = -2.91994
+scale = Vector2(0.924837, 0.991248)
+texture = ExtResource("2_l68xf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-18, -1.49973)
-rotation = -1.5708
-shape = SubResource("RectangleShape2D_lmq82")
+position = Vector2(7.5, 10)
+shape = SubResource("RectangleShape2D_0a4au")

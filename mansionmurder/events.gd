@@ -4,7 +4,7 @@ signal room_entered(room)
 signal puzzle_completed(puzzle1)
 
 @onready var inventory_ui = $InventoryUI
-@onready var clue_node_safe = $Rooms/LivingRoom/Safe
+@onready var clue_node_safe = $Rooms/Bedroom/Safe 
 @onready var settings_ui = $SettingsUI
 
 @onready var clue_scene = preload("res://clue.tscn").instantiate()
@@ -28,6 +28,7 @@ func _ready():
 	general_border_ui.inventorybuttonpressed.connect(_on_inventory_button_pressed)
 	general_border_ui.settingsbuttonpressed.connect(_on_settings_button_pressed)
 	clue_node_safe.clue_clicked.connect(self._on_clue_clicked)
+	clue_scene.clue_clicked.connect(self._on_clue_clicked)
 
 	#clue_scene.connect("normal_clue_clicked", new_zoom_node, "_on_normal_clue_clicked")
 	

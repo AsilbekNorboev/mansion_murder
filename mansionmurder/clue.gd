@@ -1,107 +1,97 @@
 extends Area2D
 
-#loads textbox scene to use its functions later
-var textbox_scene = preload("res://textbox.tscn").instantiate()
-var textappear = textbox_scene.get_node("TextboxContainer")
+# Exported variables for customizing each clue
+@export var clue_name: String = "Example Clue"
+@export var lines: Array[String] = []
+@export var clue_texture: Texture
+@export var zoom_image_path: String = ""  # Optional zoom image path
+@export var clue_description: String = ""
+@onready var collision_shape = $CollisionShape2D
+@onready var clue_sprite = $Sprite2D  # Image to display the clue
+
+# Instance variables
+var textbox_scene = preload("res://textbox.tscn")
+var is_dialog_active = false
 var current_line_index = 0
 
-var is_dialog_active = false
-
-@export var lines:Array[String] = []
-@onready var newclue_image = $Image
-@export_global_file("*.png") var clue_image
-@export_global_file("*.tscn") var zoom_image
-@export_multiline var clue_name = "Example Text"
-
-var zoom_scene
-@onready var collision_shape = $CollisionShape2D
-
+# Signals for clue interactions
+signal clue_clicked(clue_data)
 signal main_add_zoom_scene
 
-	
 func _ready():
-	#changes the default clue sprite to sprite assigned in the room scene
-	_clue_image()
-	
+	# Set the texture and other properties when the clue is added to the scene
+	_setup_clue_image()
+	set_process_input(true)
+
+func _setup_clue_image():
+	# Set the clue's sprite to the given texture if it exists
+	if clue_texture:
+		clue_sprite.texture = clue_texture
+	else:
+		print("Warning: No texture set for clue ", clue_name)
+
 func _input(event):
-	if Input.is_action_pressed("click"):
+	if event.is_action_pressed("click"):
 		var global_mouse_position = get_viewport().get_camera_2d().get_global_mouse_position()
-		var local_mouse_position = to_local(global_mouse_position)
-		if collision_shape.shape:
+		var local_mouse_position = to_local(global_mouse_position)  # Convert to local coordinates
+
+		# Check if collision_shape is valid and has a shape
+		if collision_shape and collision_shape.shape:
 			if collision_shape.shape is RectangleShape2D:
 				var rect = Rect2(collision_shape.position - (collision_shape.shape.extents), collision_shape.shape.extents * 2)
 				if rect.has_point(local_mouse_position):
-					print("You clicked on Clue")
+					print("Clicked on Clue: ", clue_name)
+					emit_signal("clue_clicked", {
+						"name": clue_name,
+						"description": clue_description,
+						"icon": clue_texture
+						})
 					_dialog_start()
-					
-					#display zoom image if exists
-					_zoom_image()					
-					
-#on click, add text from the array to populate the textbox scene
+					_show_zoom_image()
+		else:
+			print("Warning: CollisionShape2D is null or does not have a shape.")
+
+# Starts the dialog for this clue
 func _dialog_start():
-	if is_dialog_active:
+	if is_dialog_active or not lines:
 		return
-	if not lines:
-		return
-	if (textbox_scene.find_parent("*") == null):
-		add_child(textbox_scene)
-		textappear.add_text(lines[current_line_index])
-		is_dialog_active = true
 	
-			
-func _dialog_end():
-	#hide the textbox
+	# Instantiate and set up the textbox
+	var textbox_instance = textbox_scene.instantiate()
+	add_child(textbox_instance)
+	var text_container = textbox_instance.get_node("TextboxContainer")
+	text_container.add_text(lines[current_line_index])
+	is_dialog_active = true
+
+# Ends the dialog for this clue
+func _dialog_end(textbox_instance):
 	is_dialog_active = false
 	current_line_index = 0
-	textappear.hide_textbox()
-	#remove the instantiated textbox from current room scene
-	remove_child(textbox_scene)
+	textbox_instance.queue_free()  # Remove the dialog box from the scene
 
-	
 func _unhandled_input(event):
-	if( event.is_action_pressed("dialogue_next") && is_dialog_active):
+	if event.is_action_pressed("dialogue_next") and is_dialog_active:
 		current_line_index += 1
-		#if there is no more text left in array, end the dialog
+		var textbox_instance = get_node("TextboxContainer")
 		if current_line_index >= lines.size():
-			_dialog_end()
-		#if there is more text left, display the next line of text
+			_dialog_end(textbox_instance)
 		else:
-			textappear.add_text(lines[current_line_index])
+			textbox_instance.add_text(lines[current_line_index])
 
-func _clue_image():
-	#changes the default clue sprite to sprite assigned in the room scene
-	if (clue_image):
-		print("clue image changed")
-		newclue_image.texture = load(clue_image)
-		#print(newclue_image.texture.resource_path)
-	else:
-		print("clue image not loaded")
-		pass
-		
-func _zoom_image():
-	#if the clue has a zoom image assigned to it...
-	if (zoom_image):
-		print("zoom image present")
-		#_add_zoom_scene()
+# Show zoom image if specified
+func _show_zoom_image():
+	if zoom_image_path:
+		var zoom_scene_instance = load(zoom_image_path).instantiate()
+		add_child(zoom_scene_instance)
 		emit_signal("main_add_zoom_scene")
-		print("signal emitted")
 	else:
-		print("no zoom image present")
-		pass
+		print("No zoom image set for clue ", clue_name)
 
-func _add_zoom_scene():
-	zoom_scene = load(zoom_image).instantiate()
-	print(zoom_scene)
-	add_child(zoom_scene)
-
-#func _zoom_image():
-	##if the clue has a zoom image assigned to it...
-	#if (zoom_image and clue_zoom.find_parent("*") == null):
-		#add_child(clue_zoom)
-		##replace default empty texture with chosen clue-specific texture
-		#print(cluezoom_image.texture.resource_path)
-		#cluezoom_image.texture = load(zoom_image)
-		#print(cluezoom_image.texture.resource_path)
-		#cluezoom_image.visible = true
-	#else:
-		#pass
+# Function to set up the clue's properties dynamically
+func set_clue_data(data: Dictionary):
+	clue_name = data.get("name", clue_name)
+	lines = data.get("lines", lines)
+	clue_texture = data.get("texture", clue_texture)
+	zoom_image_path = data.get("zoom_image", zoom_image_path)
+	clue_description = data.get("description", clue_description)  # Added for description
+	_setup_clue_image()

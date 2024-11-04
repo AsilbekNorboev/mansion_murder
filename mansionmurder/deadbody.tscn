@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://k40svbrvl8o2"]
+
+[ext_resource type="Texture2D" uid="uid://bf40stcykdaba" path="res://art/Clues/Body.png" id="1_ltacy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r5f6"]
+size = Vector2(154, 16)
+
+[node name="Deadbody" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ltacy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12, 2)
+shape = SubResource("RectangleShape2D_8r5f6")

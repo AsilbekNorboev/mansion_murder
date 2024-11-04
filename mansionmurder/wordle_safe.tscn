@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd1u0n0jkr1pq"]
+
+[ext_resource type="Texture2D" uid="uid://r54p4cvmnmw7" path="res://art/Clues/safe.png" id="1_mjnme"]
+
+[sub_resource type="GDScript" id="GDScript_8b35d"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4jvn"]
+size = Vector2(70, 81)
+
+[node name="WorldeSafe" type="Area2D"]
+script = SubResource("GDScript_8b35d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, -11)
+texture = ExtResource("1_mjnme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -15.5)
+shape = SubResource("RectangleShape2D_o4jvn")

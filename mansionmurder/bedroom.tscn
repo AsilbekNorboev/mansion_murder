@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dg4qym28b3db5"]
+[gd_scene load_steps=9 format=3 uid="uid://dg4qym28b3db5"]
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_x5y1v"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_236vv"]
-[ext_resource type="PackedScene" uid="uid://p8q7ed24lfeq" path="res://maid.tscn" id="3_80a53"]
+[ext_resource type="PackedScene" uid="uid://pjj5rypshk1d" path="res://maid.tscn" id="3_80a53"]
+[ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="4_o0aq8"]
+[ext_resource type="Texture2D" uid="uid://bs8a5mrwnirdd" path="res://art/Clues/Diary.png" id="5_txu53"]
+[ext_resource type="Texture2D" uid="uid://bv8pn1847njgt" path="res://art/Clues/Untitled_Artwork 2.png" id="6_xcdyy"]
+[ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="7_jlllh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
 size = Vector2(1200, 680)
@@ -24,5 +28,20 @@ shape = SubResource("RectangleShape2D_j4bkx")
 [node name="Maid" parent="." instance=ExtResource("3_80a53")]
 position = Vector2(754, 366)
 scale = Vector2(1.2, 1.2)
+
+[node name="Diary" parent="." instance=ExtResource("4_o0aq8")]
+position = Vector2(212, 602)
+clue_name = "Diary"
+clue_texture = ExtResource("5_txu53")
+clue_description = "Looks like a diary"
+
+[node name="Necklace" parent="." instance=ExtResource("4_o0aq8")]
+position = Vector2(962, 198)
+clue_name = "necklace"
+clue_texture = ExtResource("6_xcdyy")
+clue_description = "Appears to be a necklace"
+
+[node name="Safe" parent="." instance=ExtResource("7_jlllh")]
+position = Vector2(971, 221)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

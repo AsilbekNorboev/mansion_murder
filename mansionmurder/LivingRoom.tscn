@@ -1,11 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://ct0b334pb2lmf"]
+[gd_scene load_steps=16 format=3 uid="uid://ct0b334pb2lmf"]
 
 [ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
-[ext_resource type="PackedScene" uid="uid://cc4ndhw1yk0gt" path="res://clue.tscn" id="3_qdrqd"]
-[ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="4_hovhj"]
 [ext_resource type="PackedScene" uid="uid://cocv41sdm5dlh" path="res://wife.tscn" id="5_vsfb2"]
+[ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="6_1tmqa"]
 [ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="6_wqe7p"]
+[ext_resource type="Texture2D" uid="uid://cb412322sexk3" path="res://art/Clues/Knife 2.png" id="7_jy6q6"]
+[ext_resource type="PackedScene" uid="uid://k40svbrvl8o2" path="res://deadbody.tscn" id="7_pih30"]
+[ext_resource type="Texture2D" uid="uid://cvmyer14dijnk" path="res://art/Clues/Deed.png" id="9_gcmtm"]
+[ext_resource type="PackedScene" uid="uid://cd1u0n0jkr1pq" path="res://wordle_safe.tscn" id="9_yyjpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
 size = Vector2(1200, 680)
@@ -77,30 +80,31 @@ polygon = PackedVector2Array(807, 741, 807, 692, 1231, 691, 1261, 741)
 position = Vector2(-791, 1)
 polygon = PackedVector2Array(807, 741, 807, 692, 1243, 688, 1261, 741)
 
-[node name="body" parent="." groups=["Clues"] instance=ExtResource("3_qdrqd")]
-position = Vector2(436, 282)
-scale = Vector2(0.7, 0.7)
-lines = Array[String](["The victim: Mr Moneybags."])
-clue_image = "res://art/Clues/deadbody_temp.png"
-zoom_image = "res://Zoom Scenes/body_investigate_scene.tscn"
-clue_name = "Body"
-
-[node name="Safe" parent="." instance=ExtResource("4_hovhj")]
-position = Vector2(813, 193)
-
 [node name="Deputy" parent="." instance=ExtResource("6_wqe7p")]
 position = Vector2(331, 115)
 scale = Vector2(1.2, 1.2)
 
-[node name="clue" parent="." instance=ExtResource("3_qdrqd")]
-position = Vector2(453, 550)
-lines = Array[String](["cool painting!"])
-clue_image = ""
-zoom_image = ""
-clue_name = "Knife"
-
 [node name="Wife" parent="." instance=ExtResource("5_vsfb2")]
 position = Vector2(610, 182)
 scale = Vector2(0.43, 0.43)
+
+[node name="Knife" parent="." instance=ExtResource("6_1tmqa")]
+position = Vector2(409, 303)
+clue_name = "Knife"
+clue_texture = ExtResource("7_jy6q6")
+clue_description = "Appears to be a knife"
+
+[node name="Deadbody" parent="." instance=ExtResource("7_pih30")]
+position = Vector2(429, 352)
+scale = Vector2(1.5, 1.5)
+
+[node name="Deed" parent="." instance=ExtResource("6_1tmqa")]
+position = Vector2(803, 191)
+clue_name = "Deed"
+clue_texture = ExtResource("9_gcmtm")
+clue_description = "ppears to be the Professors deed"
+
+[node name="WorldeSafe" parent="." instance=ExtResource("9_yyjpp")]
+position = Vector2(800, 211)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

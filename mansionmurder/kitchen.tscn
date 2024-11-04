@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0tac7mqeul18"]
+[gd_scene load_steps=9 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://rhsfpcuok838" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
 [ext_resource type="Texture2D" uid="uid://c2b42ow8e6v8e" path="res://art/Clues/Plant.png" id="4_k42ji"]
 [ext_resource type="PackedScene" uid="uid://bg8q0fe6upe2d" path="res://chef.tscn" id="5_8sl5h"]
+[ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="5_q6yu7"]
+[ext_resource type="Texture2D" uid="uid://bkgxam257yav2" path="res://art/Clues/Envelope.png" id="6_ysihl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w0s"]
 size = Vector2(1200, 680)
@@ -38,5 +40,9 @@ texture = ExtResource("4_k42ji")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dirt"]
 position = Vector2(1155, 367)
 shape = SubResource("CircleShape2D_3lmyk")
+
+[node name="Envelope" parent="." instance=ExtResource("5_q6yu7")]
+position = Vector2(370, 162)
+clue_texture = ExtResource("6_ysihl")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

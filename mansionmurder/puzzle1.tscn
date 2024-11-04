@@ -277,26 +277,54 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vs50p")
 text = "UNLOCK"
 
 [node name="ExitMessage" type="Label" parent="Menu"]
-offset_left = 345.0
+offset_left = 443.0
 offset_top = 568.0
-offset_right = 821.0
+offset_right = 919.0
 offset_bottom = 637.0
 theme_override_font_sizes/font_size = 40
 text = "Click ESC key to exit"
 
 [node name="Hint" type="Label" parent="."]
-offset_left = 490.0
-offset_top = -626.0
-offset_right = 904.0
-offset_bottom = -341.0
+offset_left = 489.0
+offset_top = -691.0
+offset_right = 903.0
+offset_bottom = -406.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "HINT: 
 Professor's
- favorite 
+ favorite Italian
 food"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Instructions" type="Label" parent="."]
+offset_left = 476.0
+offset_top = -271.0
+offset_right = 873.0
+offset_bottom = -222.0
+theme_override_colors/font_color = Color(0, 0.607843, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Green: Letter is in word"
+
+[node name="Instructions2" type="Label" parent="."]
+offset_left = 480.0
+offset_top = -202.0
+offset_right = 1081.0
+offset_bottom = -101.0
+theme_override_colors/font_color = Color(0.898039, 0.431373, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Orange: Letter is in word but wrong 
+position"
+
+[node name="Instructions3" type="Label" parent="."]
+offset_left = 477.0
+offset_top = -97.0
+offset_right = 1070.0
+offset_bottom = -42.0
+theme_override_colors/font_color = Color(0.780392, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Red: letter is not contianed in word"
 
 [connection signal="pressed" from="Menu/Button" to="." method="_on_button_pressed"]

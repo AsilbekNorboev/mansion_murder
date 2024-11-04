@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3h24xji8o1et"]
+[gd_scene load_steps=8 format=3 uid="uid://c3h24xji8o1et"]
 
 [ext_resource type="Script" path="res://garden.gd" id="1_wpmah"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_df674"]
 [ext_resource type="PackedScene" uid="uid://cfs683yifn6p0" path="res://gardener.tscn" id="3_vkqy3"]
+[ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="4_8xh4o"]
+[ext_resource type="Texture2D" uid="uid://dgetccc0dwoqn" path="res://art/Clues/Gloves 2.png" id="5_sqbn4"]
+[ext_resource type="Texture2D" uid="uid://b050dsyj47gf1" path="res://art/Clues/Key.png" id="6_ywjo7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
 size = Vector2(1200, 680)
@@ -24,5 +27,17 @@ shape = SubResource("RectangleShape2D_j4bkx")
 [node name="Gardener" parent="." instance=ExtResource("3_vkqy3")]
 position = Vector2(828, 282)
 scale = Vector2(0.6, 0.6)
+
+[node name="gloves" parent="." instance=ExtResource("4_8xh4o")]
+position = Vector2(494, 590)
+clue_name = "Gloves"
+clue_texture = ExtResource("5_sqbn4")
+clue_description = "looks like gloves from the murdr"
+
+[node name="key" parent="." instance=ExtResource("4_8xh4o")]
+position = Vector2(1022, 266)
+clue_name = "Key"
+clue_texture = ExtResource("6_ywjo7")
+clue_description = "Appears to be a key"
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
