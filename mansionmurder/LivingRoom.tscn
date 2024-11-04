@@ -91,6 +91,7 @@ scale = Vector2(0.43, 0.43)
 [node name="Knife" parent="." instance=ExtResource("6_1tmqa")]
 position = Vector2(409, 303)
 clue_name = "Knife"
+lines = Array[String](["A knife lay next to the body of the deceased."])
 clue_texture = ExtResource("7_jy6q6")
 clue_description = "Appears to be a knife"
 
