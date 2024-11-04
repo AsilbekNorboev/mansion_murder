@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0tac7mqeul18"]
+[gd_scene load_steps=8 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://rhsfpcuok838" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
@@ -9,9 +9,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w0s"]
 size = Vector2(1200, 680)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_3lmyk"]
-radius = 31.0161
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_wkt5y")
@@ -28,21 +25,17 @@ position = Vector2(647, 449)
 shape = SubResource("RectangleShape2D_d0w0s")
 
 [node name="Chef" parent="." instance=ExtResource("5_8sl5h")]
-position = Vector2(828, 348)
+position = Vector2(823, 352)
 scale = Vector2(0.66, 0.66)
-
-[node name="Dirt" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Dirt"]
-position = Vector2(1170, 362)
-texture = ExtResource("4_k42ji")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dirt"]
-position = Vector2(1155, 367)
-shape = SubResource("CircleShape2D_3lmyk")
 
 [node name="Envelope" parent="." instance=ExtResource("5_q6yu7")]
 position = Vector2(370, 162)
 clue_texture = ExtResource("6_ysihl")
+
+[node name="Dirt" parent="." instance=ExtResource("5_q6yu7")]
+position = Vector2(1120, 285)
+clue_name = "Dirt"
+clue_texture = ExtResource("4_k42ji")
+clue_description = "This appears to be a plant from the Garde."
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
