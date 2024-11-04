@@ -11,6 +11,11 @@ signal puzzle_completed(puzzle1)
 @onready var clue_envelope = $Rooms/Kitchen/Envelope
 @onready var clue_dirt = $Rooms/Kitchen/Dirt
 @onready var clue_knife = $Rooms/LivingRoom/Knife
+@onready var clue_safe = $Rooms/Bedroom/Safe
+@onready var clue_necklace = $Rooms/Bedroom/Necklace
+@onready var clue_diary = $Rooms/Bedroom/Diary
+@onready var clue_gloves = $Rooms/Garden/gloves
+@onready var clue_key = $Rooms/Garden/key
 
 @onready var clue_scene = preload("res://clue.tscn").instantiate()
 
@@ -38,6 +43,12 @@ func _ready():
 	clue_envelope.clue_clicked.connect(self._on_clue_clicked)
 	clue_dirt.clue_clicked.connect(self._on_clue_clicked)
 	clue_knife.clue_clicked.connect(self._on_clue_clicked)
+	clue_safe.clue_clicked.connect(self._on_clue_clicked)
+	clue_necklace.clue_clicked.connect(self._on_clue_clicked)
+	clue_diary.clue_clicked.connect(self._on_clue_clicked)
+	clue_gloves.clue_clicked.connect(self._on_clue_clicked)
+	clue_key.clue_clicked.connect(self._on_clue_clicked)
+	
 	#clue_scene.connect("normal_clue_clicked", new_zoom_node, "_on_normal_clue_clicked")
 	
 	$InventoryUI.visible = false

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_x5y1v"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_236vv"]
-[ext_resource type="PackedScene" uid="uid://pjj5rypshk1d" path="res://maid.tscn" id="3_80a53"]
+[ext_resource type="PackedScene" uid="uid://p8q7ed24lfeq" path="res://maid.tscn" id="3_80a53"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="4_o0aq8"]
 [ext_resource type="Texture2D" uid="uid://bs8a5mrwnirdd" path="res://art/Clues/Diary.png" id="5_txu53"]
 [ext_resource type="Texture2D" uid="uid://bv8pn1847njgt" path="res://art/Clues/Untitled_Artwork 2.png" id="6_xcdyy"]
@@ -43,6 +43,6 @@ clue_texture = ExtResource("6_xcdyy")
 clue_description = "Appears to be a necklace"
 
 [node name="Safe" parent="." instance=ExtResource("7_jlllh")]
-position = Vector2(971, 221)
+position = Vector2(855, 209)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

@@ -21,7 +21,7 @@ texture = ExtResource("2_n44tm")
 [node name="PlayerDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
-position = Vector2(647, 449)
+position = Vector2(654, 392)
 shape = SubResource("RectangleShape2D_d0w0s")
 
 [node name="Chef" parent="." instance=ExtResource("5_8sl5h")]
