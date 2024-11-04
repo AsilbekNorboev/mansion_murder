@@ -32,8 +32,9 @@ scale = Vector2(1.2, 1.2)
 [node name="Diary" parent="." instance=ExtResource("4_o0aq8")]
 position = Vector2(212, 602)
 clue_name = "Diary"
+lines = Array[String](["Looks like a diary"])
 clue_texture = ExtResource("5_txu53")
-clue_description = "Looks like a diary"
+clue_description = "Looks like a diaryLooks like a diary"
 
 [node name="Necklace" parent="." instance=ExtResource("4_o0aq8")]
 position = Vector2(962, 198)
