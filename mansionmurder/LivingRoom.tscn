@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
-[ext_resource type="PackedScene" uid="uid://ikqfwk553lwl" path="res://wife.tscn" id="5_vsfb2"]
+[ext_resource type="PackedScene" uid="uid://cocv41sdm5dlh" path="res://wife.tscn" id="5_vsfb2"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="6_1tmqa"]
-[ext_resource type="PackedScene" path="res://deputy.tscn" id="6_wqe7p"]
+[ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="6_wqe7p"]
 [ext_resource type="Texture2D" uid="uid://cb412322sexk3" path="res://art/Clues/Knife 2.png" id="7_jy6q6"]
-[ext_resource type="Texture2D" uid="uid://bf40stcykdaba" path="res://art/Clues/Body.png" id="9_ba34c"]
+[ext_resource type="PackedScene" uid="uid://bmidqgfamf8bo" path="res://deadbody.tscn" id="9_5sgsi"]
 [ext_resource type="Texture2D" uid="uid://cvmyer14dijnk" path="res://art/Clues/Deed.png" id="9_gcmtm"]
 [ext_resource type="PackedScene" uid="uid://b6ihdt4baecc3" path="res://wordle_safe.tscn" id="9_yyjpp"]
 
@@ -105,11 +105,8 @@ clue_description = "Appears to be the Professors deed"
 [node name="WorldeSafe" parent="." instance=ExtResource("9_yyjpp")]
 position = Vector2(800, 211)
 
-[node name="Deadbody" parent="." instance=ExtResource("6_1tmqa")]
-position = Vector2(373, 345)
-rotation = 3.12323
-scale = Vector2(1.5, 1.387)
-lines = Array[String](["The body of the victim."])
-clue_texture = ExtResource("9_ba34c")
+[node name="deadbody" parent="." instance=ExtResource("9_5sgsi")]
+position = Vector2(414, 344)
+scale = Vector2(1.4, 1.4)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
