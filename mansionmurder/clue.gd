@@ -48,7 +48,7 @@ func _input(event):
 						})
 					_dialog_start()
 					_show_zoom_image()
-					queue_free()
+					#queue_free()
 		else:
 			print("Warning: CollisionShape2D is null or does not have a shape.")
 
@@ -69,6 +69,8 @@ func _dialog_end(textbox_instance):
 	is_dialog_active = false
 	current_line_index = 0
 	textbox_instance.queue_free()  # Remove the dialog box from the scene
+	queue_free()
+
 
 func _unhandled_input(event):
 	if event.is_action_pressed("dialogue_next") and is_dialog_active:
