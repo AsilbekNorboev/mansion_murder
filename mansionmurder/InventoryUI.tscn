@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsgbmst7wprd3"]
+[gd_scene load_steps=4 format=3 uid="uid://bsgbmst7wprd3"]
 
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="1_gqlcb"]
 [ext_resource type="Script" path="res://inventory_ui.gd" id="1_lqmkm"]
+[ext_resource type="PackedScene" uid="uid://b3hqh46weabti" path="res://accusation_menu.tscn" id="3_lpcbi"]
 
 [node name="InventoryUI" type="CanvasLayer"]
 layer = 3
@@ -55,4 +56,20 @@ offset_bottom = 692.0
 texture = ExtResource("1_gqlcb")
 expand_mode = 1
 
+[node name="SwitchButton" type="Button" parent="."]
+offset_left = 645.0
+offset_top = 10.0
+offset_right = 804.0
+offset_bottom = 56.0
+text = "Accuse
+"
+
+[node name="AccusationMenu" parent="." instance=ExtResource("3_lpcbi")]
+visible = false
+offset_left = 127.0
+offset_top = 67.0
+offset_right = 161.0
+offset_bottom = 99.0
+
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="SwitchButton" to="." method="_on_switch_button_pressed"]

@@ -1,0 +1,170 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3hqh46weabti"]
+
+[ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="1_hgcsa"]
+[ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="2_71v37"]
+[ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="2_lnwyg"]
+[ext_resource type="Texture2D" uid="uid://dvtrmyhgte871" path="res://art/NPC/Gardener/Gardener-1.png" id="4_es4s4"]
+[ext_resource type="Texture2D" uid="uid://ctmykf6rkt7wl" path="res://art/NPC/Wife/Wife-1.png" id="5_d7jnx"]
+[ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="6_0r2re"]
+
+[node name="AccusationMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 60
+text = "Who is the murderer?"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 700.0
+offset_bottom = 638.0
+texture = ExtResource("1_hgcsa")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 1.0
+offset_top = 68.0
+offset_right = 691.0
+offset_bottom = 568.0
+
+[node name="NPCContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/NPCContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_lnwyg")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer/TextureRect"]
+offset_left = 214.0
+offset_top = 3.0
+offset_right = 302.0
+offset_bottom = 92.0
+texture = ExtResource("2_71v37")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/NPCContainer/TextureRect"]
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 381.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.886275, 0.482353, 0.0588235, 1)
+theme_override_font_sizes/font_size = 30
+text = "The chef"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/NPCContainer/TextureRect"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 23.0
+offset_right = 672.0
+offset_bottom = 85.0
+text = "Accuse"
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_lnwyg")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer/TextureRect2"]
+offset_left = 214.0
+offset_top = 3.0
+offset_right = 302.0
+offset_bottom = 92.0
+texture = ExtResource("4_es4s4")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/NPCContainer/TextureRect2"]
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 381.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.886275, 0.482353, 0.0588235, 1)
+theme_override_font_sizes/font_size = 30
+text = "The gardener"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/NPCContainer/TextureRect2"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 23.0
+offset_right = 672.0
+offset_bottom = 85.0
+text = "Accuse"
+
+[node name="TextureRect3" type="TextureRect" parent="ScrollContainer/NPCContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_lnwyg")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer/TextureRect3"]
+offset_left = 214.0
+offset_top = 3.0
+offset_right = 302.0
+offset_bottom = 92.0
+texture = ExtResource("5_d7jnx")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/NPCContainer/TextureRect3"]
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 381.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.886275, 0.482353, 0.0588235, 1)
+theme_override_font_sizes/font_size = 30
+text = "The wife
+"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/NPCContainer/TextureRect3"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 23.0
+offset_right = 672.0
+offset_bottom = 85.0
+text = "Accuse"
+
+[node name="TextureRect4" type="TextureRect" parent="ScrollContainer/NPCContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_lnwyg")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer/TextureRect4"]
+offset_left = 214.0
+offset_top = 3.0
+offset_right = 302.0
+offset_bottom = 92.0
+texture = ExtResource("6_0r2re")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/NPCContainer/TextureRect4"]
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 381.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.886275, 0.482353, 0.0588235, 1)
+theme_override_font_sizes/font_size = 30
+text = "The maid"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ScrollContainer/NPCContainer/TextureRect4"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 23.0
+offset_right = 672.0
+offset_bottom = 85.0
+text = "Accuse"

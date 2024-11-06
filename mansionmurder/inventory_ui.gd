@@ -18,3 +18,14 @@ func add_clue(clue_data: Dictionary):
 func _on_exit_button_pressed() -> void:
 	print("exit button pressed")
 	self.visible = false
+
+
+func _on_switch_button_pressed() -> void:
+	if $SwitchButton.text == "Inventory":
+		$AccusationMenu.visible = false
+		$ScrollContainer/ClueContainer.visible = true
+		$SwitchButton.text = "Accuse"
+	else:
+		$AccusationMenu.visible = true
+		$ScrollContainer/ClueContainer.visible = false
+		$SwitchButton.text = "Inventory"
