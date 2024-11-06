@@ -35,8 +35,6 @@ func _ready():
 	_queue_text("Ah, Detective! Chief Officer here, your charming guide through this delightful disaster we call Mansion Murder.")
 	_queue_text("Our victim, Mr. Burmingham, was found dead around 9:32 PM—clearly, he didn't make it to the dinner party.")
 	_queue_text("As for the suspects, we have Mrs. Burmingham, Chef Sordanio, Gardener James, and Maid Bertha.")
-	_queue_text("Think of it as a reality show, but instead of roses, everyone’s just pointing fingers—hopefully not at you! Haha...")
-	_queue_text("*Cough Cough* Anyway, before you dive in, let’s cover the basics...")
 	_queue_text("Move around using the arrow keys or WASD, because walking is a lot more fun than just standing there looking puzzled.")
 	_queue_text("To chat, just click on us—though I recommend being close enough so we can hear your brilliant deductions and not just your breathing.")
 	_queue_text("To uncover clues, approach them and click away! They’ll magically teleport into your inventory, and no, you don’t have to thank me for that.")

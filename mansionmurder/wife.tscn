@@ -52,3 +52,4 @@ shape = SubResource("RectangleShape2D_4lfo7")
 
 [node name="Dialogue" type="Node" parent="."]
 script = ExtResource("7_2kt63")
+lines = Array[String](["I can’t believe this is happening... he was everything to me. Well, most of the time, anyway.", "Who would do something like this? Who would hurt him?"])

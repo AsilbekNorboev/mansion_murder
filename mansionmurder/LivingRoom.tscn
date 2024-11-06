@@ -81,19 +81,23 @@ position = Vector2(-791, 1)
 polygon = PackedVector2Array(807, 741, 807, 692, 1243, 688, 1261, 741)
 
 [node name="Deputy" parent="." instance=ExtResource("6_wqe7p")]
-position = Vector2(331, 115)
+position = Vector2(322, 180)
 scale = Vector2(1.2, 1.2)
-
-[node name="Wife" parent="." instance=ExtResource("5_vsfb2")]
-position = Vector2(610, 182)
-scale = Vector2(0.43, 0.43)
 
 [node name="Knife" parent="." instance=ExtResource("6_1tmqa")]
 position = Vector2(409, 303)
 clue_name = "Knife"
-lines = Array[String](["A knife lay next to the body of the deceased."])
+lines = Array[String](["A knife lay next to the body of the deceased, its blade glinting ominously. A fresh stain of blood is smeared along its edge.", "This knife looks like it came straight from the kitchen. Not exactly what you'd use for a salad, unless you're preparing a very 'cutting' edge dish.", "This could be important. You might want to have a chat with Chef Sordanio.", "The knife has been added to your inventory as a clue."])
 clue_texture = ExtResource("7_jy6q6")
 clue_description = "Appears to be a knife"
+
+[node name="deadbody" parent="." instance=ExtResource("9_5sgsi")]
+position = Vector2(414, 344)
+scale = Vector2(1.4, 1.4)
+
+[node name="Wife" parent="." instance=ExtResource("5_vsfb2")]
+position = Vector2(256, 274)
+scale = Vector2(0.43, 0.43)
 
 [node name="Deed" parent="." instance=ExtResource("6_1tmqa")]
 position = Vector2(803, 191)
@@ -104,9 +108,5 @@ clue_description = "Appears to be the Professors deed"
 
 [node name="WorldeSafe" parent="." instance=ExtResource("9_yyjpp")]
 position = Vector2(800, 211)
-
-[node name="deadbody" parent="." instance=ExtResource("9_5sgsi")]
-position = Vector2(414, 344)
-scale = Vector2(1.4, 1.4)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
