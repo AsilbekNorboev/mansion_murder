@@ -48,6 +48,7 @@ func _input(event):
 						})
 					_dialog_start()
 					_show_zoom_image()
+					queue_free()
 		else:
 			print("Warning: CollisionShape2D is null or does not have a shape.")
 
