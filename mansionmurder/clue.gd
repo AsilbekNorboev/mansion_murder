@@ -39,7 +39,6 @@ func _input(event):
 	if event.is_action_pressed("click"):
 		var global_mouse_position = get_viewport().get_camera_2d().get_global_mouse_position()
 		var local_mouse_position = to_local(global_mouse_position)  # Convert to local coordinates
-
 		# Check if collision_shape is valid and has a shape
 		if collision_shape and collision_shape.shape:
 			if collision_shape.shape is RectangleShape2D:
@@ -53,14 +52,11 @@ func _input(event):
 						})
 					_dialog_start()
 					_show_zoom_image()
-<<<<<<< Updated upstream
 					show_clue_pickup_text()
-					#queue_free()
-=======
 					Input.set_custom_mouse_cursor(null)
->>>>>>> Stashed changes
 		else:
 			print("Warning: CollisionShape2D is null or does not have a shape.")
+			
 func show_clue_pickup_text():
 	var clue_pickup_text_instance = clue_pickup_text_scene.instantiate()
 	get_tree().root.add_child(clue_pickup_text_instance)
