@@ -2,6 +2,9 @@ extends Area2D
 
 var cursor = preload("res://art/pointer.png")		
 # Exported variables for customizing each clue
+@export var display_time: float = 2.0  # Time to show the textbox
+@export var offset: Vector2 = Vector2(0, -50)  # Offset to position the textbox above the clue
+
 @export var clue_name: String = "Example Clue"
 @export var lines: Array[String] = []
 @export var clue_texture: Texture
@@ -14,6 +17,7 @@ var cursor = preload("res://art/pointer.png")
 var textbox_scene = preload("res://textbox.tscn")
 var is_dialog_active = false
 var current_line_index = 0
+var clue_pickup_text_scene = preload("res://clue_pickup_text.tscn")
 
 # Signals for clue interactions
 signal clue_clicked(clue_data)
@@ -49,9 +53,20 @@ func _input(event):
 						})
 					_dialog_start()
 					_show_zoom_image()
+					show_clue_pickup_text()
+					#queue_free()
 		else:
 			print("Warning: CollisionShape2D is null or does not have a shape.")
+func show_clue_pickup_text():
+	var clue_pickup_text_instance = clue_pickup_text_scene.instantiate()
+	get_tree().root.add_child(clue_pickup_text_instance)
+	clue_pickup_text_instance.z_index = 100 
+	var screen_position = get_viewport().get_camera_2d().get_global_mouse_position()
+	
+	clue_pickup_text_instance.position = screen_position
 
+
+	await clue_pickup_text_instance.show_message("Item has been picked up", display_time)
 # Starts the dialog for this clue
 func _dialog_start():
 	if is_dialog_active or not lines:
