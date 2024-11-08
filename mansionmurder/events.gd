@@ -20,6 +20,8 @@ signal puzzle_completed(puzzle1)
 
 @onready var clue_scene = preload("res://clue.tscn").instantiate()
 
+# Empty node
+# @onready var new_zoom_node = $Rooms
 
 func new_game():
 	print("game start")
