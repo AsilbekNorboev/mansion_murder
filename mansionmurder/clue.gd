@@ -53,8 +53,12 @@ func _input(event):
 						})
 					_dialog_start()
 					_show_zoom_image()
+<<<<<<< Updated upstream
 					show_clue_pickup_text()
 					#queue_free()
+=======
+					Input.set_custom_mouse_cursor(null)
+>>>>>>> Stashed changes
 		else:
 			print("Warning: CollisionShape2D is null or does not have a shape.")
 func show_clue_pickup_text():
@@ -119,7 +123,6 @@ func set_clue_data(data: Dictionary):
 #change cursor when hovering over
 func _on_mouse_entered() -> void:
 		Input.set_custom_mouse_cursor(cursor, Input.CURSOR_ARROW, Vector2(16,16))
-
 
 func _on_mouse_exited() -> void:
 		Input.set_custom_mouse_cursor(null)

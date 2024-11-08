@@ -1,5 +1,6 @@
 extends Area2D
 
+var cursor = preload("res://art/dialogueicon.png")	
 #loads textbox scene to use its functions later
 var textbox_scene = preload("res://textbox.tscn").instantiate()
 var textappear = textbox_scene.get_node("TextboxContainer")
@@ -54,3 +55,10 @@ func _unhandled_input(event):
 		#if there is more text left, display the next line of text
 		else:
 			textappear.add_text(lines[current_line_index])
+
+#change cursor when hovering over
+func _on_mouse_entered() -> void:
+		Input.set_custom_mouse_cursor(cursor, Input.CURSOR_ARROW, Vector2(16,16))
+
+func _on_mouse_exited() -> void:
+		Input.set_custom_mouse_cursor(null)
