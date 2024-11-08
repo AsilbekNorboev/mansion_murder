@@ -1,5 +1,6 @@
 extends Area2D
 
+var cursor = preload("res://art/pointer.png")		
 # Exported variables for customizing each clue
 @export var clue_name: String = "Example Clue"
 @export var lines: Array[String] = []
@@ -48,7 +49,6 @@ func _input(event):
 						})
 					_dialog_start()
 					_show_zoom_image()
-					#queue_free()
 		else:
 			print("Warning: CollisionShape2D is null or does not have a shape.")
 
@@ -99,3 +99,12 @@ func set_clue_data(data: Dictionary):
 	zoom_image_path = data.get("zoom_image", zoom_image_path)
 	clue_description = data.get("description", clue_description)  # Added for description
 	_setup_clue_image()
+
+
+#change cursor when hovering over
+func _on_mouse_entered() -> void:
+		Input.set_custom_mouse_cursor(cursor, Input.CURSOR_ARROW, Vector2(16,16))
+
+
+func _on_mouse_exited() -> void:
+		Input.set_custom_mouse_cursor(null)
