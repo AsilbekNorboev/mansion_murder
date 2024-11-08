@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceibgpr5wsksu"
-path="res://.godot/imported/Dead_Body-1.png-e8c23f511b5154f70503c3abcf34a408.ctex"
+uid="uid://bv8pn1847njgt"
+path="res://.godot/imported/necklace.png-c9148ba2abbfe9a873466435f60df662.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/NPC/Deadbody/Dead_Body-1.png"
-dest_files=["res://.godot/imported/Dead_Body-1.png-e8c23f511b5154f70503c3abcf34a408.ctex"]
+source_file="res://art/Clues/necklace.png"
+dest_files=["res://.godot/imported/necklace.png-c9148ba2abbfe9a873466435f60df662.ctex"]
 
 [params]
 

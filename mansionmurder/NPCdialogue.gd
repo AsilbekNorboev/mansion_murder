@@ -1,6 +1,7 @@
 extends Area2D
 
-var cursor = preload("res://art/dialogueicon.png")	
+var cursor = preload("res://art/dialogueicon.png")
+
 #loads textbox scene to use its functions later
 var textbox_scene = preload("res://textbox.tscn").instantiate()
 var textappear = textbox_scene.get_node("TextboxContainer")
