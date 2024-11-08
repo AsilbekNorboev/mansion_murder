@@ -40,15 +40,14 @@ func _input(event):
 			if collision_shape.shape is RectangleShape2D:
 				var rect = Rect2(collision_shape.position - (collision_shape.shape.extents), collision_shape.shape.extents * 2)
 				if rect.has_point(local_mouse_position):
-					print("Clicked on Clue: ", clue_name)
-					emit_signal("clue_clicked", {
-						"name": clue_name,
-						"description": clue_description,
-						"icon": clue_texture
-						})
+					#print("Clicked on Clue: ", clue_name)
+					#emit_signal("clue_clicked", {
+						#"name": clue_name,
+						#"description": clue_description,
+						#"icon": clue_texture
+						#})
 					_dialog_start()
 					_show_zoom_image()
-					#queue_free()
 		else:
 			print("Warning: CollisionShape2D is null or does not have a shape.")
 
@@ -70,7 +69,6 @@ func _dialog_end(textbox_instance):
 	current_line_index = 0
 	textbox_instance.queue_free()  # Remove the dialog box from the scene
 	queue_free()
-
 
 func _unhandled_input(event):
 	if event.is_action_pressed("dialogue_next") and is_dialog_active:

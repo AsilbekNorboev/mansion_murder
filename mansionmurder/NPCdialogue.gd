@@ -4,7 +4,7 @@ extends Area2D
 var textbox_scene = preload("res://textbox.tscn").instantiate()
 var textappear = textbox_scene.get_node("TextboxContainer")
 var current_line_index = 0
-
+var emptyspriteanimation
 var is_dialog_active = false
 
 @onready var lines = $Dialogue.lines
@@ -34,6 +34,12 @@ func _dialog_start():
 		add_child(textbox_scene)
 		textappear.add_text(lines[current_line_index])
 		is_dialog_active = true
+		#play sprite animation
+		emptyspriteanimation = textappear.get_node("SpriteTalk")
+		#print(AnimatedSprite2D.animation)
+
+		#emptyspriteanimation.animation = $AnimatedSprite2D
+		
 	
 			
 func _dialog_end():

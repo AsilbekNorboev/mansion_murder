@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdnmgmqgim23v"]
+[gd_scene load_steps=5 format=3 uid="uid://cdnmgmqgim23v"]
 
 [ext_resource type="Script" path="res://textbox_container.gd" id="1_b4rrd"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_at36y"]
@@ -10,6 +10,8 @@ border_width_top = 6
 border_width_right = 6
 border_width_bottom = 6
 border_color = Color(0.466667, 0.352941, 0.105882, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gxwwk"]
 
 [node name="textbox" type="CanvasLayer"]
 
@@ -64,3 +66,6 @@ offset_bottom = 524.0
 theme_override_fonts/font = ExtResource("2_at36y")
 theme_override_font_sizes/font_size = 30
 text = "Press 'Enter' to skip..."
+
+[node name="SpriteTalk" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gxwwk")
