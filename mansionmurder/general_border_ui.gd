@@ -14,13 +14,13 @@ func _on_investigate_button_pressed():
 func _on_inventory_button_pressed() -> void:
 	$InventoryButton.modulate = Color("#000000")
 	await get_tree().create_timer(0.2).timeout
+	$InventoryButton/rustleSFX.play()
 	$InventoryButton.modulate = Color("#ffffff")
 	inventorybuttonpressed.emit()
-	$InventoryButton/rustleSFX.play()
 
 func _on_settings_button_pressed() -> void:
+	$SettingsButton/ButtonClick.play()
 	$SettingsButton.modulate = Color("#000000")
 	await get_tree().create_timer(0.2).timeout
 	$SettingsButton.modulate = Color("#ffffff")
 	settingsbuttonpressed.emit()
-	$SettingsButton/ButtonClick.play()
