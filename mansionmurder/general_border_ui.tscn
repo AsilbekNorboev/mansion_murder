@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvhrk42a3p58v"]
+[gd_scene load_steps=6 format=3 uid="uid://bvhrk42a3p58v"]
 
 [ext_resource type="Script" path="res://general_border_ui.gd" id="1_ufin5"]
 [ext_resource type="Texture2D" uid="uid://dyt0pbqdororh" path="res://art/TempBorder_updated.png" id="2_vumir"]
 [ext_resource type="Script" path="res://investigate_button.gd" id="3_a27rf"]
+[ext_resource type="AudioStream" uid="uid://dvalpk5jn2i56" path="res://audio/Inventory_open_sfx.wav" id="4_pbeyp"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="5_glnpu"]
 
 [node name="GeneralBorderUI" type="CanvasLayer"]
 layer = 2
@@ -31,6 +33,10 @@ offset_top = -30.905
 offset_right = 96.47
 offset_bottom = 73.095
 
+[node name="rustleSFX" type="AudioStreamPlayer" parent="InventoryButton"]
+stream = ExtResource("4_pbeyp")
+volume_db = 20.0
+
 [node name="SettingsButton" type="Button" parent="."]
 anchors_preset = -1
 anchor_left = 0.913
@@ -41,6 +47,10 @@ offset_left = -68.03
 offset_top = -38.69
 offset_right = 72.97
 offset_bottom = 71.31
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="SettingsButton"]
+stream = ExtResource("5_glnpu")
+volume_db = 20.0
 
 [connection signal="investigate" from="." to="InvestigateButton" method="_on_investigate_clicked"]
 [connection signal="pressed" from="InvestigateButton" to="." method="_on_investigate_button_pressed"]

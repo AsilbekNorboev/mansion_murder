@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsgbmst7wprd3"]
+[gd_scene load_steps=5 format=3 uid="uid://bsgbmst7wprd3"]
 
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="1_gqlcb"]
 [ext_resource type="Script" path="res://inventory_ui.gd" id="1_lqmkm"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="2_2bw1c"]
 [ext_resource type="PackedScene" uid="uid://b3hqh46weabti" path="res://accusation_menu.tscn" id="3_lpcbi"]
 
 [node name="InventoryUI" type="CanvasLayer"]
@@ -70,6 +71,10 @@ offset_left = 127.0
 offset_top = 67.0
 offset_right = 161.0
 offset_bottom = 99.0
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2bw1c")
+volume_db = 20.0
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="SwitchButton" to="." method="_on_switch_button_pressed"]
