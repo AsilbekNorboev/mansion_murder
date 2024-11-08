@@ -100,6 +100,7 @@ position = Vector2(256, 274)
 scale = Vector2(0.43, 0.43)
 
 [node name="Deed" parent="." instance=ExtResource("6_1tmqa")]
+visible = false
 position = Vector2(803, 191)
 clue_name = "Deed"
 lines = Array[String](["Appears to be the deed"])
