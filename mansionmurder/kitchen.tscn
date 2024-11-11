@@ -28,7 +28,6 @@ texture = ExtResource("2_n44tm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2(654, 392)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_d0w0s")
 
 [node name="Chef" parent="." instance=ExtResource("5_8sl5h")]
