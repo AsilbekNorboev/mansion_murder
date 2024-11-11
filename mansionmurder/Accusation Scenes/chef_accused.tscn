@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://tkn36d3r41w1"]
+[gd_scene load_steps=24 format=3 uid="uid://tkn36d3r41w1"]
 
 [ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_diwa1"]
 [ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="3_ctlrr"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cyr6vnfag6yo2" path="res://art/NPC/Chef/Chef-12.png" id="14_jcih7"]
 [ext_resource type="Texture2D" uid="uid://dct5fbf03cmir" path="res://art/NPC/Chef/Chef-13.png" id="15_uujcj"]
 [ext_resource type="Texture2D" uid="uid://wn71042djilq" path="res://art/NPC/Chef/Chef-14.png" id="16_a15ny"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="18_y46kb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_37hwt"]
 animations = [{
@@ -226,6 +227,10 @@ offset_bottom = 247.0
 theme_override_fonts/font = ExtResource("3_moqtl")
 theme_override_font_sizes/font_size = 30
 text = "Press 'Enter' to skip..."
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_y46kb")
+volume_db = 20.0
 
 [connection signal="pressed" from="Replay Game" to="." method="_on_replay_game_pressed"]
 [connection signal="pressed" from="Exit Game" to="." method="_on_exit_game_pressed"]

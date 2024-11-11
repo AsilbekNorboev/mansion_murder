@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3hqh46weabti"]
+[gd_scene load_steps=9 format=3 uid="uid://b3hqh46weabti"]
 
 [ext_resource type="Script" path="res://accusation.gd" id="1_b2ae4"]
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="1_hgcsa"]
 [ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="2_71v37"]
 [ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="2_lnwyg"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="3_itn42"]
 [ext_resource type="Texture2D" uid="uid://dvtrmyhgte871" path="res://art/NPC/Gardener/Gardener-1.png" id="4_es4s4"]
 [ext_resource type="Texture2D" uid="uid://ctmykf6rkt7wl" path="res://art/NPC/Wife/Wife-1.png" id="5_d7jnx"]
 [ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="6_0r2re"]
@@ -17,26 +18,33 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_b2ae4")
 
-[node name="Label" type="Label" parent="."]
+[node name="Text" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 37.0
+offset_right = 664.0
+offset_bottom = 83.0
 theme_override_font_sizes/font_size = 60
 text = "Who is the murderer?"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 z_index = -1
 layout_mode = 0
 offset_right = 700.0
 offset_bottom = 638.0
 texture = ExtResource("1_hgcsa")
 
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_itn42")
+volume_db = 20.0
+
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 68.0
-offset_right = 691.0
-offset_bottom = 568.0
+offset_left = 4.0
+offset_top = 85.0
+offset_right = 694.0
+offset_bottom = 585.0
 
 [node name="NPCContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2

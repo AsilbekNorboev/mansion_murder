@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ddacxdvl6pl6m"]
+[gd_scene load_steps=18 format=3 uid="uid://ddacxdvl6pl6m"]
 
 [ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_m72g6"]
 [ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="3_d8cru"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dw8qjkx7dflok" path="res://art/NPC/Maid/Maid-3.png" id="5_jhv1w"]
 [ext_resource type="Texture2D" uid="uid://dvatrox5o425u" path="res://art/NPC/Maid/Maid-4.png" id="6_j5fxq"]
 [ext_resource type="Texture2D" uid="uid://vilqu11acpnp" path="res://art/NPC/Maid/Maid-5.png" id="7_tnmcm"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="9_uun62"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vm8pg"]
 animations = [{
@@ -211,6 +212,10 @@ offset_bottom = 247.0
 theme_override_fonts/font = ExtResource("3_ujhmh")
 theme_override_font_sizes/font_size = 30
 text = "Press 'Enter' to skip..."
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_uun62")
+volume_db = 20.0
 
 [connection signal="pressed" from="Exit Game" to="." method="_on_exit_game_pressed"]
 [connection signal="pressed" from="Replay Game" to="." method="_on_replay_game_pressed"]

@@ -119,8 +119,16 @@ func _on_Tween_tween_completed(object, key):
 	end_symbol.text = "v"
 	change_state(State.FINISHED)
 
+#waits a few seconds to allow the sound effect of the button to play
+func wait(seconds: float) -> void:
+	OS.delay_msec(seconds * 1000)
+	
 func _on_replay_game_pressed() -> void:
+	$ButtonClick.play()
+	wait(.5)
 	get_tree().change_scene_to_file("res://main.tscn")
 
 func _on_exit_game_pressed() -> void:
+	$ButtonClick.play()
+	wait(.5)
 	get_tree().quit()

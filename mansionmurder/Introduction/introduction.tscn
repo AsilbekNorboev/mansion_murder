@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dquggvbpa25bl"]
+[gd_scene load_steps=24 format=3 uid="uid://dquggvbpa25bl"]
 
 [ext_resource type="Script" path="res://Introduction/introduction.gd" id="1_6ckga"]
 [ext_resource type="Texture2D" uid="uid://4mefy3j2jqvf" path="res://art/NPC/Deputy/Deputy-1.png" id="2_byefp"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bcr0rxe8qn7m" path="res://art/NPC/Deputy/Deputy-12.png" id="13_daii2"]
 [ext_resource type="Texture2D" uid="uid://vocicb8uhbxn" path="res://art/NPC/Deputy/Deputy-13.png" id="14_7b4c4"]
 [ext_resource type="Texture2D" uid="uid://c3ahe60006bnr" path="res://art/NPC/Deputy/Deputy-14.png" id="15_iugtt"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="18_kx4gv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5chha"]
 animations = [{
@@ -212,5 +213,9 @@ offset_bottom = 247.0
 theme_override_fonts/font = ExtResource("2_csjga")
 theme_override_font_sizes/font_size = 30
 text = "Press 'Enter' to skip..."
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_kx4gv")
+volume_db = 20.0
 
 [connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]

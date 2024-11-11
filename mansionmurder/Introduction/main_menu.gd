@@ -10,14 +10,23 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+#waits a few seconds to allow the sound effect of the button to play
+func wait(seconds: float) -> void:
+	OS.delay_msec(seconds * 1000)
+	
+#BUTTONS------------------------------------
 func _on_start_game_pressed() -> void:
+	$ButtonClick.play()
+	wait(.5)
 	get_tree().change_scene_to_file("res://Introduction/introduction.tscn")
 
 
 func _on_options_pressed() -> void:
+	$ButtonClick.play()
+	wait(.5)
 	pass # Replace with function body.
 
-
 func _on_exit_pressed() -> void:
+	$ButtonClick.play()
+	wait(.5)
 	get_tree().quit()
