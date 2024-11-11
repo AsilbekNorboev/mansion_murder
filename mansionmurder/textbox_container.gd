@@ -14,6 +14,7 @@ func show_textbox():
 	textbox_container.show()
 	
 func add_text(lines):
+	$NextDialogueSfx.play()	
 	label.text = lines
 	show_textbox()
 	
