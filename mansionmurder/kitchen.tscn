@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0tac7mqeul18"]
+[gd_scene load_steps=11 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://rhsfpcuok838" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
@@ -15,6 +15,9 @@ size = Vector2(1182.5, 70.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5lok"]
 size = Vector2(50, 731)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p865r"]
+size = Vector2(100, 82.5)
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_wkt5y")
@@ -47,15 +50,35 @@ lines = Array[String](["This appears to be a plant from the Garden."])
 clue_texture = ExtResource("4_k42ji")
 clue_description = "This appears to be a plant from the Garde."
 
-[node name="colliders" type="StaticBody2D" parent="."]
+[node name="Colliders" type="StaticBody2D" parent="."]
 position = Vector2(1255, -15)
 
-[node name="bottom wall" type="CollisionShape2D" parent="colliders"]
+[node name="Bottom Wall" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(-560.75, 761)
 shape = SubResource("RectangleShape2D_60llk")
 
-[node name="left wall" type="CollisionShape2D" parent="colliders"]
+[node name="Left Wall" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(-9, 433)
 shape = SubResource("RectangleShape2D_l5lok")
+
+[node name="Right Counter" type="CollisionPolygon2D" parent="Colliders"]
+polygon = PackedVector2Array(-31, 642, -85, 655, -202, 360, -208, 276, -191, 61, 7, 69)
+
+[node name="Back Wall" type="CollisionPolygon2D" parent="Colliders"]
+polygon = PackedVector2Array(-217, 260, -1056, 255, -1124, 68, -193, 63, -214, 249)
+
+[node name="Island" type="CollisionPolygon2D" parent="Colliders"]
+polygon = PackedVector2Array(-914, 628, -895, 536, -415, 535, -381, 628, -426, 667, -869, 675)
+
+[node name="Near Door" type="CollisionPolygon2D" parent="Colliders"]
+position = Vector2(0, 3)
+polygon = PackedVector2Array(-1173, 149, -1132, 203, -1084, 337, -1054, 252, -1130, 63, -1201, 70, -1194, 117)
+
+[node name="Chef Collision" type="CollisionShape2D" parent="Colliders"]
+position = Vector2(-427, 432.25)
+shape = SubResource("RectangleShape2D_p865r")
+
+[node name="Left Island" type="CollisionPolygon2D" parent="Colliders"]
+polygon = PackedVector2Array(-1108, 514, -1112, 750, -1202, 749, -1201, 469, -1116, 476, -1108, 506)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

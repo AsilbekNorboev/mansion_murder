@@ -25,16 +25,17 @@ z_index = -1
 position = Vector2(655, 395)
 texture = ExtResource("2_236vv")
 
+[node name="Maid" parent="." instance=ExtResource("3_80a53")]
+position = Vector2(754, 366)
+scale = Vector2(1.2, 1.2)
+
 [node name="PlayerDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2(655, 395)
 shape = SubResource("RectangleShape2D_j4bkx")
 
-[node name="Maid" parent="." instance=ExtResource("3_80a53")]
 position = Vector2(754, 366)
-scale = Vector2(1.2, 1.2)
-
 [node name="Diary" parent="." instance=ExtResource("4_o0aq8")]
 position = Vector2(212, 602)
 clue_name = "Diary"
@@ -51,15 +52,28 @@ clue_description = "Appears to be a necklace"
 [node name="Safe" parent="." instance=ExtResource("7_jlllh")]
 position = Vector2(855, 209)
 
-[node name="colliders" type="StaticBody2D" parent="."]
+[node name="Colliders" type="StaticBody2D" parent="."]
 position = Vector2(1257, -17)
 
-[node name="bottom wall" type="CollisionShape2D" parent="colliders"]
+[node name="Bottom Wall" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(-595, 761)
 shape = SubResource("RectangleShape2D_dsw38")
 
-[node name="left wall" type="CollisionShape2D" parent="colliders"]
+[node name="Left Wall" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(-1177, 432.5)
 shape = SubResource("RectangleShape2D_1q56j")
+
+[node name="Bed" type="CollisionPolygon2D" parent="Colliders"]
+polygon = PackedVector2Array(-1060, 205, -706, 207, -713, 262, -689, 524, -755, 601, -1104, 603, -1191, 479)
+
+[node name="Back Wall" type="CollisionPolygon2D" parent="Colliders"]
+polygon = PackedVector2Array(-88, 216, -124, 313, -266, 282, -708, 286, -1063, 287, -1205, 553, -1199, 73, -9, 70, 0, 183, -52, 134)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders"]
+position = Vector2(4, 48)
+polygon = PackedVector2Array(-5, 391, -99, 430, -134, 731, -7, 746)
+
+[node name="Maid" type="CollisionPolygon2D" parent="Colliders"]
+polygon = PackedVector2Array(-553, 421, -483, 423, -481, 480, -544, 493, -558, 490, -567, 479, -557, 458)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
