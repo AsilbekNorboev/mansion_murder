@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3hqh46weabti"]
+[gd_scene load_steps=8 format=3 uid="uid://b3hqh46weabti"]
 
+[ext_resource type="Script" path="res://accusation.gd" id="1_b2ae4"]
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="1_hgcsa"]
 [ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="2_71v37"]
 [ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="2_lnwyg"]
@@ -14,6 +15,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_b2ae4")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -30,6 +32,7 @@ offset_bottom = 638.0
 texture = ExtResource("1_hgcsa")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 68.0
 offset_right = 691.0
@@ -40,13 +43,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/NPCContainer"]
+[node name="Chef" type="TextureRect" parent="ScrollContainer/NPCContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer/TextureRect"]
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer/Chef"]
+layout_mode = 0
 offset_left = 214.0
 offset_top = 3.0
 offset_right = 302.0
@@ -54,7 +58,8 @@ offset_bottom = 92.0
 texture = ExtResource("2_71v37")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="ScrollContainer/NPCContainer/TextureRect"]
+[node name="Label" type="Label" parent="ScrollContainer/NPCContainer/Chef"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 3.0
 offset_right = 381.0
@@ -64,7 +69,7 @@ theme_override_font_sizes/font_size = 30
 text = "The chef"
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/NPCContainer/TextureRect"]
+[node name="ChefButton" type="Button" parent="ScrollContainer/NPCContainer/Chef"]
 layout_mode = 0
 offset_left = 447.0
 offset_top = 23.0
@@ -72,13 +77,14 @@ offset_right = 672.0
 offset_bottom = 85.0
 text = "Accuse"
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer"]
+[node name="Gardener" type="TextureRect" parent="ScrollContainer/NPCContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer/TextureRect2"]
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer/Gardener"]
+layout_mode = 0
 offset_left = 214.0
 offset_top = 3.0
 offset_right = 302.0
@@ -86,7 +92,8 @@ offset_bottom = 92.0
 texture = ExtResource("4_es4s4")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="ScrollContainer/NPCContainer/TextureRect2"]
+[node name="Label" type="Label" parent="ScrollContainer/NPCContainer/Gardener"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 3.0
 offset_right = 381.0
@@ -96,7 +103,7 @@ theme_override_font_sizes/font_size = 30
 text = "The gardener"
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/NPCContainer/TextureRect2"]
+[node name="GardenerButton" type="Button" parent="ScrollContainer/NPCContainer/Gardener"]
 layout_mode = 0
 offset_left = 447.0
 offset_top = 23.0
@@ -104,13 +111,14 @@ offset_right = 672.0
 offset_bottom = 85.0
 text = "Accuse"
 
-[node name="TextureRect3" type="TextureRect" parent="ScrollContainer/NPCContainer"]
+[node name="Wife" type="TextureRect" parent="ScrollContainer/NPCContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer/TextureRect3"]
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer/Wife"]
+layout_mode = 0
 offset_left = 214.0
 offset_top = 3.0
 offset_right = 302.0
@@ -118,7 +126,8 @@ offset_bottom = 92.0
 texture = ExtResource("5_d7jnx")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="ScrollContainer/NPCContainer/TextureRect3"]
+[node name="Label" type="Label" parent="ScrollContainer/NPCContainer/Wife"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 3.0
 offset_right = 381.0
@@ -129,7 +138,7 @@ text = "The wife
 "
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/NPCContainer/TextureRect3"]
+[node name="WifeButton" type="Button" parent="ScrollContainer/NPCContainer/Wife"]
 layout_mode = 0
 offset_left = 447.0
 offset_top = 23.0
@@ -137,13 +146,14 @@ offset_right = 672.0
 offset_bottom = 85.0
 text = "Accuse"
 
-[node name="TextureRect4" type="TextureRect" parent="ScrollContainer/NPCContainer"]
+[node name="Maid" type="TextureRect" parent="ScrollContainer/NPCContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer/TextureRect4"]
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/NPCContainer/Maid"]
+layout_mode = 0
 offset_left = 214.0
 offset_top = 3.0
 offset_right = 302.0
@@ -151,7 +161,8 @@ offset_bottom = 92.0
 texture = ExtResource("6_0r2re")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="ScrollContainer/NPCContainer/TextureRect4"]
+[node name="Label" type="Label" parent="ScrollContainer/NPCContainer/Maid"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 3.0
 offset_right = 381.0
@@ -161,10 +172,15 @@ theme_override_font_sizes/font_size = 30
 text = "The maid"
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="ScrollContainer/NPCContainer/TextureRect4"]
+[node name="MaidButton" type="Button" parent="ScrollContainer/NPCContainer/Maid"]
 layout_mode = 0
 offset_left = 447.0
 offset_top = 23.0
 offset_right = 672.0
 offset_bottom = 85.0
 text = "Accuse"
+
+[connection signal="pressed" from="ScrollContainer/NPCContainer/Chef/ChefButton" to="." method="_on_chef_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/NPCContainer/Gardener/GardenerButton" to="." method="_on_gardener_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/NPCContainer/Wife/WifeButton" to="." method="_on_wife_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/NPCContainer/Maid/MaidButton" to="." method="_on_maid_button_pressed"]
