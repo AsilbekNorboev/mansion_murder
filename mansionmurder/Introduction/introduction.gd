@@ -104,13 +104,6 @@ func _finish_dialogue():
 # State Management
 func change_state(next_state: State):
 	state = next_state
-	#match state:
-		#State.READY:
-			#print("Changing state to: State.READY")
-		#State.READING:
-			#print("Changing state to: State.READING")
-		#State.FINISHED:
-			#print("Changing state to: State.FINISHED")
 
 # Handle Tween Completion
 func _on_Tween_tween_completed(object, key):

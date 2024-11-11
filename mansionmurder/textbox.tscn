@@ -53,7 +53,7 @@ size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_at36y")
 theme_override_font_sizes/font_size = 40
 text = "Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!"
-autowrap_mode = 1
+autowrap_mode = 3
 clip_text = true
 
 [node name="SkipLabel" type="Label" parent="."]
