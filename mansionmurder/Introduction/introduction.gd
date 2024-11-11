@@ -10,6 +10,7 @@ const CHAR_RATE = 0.075
 @onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Text
 @onready var start_game_button = $"Start Game"
 @onready var skip_label = $SkipLabel
+@onready var animated_sprite = $Deputy
 
 # Signals
 signal dialogue_finished
@@ -30,6 +31,8 @@ var tween: Tween
 func _ready():
 	_hide_textbox()
 	start_game_button.hide()
+	animated_sprite.animation = "idle"
+	animated_sprite.play()
 	
 	# Add dialogue lines
 	_queue_text("Ah, Detective! Chief Officer here, your charming guide through this delightful disaster we call Mansion Murder.")
