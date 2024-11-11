@@ -1,9 +1,36 @@
-[gd_scene load_steps=12 format=3 uid="uid://ddacxdvl6pl6m"]
+[gd_scene load_steps=17 format=3 uid="uid://ddacxdvl6pl6m"]
 
 [ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_m72g6"]
-[ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="2_m46gx"]
+[ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="3_d8cru"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="3_ujhmh"]
+[ext_resource type="Texture2D" uid="uid://cigmgtqqys4a8" path="res://art/NPC/Maid/Maid-2.png" id="4_hhcjl"]
 [ext_resource type="FontFile" uid="uid://debhhnvyq2u7l" path="res://fonts/GhoulFriAOE.ttf" id="4_kc8sc"]
+[ext_resource type="Texture2D" uid="uid://dw8qjkx7dflok" path="res://art/NPC/Maid/Maid-3.png" id="5_jhv1w"]
+[ext_resource type="Texture2D" uid="uid://dvatrox5o425u" path="res://art/NPC/Maid/Maid-4.png" id="6_j5fxq"]
+[ext_resource type="Texture2D" uid="uid://vilqu11acpnp" path="res://art/NPC/Maid/Maid-5.png" id="7_tnmcm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vm8pg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_d8cru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hhcjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jhv1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j5fxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tnmcm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3cmf"]
 bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)
@@ -60,7 +87,7 @@ shadow_offset = Vector2(1, 1)
 [node name="maid_accused" type="CanvasLayer"]
 script = ExtResource("1_m72g6")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -68,9 +95,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.121569, 0, 0, 1)
 
-[node name="Maid" parent="." instance=ExtResource("2_m46gx")]
-position = Vector2(274, 479)
-scale = Vector2(7, 7)
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(375, 529)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_vm8pg")
+animation = &"idle"
 
 [node name="Exit Game" type="Button" parent="."]
 offset_left = 706.0
@@ -183,4 +212,5 @@ theme_override_fonts/font = ExtResource("3_ujhmh")
 theme_override_font_sizes/font_size = 30
 text = "Press 'Enter' to skip..."
 
+[connection signal="pressed" from="Exit Game" to="." method="_on_exit_game_pressed"]
 [connection signal="pressed" from="Replay Game" to="." method="_on_replay_game_pressed"]

@@ -12,6 +12,9 @@ const CHAR_RATE = 0.075
 @onready var exit_game_button = $"Exit Game"
 @onready var skip_label = $SkipLabel
 
+
+@onready var animated_sprite = $Sprite
+
 # Signals
 signal dialogue_finished
 
@@ -35,6 +38,8 @@ func _ready():
 
 	# Start displaying the first queued dialogue
 	_display_text()
+	animated_sprite.animation = "idle"
+	animated_sprite.play()
 
 func _detect_NPC():
 	if (self.name == "chef_accused"):
