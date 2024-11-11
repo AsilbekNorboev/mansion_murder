@@ -62,7 +62,7 @@ position = Vector2(50.75, 627)
 shape = SubResource("RectangleShape2D_sasua")
 
 [node name="Right Wall Collider" type="CollisionShape2D" parent="Colliders"]
-position = Vector2(1265, 603)
+position = Vector2(1238, 621)
 shape = SubResource("RectangleShape2D_sasua")
 
 [node name="Couch Collider 1" type="CollisionShape2D" parent="Colliders"]

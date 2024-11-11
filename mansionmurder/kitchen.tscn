@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0tac7mqeul18"]
+[gd_scene load_steps=10 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://rhsfpcuok838" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
@@ -9,6 +9,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w0s"]
 size = Vector2(1200, 680)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60llk"]
+size = Vector2(1182.5, 70.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5lok"]
+size = Vector2(50, 731)
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_wkt5y")
@@ -22,6 +28,7 @@ texture = ExtResource("2_n44tm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2(654, 392)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_d0w0s")
 
 [node name="Chef" parent="." instance=ExtResource("5_8sl5h")]
@@ -40,5 +47,16 @@ clue_name = "Dirt"
 lines = Array[String](["This appears to be a plant from the Garden."])
 clue_texture = ExtResource("4_k42ji")
 clue_description = "This appears to be a plant from the Garde."
+
+[node name="colliders" type="StaticBody2D" parent="."]
+position = Vector2(1255, -15)
+
+[node name="bottom wall" type="CollisionShape2D" parent="colliders"]
+position = Vector2(-560.75, 761)
+shape = SubResource("RectangleShape2D_60llk")
+
+[node name="left wall" type="CollisionShape2D" parent="colliders"]
+position = Vector2(-9, 433)
+shape = SubResource("RectangleShape2D_l5lok")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

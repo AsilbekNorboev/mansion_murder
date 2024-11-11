@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dg4qym28b3db5"]
+[gd_scene load_steps=11 format=3 uid="uid://dg4qym28b3db5"]
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_x5y1v"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_236vv"]
@@ -10,6 +10,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
 size = Vector2(1200, 680)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsw38"]
+size = Vector2(1182.5, 70.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1q56j"]
+size = Vector2(50, 731)
 
 [node name="Bedroom" type="Node2D"]
 script = ExtResource("1_x5y1v")
@@ -44,5 +50,16 @@ clue_description = "Appears to be a necklace"
 
 [node name="Safe" parent="." instance=ExtResource("7_jlllh")]
 position = Vector2(855, 209)
+
+[node name="colliders" type="StaticBody2D" parent="."]
+position = Vector2(1257, -17)
+
+[node name="bottom wall" type="CollisionShape2D" parent="colliders"]
+position = Vector2(-595, 761)
+shape = SubResource("RectangleShape2D_dsw38")
+
+[node name="left wall" type="CollisionShape2D" parent="colliders"]
+position = Vector2(-1177, 432.5)
+shape = SubResource("RectangleShape2D_1q56j")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
