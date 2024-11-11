@@ -20,10 +20,11 @@ signal puzzle_completed(puzzle1)
 
 @onready var clue_scene = preload("res://clue.tscn").instantiate()
 
-func new_game():
-	print("game start")
+#func new_game():
+	#print("game start")
 
 func _ready():
+	$BackgroundLoop.play()
 	clue_scene.main_add_zoom_scene.connect(_on_normal_clue_clicked)
 
 	# Print clue node info
