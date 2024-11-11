@@ -50,6 +50,7 @@ func _input(event):
 						"description": clue_description,
 						"icon": clue_texture
 						})
+					print("mouse pos:", global_mouse_position)
 					_dialog_start()
 					_show_zoom_image()
 					show_clue_pickup_text()
@@ -61,9 +62,19 @@ func show_clue_pickup_text():
 	var clue_pickup_text_instance = clue_pickup_text_scene.instantiate()
 	get_tree().root.add_child(clue_pickup_text_instance)
 	clue_pickup_text_instance.z_index = 100 
-	var screen_position = get_viewport().get_camera_2d().get_global_mouse_position()
+	#var screen_position = get_viewport().get_camera_2d().get_global_mouse_position()
 	
-	clue_pickup_text_instance.position = screen_position
+	#clue_pickup_text_instance.position = screen_position
+		# Get the viewport size
+	var viewport_size = get_viewport().size
+
+	# Calculate the top-right position
+	var camera_pos = get_viewport().get_camera_2d().global_position
+	#var top_right_position = Vector2(viewport_size.x-400, 0)
+	#clue_pickup_text_instance.position = top_right_position
+	# Set the position
+	clue_pickup_text_instance.position = Vector2(camera_pos.x+255,0)
+	print("clue pickup pos: ",clue_pickup_text_instance.position)
 
 
 	await clue_pickup_text_instance.show_message("Item has been picked up", display_time)
