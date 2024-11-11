@@ -1,25 +1,46 @@
-[gd_scene load_steps=9 format=3 uid="uid://be6glo10et5ru"]
+[gd_scene load_steps=12 format=3 uid="uid://be6glo10et5ru"]
 
-[ext_resource type="Script" path="res://Introduction/introduction.gd" id="1_ebyxb"]
+[ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_1diqn"]
 [ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="2_qiney"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="3_n3vt2"]
 [ext_resource type="FontFile" uid="uid://debhhnvyq2u7l" path="res://fonts/GhoulFriAOE.ttf" id="4_bsbwu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31d8l"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mco2"]
 bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cj2ck"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogox5"]
 bg_color = Color(0.217684, 0.0639309, 0.0400902, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fprus"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_868qq"]
+bg_color = Color(0.348751, 0.121991, 0.0866908, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aq5al"]
+bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cedld"]
+bg_color = Color(0.217684, 0.0639309, 0.0400902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7p1n2"]
 bg_color = Color(0.348751, 0.121991, 0.0866908, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -36,8 +57,8 @@ border_color = Color(0, 0, 0, 1)
 shadow_color = Color(0.2484, 0.2484, 0.2484, 0.6)
 shadow_offset = Vector2(1, 1)
 
-[node name="Introduction" type="CanvasLayer"]
-script = ExtResource("1_ebyxb")
+[node name="wife_accused" type="CanvasLayer"]
+script = ExtResource("1_1diqn")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -47,23 +68,36 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.121569, 0, 0, 1)
 
-[node name="Deputy" parent="." instance=ExtResource("2_qiney")]
+[node name="Wife" parent="." instance=ExtResource("2_qiney")]
 position = Vector2(274, 479)
 scale = Vector2(7, 7)
 
-[node name="Start Game" type="Button" parent="."]
+[node name="Exit Game" type="Button" parent="."]
+offset_left = 706.0
+offset_top = 619.0
+offset_right = 959.0
+offset_bottom = 701.0
+theme_override_fonts/font = ExtResource("3_n3vt2")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_4mco2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ogox5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_868qq")
+text = "Exit
+"
+
+[node name="Replay Game" type="Button" parent="."]
 offset_left = 704.0
 offset_top = 504.0
 offset_right = 957.0
 offset_bottom = 586.0
 theme_override_fonts/font = ExtResource("3_n3vt2")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/hover = SubResource("StyleBoxFlat_31d8l")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cj2ck")
-theme_override_styles/normal = SubResource("StyleBoxFlat_fprus")
-text = "Start Game"
+theme_override_styles/hover = SubResource("StyleBoxFlat_aq5al")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cedld")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7p1n2")
+text = "Replay"
 
-[node name="Game Title" type="Label" parent="Start Game"]
+[node name="Game Title" type="Label" parent="Replay Game"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -148,4 +182,4 @@ theme_override_fonts/font = ExtResource("3_n3vt2")
 theme_override_font_sizes/font_size = 30
 text = "Press 'Enter' to skip..."
 
-[connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Replay Game" to="." method="_on_replay_game_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://tkn36d3r41w1"]
 
-[ext_resource type="Script" path="res://Introduction/introduction.gd" id="1_py55d"]
+[ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_diwa1"]
 [ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="2_r0kgc"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="3_moqtl"]
 [ext_resource type="FontFile" uid="uid://debhhnvyq2u7l" path="res://fonts/GhoulFriAOE.ttf" id="4_ixwac"]
@@ -36,8 +36,8 @@ border_color = Color(0, 0, 0, 1)
 shadow_color = Color(0.2484, 0.2484, 0.2484, 0.6)
 shadow_offset = Vector2(1, 1)
 
-[node name="Introduction" type="CanvasLayer"]
-script = ExtResource("1_py55d")
+[node name="chef_accused" type="CanvasLayer"]
+script = ExtResource("1_diwa1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -51,7 +51,7 @@ color = Color(0.121569, 0, 0, 1)
 position = Vector2(274, 479)
 scale = Vector2(7, 7)
 
-[node name="Start Game" type="Button" parent="."]
+[node name="Replay Game" type="Button" parent="."]
 offset_left = 704.0
 offset_top = 504.0
 offset_right = 957.0
@@ -61,9 +61,9 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = SubResource("StyleBoxFlat_31d8l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cj2ck")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fprus")
-text = "Start Game"
+text = "Replay"
 
-[node name="Game Title" type="Label" parent="Start Game"]
+[node name="Game Title" type="Label" parent="Replay Game"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -81,7 +81,21 @@ theme_override_font_sizes/font_size = 90
 text = "Mansion Murder"
 horizontal_alignment = 1
 
+[node name="Exit Game" type="Button" parent="."]
+offset_left = 706.0
+offset_top = 619.0
+offset_right = 959.0
+offset_bottom = 701.0
+theme_override_fonts/font = ExtResource("3_moqtl")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_31d8l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cj2ck")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fprus")
+text = "Exit
+"
+
 [node name="TextboxContainer" type="MarginContainer" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -148,4 +162,5 @@ theme_override_fonts/font = ExtResource("3_moqtl")
 theme_override_font_sizes/font_size = 30
 text = "Press 'Enter' to skip..."
 
-[connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Replay Game" to="." method="_on_replay_game_pressed"]
+[connection signal="pressed" from="Exit Game" to="." method="_on_exit_game_pressed"]

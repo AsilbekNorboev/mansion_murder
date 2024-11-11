@@ -1,25 +1,25 @@
 [gd_scene load_steps=9 format=3 uid="uid://do22xrru64f48"]
 
-[ext_resource type="Script" path="res://Introduction/introduction.gd" id="1_hbh8p"]
+[ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_6xnvw"]
 [ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="2_damls"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="3_vyg7s"]
 [ext_resource type="FontFile" uid="uid://debhhnvyq2u7l" path="res://fonts/GhoulFriAOE.ttf" id="4_7dum0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31d8l"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56o2w"]
 bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cj2ck"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w015a"]
 bg_color = Color(0.217684, 0.0639309, 0.0400902, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fprus"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh7vw"]
 bg_color = Color(0.348751, 0.121991, 0.0866908, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -36,8 +36,8 @@ border_color = Color(0, 0, 0, 1)
 shadow_color = Color(0.2484, 0.2484, 0.2484, 0.6)
 shadow_offset = Vector2(1, 1)
 
-[node name="Introduction" type="CanvasLayer"]
-script = ExtResource("1_hbh8p")
+[node name="gardener_accused" type="CanvasLayer"]
+script = ExtResource("1_6xnvw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -47,23 +47,23 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.121569, 0, 0, 1)
 
-[node name="Deputy" parent="." instance=ExtResource("2_damls")]
+[node name="Gardener" parent="." instance=ExtResource("2_damls")]
 position = Vector2(274, 479)
 scale = Vector2(7, 7)
 
-[node name="Start Game" type="Button" parent="."]
-offset_left = 704.0
-offset_top = 504.0
-offset_right = 957.0
-offset_bottom = 586.0
+[node name="Replay Game" type="Button" parent="."]
+offset_left = 761.0
+offset_top = 341.0
+offset_right = 1014.0
+offset_bottom = 423.0
 theme_override_fonts/font = ExtResource("3_vyg7s")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/hover = SubResource("StyleBoxFlat_31d8l")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cj2ck")
-theme_override_styles/normal = SubResource("StyleBoxFlat_fprus")
-text = "Start Game"
+theme_override_styles/hover = SubResource("StyleBoxFlat_56o2w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w015a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jh7vw")
+text = "Replay"
 
-[node name="Game Title" type="Label" parent="Start Game"]
+[node name="Game Title" type="Label" parent="Replay Game"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -81,7 +81,21 @@ theme_override_font_sizes/font_size = 90
 text = "Mansion Murder"
 horizontal_alignment = 1
 
+[node name="Exit Game" type="Button" parent="."]
+offset_left = 760.0
+offset_top = 467.0
+offset_right = 1013.0
+offset_bottom = 549.0
+theme_override_fonts/font = ExtResource("3_vyg7s")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_56o2w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w015a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jh7vw")
+text = "Exit
+"
+
 [node name="TextboxContainer" type="MarginContainer" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -148,4 +162,4 @@ theme_override_fonts/font = ExtResource("3_vyg7s")
 theme_override_font_sizes/font_size = 30
 text = "Press 'Enter' to skip..."
 
-[connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Replay Game" to="." method="_on_replay_game_pressed"]
