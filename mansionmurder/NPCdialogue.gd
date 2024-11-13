@@ -26,13 +26,14 @@ func _input_event(viewport, event, shape_idx):
 		print("you clicked the ", self.name)
 		_dialog_start()
 
-
 #on click, add text from the array to populate the textbox scene
 func _dialog_start():
 	if is_dialog_active:
 		return
 	if not dialog:
 		return
+	#toggle overlay
+	textappear.get_node("Overlay").show()
 		
 	lines = get_lines(InventoryManager.get_inventory(), dialog.dialog_dictionary)
 	
@@ -75,6 +76,6 @@ func get_lines(inventory_list, dialog_dictionary):
 #change cursor when hovering over
 func _on_mouse_entered() -> void:
 		Input.set_custom_mouse_cursor(cursor, Input.CURSOR_ARROW, Vector2(16,16))
-
+#reset cursor back to default
 func _on_mouse_exited() -> void:
 		Input.set_custom_mouse_cursor(null)
