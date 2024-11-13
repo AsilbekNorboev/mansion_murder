@@ -85,7 +85,6 @@ shape = SubResource("CapsuleShape2D_u6l7w")
 
 [node name="Dialogue" type="Node" parent="."]
 script = ExtResource("16_3dk3l")
-lines = Array[String](["This is a mess, Detective. I’ve seen my fair share of crime scenes, but this one...", "I just hope you’re quicker than the last guy we had investigating. Took him weeks to figure out where the body was."])
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

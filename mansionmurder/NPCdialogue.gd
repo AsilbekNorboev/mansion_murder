@@ -9,8 +9,9 @@ var current_line_index = 0
 
 var is_dialog_active = false
 
-@onready var lines = $Dialogue.lines
+var lines = []
 
+@onready var dialog = $Dialogue
 @onready var animated_sprite = $AnimatedSprite2D # Reference to the AnimatedSprite2D node
 @onready var collision_shape = $CollisionShape2D
 
@@ -30,6 +31,11 @@ func _input_event(viewport, event, shape_idx):
 func _dialog_start():
 	if is_dialog_active:
 		return
+	if not dialog:
+		return
+		
+	lines = get_lines(InventoryManager.get_inventory(), dialog.dialog_dictionary)
+	
 	if not lines:
 		return
 	if (textbox_scene.find_parent("*") == null):
@@ -56,6 +62,15 @@ func _unhandled_input(event):
 		#if there is more text left, display the next line of text
 		else:
 			textappear.add_text(lines[current_line_index])
+			
+			
+func get_lines(inventory_list, dialog_dictionary):
+	for clue_index in range(inventory_list.size()-1, -1, -1):
+		if not dialog_dictionary.has(inventory_list[clue_index].name):
+			continue
+		return dialog_dictionary[inventory_list[clue_index].name]
+				
+	return dialog_dictionary[""]
 
 #change cursor when hovering over
 func _on_mouse_entered() -> void:
