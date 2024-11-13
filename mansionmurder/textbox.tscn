@@ -1,9 +1,61 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdnmgmqgim23v"]
+[gd_scene load_steps=63 format=3 uid="uid://cdnmgmqgim23v"]
 
 [ext_resource type="Script" path="res://textbox_container.gd" id="1_b4rrd"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_at36y"]
 [ext_resource type="AudioStream" uid="uid://dgdsahk84hao8" path="res://audio/next_dialogue_sfx.wav" id="3_oqodl"]
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="4_hxv45"]
+[ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="5_s65gi"]
+[ext_resource type="Texture2D" uid="uid://d2pjchcx0kso7" path="res://art/NPC/Chef/Chef-2.png" id="6_6avsv"]
+[ext_resource type="Texture2D" uid="uid://b7r4djrgj3kfg" path="res://art/NPC/Chef/Chef-3.png" id="7_31wke"]
+[ext_resource type="Texture2D" uid="uid://bt21upprpmejs" path="res://art/NPC/Chef/Chef-4.png" id="8_uqmsi"]
+[ext_resource type="Texture2D" uid="uid://cramiw43ec8l" path="res://art/NPC/Chef/Chef-5.png" id="9_b0xr3"]
+[ext_resource type="Texture2D" uid="uid://oy83kkgucp12" path="res://art/NPC/Chef/Chef-6.png" id="10_r071e"]
+[ext_resource type="Texture2D" uid="uid://cj5tn2n4jcdwk" path="res://art/NPC/Chef/Chef-7.png" id="11_v4i87"]
+[ext_resource type="Texture2D" uid="uid://gprogagptd4c" path="res://art/NPC/Chef/Chef-8.png" id="12_ret5r"]
+[ext_resource type="Texture2D" uid="uid://y5px765aihxm" path="res://art/NPC/Chef/Chef-9.png" id="13_hv4cc"]
+[ext_resource type="Texture2D" uid="uid://c4m0d22bnvrbl" path="res://art/NPC/Chef/Chef-10.png" id="14_akdtw"]
+[ext_resource type="Texture2D" uid="uid://xbhy2m0mmuqc" path="res://art/NPC/Chef/Chef-11.png" id="15_d3iak"]
+[ext_resource type="Texture2D" uid="uid://cyr6vnfag6yo2" path="res://art/NPC/Chef/Chef-12.png" id="16_s0i8h"]
+[ext_resource type="Texture2D" uid="uid://dct5fbf03cmir" path="res://art/NPC/Chef/Chef-13.png" id="17_wxk43"]
+[ext_resource type="Texture2D" uid="uid://wn71042djilq" path="res://art/NPC/Chef/Chef-14.png" id="18_ujacs"]
+[ext_resource type="Texture2D" uid="uid://4mefy3j2jqvf" path="res://art/NPC/Deputy/Deputy-1.png" id="19_s7d0i"]
+[ext_resource type="Texture2D" uid="uid://q6iqonmc2uhu" path="res://art/NPC/Deputy/Deputy-2.png" id="20_jbyiy"]
+[ext_resource type="Texture2D" uid="uid://rdiym5w3dqs0" path="res://art/NPC/Deputy/Deputy-3.png" id="21_r3evk"]
+[ext_resource type="Texture2D" uid="uid://cokhux5rrwv24" path="res://art/NPC/Deputy/Deputy-4.png" id="22_6wr0g"]
+[ext_resource type="Texture2D" uid="uid://c2ojptm42g1jq" path="res://art/NPC/Deputy/Deputy-5.png" id="23_3xkxc"]
+[ext_resource type="Texture2D" uid="uid://cjuvotg6kisu8" path="res://art/NPC/Deputy/Deputy-6.png" id="24_w0nnt"]
+[ext_resource type="Texture2D" uid="uid://4k5rqayo8njt" path="res://art/NPC/Deputy/Deputy-7.png" id="25_vkvvh"]
+[ext_resource type="Texture2D" uid="uid://cvyh8unmp6yu5" path="res://art/NPC/Deputy/Deputy-8.png" id="26_v2pbn"]
+[ext_resource type="Texture2D" uid="uid://brs1ctpxyrfsk" path="res://art/NPC/Deputy/Deputy-9.png" id="27_4vbof"]
+[ext_resource type="Texture2D" uid="uid://brxc3qatsmc4" path="res://art/NPC/Deputy/Deputy-10.png" id="28_yk3bd"]
+[ext_resource type="Texture2D" uid="uid://bcr526xg5qjoa" path="res://art/NPC/Deputy/Deputy-11.png" id="29_84e3d"]
+[ext_resource type="Texture2D" uid="uid://bcr0rxe8qn7m" path="res://art/NPC/Deputy/Deputy-12.png" id="30_qcdjg"]
+[ext_resource type="Texture2D" uid="uid://vocicb8uhbxn" path="res://art/NPC/Deputy/Deputy-13.png" id="31_5fhc5"]
+[ext_resource type="Texture2D" uid="uid://c3ahe60006bnr" path="res://art/NPC/Deputy/Deputy-14.png" id="32_phec8"]
+[ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="33_q6lp3"]
+[ext_resource type="Texture2D" uid="uid://cigmgtqqys4a8" path="res://art/NPC/Maid/Maid-2.png" id="34_stssy"]
+[ext_resource type="Texture2D" uid="uid://dw8qjkx7dflok" path="res://art/NPC/Maid/Maid-3.png" id="35_37gu1"]
+[ext_resource type="Texture2D" uid="uid://dvatrox5o425u" path="res://art/NPC/Maid/Maid-4.png" id="36_bh3qf"]
+[ext_resource type="Texture2D" uid="uid://vilqu11acpnp" path="res://art/NPC/Maid/Maid-5.png" id="37_n0xru"]
+[ext_resource type="Texture2D" uid="uid://ctmykf6rkt7wl" path="res://art/NPC/Wife/Wife-1.png" id="38_o83iv"]
+[ext_resource type="Texture2D" uid="uid://c4leex18va013" path="res://art/NPC/Wife/Wife-2.png" id="39_ll205"]
+[ext_resource type="Texture2D" uid="uid://ccl3a8i1nrtp8" path="res://art/NPC/Wife/Wife-3.png" id="40_iy4v3"]
+[ext_resource type="Texture2D" uid="uid://br1lr1ad2snsi" path="res://art/NPC/Wife/Wife-4.png" id="41_nysuu"]
+[ext_resource type="Texture2D" uid="uid://ercjt07alluc" path="res://art/NPC/Wife/Wife-5.png" id="42_v5hib"]
+[ext_resource type="Texture2D" uid="uid://dvtrmyhgte871" path="res://art/NPC/Gardener/Gardener-1.png" id="43_2414y"]
+[ext_resource type="Texture2D" uid="uid://4rcbg4cdpsog" path="res://art/NPC/Gardener/Gardener-2.png" id="44_v2ogy"]
+[ext_resource type="Texture2D" uid="uid://nk6e7eei3pj3" path="res://art/NPC/Gardener/Gardener-3.png" id="45_ovjjo"]
+[ext_resource type="Texture2D" uid="uid://bj4cvn16vx0w6" path="res://art/NPC/Gardener/Gardener-4.png" id="46_fbscs"]
+[ext_resource type="Texture2D" uid="uid://byko5jdthe5nc" path="res://art/NPC/Gardener/Gardener-5.png" id="47_vexsv"]
+[ext_resource type="Texture2D" uid="uid://deafykafe2l0o" path="res://art/NPC/Gardener/Gardener-6.png" id="48_4avs2"]
+[ext_resource type="Texture2D" uid="uid://bs4kr8esf5hbl" path="res://art/NPC/Gardener/Gardener-7.png" id="49_nudmh"]
+[ext_resource type="Texture2D" uid="uid://bjoypuelukntw" path="res://art/NPC/Gardener/Gardener-8.png" id="50_jdah8"]
+[ext_resource type="Texture2D" uid="uid://bsm15cnehs777" path="res://art/NPC/Gardener/Gardener-9.png" id="51_y3ogc"]
+[ext_resource type="Texture2D" uid="uid://bk1kqahji1mh0" path="res://art/NPC/Gardener/Gardener-10.png" id="52_x1yce"]
+[ext_resource type="Texture2D" uid="uid://fjg00hillxyl" path="res://art/NPC/Gardener/Gardener-11.png" id="53_l3eat"]
+[ext_resource type="Texture2D" uid="uid://baj4bw02gmaja" path="res://art/NPC/Gardener/Gardener-12.png" id="54_o04nr"]
+[ext_resource type="Texture2D" uid="uid://dlccc013bh4ld" path="res://art/NPC/Gardener/Gardener-13.png" id="55_uby4x"]
+[ext_resource type="Texture2D" uid="uid://csqd10iwmll7q" path="res://art/NPC/Gardener/Gardener-14.png" id="56_lrd3b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xuhy"]
 bg_color = Color(0, 0, 0, 1)
@@ -12,6 +64,202 @@ border_width_top = 6
 border_width_right = 6
 border_width_bottom = 6
 border_color = Color(0.466667, 0.352941, 0.105882, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ytbd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_s65gi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6avsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_31wke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uqmsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b0xr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r071e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v4i87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ret5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hv4cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_akdtw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_d3iak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_s0i8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wxk43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ujacs")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_je47w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_s7d0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jbyiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_r3evk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6wr0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_3xkxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_w0nnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vkvvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_v2pbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4vbof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_yk3bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_84e3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_qcdjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5fhc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_phec8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d1akk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_q6lp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_stssy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_37gu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_bh3qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_n0xru")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rk3b0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_o83iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ll205")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_iy4v3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_nysuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_v5hib")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ms4ue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_2414y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_v2ogy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ovjjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_fbscs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_vexsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_4avs2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_nudmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_jdah8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_y3ogc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_x1yce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_l3eat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_o04nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_uby4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_lrd3b")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="textbox" type="CanvasLayer"]
 
@@ -65,10 +313,43 @@ volume_db = 10.0
 [node name="Overlay" type="Sprite2D" parent="TextboxContainer"]
 visible = false
 modulate = Color(0.016, 0.016, 0.016, 0.624)
-z_index = -1
+z_index = -2
 position = Vector2(547, 0)
 scale = Vector2(3, 3.767)
 texture = ExtResource("4_hxv45")
+
+[node name="Dialogue Sprites" type="Node" parent="TextboxContainer"]
+
+[node name="Chef Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
+visible = false
+z_index = -1
+position = Vector2(238, 345)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6ytbd")
+animation = &"idle"
+
+[node name="Deputy Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
+visible = false
+position = Vector2(11, -2)
+sprite_frames = SubResource("SpriteFrames_je47w")
+animation = &"idle"
+
+[node name="Maid Dialgoue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_d1akk")
+animation = &"idle"
+
+[node name="Wife Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
+visible = false
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_rk3b0")
+animation = &"idle"
+
+[node name="Gardener Dialgoue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
+visible = false
+position = Vector2(15, 0)
+sprite_frames = SubResource("SpriteFrames_ms4ue")
+animation = &"idle"
 
 [node name="SkipLabel" type="Label" parent="."]
 offset_left = 902.0

@@ -32,8 +32,19 @@ func _dialog_start():
 		return
 	if not dialog:
 		return
-	#toggle overlay
+	#toggle visibliity of overlay
 	textappear.get_node("Overlay").show()
+	#toggle visibliity of textsprites
+	if (self.name == "Chef"):
+		textappear.get_node("Dialogue Sprites/Chef Dialogue Sprite").show()
+	if (self.name == "Wife"):
+		textappear.get_node("Dialogue Sprites/Wife Dialogue Sprite").show()
+	if (self.name == "Dialogue Sprites/Deputy"):
+		textappear.get_node("Dialogue Sprites/Deputy Dialogue Sprite").show()
+	if (self.name == "Dialogue Sprites/Gardener"):
+		textappear.get_node("Dialogue Sprites/Gardener Dialogue Sprite").show()
+	if (self.name == "Maid"):
+		textappear.get_node("Dialogue Sprites/Maid Dialogue Sprite").show()
 		
 	lines = get_lines(InventoryManager.get_inventory(), dialog.dialog_dictionary)
 	
