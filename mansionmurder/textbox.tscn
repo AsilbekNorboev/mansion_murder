@@ -330,24 +330,34 @@ animation = &"idle"
 
 [node name="Deputy Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
-position = Vector2(11, -2)
+z_index = -1
+position = Vector2(290, 282)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_je47w")
 animation = &"idle"
 
 [node name="Maid Dialgoue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
+z_index = -1
+position = Vector2(334, 441)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_d1akk")
 animation = &"idle"
 
 [node name="Wife Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
-scale = Vector2(2.5, 2.5)
+z_index = -1
+position = Vector2(215, 392)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_rk3b0")
 animation = &"idle"
 
 [node name="Gardener Dialgoue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
-position = Vector2(15, 0)
+z_index = -1
+texture_filter = 1
+position = Vector2(309, 339)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ms4ue")
 animation = &"idle"
 
