@@ -20,6 +20,9 @@ signal puzzle_completed(puzzle1)
 
 @onready var clue_scene = preload("res://clue.tscn").instantiate()
 
+var first_clue_found = false
+
+
 #func new_game():
 	#print("game start")
 
@@ -66,12 +69,28 @@ func _on_clue_clicked(clue_data):
 	print("Clue clicked with data:", clue_data)
 	
 	if clue_data not in InventoryManager.get_inventory():
+		if not first_clue_found:
+			first_clue_found = true
+			show_first_clue_message()
 		InventoryManager.add_clue(clue_data)  # Add to inventory manager
 		inventory_ui.add_clue(clue_data)  # Add to UI immediately
 
 		# Call the function to hide the clue after it's clicked
 		hide_clue(clue_data)
+func show_first_clue_message():
+	# Create a PopupPanel node
+	var popup = PopupPanel.new()
+	add_child(popup)  # Add it to the scene tree
+	popup.set_size(Vector2(300, 100))  # Set its size
+	popup.popup_centered()  # Center the popup
 
+	# Create a label for the message and add it to the popup
+	var label = Label.new()
+	label.text = "You found your first clue! You can now accuse a suspect."
+	#label.autowrap = true  # Ensure text wraps if it's too long
+	popup.add_child(label)
+
+	# Optionally style the popup or the label for better appearance
 func hide_clue(clue_data):
 	# Check if the clue is a node and hide it
 	if clue_data is Node:
