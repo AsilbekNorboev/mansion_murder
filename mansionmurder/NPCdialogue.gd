@@ -7,6 +7,11 @@ var textbox_scene = preload("res://textbox.tscn").instantiate()
 var textappear = textbox_scene.get_node("TextboxContainer")
 var current_line_index = 0
 
+var cheftalksprite = textappear.get_node("Dialogue Sprites/Chef Dialogue Sprite")
+var wifetalksprite = textappear.get_node("Dialogue Sprites/Wife Dialogue Sprite")
+var gardenertalksprite = textappear.get_node("Dialogue Sprites/Gardener Dialgoue Sprite")
+var deputytalksprite = textappear.get_node("Dialogue Sprites/Deputy Dialogue Sprite")
+var maidtalksprite = textappear.get_node("Dialogue Sprites/Maid Dialogue Sprite")
 var is_dialog_active = false
 
 var lines = []
@@ -36,15 +41,25 @@ func _dialog_start():
 	textappear.get_node("Overlay").show()
 	#toggle visibliity of textsprites
 	if (self.name == "Chef"):
-		textappear.get_node("Dialogue Sprites/Chef Dialogue Sprite").show()
+		cheftalksprite.animation = "idle"
+		cheftalksprite.play()
+		cheftalksprite.show()
 	if (self.name == "Wife"):
-		textappear.get_node("Dialogue Sprites/Wife Dialogue Sprite").show()
-	if (self.name == "Dialogue Sprites/Deputy"):
-		textappear.get_node("Dialogue Sprites/Deputy Dialogue Sprite").show()
-	if (self.name == "Dialogue Sprites/Gardener"):
-		textappear.get_node("Dialogue Sprites/Gardener Dialogue Sprite").show()
+		wifetalksprite.animation = "idle"
+		wifetalksprite.play()
+		wifetalksprite.show()
+	if (self.name == "Deputy"):
+		deputytalksprite.animation = "idle"
+		deputytalksprite.play()
+		deputytalksprite.show()
+	if (self.name == "Gardener"):
+		gardenertalksprite.animation = "idle"
+		gardenertalksprite.play()
+		gardenertalksprite.show()
 	if (self.name == "Maid"):
-		textappear.get_node("Dialogue Sprites/Maid Dialogue Sprite").show()
+		maidtalksprite.animation = "idle"
+		maidtalksprite.play()
+		maidtalksprite.show()
 		
 	lines = get_lines(InventoryManager.get_inventory(), dialog.dialog_dictionary)
 	

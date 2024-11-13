@@ -331,12 +331,12 @@ animation = &"idle"
 [node name="Deputy Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
 z_index = -1
-position = Vector2(290, 282)
+position = Vector2(337, 283)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_je47w")
 animation = &"idle"
 
-[node name="Maid Dialgoue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
+[node name="Maid Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
 z_index = -1
 position = Vector2(334, 441)
