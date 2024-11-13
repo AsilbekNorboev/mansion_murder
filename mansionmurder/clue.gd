@@ -70,10 +70,11 @@ func show_clue_pickup_text():
 
 	# Calculate the top-right position
 	var camera_pos = get_viewport().get_camera_2d().global_position
+	print("camera pos: ", camera_pos)
 	#var top_right_position = Vector2(viewport_size.x-400, 0)
 	#clue_pickup_text_instance.position = top_right_position
 	# Set the position
-	clue_pickup_text_instance.position = Vector2(camera_pos.x+255,0)
+	clue_pickup_text_instance.position = Vector2(camera_pos.x+255,camera_pos.y-430)
 	print("clue pickup pos: ",clue_pickup_text_instance.position)
 
 
