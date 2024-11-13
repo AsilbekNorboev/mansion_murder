@@ -1,74 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://dquggvbpa25bl"]
+[gd_scene load_steps=11 format=3 uid="uid://dquggvbpa25bl"]
 
 [ext_resource type="Script" path="res://Introduction/introduction.gd" id="1_6ckga"]
-[ext_resource type="Texture2D" uid="uid://4mefy3j2jqvf" path="res://art/NPC/Deputy/Deputy-1.png" id="2_byefp"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_csjga"]
-[ext_resource type="Texture2D" uid="uid://q6iqonmc2uhu" path="res://art/NPC/Deputy/Deputy-2.png" id="3_csnjd"]
 [ext_resource type="FontFile" uid="uid://debhhnvyq2u7l" path="res://fonts/GhoulFriAOE.ttf" id="4_fcfhe"]
-[ext_resource type="Texture2D" uid="uid://rdiym5w3dqs0" path="res://art/NPC/Deputy/Deputy-3.png" id="4_jfuom"]
-[ext_resource type="Texture2D" uid="uid://cokhux5rrwv24" path="res://art/NPC/Deputy/Deputy-4.png" id="5_s32ii"]
-[ext_resource type="Texture2D" uid="uid://c2ojptm42g1jq" path="res://art/NPC/Deputy/Deputy-5.png" id="6_q0c0q"]
-[ext_resource type="Texture2D" uid="uid://cjuvotg6kisu8" path="res://art/NPC/Deputy/Deputy-6.png" id="7_46m4n"]
-[ext_resource type="Texture2D" uid="uid://4k5rqayo8njt" path="res://art/NPC/Deputy/Deputy-7.png" id="8_a3uai"]
-[ext_resource type="Texture2D" uid="uid://cvyh8unmp6yu5" path="res://art/NPC/Deputy/Deputy-8.png" id="9_pahh2"]
-[ext_resource type="Texture2D" uid="uid://brs1ctpxyrfsk" path="res://art/NPC/Deputy/Deputy-9.png" id="10_whri3"]
-[ext_resource type="Texture2D" uid="uid://brxc3qatsmc4" path="res://art/NPC/Deputy/Deputy-10.png" id="11_heym4"]
-[ext_resource type="Texture2D" uid="uid://bcr526xg5qjoa" path="res://art/NPC/Deputy/Deputy-11.png" id="12_wd7s6"]
-[ext_resource type="Texture2D" uid="uid://bcr0rxe8qn7m" path="res://art/NPC/Deputy/Deputy-12.png" id="13_daii2"]
-[ext_resource type="Texture2D" uid="uid://vocicb8uhbxn" path="res://art/NPC/Deputy/Deputy-13.png" id="14_7b4c4"]
-[ext_resource type="Texture2D" uid="uid://c3ahe60006bnr" path="res://art/NPC/Deputy/Deputy-14.png" id="15_iugtt"]
+[ext_resource type="Texture2D" uid="uid://c7s64igy8xpkt" path="res://art/NPC/Deputy/Deputy_intro.png" id="6_h7jsf"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="18_kx4gv"]
 [ext_resource type="AudioStream" uid="uid://dgdsahk84hao8" path="res://audio/next_dialogue_sfx.wav" id="19_id6f0"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5chha"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_byefp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_csnjd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_jfuom")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_s32ii")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_q0c0q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_46m4n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_a3uai")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_pahh2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_whri3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_heym4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_wd7s6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_daii2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_7b4c4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_iugtt")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 3.0
-}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31d8l"]
 bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)
@@ -111,12 +48,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.121569, 0, 0, 1)
-
-[node name="Deputy" type="AnimatedSprite2D" parent="."]
-position = Vector2(347, 462)
-scale = Vector2(7, 7)
-sprite_frames = SubResource("SpriteFrames_5chha")
-animation = &"idle"
 
 [node name="Start Game" type="Button" parent="."]
 offset_left = 704.0
@@ -222,5 +153,10 @@ volume_db = 20.0
 [node name="NextDialogueSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_id6f0")
 volume_db = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(490, 516)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("6_h7jsf")
 
 [connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]

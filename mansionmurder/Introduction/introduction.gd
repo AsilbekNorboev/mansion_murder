@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # Constants
-const CHAR_RATE = 0.075
+const CHAR_RATE = 0.01
 
 # Nodes
 @onready var textbox_container = $TextboxContainer
@@ -31,19 +31,12 @@ var tween: Tween
 func _ready():
 	_hide_textbox()
 	start_game_button.hide()
-	animated_sprite.animation = "idle"
-	animated_sprite.play()
 	
 	# Add dialogue lines
-	_queue_text("Ah, Detective! Chief Officer here, your charming guide through this delightful disaster we call Mansion Murder.")
-	_queue_text("Our victim, Mr. Burmingham, was found dead around 9:32 PM—clearly, he didn't make it to the dinner party.")
-	_queue_text("As for the suspects, we have Mrs. Burmingham, Chef Sordanio, Gardener James, and Maid Bertha.")
-	_queue_text("Move around using the arrow keys or WASD, because walking is a lot more fun than just standing there looking puzzled.")
-	_queue_text("To chat, just click on us—though I recommend being close enough so we can hear your brilliant deductions and not just your breathing.")
-	_queue_text("To uncover clues, approach them and click away! They’ll magically teleport into your inventory, and no, you don’t have to thank me for that.")
+	_queue_text("Ah, Detective! Chief Officer here, your charming guide through this delightful disaster we call Mansion Murder.Our victim, Mr. Burmingham, was found dead this evening in his own home.")
+	_queue_text("Move around using the arrow keys or WASD. This is a Click game so to interact with anything just click with your mouse")
 	_queue_text("Some clues come with puzzles—because what's a mystery without a little brain strain? Complete the puzzle, and voilà, another clue for your growing collection of detective swag.")
-	_queue_text("And once you've got your first clue, you can start accusing the suspects. Nail the right one, and you win—get it wrong, and well, let's just say the afterlife has a great social scene, too.")
-	_queue_text("Good luck, detective! Come find me, and let’s get this grim little party started!")
+	_queue_text("Once Invenory is full you can accuse suspects. Good luck, detective! Come find me, and let’s get this grim little party started!")
 
 	# Start displaying the first queued dialogue
 	_display_text()
