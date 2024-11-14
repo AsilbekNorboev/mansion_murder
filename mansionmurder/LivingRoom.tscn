@@ -89,7 +89,7 @@ position = Vector2(409, 303)
 clue_name = "Knife"
 lines = Array[String](["A knife lay next to the body of the deceased, its blade glinting ominously. A fresh stain of blood is smeared along its edge.", "This knife looks like it came straight from the kitchen. Not exactly what you'd use for a salad, unless you're preparing a very 'cutting' edge dish.", "This could be important. You might want to have a chat with Chef Sordanio.", "The knife has been added to your inventory as a clue."])
 clue_texture = ExtResource("7_jy6q6")
-clue_description = "Appears to be a knife"
+clue_description = "The knife"
 
 [node name="deadbody" parent="." instance=ExtResource("9_5sgsi")]
 position = Vector2(414, 344)
@@ -105,7 +105,7 @@ position = Vector2(803, 191)
 clue_name = "Deed"
 lines = Array[String](["Appears to be the deed"])
 clue_texture = ExtResource("9_gcmtm")
-clue_description = "Appears to be the Professors deed"
+clue_description = "Professor's Deed"
 
 [node name="WorldeSafe" parent="." instance=ExtResource("9_yyjpp")]
 position = Vector2(800, 211)
