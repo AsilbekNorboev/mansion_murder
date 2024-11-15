@@ -33,6 +33,8 @@ func _input_event(viewport, event, shape_idx):
 
 #on click, add text from the array to populate the textbox scene
 func _dialog_start():
+#lock character movement until the dialogue ends
+	get_tree().paused = true
 	if is_dialog_active:
 		return
 	if not dialog:
@@ -72,6 +74,8 @@ func _dialog_start():
 	
 			
 func _dialog_end():
+	#unlock character movement when  the dialogue ends
+	get_tree().paused = false
 	#hide the textbox
 	is_dialog_active = false
 	current_line_index = 0

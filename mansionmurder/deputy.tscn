@@ -72,6 +72,7 @@ radius = 22.0
 height = 172.0
 
 [node name="Deputy" type="Area2D"]
+process_mode = 3
 script = ExtResource("1_l61ar")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

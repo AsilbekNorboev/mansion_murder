@@ -38,11 +38,11 @@ script = ExtResource("1_8pb21")
 [node name="Background" type="ColorRect" parent="."]
 z_index = -1
 layout_mode = 0
-offset_left = -71.0
-offset_top = -77.0
-offset_right = -31.0
-offset_bottom = -37.0
-scale = Vector2(33.6042, 20.6932)
+offset_left = -130.0
+offset_top = -114.0
+offset_right = -90.0
+offset_bottom = -74.0
+scale = Vector2(35.6442, 22.9332)
 color = Color(0.121569, 0, 0, 1)
 
 [node name="Settings Text" type="Label" parent="."]
@@ -96,6 +96,7 @@ text = "Mute
 layout_mode = 2
 
 [node name="Exit Game" type="Button" parent="."]
+layout_mode = 0
 offset_left = -12.0
 offset_top = 415.0
 offset_right = 241.0
@@ -107,6 +108,18 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rg2fj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qoytx")
 text = "Exit Game"
 
+[node name="Return" type="Button" parent="."]
+offset_left = -12.0
+offset_top = 294.0
+offset_right = 241.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("3_e6h66")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_11375")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rg2fj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qoytx")
+text = "Main Menu"
+
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ehn7o")
 volume_db = 20.0
@@ -114,3 +127,4 @@ volume_db = 20.0
 [connection signal="value_changed" from="Audio Container/VolumeBoxContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="Audio Container/VolumeBoxContainer/Mute Button" to="." method="_on_mute_toggled"]
 [connection signal="pressed" from="Exit Game" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

@@ -26,3 +26,9 @@ func _on_exit_game_pressed() -> void:
 	$ButtonClick.play()
 	wait(.5)
 	get_tree().quit()
+
+
+func _on_return_pressed() -> void:
+	$ButtonClick.play()
+	wait(.5)
+	get_tree().change_scene_to_file("res://Introduction/main_menu.tscn")

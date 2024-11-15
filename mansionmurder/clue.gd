@@ -81,6 +81,8 @@ func show_clue_pickup_text():
 func _dialog_start():
 	if is_dialog_active or not lines:
 		return
+	#lock character movement until the dialogue ends
+	get_tree().paused = true
 	# Instantiate and set up the textbox
 	var textbox_instance = textbox_scene.instantiate()
 	add_child(textbox_instance)
@@ -96,6 +98,8 @@ func _dialog_end(textbox_instance):
 	current_line_index = 0
 	#Remove the dialog box from the scene
 	textbox_instance.queue_free() 
+	#unlock character movement when the dialogue ends
+	get_tree().paused = false
 	#clue must have a description to be removed from scene (for the deadbody)
 	if (clue_description != ""):
 		#Remove clue from scene

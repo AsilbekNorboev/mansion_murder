@@ -35,6 +35,7 @@ animations = [{
 size = Vector2(9.90203, 14.8458)
 
 [node name="Wife" type="Area2D"]
+process_mode = 3
 script = ExtResource("1_mnyn3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
