@@ -1,7 +1,9 @@
 extends Node
 
 @export var dialog_dictionary = {
-	"": ["I still can't believe he’s gone...He never spent much time in the kitchen, but he was always around when the food was ready. He had a… presence, I suppose.",
+	"": 
+		["I still can't believe he’s gone...He never spent much time in the kitchen, but he was always around when the food was ready.",
+		"He had a… presence, I suppose.",
 		"Strange how quickly life can change, isn’t it? One minute, we're serving dinner, and the next… this."],
 	
 	"Knife": 
@@ -9,5 +11,6 @@ extends Node
 		
 	"Dirt":
 		["Dirt? What in the world... that’s not mine, I assure you. I keep my kitchen spotless.",
-		"The only dirt I’m familiar with is in the garden, and trust me, I didn’t bring it in here. I’ve got a gardener who’s always bringing in fresh produce—this might be his contribution to ‘freshness’."]
+		"The only dirt I’m familiar with is in the garden, and trust me, I didn’t bring it in here. I’ve got a gardener who’s always bringing in fresh",
+		"produce—this might be his contribution to ‘freshness’."]
 }

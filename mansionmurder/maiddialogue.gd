@@ -14,5 +14,6 @@ extends Node
 	"Gloves":
 		["Those... those are mine? But I swear, I would never—never hurt him! He was always kind to me.",
 		"You need to look at her—the wife. She’s the one who’s always been so cold toward him, always angry. She’s been on edge lately.",
+		
 		"You’re welcome to look through the bedroom. I’ve been cleaning here, maybe you’ll find something that makes more sense...if you look close enough"]
 }

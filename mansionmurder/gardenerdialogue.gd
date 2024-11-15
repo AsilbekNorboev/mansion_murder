@@ -1,8 +1,10 @@
 extends Node
 
 @export var dialog_dictionary = {
-	"": ["Ah, I hear we’ve got a bit of trouble in the house, eh? Not the first time something’s gone missing, but I’m sorry to hear it.",
-		"As for me, I’m just here to keep the garden in shape and drop off the freshest produce for the kitchen. My tomatoes? They’re the best in town."],
+	"":
+		["Ah, I hear we’ve got a bit of trouble in the house, eh? Not the first time something’s gone missing, but I’m sorry to hear it.",
+		"As for me, I’m just here to keep the garden in shape and drop off the freshest produce for the kitchen.",
+		 "My tomatoes? They’re the best in town."],
 	
 	"Knife": 
 		["A knife? From the kitchen? Well, that’s not out of the ordinary.", "I just bring the produce to the chef, fresh as it comes.", "As for knives, well, that's his jurisdiction."],
