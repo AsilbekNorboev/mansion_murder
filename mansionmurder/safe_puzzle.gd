@@ -31,7 +31,7 @@ func reset_game():
 func _input(event):
 	# Check for ESC key to return to the Living Room scene
 	if event is InputEventKey and event.is_pressed() and event.keycode == KEY_ESCAPE:
-		get_tree().change_scene_to_file("res://main.tscn")  # Switch to Living Room scene
+		get_tree().change_scene_to_file("res://bedroom.tscn")  # Switch to Living Room scene
 	
 	# Don't start game until menu is visible
 	if menu.visible:

@@ -24,6 +24,7 @@ expand_margin_left = 20.0
 expand_margin_right = 20.0
 
 [sub_resource type="SystemFont" id="SystemFont_1lvys"]
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_2c3er"]
 

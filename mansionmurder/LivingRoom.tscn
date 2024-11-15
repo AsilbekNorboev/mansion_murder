@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ct0b334pb2lmf"]
+[gd_scene load_steps=14 format=3 uid="uid://ct0b334pb2lmf"]
 
 [ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
@@ -8,13 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cb412322sexk3" path="res://art/Clues/Knife 2.png" id="7_jy6q6"]
 [ext_resource type="PackedScene" uid="uid://bmidqgfamf8bo" path="res://deadbody.tscn" id="9_5sgsi"]
 [ext_resource type="Texture2D" uid="uid://cvmyer14dijnk" path="res://art/Clues/Deed.png" id="9_gcmtm"]
-[ext_resource type="PackedScene" uid="uid://b6ihdt4baecc3" path="res://wordle_safe.tscn" id="9_yyjpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
 size = Vector2(1200, 680)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5b3ow"]
-size = Vector2(72, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lx2a"]
 size = Vector2(1193, 19)
@@ -42,10 +38,6 @@ position = Vector2(655, 395)
 shape = SubResource("RectangleShape2D_mddni")
 
 [node name="Colliders" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colliders"]
-position = Vector2(809, 211.5)
-shape = SubResource("RectangleShape2D_5b3ow")
 
 [node name="Upper Left Wall Collider" type="CollisionPolygon2D" parent="Colliders"]
 polygon = PackedVector2Array(30, 203, 72, 204, 119, 182, 185, 414, 270, 225, 578, 219, 581, 186, 577, 56, 55, 58)
@@ -106,8 +98,5 @@ clue_name = "Deed"
 lines = Array[String](["Appears to be the deed"])
 clue_texture = ExtResource("9_gcmtm")
 clue_description = "Professor's Deed"
-
-[node name="WorldeSafe" parent="." instance=ExtResource("9_yyjpp")]
-position = Vector2(800, 211)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
