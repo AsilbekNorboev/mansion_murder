@@ -13,5 +13,6 @@ extends Node
 		
 	"Gloves":
 		["Bloody gloves? Now, hold on a minute. Those? They’re way too small for me. I’ve got big hands—look at them! Those gloves must belong to someone else. A woman, probably.",
-		"But the wife or the maid... they might be a different story. They both wear gloves, right? Could be one of them. You should check with them."]
+		"But the wife or the maid... they might be a different story. They both wear gloves, right?",
+		"Could be one of them. You should check with them."]
 }
