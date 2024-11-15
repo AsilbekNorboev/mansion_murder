@@ -61,7 +61,7 @@ position = Vector2(-1286, 36)
 position = Vector2(655, 430)
 
 [node name="Garden" parent="Rooms" instance=ExtResource("12_ikl3x")]
-position = Vector2(2, -760)
+position = Vector2(-38, -720)
 
 [node name="Marker2D" type="Marker2D" parent="Rooms/Garden"]
 position = Vector2(655, 430)

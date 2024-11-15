@@ -50,7 +50,6 @@ func _input(event):
 						"description": clue_description,
 						"icon": clue_texture
 						})
-					print("mouse pos:", global_mouse_position)
 					_dialog_start()
 					_show_zoom_image()
 					show_clue_pickup_text()
@@ -83,13 +82,14 @@ func show_clue_pickup_text():
 func _dialog_start():
 	if is_dialog_active or not lines:
 		return
-	
 	# Instantiate and set up the textbox
 	var textbox_instance = textbox_scene.instantiate()
 	add_child(textbox_instance)
 	var text_container = textbox_instance.get_node("TextboxContainer")
 	text_container.add_text(lines[current_line_index])
 	is_dialog_active = true
+	textbox_instance.get_node("Control").show()
+
 
 # Ends the dialog for this clue
 func _dialog_end(textbox_instance):
