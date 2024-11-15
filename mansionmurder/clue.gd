@@ -96,6 +96,7 @@ func _dialog_start():
 func _dialog_end(textbox_instance):
 	is_dialog_active = false
 	current_line_index = 0
+	textbox_instance.hide_skip_label()
 	#Remove the dialog box from the scene
 	textbox_instance.queue_free() 
 	#unlock character movement when the dialogue ends

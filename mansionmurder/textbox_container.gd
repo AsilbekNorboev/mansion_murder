@@ -2,6 +2,7 @@ extends MarginContainer
 
 @onready var textbox_container = $"."
 @onready var label = $Panel/MarginContainer/HBoxContainer/Label
+@onready var maincontainer = $".."
 
 func _ready():
 	hide_textbox()
@@ -18,3 +19,5 @@ func add_text(lines):
 	label.text = lines
 	show_textbox()
 	
+func hide_skip_label():
+	maincontainer.get_node("SkipLabel").hide()
