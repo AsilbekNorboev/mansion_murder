@@ -69,8 +69,9 @@ clue_description = "a pair of garden gloves stained with blood."
 [node name="key" parent="." instance=ExtResource("4_8xh4o")]
 position = Vector2(870, 502)
 clue_name = "Key"
+lines = Array[String](["A golden key."])
 clue_texture = ExtResource("6_ywjo7")
-clue_description = "Appears to be a key"
+clue_description = "A golden key."
 
 [node name="Colliders" type="StaticBody2D" parent="."]
 position = Vector2(1255, -15)

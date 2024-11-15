@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="6_1tmqa"]
 [ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="6_wqe7p"]
 [ext_resource type="Texture2D" uid="uid://cb412322sexk3" path="res://art/Clues/Knife 2.png" id="7_jy6q6"]
-[ext_resource type="PackedScene" uid="uid://bmidqgfamf8bo" path="res://deadbody.tscn" id="9_5sgsi"]
+[ext_resource type="Texture2D" uid="uid://bf40stcykdaba" path="res://art/Clues/Body.png" id="8_d0tdq"]
 [ext_resource type="Texture2D" uid="uid://cvmyer14dijnk" path="res://art/Clues/Deed.png" id="9_gcmtm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
@@ -83,10 +83,6 @@ lines = Array[String](["A knife lay next to the body of the deceased, its blade 
 clue_texture = ExtResource("7_jy6q6")
 clue_description = "The knife"
 
-[node name="deadbody" parent="." instance=ExtResource("9_5sgsi")]
-position = Vector2(414, 344)
-scale = Vector2(1.4, 1.4)
-
 [node name="Wife" parent="." instance=ExtResource("5_vsfb2")]
 position = Vector2(256, 274)
 scale = Vector2(0.43, 0.43)
@@ -98,5 +94,11 @@ clue_name = "Deed"
 lines = Array[String](["Appears to be the deed"])
 clue_texture = ExtResource("9_gcmtm")
 clue_description = "Professor's Deed"
+
+[node name="Mr_Birmingham" parent="." instance=ExtResource("6_1tmqa")]
+position = Vector2(418, 367)
+scale = Vector2(1.5, 1.5)
+lines = Array[String](["The body of the deceased, Mr. Birmingham.", "He died sometime last night, the maid reported him dead upon coming into work the following morning."])
+clue_texture = ExtResource("8_d0tdq")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
