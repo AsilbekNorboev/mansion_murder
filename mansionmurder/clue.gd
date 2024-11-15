@@ -12,6 +12,7 @@ var cursor = preload("res://art/pointer.png")
 @export var clue_description: String = ""
 @onready var collision_shape = $CollisionShape2D
 @onready var clue_sprite = $Sprite2D  # Image to display the clue
+#signal textbox_active
 
 # Instance variables
 var textbox_scene = preload("res://textbox.tscn")
@@ -85,10 +86,10 @@ func _dialog_start():
 	# Instantiate and set up the textbox
 	var textbox_instance = textbox_scene.instantiate()
 	add_child(textbox_instance)
+	#textbox_active.emit()
 	var text_container = textbox_instance.get_node("TextboxContainer")
 	text_container.add_text(lines[current_line_index])
 	is_dialog_active = true
-	textbox_instance.get_node("Control").show()
 
 
 # Ends the dialog for this clue

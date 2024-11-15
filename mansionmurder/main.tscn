@@ -21,6 +21,7 @@ z_index = 1
 position = Vector2(542, 314)
 
 [node name="BackgroundLoop" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("3_qa8xs")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -369,12 +369,3 @@ offset_bottom = 524.0
 theme_override_fonts/font = ExtResource("2_at36y")
 theme_override_font_sizes/font_size = 30
 text = "Press 'Enter' to skip..."
-
-[node name="Control" type="Control" parent="."]
-visible = false
-z_index = 10
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1344.0
-offset_bottom = 869.0
-mouse_filter = 2
