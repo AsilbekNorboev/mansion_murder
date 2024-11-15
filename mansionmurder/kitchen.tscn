@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0tac7mqeul18"]
+[gd_scene load_steps=10 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://rhsfpcuok838" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
@@ -15,9 +15,6 @@ size = Vector2(1182.5, 70.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5lok"]
 size = Vector2(50, 731)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p865r"]
-size = Vector2(100, 82.5)
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_wkt5y")
@@ -73,10 +70,6 @@ polygon = PackedVector2Array(-914, 628, -895, 536, -415, 535, -381, 628, -426, 6
 [node name="Near Door" type="CollisionPolygon2D" parent="Colliders"]
 position = Vector2(0, 3)
 polygon = PackedVector2Array(-1173, 149, -1132, 203, -1084, 337, -1054, 252, -1130, 63, -1201, 70, -1194, 117)
-
-[node name="Chef Collision" type="CollisionShape2D" parent="Colliders"]
-position = Vector2(-427, 432.25)
-shape = SubResource("RectangleShape2D_p865r")
 
 [node name="Left Island" type="CollisionPolygon2D" parent="Colliders"]
 polygon = PackedVector2Array(-1108, 514, -1112, 750, -1202, 749, -1201, 469, -1116, 476, -1108, 506)
