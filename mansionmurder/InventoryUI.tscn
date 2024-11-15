@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b3hqh46weabti" path="res://accusation_menu.tscn" id="3_lpcbi"]
 
 [node name="InventoryUI" type="CanvasLayer"]
-process_mode = 3
 layer = 3
 script = ExtResource("1_lqmkm")
 

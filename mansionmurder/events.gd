@@ -22,9 +22,16 @@ signal puzzle_completed(puzzle1)
 
 var first_clue_found = false
 
+
+#func new_game():
+	#print("game start")
+
 func _ready():
 	$BackgroundLoop.play()
 	clue_scene.main_add_zoom_scene.connect(_on_normal_clue_clicked)
+
+	# Print clue node info
+	# print(clue_node_safe)
 
 	# Add any existing inventory items to the UI
 	for clue_data in InventoryManager.get_inventory():
@@ -55,14 +62,7 @@ func _on_inventory_button_pressed():
 	$InventoryUI.visible = not $InventoryUI.visible
 
 func _on_settings_button_pressed():
-	if ($SettingsUI.visible):
-		#disable character movement while in settings
-		get_tree().paused = false
-		$SettingsUI.visible = not $SettingsUI.visible
-	else:
-		$SettingsUI.visible = not $SettingsUI.visible
-		get_tree().paused = true
-
+	$SettingsUI.visible = not $SettingsUI.visible
 
 func _on_clue_clicked(clue_data):
 	# Add the clue to the inventory UI
@@ -77,7 +77,6 @@ func _on_clue_clicked(clue_data):
 
 		# Call the function to hide the clue after it's clicked
 		hide_clue(clue_data)
-		
 func show_first_clue_message():
 	# Create a PopupPanel node
 	var popup = PopupPanel.new()
@@ -103,15 +102,14 @@ func _on_normal_clue_clicked():
 	print("Zoom launched in main")
 	clue_scene.add_zoom_scene()
 
-
-	## Adding the zoom scene as a child to main
-	 #new_zoom_node.connect("add_zoom_scene")
-	 ##Assigning variable for ease
-	 #var main_zoom_scene = clue_scene.zoom_scene
-	 #Instantiating the clue scene and grabbing the specified zoom image from it
-	 #main_zoom_scene = load(clue_scene.zoom_image).instantiate()
+	# Adding the zoom scene as a child to main
+	# new_zoom_node.connect("add_zoom_scene")
+	# Assigning variable for ease
+	# var main_zoom_scene = clue_scene.zoom_scene
+	# Instantiating the clue scene and grabbing the specified zoom image from it
+	# main_zoom_scene = load(clue_scene.zoom_image).instantiate()
 	#
-	 #new_zoom_node = main_zoom_scene
-	 #Adding the zoom scene as a child to main
-	 #new_zoom_node.connect("add_zoom_scene")
-	 #new_zoom_node.add_zoom_scene()
+	# new_zoom_node = main_zoom_scene
+	# Adding the zoom scene as a child to main
+	# new_zoom_node.connect("add_zoom_scene")
+	# new_zoom_node.add_zoom_scene()

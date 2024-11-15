@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="2_jb47l"]
 
 [node name="SettingsUI" type="Control"]
-process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_left = 102.0
