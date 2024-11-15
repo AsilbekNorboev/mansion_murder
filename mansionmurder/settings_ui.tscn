@@ -1,7 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct67jwpeggu22"]
+[gd_scene load_steps=7 format=3 uid="uid://ct67jwpeggu22"]
 
 [ext_resource type="Script" path="res://settings_ui.gd" id="1_8pb21"]
-[ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="2_jb47l"]
+[ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="3_e6h66"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="4_ehn7o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11375"]
+bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rg2fj"]
+bg_color = Color(0.217684, 0.0639309, 0.0400902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qoytx"]
+bg_color = Color(0.348751, 0.121991, 0.0866908, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="SettingsUI" type="Control"]
 process_mode = 3
@@ -13,7 +35,29 @@ offset_right = 302.0
 offset_bottom = 107.0
 script = ExtResource("1_8pb21")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Background" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = -71.0
+offset_top = -77.0
+offset_right = -31.0
+offset_bottom = -37.0
+scale = Vector2(33.6042, 20.6932)
+color = Color(0.121569, 0, 0, 1)
+
+[node name="Settings Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 465.0
+offset_top = -50.0
+offset_right = 705.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_e6h66")
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Audio Container" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,44 +68,49 @@ offset_right = 9.0
 offset_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VolumeBoxContainer" type="VBoxContainer" parent="Audio Container"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Volume Text" type="Label" parent="Audio Container/VolumeBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_e6h66")
+theme_override_font_sizes/font_size = 30
 text = "Volume"
 
-[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+[node name="Volume" type="HSlider" parent="Audio Container/VolumeBoxContainer"]
 layout_mode = 2
 value = 100.0
 
-[node name="Mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+[node name="Mute Text" type="Label" parent="Audio Container/VolumeBoxContainer"]
 layout_mode = 2
-
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_e6h66")
+theme_override_font_sizes/font_size = 30
 text = "Mute
 "
 
-[node name="TextureRect" type="TextureRect" parent="."]
-z_index = -1
-layout_mode = 0
-offset_left = -40.0
-offset_top = -52.0
-offset_right = 760.0
-offset_bottom = 548.0
-mouse_filter = 2
-texture = ExtResource("2_jb47l")
+[node name="Mute Button" type="CheckBox" parent="Audio Container/VolumeBoxContainer"]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 124.0
-offset_top = -45.0
-offset_right = 317.0
-offset_bottom = 24.0
+[node name="Exit Game" type="Button" parent="."]
+offset_left = -12.0
+offset_top = 415.0
+offset_right = 241.0
+offset_bottom = 497.0
+theme_override_fonts/font = ExtResource("3_e6h66")
 theme_override_font_sizes/font_size = 50
-text = "Settings"
+theme_override_styles/hover = SubResource("StyleBoxFlat_11375")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rg2fj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qoytx")
+text = "Exit Game"
 
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ehn7o")
+volume_db = 20.0
+
+[connection signal="value_changed" from="Audio Container/VolumeBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="Audio Container/VolumeBoxContainer/Mute Button" to="." method="_on_mute_toggled"]
+[connection signal="pressed" from="Exit Game" to="." method="_on_exit_game_pressed"]
