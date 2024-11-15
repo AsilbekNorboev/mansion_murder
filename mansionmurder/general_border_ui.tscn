@@ -38,6 +38,7 @@ stream = ExtResource("4_pbeyp")
 volume_db = 20.0
 
 [node name="SettingsButton" type="Button" parent="."]
+process_mode = 3
 anchors_preset = -1
 anchor_left = 0.913
 anchor_top = 0.906
