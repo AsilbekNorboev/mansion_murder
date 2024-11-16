@@ -1,77 +1,100 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsgbmst7wprd3"]
+[gd_scene load_steps=7 format=3 uid="uid://bsgbmst7wprd3"]
 
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="1_gqlcb"]
 [ext_resource type="Script" path="res://inventory_ui.gd" id="1_lqmkm"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="2_2bw1c"]
+[ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_jgaly"]
 [ext_resource type="PackedScene" uid="uid://b3hqh46weabti" path="res://accusation_menu.tscn" id="3_lpcbi"]
+[ext_resource type="Texture2D" uid="uid://dau0m6tcnctxx" path="res://art/notebookpage.png" id="3_ulocx"]
 
 [node name="InventoryUI" type="CanvasLayer"]
 process_mode = 3
 layer = 3
 script = ExtResource("1_lqmkm")
 
-[node name="Title" type="Label" parent="."]
-offset_left = 128.0
-offset_top = 1.0
-offset_right = 810.0
-offset_bottom = 63.0
+[node name="Inventory Label" type="Label" parent="."]
+offset_left = 608.0
+offset_top = 75.0
+offset_right = 1290.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("2_jgaly")
 theme_override_font_sizes/font_size = 50
-text = "Inventory"
+text = "Inventory
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="."]
+offset_left = 604.0
+offset_top = -2.0
+offset_right = 1286.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("2_jgaly")
+theme_override_font_sizes/font_size = 50
+text = "Case Notes"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 132.0
+offset_left = 610.0
 offset_top = 6.0
-offset_right = 285.0
+offset_right = 763.0
 offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_jgaly")
 text = "Exit
 "
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-offset_left = 128.0
-offset_top = 65.0
-offset_right = 818.0
-offset_bottom = 649.0
+offset_left = 608.0
+offset_top = 154.0
+offset_right = 1298.0
+offset_bottom = 738.0
+scale = Vector2(1, 0.92)
 
 [node name="ClueContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Button Block" type="TextureRect" parent="."]
 z_index = -1
-offset_left = 128.0
+offset_left = 606.0
 offset_top = 1.0
-offset_right = 826.0
+offset_right = 1304.0
 offset_bottom = 65.0
 mouse_filter = 2
 texture = ExtResource("1_gqlcb")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="Everything Else Block" type="TextureRect" parent="."]
 z_index = -1
-offset_left = 128.0
+offset_left = 606.0
 offset_top = 67.0
-offset_right = 826.0
+offset_right = 1304.0
 offset_bottom = 692.0
 texture = ExtResource("1_gqlcb")
 expand_mode = 1
 
+[node name="NotebookPage" type="Sprite2D" parent="Everything Else Block"]
+position = Vector2(344, 312)
+scale = Vector2(-1.1904, 0.814272)
+texture = ExtResource("3_ulocx")
+
 [node name="SwitchButton" type="Button" parent="."]
-offset_left = 645.0
+offset_left = 1123.0
 offset_top = 10.0
-offset_right = 804.0
+offset_right = 1282.0
 offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_jgaly")
 text = "Suspects
 "
 
 [node name="AccusationMenu" parent="." instance=ExtResource("3_lpcbi")]
 visible = false
-offset_left = 127.0
-offset_top = 67.0
-offset_right = 161.0
-offset_bottom = 99.0
+offset_left = 605.0
+offset_top = 60.0
+offset_right = 645.0
+offset_bottom = 100.0
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_2bw1c")
