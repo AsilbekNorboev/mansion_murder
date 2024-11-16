@@ -71,7 +71,7 @@ animations = [{
 radius = 55.0
 height = 288.0
 
-[node name="Gardener" type="Area2D"]
+[node name="Gardener" type="Area2D" groups=["Suspects"]]
 process_mode = 3
 script = ExtResource("1_7w655")
 

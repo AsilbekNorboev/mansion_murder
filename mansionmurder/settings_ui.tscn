@@ -109,6 +109,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qoytx")
 text = "Exit Game"
 
 [node name="Return" type="Button" parent="."]
+layout_mode = 0
 offset_left = -12.0
 offset_top = 294.0
 offset_right = 241.0

@@ -71,7 +71,7 @@ animations = [{
 radius = 55.0
 height = 298.0
 
-[node name="Chef" type="Area2D"]
+[node name="Chef" type="Area2D" groups=["Suspects"]]
 process_mode = 3
 script = ExtResource("1_58tfy")
 

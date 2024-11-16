@@ -63,7 +63,7 @@ offset_left = 645.0
 offset_top = 10.0
 offset_right = 804.0
 offset_bottom = 56.0
-text = "Accuse
+text = "Suspects
 "
 
 [node name="AccusationMenu" parent="." instance=ExtResource("3_lpcbi")]

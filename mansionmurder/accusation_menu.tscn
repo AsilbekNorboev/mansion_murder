@@ -19,7 +19,6 @@ size_flags_vertical = 3
 script = ExtResource("1_b2ae4")
 
 [node name="Text" type="Label" parent="."]
-layout_mode = 0
 offset_left = 37.0
 offset_right = 664.0
 offset_bottom = 83.0
@@ -30,7 +29,6 @@ vertical_alignment = 1
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -1
-layout_mode = 0
 offset_right = 700.0
 offset_bottom = 638.0
 texture = ExtResource("1_hgcsa")
@@ -40,7 +38,6 @@ stream = ExtResource("3_itn42")
 volume_db = 20.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 0
 offset_left = 4.0
 offset_top = 85.0
 offset_right = 694.0
@@ -52,6 +49,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Chef" type="TextureRect" parent="ScrollContainer/NPCContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")
@@ -86,6 +84,7 @@ offset_bottom = 85.0
 text = "Accuse"
 
 [node name="Gardener" type="TextureRect" parent="ScrollContainer/NPCContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")
@@ -120,6 +119,7 @@ offset_bottom = 85.0
 text = "Accuse"
 
 [node name="Wife" type="TextureRect" parent="ScrollContainer/NPCContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")
@@ -155,6 +155,7 @@ offset_bottom = 85.0
 text = "Accuse"
 
 [node name="Maid" type="TextureRect" parent="ScrollContainer/NPCContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")

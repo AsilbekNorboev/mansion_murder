@@ -14,12 +14,19 @@ var deputytalksprite = textappear.get_node("Dialogue Sprites/Deputy Dialogue Spr
 var maidtalksprite = textappear.get_node("Dialogue Sprites/Maid Dialogue Sprite")
 var is_dialog_active = false
 
+#var NPC_identity
+#var Chef_identity
+#var Wife_identity
+#var Maid_identity
+#var Gardener_identity
+
 var lines = []
 
 @onready var dialog = $Dialogue
 @onready var animated_sprite = $AnimatedSprite2D # Reference to the AnimatedSprite2D node
 @onready var collision_shape = $CollisionShape2D
 
+var met_this_character = false
 
 func _ready():
 	# Start playing the idle animation as soon as the NPC is ready
@@ -29,6 +36,7 @@ func _ready():
 func _input_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click"):
 		print("you clicked the ", self.name)
+		met_this_character = true
 		_dialog_start()
 
 #on click, add text from the array to populate the textbox scene
@@ -46,10 +54,14 @@ func _dialog_start():
 		cheftalksprite.animation = "idle"
 		cheftalksprite.play()
 		cheftalksprite.show()
+		#NPC_identity = Chef_identity
+
 	if (self.name == "Wife"):
 		wifetalksprite.animation = "idle"
 		wifetalksprite.play()
 		wifetalksprite.show()
+		#NPC_identity = Wife_identity
+		
 	if (self.name == "Deputy"):
 		deputytalksprite.animation = "idle"
 		deputytalksprite.play()
@@ -58,11 +70,14 @@ func _dialog_start():
 		gardenertalksprite.animation = "idle"
 		gardenertalksprite.play()
 		gardenertalksprite.show()
+		#NPC_identity = Gardener_identity 
+
 	if (self.name == "Maid"):
 		maidtalksprite.animation = "idle"
 		maidtalksprite.play()
 		maidtalksprite.show()
-		
+		#NPC_identity = Maid_identity 
+
 	lines = get_lines(InventoryManager.get_inventory(), dialog.dialog_dictionary)
 	
 	if not lines:
@@ -109,3 +124,12 @@ func _on_mouse_entered() -> void:
 #reset cursor back to default
 func _on_mouse_exited() -> void:
 		Input.set_custom_mouse_cursor(null)
+
+#detect which NPCs you've met
+func met_character():
+	if (met_this_character == true):
+		Global.NPC = self.name
+		print("met ", Global.NPC)
+		#return Global.NPC
+	else:
+		pass
