@@ -14,12 +14,6 @@ var deputytalksprite = textappear.get_node("Dialogue Sprites/Deputy Dialogue Spr
 var maidtalksprite = textappear.get_node("Dialogue Sprites/Maid Dialogue Sprite")
 var is_dialog_active = false
 
-#var NPC_identity
-#var Chef_identity
-#var Wife_identity
-#var Maid_identity
-#var Gardener_identity
-
 var lines = []
 
 @onready var dialog = $Dialogue
@@ -36,7 +30,6 @@ func _ready():
 func _input_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click"):
 		print("you clicked the ", self.name)
-		met_this_character = true
 		_dialog_start()
 
 #on click, add text from the array to populate the textbox scene
@@ -54,29 +47,31 @@ func _dialog_start():
 		cheftalksprite.animation = "idle"
 		cheftalksprite.play()
 		cheftalksprite.show()
-		#NPC_identity = Chef_identity
+		met_this_character = true
 
 	if (self.name == "Wife"):
 		wifetalksprite.animation = "idle"
 		wifetalksprite.play()
 		wifetalksprite.show()
-		#NPC_identity = Wife_identity
-		
+		met_this_character = true
+
 	if (self.name == "Deputy"):
 		deputytalksprite.animation = "idle"
 		deputytalksprite.play()
 		deputytalksprite.show()
+		met_this_character = true
+	
 	if (self.name == "Gardener"):
 		gardenertalksprite.animation = "idle"
 		gardenertalksprite.play()
 		gardenertalksprite.show()
-		#NPC_identity = Gardener_identity 
+		met_this_character = true
 
 	if (self.name == "Maid"):
 		maidtalksprite.animation = "idle"
 		maidtalksprite.play()
 		maidtalksprite.show()
-		#NPC_identity = Maid_identity 
+		met_this_character = true
 
 	lines = get_lines(InventoryManager.get_inventory(), dialog.dialog_dictionary)
 	
@@ -128,8 +123,13 @@ func _on_mouse_exited() -> void:
 #detect which NPCs you've met
 func met_character():
 	if (met_this_character == true):
-		Global.NPC = self.name
-		print("met ", Global.NPC)
-		#return Global.NPC
-	else:
-		pass
+		#if they're not already in the suspect list...
+		if not self.name in Global.suspect_list:
+			Global.NPC = self.name
+			print("met ", Global.NPC)
+			#add them to the suspect list.
+			Global.suspect_list.push_back(Global.NPC)
+			print(Global.NPC, " has been added to the suspect list")
+			print(Global.suspect_list)
+		else:
+			Global.NPC = self.name
