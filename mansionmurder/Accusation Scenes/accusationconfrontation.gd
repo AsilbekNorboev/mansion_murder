@@ -43,16 +43,16 @@ func _ready():
 
 func _detect_NPC():
 	if (self.name == "chef_accused"):
-		_queue_text("I am the chef.")
+		_queue_text("I didn't do anything, you've got the wrong guy!")
 		
 	if (self.name == "gardener_accused"):
-		_queue_text("I am the gardener.")
+		_queue_text("I'm not a killer, I'm a gardener.")
 		
 	if (self.name == "maid_accused"):
-		_queue_text("I am the maid.")
+		_queue_text("I am the maid, I'm innocent!")
 		
 	if (self.name == "wife_accused"):
-		_queue_text("I am the wife.")
+		_queue_text("I am the killer! You caught me :(")
 
 func _process(delta):
 	match state:
