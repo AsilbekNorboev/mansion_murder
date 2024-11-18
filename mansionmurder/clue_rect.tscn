@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://2ouiukuiaa0u"]
+
+[ext_resource type="Script" path="res://clue_rect.gd" id="1_kjhj0"]
+[ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="1_rijtb"]
+[ext_resource type="Texture2D" uid="uid://cf0kb1ehkj1m1" path="res://art/Clues/testclue.png" id="2_am86m"]
+
+[node name="ClueRect" type="TextureRect"]
+offset_right = 300.0
+offset_bottom = 80.0
+script = ExtResource("1_kjhj0")
+
+[node name="ClueButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 80.0
+
+[node name="ClueLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.243333
+anchor_top = 0.025
+anchor_right = 0.856667
+anchor_bottom = 0.9625
+offset_right = -1.52588e-05
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_rijtb")
+theme_override_font_sizes/font_size = 20
+text = "A painting of a woman"
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="ClueImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.03125
+anchor_right = 0.21
+anchor_bottom = 0.96875
+grow_vertical = 2
+texture = ExtResource("2_am86m")
+expand_mode = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

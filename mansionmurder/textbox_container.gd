@@ -1,8 +1,47 @@
 extends MarginContainer
 
 @onready var textbox_container = $"."
-@onready var label = $Panel/MarginContainer/HBoxContainer/Label
+@onready var label = $OutlinePanel/MarginContainer/HBoxContainer/Label
 @onready var maincontainer = $".."
+@onready var clue_container: VBoxContainer = $OutlinePanel/ScrollContainer/ClueContainer
+@onready var scroll_container: ScrollContainer = $OutlinePanel/ScrollContainer
+@onready var margin_container: MarginContainer = $OutlinePanel/MarginContainer
+@onready var h_box_container: HBoxContainer = $OutlinePanel/MarginContainer/HBoxContainer
+
+
+signal _on_clue_clicked_text
+
+func add_clue(clue_data: Dictionary, lines):
+	print("Adding clue to inventory:", clue_data)
+
+	var clue_rect = preload("res://clue_rect.tscn")  # Path to your clue item scene
+	var clue_item = clue_rect.instantiate()  # Instance the clue item scene	
+	clue_item.clue_clicked.connect(_on_clue_clicked)
+
+	# Assuming your clue item scene has a method to set data
+	clue_item.set_data(clue_data, lines)  # Pass c
+	clue_container.add_child(clue_item)
+	
+func _on_clue_clicked(lines):
+	emit_signal("_on_clue_clicked_text", lines)
+
+func clear_clues():
+	for child in clue_container.get_children():
+		clue_container.remove_child(child)
+
+func show_clue_container(visible):
+	if visible and clue_container.get_child_count():
+		scroll_container.show()
+		scroll_container.size.x = 320
+		margin_container.size.x = 760
+		
+	else:
+		scroll_container.hide()
+		scroll_container.size.x = 0
+		margin_container.size.x = 1085
+
+func initialize_margin_container():
+	margin_container.size.x = 300	
 
 func _ready():
 	hide_textbox()
@@ -14,9 +53,9 @@ func hide_textbox():
 func show_textbox():
 	textbox_container.show()
 	
-func add_text(lines):
+func add_text(line):
 	$NextDialogueSfx.play()	
-	label.text = lines
+	label.text = line
 	show_textbox()
 	
 func hide_skip_label():

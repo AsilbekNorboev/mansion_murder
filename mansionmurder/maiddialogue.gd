@@ -1,7 +1,7 @@
 extends Node
 
 @export var dialog_dictionary = {
-	"": ["Oh, no... no, this can’t be happening. He was like family to me. I can’t believe he’s gone.",
+	"": ["Oh, no... no, this can’t be happening. I can’t believe he’s gone.",
 		"He didn’t deserve this... He was always so kind, always looking out for everyone. This... this isn’t fair."],
 	
 	"Knife": 

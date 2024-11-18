@@ -38,11 +38,12 @@ shape = SubResource("RectangleShape2D_j4bkx")
 [node name="Diary" parent="." instance=ExtResource("4_o0aq8")]
 position = Vector2(212, 602)
 clue_name = "Diary"
-lines = Array[String](["Looks like a diary"])
+lines = Array[String](["Looks like a diary", "Written on the front: Belongs to Mrs. Burmingham...", "Enrty 09/08/88: Mr. Burmingham had been having an affair...with THE MAID?!?!", "I can't believe it...I must get revenge.", "Clue has been added to inventory, you can now ask suspects about it."])
 clue_texture = ExtResource("5_txu53")
 clue_description = "Looks like a diaryLooks like a diary"
 
 [node name="Necklace" parent="." instance=ExtResource("4_o0aq8")]
+visible = false
 position = Vector2(962, 198)
 clue_name = "necklace"
 lines = Array[String](["A beautiful necklace with a heart pendant."])
@@ -50,6 +51,7 @@ clue_texture = ExtResource("6_xcdyy")
 clue_description = "A necklace with a heart pendant."
 
 [node name="Safe" parent="." instance=ExtResource("7_jlllh")]
+visible = false
 position = Vector2(855, 209)
 
 [node name="Colliders" type="StaticBody2D" parent="."]

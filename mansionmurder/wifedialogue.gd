@@ -2,7 +2,7 @@ extends Node
 
 @export var dialog_dictionary = {
 	"": 
-		["I can’t believe this is happening... he was everything to me. Well, most of the time, anyway.",
+		["I can’t believe this is happening... he was everything to me.",
 		"Who would do something like this? Who would hurt him?"],
 	
 	"Knife": 

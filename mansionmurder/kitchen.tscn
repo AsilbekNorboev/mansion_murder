@@ -35,6 +35,7 @@ position = Vector2(823, 352)
 scale = Vector2(0.66, 0.66)
 
 [node name="Envelope" parent="." instance=ExtResource("5_q6yu7")]
+visible = false
 position = Vector2(370, 162)
 lines = Array[String](["This seems to be an envelope"])
 clue_texture = ExtResource("6_ysihl")
@@ -43,7 +44,7 @@ clue_description = "This seems to be an envelope"
 [node name="Dirt" parent="." instance=ExtResource("5_q6yu7")]
 position = Vector2(1120, 285)
 clue_name = "Dirt"
-lines = Array[String](["This appears to be a plant from the Garden."])
+lines = Array[String](["A patch of dirt...this is incredibly unsanitary, especially in the kitchen", "This is a question for Chef Sordanio", "Clue has been added to inventory, you can now ask suspects about it."])
 clue_texture = ExtResource("4_k42ji")
 clue_description = "This appears to be a plant from the Garde."
 

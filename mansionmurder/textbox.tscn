@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cdnmgmqgim23v"]
+[gd_scene load_steps=64 format=3 uid="uid://cdnmgmqgim23v"]
 
 [ext_resource type="Script" path="res://textbox_container.gd" id="1_b4rrd"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_at36y"]
@@ -261,41 +261,48 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxlak"]
+bg_color = Color(0.75959, 0.172171, 2.88785e-07, 1)
+
 [node name="textbox" type="CanvasLayer"]
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
-anchors_preset = -1
-anchor_right = 0.793
-anchor_bottom = 0.225
-offset_left = 109.0
-offset_top = 489.0
-offset_right = 109.464
-offset_bottom = 489.2
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = -379.0
+offset_right = -85.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
 script = ExtResource("1_b4rrd")
 
-[node name="Panel" type="Panel" parent="TextboxContainer"]
+[node name="OutlinePanel" type="Panel" parent="TextboxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1xuhy")
 
-[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer/OutlinePanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.027
 anchor_top = 0.159
 anchor_right = 0.972
 anchor_bottom = 0.877
-offset_left = -0.0530014
-offset_top = -5.846
-offset_right = -0.90802
-offset_bottom = -7.138
+offset_top = -1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="TextboxContainer/Panel/MarginContainer"]
+[node name="TextPanel" type="Panel" parent="TextboxContainer/OutlinePanel/MarginContainer"]
+visible = false
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/Panel/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/OutlinePanel/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TextboxContainer/Panel/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="TextboxContainer/OutlinePanel/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(1, 10)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -305,6 +312,19 @@ theme_override_font_sizes/font_size = 40
 text = "Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!"
 autowrap_mode = 3
 clip_text = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TextboxContainer/OutlinePanel"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 20.0
+offset_right = 1128.0
+offset_bottom = 200.0
+horizontal_scroll_mode = 3
+
+[node name="ClueContainer" type="VBoxContainer" parent="TextboxContainer/OutlinePanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="NextDialogueSfx" type="AudioStreamPlayer" parent="TextboxContainer"]
 stream = ExtResource("3_oqodl")
@@ -369,3 +389,14 @@ offset_bottom = 524.0
 theme_override_fonts/font = ExtResource("2_at36y")
 theme_override_font_sizes/font_size = 30
 text = "Press 'Enter' to skip..."
+
+[node name="CloseButton" type="Button" parent="."]
+visible = false
+offset_left = 1173.0
+offset_top = 438.0
+offset_right = 1222.0
+offset_bottom = 478.0
+theme_override_fonts/font = ExtResource("2_at36y")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_rxlak")
+text = "X"

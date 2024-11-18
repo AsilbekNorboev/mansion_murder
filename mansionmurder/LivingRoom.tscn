@@ -79,7 +79,7 @@ scale = Vector2(1.2, 1.2)
 [node name="Knife" parent="." instance=ExtResource("6_1tmqa")]
 position = Vector2(409, 303)
 clue_name = "Knife"
-lines = Array[String](["A knife lay next to the body of the deceased, its blade glinting ominously. A fresh stain of blood is smeared along its edge.", "This knife looks like it came straight from the kitchen. Not exactly what you'd use for a salad, unless you're preparing a very 'cutting' edge dish.", "This could be important. You might want to have a chat with Chef Sordanio.", "The knife has been added to your inventory as a clue."])
+lines = Array[String](["A knife lay next to the body of the deceased...", "This knife looks like it came straight from the kitchen.", "You might want to have a chat with Chef Sordanio.", "Clue has been added to inventory, you can now ask suspects about it."])
 clue_texture = ExtResource("7_jy6q6")
 clue_description = "The knife"
 
@@ -98,7 +98,7 @@ clue_description = "Professor's Deed"
 [node name="Mr_Birmingham" parent="." instance=ExtResource("6_1tmqa")]
 position = Vector2(418, 367)
 scale = Vector2(1.5, 1.5)
-lines = Array[String](["The body of the deceased, Mr. Birmingham.", "He died sometime last night, the maid reported him dead upon coming into work the following morning."])
+lines = Array[String](["The body of the deceased, Mr. Birmingham.", "Mrs. Birmingham found him dead this morning..."])
 clue_texture = ExtResource("8_d0tdq")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

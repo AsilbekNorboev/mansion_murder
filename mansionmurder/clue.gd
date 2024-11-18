@@ -88,6 +88,7 @@ func _dialog_start():
 	add_child(textbox_instance)
 	#textbox_active.emit()
 	var text_container = textbox_instance.get_node("TextboxContainer")
+	text_container.show_clue_container(false)
 	text_container.add_text(lines[current_line_index])
 	is_dialog_active = true
 
