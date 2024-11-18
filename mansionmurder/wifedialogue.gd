@@ -14,6 +14,7 @@ extends Node
 		"I would never be caught dead in those... I—",
 		"They’re clearly the maid’s. I’ve seen her wear gloves like that before. Besides, my hands are too delicate for something so...",
 		"rough."],
+		
 	"Diary":
 		["Where did you find this??? I lost it this morning, you didn't happen to read it did you???"]
 }

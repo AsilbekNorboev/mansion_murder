@@ -35,7 +35,6 @@ visible = false
 
 [node name="SettingsUI" parent="." instance=ExtResource("13_2ogmj")]
 visible = false
-z_index = 2
 
 [node name="InventoryUI" parent="." instance=ExtResource("8_6rbf8")]
 visible = false

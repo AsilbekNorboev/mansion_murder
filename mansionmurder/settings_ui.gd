@@ -1,9 +1,9 @@
-extends Control
+extends CanvasLayer
 
 var volume := 100
 
 func _ready():
-	$"Audio Container/VolumeBoxContainer/Volume".value = volume
+	$"Volume".value = volume
 	_update_audio_volumes()
 	
 func _on_volume_value_changed(value: float) -> void:

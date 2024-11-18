@@ -11,7 +11,6 @@ func _on_investigate_button_pressed():
 	investigate.emit()
 	
 func _on_inventory_button_pressed() -> void:
-	
 	$InventoryButton.modulate = Color("#000000")
 	await get_tree().create_timer(0.2).timeout
 	$InventoryButton/rustleSFX.play()
