@@ -7,6 +7,7 @@ extends MarginContainer
 @onready var scroll_container: ScrollContainer = $OutlinePanel/ScrollContainer
 @onready var margin_container: MarginContainer = $OutlinePanel/MarginContainer
 @onready var h_box_container: HBoxContainer = $OutlinePanel/MarginContainer/HBoxContainer
+@onready var player_options_label: Label = $OutlinePanel/PlayerOptionsLabel
 
 
 signal _on_clue_clicked_text
@@ -31,11 +32,13 @@ func clear_clues():
 
 func show_clue_container(visible):
 	if visible and clue_container.get_child_count():
+		player_options_label.show()
 		scroll_container.show()
 		scroll_container.size.x = 320
 		margin_container.size.x = 760
 		
 	else:
+		player_options_label.hide()
 		scroll_container.hide()
 		scroll_container.size.x = 0
 		margin_container.size.x = 1085

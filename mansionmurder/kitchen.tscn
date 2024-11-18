@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
-[ext_resource type="Texture2D" uid="uid://rhsfpcuok838" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
+[ext_resource type="Texture2D" uid="uid://ud44tx215fxo" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
 [ext_resource type="Texture2D" uid="uid://c2b42ow8e6v8e" path="res://art/Clues/Plant.png" id="4_k42ji"]
 [ext_resource type="PackedScene" uid="uid://bg8q0fe6upe2d" path="res://chef.tscn" id="5_8sl5h"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="5_q6yu7"]

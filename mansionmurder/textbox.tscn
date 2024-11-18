@@ -313,10 +313,21 @@ text = "Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!Text!!
 autowrap_mode = 3
 clip_text = true
 
+[node name="PlayerOptionsLabel" type="Label" parent="TextboxContainer/OutlinePanel"]
+layout_mode = 2
+offset_left = 808.0
+offset_top = 20.0
+offset_right = 1130.0
+offset_bottom = 52.0
+theme_override_fonts/font = ExtResource("2_at36y")
+theme_override_font_sizes/font_size = 23
+text = "What clue would you like to ask about?"
+autowrap_mode = 3
+
 [node name="ScrollContainer" type="ScrollContainer" parent="TextboxContainer/OutlinePanel"]
 layout_mode = 0
 offset_left = 808.0
-offset_top = 20.0
+offset_top = 60.0
 offset_right = 1128.0
 offset_bottom = 200.0
 horizontal_scroll_mode = 3
@@ -343,6 +354,7 @@ texture = ExtResource("4_hxv45")
 [node name="Chef Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
 z_index = -1
+texture_filter = 1
 position = Vector2(238, 345)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_6ytbd")
@@ -351,6 +363,7 @@ animation = &"idle"
 [node name="Deputy Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
 z_index = -1
+texture_filter = 1
 position = Vector2(337, 283)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_je47w")
@@ -359,6 +372,7 @@ animation = &"idle"
 [node name="Maid Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
 z_index = -1
+texture_filter = 1
 position = Vector2(334, 441)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_d1akk")
@@ -367,6 +381,7 @@ animation = &"idle"
 [node name="Wife Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
 z_index = -1
+texture_filter = 1
 position = Vector2(215, 392)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_rk3b0")
