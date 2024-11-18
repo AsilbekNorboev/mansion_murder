@@ -21,6 +21,7 @@ size_flags_vertical = 3
 script = ExtResource("1_b2ae4")
 
 [node name="Text" type="Label" parent="."]
+layout_mode = 0
 offset_left = 37.0
 offset_right = 664.0
 offset_bottom = 83.0
@@ -32,6 +33,7 @@ vertical_alignment = 1
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_right = 700.0
 offset_bottom = 638.0
 texture = ExtResource("1_hgcsa")

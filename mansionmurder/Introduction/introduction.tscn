@@ -154,7 +154,7 @@ volume_db = 20.0
 stream = ExtResource("19_id6f0")
 volume_db = 10.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Deputy" type="Sprite2D" parent="."]
 position = Vector2(490, 516)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("6_h7jsf")

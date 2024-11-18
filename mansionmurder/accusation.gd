@@ -1,18 +1,17 @@
 extends Control
 
 func add_NPC_Container():
-	get_tree().call_group("Suspects", "met_character")
+	#get_tree().call_group("Suspects", "met_character")
 	if (Global.NPC != ("test NPC")):
-		if (Global.NPC == "Wife"):
-			$NPCContainer/Wife.show()
-		if (Global.NPC == "Gardener"):
-			$NPCContainer/Gardener.show()
-		if (Global.NPC == "Chef"):
-			$NPCContainer/Chef.show()
-		if (Global.NPC == "Maid"):
-			$NPCContainer/Maid.show()		
+			if (Global.NPC == "Wife"):
+				$NPCContainer/Wife.show()
+			if (Global.NPC == "Gardener"):
+				$NPCContainer/Gardener.show()
+			if (Global.NPC == "Chef"):
+				$NPCContainer/Chef.show()
+			if (Global.NPC == "Maid"):
+				$NPCContainer/Maid.show()		
 		#var new_filepath = ("$ScrollContainer/NPCContainer/") + (Global.NPC)
-		#print(new_filepath)
 		#new_filepath.hide()
 		
 #waits a few seconds to allow the sound effect of the button to play

@@ -10,7 +10,7 @@ const CHAR_RATE = 0.01
 @onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Text
 @onready var start_game_button = $"Start Game"
 @onready var skip_label = $SkipLabel
-@onready var animated_sprite = $Deputy
+#@onready var animated_sprite = $Deputy
 
 # Signals
 signal dialogue_finished

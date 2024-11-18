@@ -5,7 +5,6 @@ var cursor = preload("res://art/dialogueicon.png")
 #loads textbox scene to use its functions later
 var textbox_scene = preload("res://textbox.tscn").instantiate()
 var textappear = textbox_scene.get_node("TextboxContainer")
-var margin_container = textbox_scene.get_node("MarginContainer")
 var current_line_index = 0
 var cheftalksprite = textappear.get_node("Dialogue Sprites/Chef Dialogue Sprite")
 var wifetalksprite = textappear.get_node("Dialogue Sprites/Wife Dialogue Sprite")
@@ -13,6 +12,7 @@ var gardenertalksprite = textappear.get_node("Dialogue Sprites/Gardener Dialgoue
 var deputytalksprite = textappear.get_node("Dialogue Sprites/Deputy Dialogue Sprite")
 var maidtalksprite = textappear.get_node("Dialogue Sprites/Maid Dialogue Sprite")
 var is_dialog_active = false
+var accusation_menu = preload("res://accusation_menu.tscn").instantiate()
 
 var active_lines = []
 
@@ -31,6 +31,7 @@ func _input_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click"):
 		print("you clicked the ", self.name)
 		_dialog_start()
+		met_character()
 
 #on click, add text from the array to populate the textbox scene
 func _dialog_start():
@@ -48,31 +49,36 @@ func _dialog_start():
 		cheftalksprite.animation = "idle"
 		cheftalksprite.play()
 		cheftalksprite.show()
-		met_this_character = true
+		#if they're not already in the suspect list...
+		if not self.name in Global.suspect_list:
+			met_this_character = true
 
 	if (self.name == "Wife"):
 		wifetalksprite.animation = "idle"
 		wifetalksprite.play()
 		wifetalksprite.show()
-		met_this_character = true
+		#if they're not already in the suspect list...
+		if not self.name in Global.suspect_list:
+			met_this_character = true
 
 	if (self.name == "Deputy"):
 		deputytalksprite.animation = "idle"
 		deputytalksprite.play()
 		deputytalksprite.show()
-		met_this_character = true
 	
 	if (self.name == "Gardener"):
 		gardenertalksprite.animation = "idle"
 		gardenertalksprite.play()
 		gardenertalksprite.show()
-		met_this_character = true
+		if not self.name in Global.suspect_list:
+			met_this_character = true
 
 	if (self.name == "Maid"):
 		maidtalksprite.animation = "idle"
 		maidtalksprite.play()
 		maidtalksprite.show()
-		met_this_character = true
+		if not self.name in Global.suspect_list:
+			met_this_character = true
 
 	active_lines = get_default(InventoryManager.get_inventory(), dialog.dialog_dictionary)
 	
@@ -137,14 +143,22 @@ func _on_mouse_exited() -> void:
 
 #detect which NPCs you've met
 func met_character():
-	if (met_this_character == true):
-		#if they're not already in the suspect list...
-		if not self.name in Global.suspect_list:
+	if (Global.suspect_list.size() >= 4):
+		pass
+	if not self.name in Global.suspect_list:
+		print("i am not in the suspect list already")
+		if (met_this_character == true):	
 			Global.NPC = self.name
 			print("met ", Global.NPC)
 			#add them to the suspect list.
 			Global.suspect_list.push_back(Global.NPC)
 			print(Global.NPC, " has been added to the suspect list")
 			print(Global.suspect_list)
-		else:
-			Global.NPC = self.name
+			print(Global.suspect_list.size())
+			
+			#Global.NPC = "resettingvariable"
+
+	else:
+		Global.NPC = self.name
+				
+		
