@@ -35,13 +35,13 @@ func _ready():
 	general_border_ui.settingsbuttonpressed.connect(_on_settings_button_pressed)
 	
 	# Connect all clue nodes to the same click handler
-	clue_node_safe.clue_clicked.connect(self._on_clue_clicked)
+	#ue_node_safe.clue_clicked.connect(self._on_clue_clicked)
 	clue_scene.clue_clicked.connect(self._on_clue_clicked)
-	clue_deed.clue_clicked.connect(self._on_clue_clicked)
+	#clue_deed.clue_clicked.connect(self._on_clue_clicked)
 	clue_envelope.clue_clicked.connect(self._on_clue_clicked)
 	clue_dirt.clue_clicked.connect(self._on_clue_clicked)
 	clue_knife.clue_clicked.connect(self._on_clue_clicked)
-	clue_safe.clue_clicked.connect(self._on_clue_clicked)
+	#clue_safe.clue_clicked.connect(self._on_clue_clicked)
 	clue_necklace.clue_clicked.connect(self._on_clue_clicked)
 	clue_diary.clue_clicked.connect(self._on_clue_clicked)
 	clue_gloves.clue_clicked.connect(self._on_clue_clicked)
