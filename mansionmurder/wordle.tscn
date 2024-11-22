@@ -1,0 +1,357 @@
+[gd_scene load_steps=7 format=3 uid="uid://dg37jkuuhrc24"]
+
+[ext_resource type="Script" path="res://wordle.gd" id="1_3nakt"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="2_x7tva"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6nwl3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5bxk"]
+bg_color = Color(0.713972, 0.343464, 0.0243649, 1)
+border_width_bottom = 10
+border_color = Color(0.292122, 0.0616881, 0.0192693, 1)
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvqlp"]
+bg_color = Color(0.46135, 0.212246, 0.00836753, 1)
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lq1so"]
+bg_color = Color(0.46135, 0.212246, 0.00836753, 1)
+border_width_bottom = 10
+border_color = Color(0.259251, 0.103988, 0.0103737, 1)
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+
+[node name="Wordle" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_3nakt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 15.0
+offset_right = -5.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0.0941176, 0.0941176, 0.996078)
+
+[node name="ResultLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -301.0
+offset_right = 236.0
+offset_bottom = -177.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 90
+text = "UNLOCKED"
+horizontal_alignment = 1
+
+[node name="WordLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.0
+offset_top = -181.0
+offset_right = 213.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 42
+text = "Password: Pizza"
+horizontal_alignment = 1
+
+[node name="ExitMessage" type="Label" parent="."]
+offset_left = 435.0
+offset_top = 576.0
+offset_right = 911.0
+offset_bottom = 645.0
+theme_override_font_sizes/font_size = 40
+text = "Click ESC key to exit"
+
+[node name="Hint" type="Label" parent="."]
+offset_left = 817.0
+offset_top = 132.0
+offset_right = 1231.0
+offset_bottom = 417.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "HINT: 
+Professor's
+ favorite Italian
+food"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_x7tva")
+volume_db = 20.0
+
+[node name="Instructions" type="Label" parent="."]
+offset_left = 767.0
+offset_top = 441.0
+offset_right = 1164.0
+offset_bottom = 490.0
+theme_override_colors/font_color = Color(0, 0.607843, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Green: Letter is in word"
+
+[node name="Instructions3" type="Label" parent="."]
+offset_left = 768.0
+offset_top = 609.0
+offset_right = 1196.0
+offset_bottom = 658.0
+theme_override_colors/font_color = Color(0.937255, 0.0980392, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "RED: Letter is not in word"
+
+[node name="Instructions2" type="Label" parent="."]
+offset_left = 763.0
+offset_top = 501.0
+offset_right = 1566.0
+offset_bottom = 602.0
+theme_override_colors/font_color = Color(0.87451, 0.607843, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "ORANGE:Letter is in word 
+but in wrong posision"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 122.0
+offset_top = 128.0
+offset_right = -578.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Button" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button2" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button3" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button4" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button5" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button6" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button7" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button8" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button9" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button10" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button11" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button12" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button13" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button14" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button15" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button16" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button17" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button18" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button19" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button20" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button21" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button22" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button23" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button24" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button25" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 72
+text = "x"
+
+[node name="Button2" type="Button" parent="."]
+process_priority = 1
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 23.0
+offset_right = 5.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 8
+
+[node name="Button" type="Button" parent="."]
+process_priority = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -38.0
+offset_right = 118.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6nwl3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d5bxk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gvqlp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lq1so")
+text = "UNLOCK"
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

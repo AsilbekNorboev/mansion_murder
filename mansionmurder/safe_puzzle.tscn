@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" path="res://safe_puzzle.gd" id="1_140i4"]
 
+[sub_resource type="SystemFont" id="SystemFont_1lvys"]
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_2c3er"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tih7w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_paq0f"]
@@ -23,19 +28,29 @@ border_color = Color(0.259251, 0.103988, 0.0103737, 1)
 expand_margin_left = 20.0
 expand_margin_right = 20.0
 
-[sub_resource type="SystemFont" id="SystemFont_1lvys"]
-subpixel_positioning = 0
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_2c3er"]
-
-[node name="safe_puzzle" type="Node2D"]
+[node name="Safe_puzzle" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_140i4")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 10.0
+offset_right = -1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.033467, 0.102757, 0.142718, 0.941176)
+
 [node name="GridContainer" type="GridContainer" parent="."]
-offset_left = 154.0
-offset_top = 250.0
-offset_right = 1384.0
-offset_bottom = 838.0
+process_mode = 3
+offset_left = 237.0
+offset_top = 194.0
+offset_right = 1467.0
+offset_bottom = 782.0
+scale = Vector2(0.8, 0.8)
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 8
@@ -99,59 +114,111 @@ theme_override_font_sizes/font_size = 72
 text = "8
 "
 
-[node name="Menu" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="Menu"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.033467, 0.102757, 0.142718, 0.941176)
-
-[node name="ResultLabel" type="Label" parent="Menu"]
+[node name="ResultLabel" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -224.0
-offset_top = -225.0
-offset_right = 216.0
-offset_bottom = -101.0
+offset_left = -267.0
+offset_top = -267.5
+offset_right = 221.0
+offset_bottom = -143.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 90
 text = "UNLOCKED"
 horizontal_alignment = 1
 
-[node name="CodeLabel" type="Label" parent="Menu"]
+[node name="CodeLabel" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -234.0
-offset_top = -46.5
-offset_right = 206.0
-offset_bottom = 77.5
+offset_left = -232.0
+offset_top = -85.5
+offset_right = 208.0
+offset_bottom = 38.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 42
 text = "Passcode: 05-06-78"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Menu"]
+[node name="Hint" type="Label" parent="."]
+modulate = Color(0.0156863, 0.866667, 0.992157, 1)
+self_modulate = Color(0.94902, 0.921569, 1, 0.952941)
+offset_left = 126.0
+offset_top = 626.0
+offset_right = 715.0
+offset_bottom = 721.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.152941, 0.627451, 0.329412, 1)
+theme_override_font_sizes/font_size = 35
+text = "HINT:  Important date (mm-dd-yy)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instruction" type="Label" parent="."]
+offset_left = 236.0
+offset_top = 418.0
+offset_right = 1303.0
+offset_bottom = 647.0
+theme_override_colors/font_color = Color(0.992157, 0.988235, 0.968627, 0.980392)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.266667, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_1lvys")
+theme_override_font_sizes/font_size = 40
+text = "To unlock the safe and find the clue 
+use up and down arrows to pick a number 
+use left and right arrows to move through 
+combination"
+
+[node name="Header" type="Label" parent="."]
+offset_left = 395.0
+offset_top = 101.0
+offset_right = 883.0
+offset_bottom = 171.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0.823529, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.933333, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxLine_2c3er")
+text = "SAFE COMBINATION"
+
+[node name="ExitMessage" type="Label" parent="."]
+self_modulate = Color(0.760784, 0.0352941, 0.0745098, 1)
+offset_left = 789.0
+offset_top = 636.0
+offset_right = 1054.0
+offset_bottom = 685.0
+theme_override_font_sizes/font_size = 35
+text = "Click ESC to exit"
+
+[node name="Button2" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 13.0
+offset_right = 6.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -123.0
-offset_top = 75.0
-offset_right = 125.0
-offset_bottom = 168.0
+offset_left = -135.0
+offset_top = 15.5
+offset_right = 113.0
+offset_bottom = 108.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 60
@@ -161,42 +228,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_y4qfr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vs50p")
 text = "UNLOCK"
 
-[node name="Hint" type="Label" parent="."]
-offset_left = 355.0
-offset_top = 759.0
-offset_right = 944.0
-offset_bottom = 854.0
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.647059, 0, 0, 1)
-theme_override_font_sizes/font_size = 35
-text = "HINT:  Important date (mm-dd-yy)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Instruction" type="Label" parent="."]
-offset_left = 182.0
-offset_top = 572.0
-offset_right = 1249.0
-offset_bottom = 743.0
-theme_override_colors/font_color = Color(0.992157, 0.988235, 0.968627, 0.980392)
-theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0.266667, 1, 1)
-theme_override_fonts/font = SubResource("SystemFont_1lvys")
-theme_override_font_sizes/font_size = 40
-text = "To unlock the safe and find the clue 
-use up and down arrows to pick a number 
-use left and right arrows to move through combination"
-
-[node name="Header" type="Label" parent="."]
-offset_left = 439.0
-offset_top = 117.0
-offset_right = 927.0
-offset_bottom = 186.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0.823529, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0.933333, 1)
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxLine_2c3er")
-text = "SAFE COMBINATION"
-
-[connection signal="pressed" from="Menu/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

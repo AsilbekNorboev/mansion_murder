@@ -1,21 +1,31 @@
-extends Node2D
+extends CanvasLayer
 
 @onready var buttons = $GridContainer.get_children()  # Assuming buttons are direct children
-@onready var menu = $Menu
-@onready var label:Label = $Menu/ResultLabel
-@onready var code_label:Label = $Menu/CodeLabel
 
-const CORRECT_CODE = "05-06-78"  # Correct combination code
+const CORRECT_CODE = "05-05-50"  # Correct combination code
 const CODE_LENGTH: int = 8        # Total length of the code (including "-")
 var current_button_index: int = 0  # Index of the currently selected button
 
 func _ready():
-	if buttons.size() < 8:
-		push_error("Expected 8 buttons in GridContainer but found fewer.")
-		return
-	reset_game()
+	$GridContainer.visible = false# Hide the grid and buttons initially
+	$Instruction.visible = false
+	$Hint.visible = false 
+	$Button.text = "start"# Hide hint initially
+	$Button.visible = true # Show the start button
+	$CodeLabel.text = "Unlock the code using the clues collected"
+	$CodeLabel.visible = true # Show the word label
+	$ResultLabel.visible = true
+	$Header.visible = true
+	$ExitMessage.visible = true
 
-func reset_game():
+func start_game():
+	$CodeLabel.visible = false
+	$GridContainer.visible = true
+	$Instruction.visible = true
+	$Button.visible = false
+	$Hint.visible = true
+	$ResultLabel.visible = false
+	$ExitMessage.visible = true # Hide the exit message
 	# Initialize buttons
 	for i in range(buttons.size()):
 		if i == 2 or i == 5:  # Button 3 and Button 6 (index 2 and 5)
@@ -23,19 +33,14 @@ func reset_game():
 		else:
 			buttons[i].text = "0"  # Set all other buttons to "0"
 	
-	code_label.text = ""  # Reset the displayed code
-	label.text = ""       # Reset the result label
 	current_button_index = 0  # Reset selected button index
 	update_button_selection()  # Update selection on reset
 
 func _input(event):
 	# Check for ESC key to return to the Living Room scene
-	if event is InputEventKey and event.is_pressed() and event.keycode == KEY_ESCAPE:
-		get_tree().change_scene_to_file("res://bedroom.tscn")  # Switch to Living Room scene
+	#if event is InputEventKey and event.is_pressed() and event.keycode == KEY_ESCAPE:
+		#self.visible = false # Switch to Living Room scene
 	
-	# Don't start game until menu is visible
-	if menu.visible:
-		return
 		
 	if event.is_action_pressed("ui_up"):
 		increment_number()
@@ -118,7 +123,20 @@ func check_code():
 		entered_code += button.text  # Collect the text from each button
 
 	if entered_code == CORRECT_CODE:
-		code_label.text = "Success! The safe is unlocked."
-		menu.show()  # Show the result menu
+		$CodeLabel.text = "Correct Code is 05-05-50"
+		$ResultLabel.text = "Sucess"
+		$CodeLabel.visible = true
+		$GridContainer.visible = false
+		$Instruction.visible = false
+		$ResultLabel.visible = true
 	else:
-		code_label.text = "Incorrect code. Try again."
+		$ResultLabel.text = "Incorrect code. Try again."
+		_ready()
+		
+
+func _on_button_pressed() -> void:
+	start_game()
+
+
+func _on_button_2_pressed() -> void:
+	print("")
