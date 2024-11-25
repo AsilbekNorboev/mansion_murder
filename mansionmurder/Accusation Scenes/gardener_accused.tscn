@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://baj4bw02gmaja" path="res://art/NPC/Gardener/Gardener-12.png" id="14_5epwh"]
 [ext_resource type="Texture2D" uid="uid://dlccc013bh4ld" path="res://art/NPC/Gardener/Gardener-13.png" id="15_ia2au"]
 [ext_resource type="Texture2D" uid="uid://csqd10iwmll7q" path="res://art/NPC/Gardener/Gardener-14.png" id="16_pyxdr"]
-[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="18_klk7r"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="18_klk7r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7qqjs"]
 animations = [{

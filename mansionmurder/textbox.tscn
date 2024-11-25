@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://textbox_container.gd" id="1_b4rrd"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_at36y"]
-[ext_resource type="AudioStream" uid="uid://dgdsahk84hao8" path="res://audio/next_dialogue_sfx.wav" id="3_oqodl"]
+[ext_resource type="AudioStream" uid="uid://dgdsahk84hao8" path="res://audio/SFX/next_dialogue_sfx.wav" id="3_oqodl"]
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="4_hxv45"]
 [ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="5_s65gi"]
 [ext_resource type="Texture2D" uid="uid://d2pjchcx0kso7" path="res://art/NPC/Chef/Chef-2.png" id="6_6avsv"]
@@ -267,6 +267,7 @@ bg_color = Color(0.75959, 0.172171, 2.88785e-07, 1)
 [node name="textbox" type="CanvasLayer"]
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
+process_mode = 3
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0

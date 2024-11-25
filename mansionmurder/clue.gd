@@ -13,12 +13,9 @@ var cursor = preload("res://art/pointer.png")
 @export var clue_description: String = ""
 @onready var collision_shape = $CollisionShape2D
 @onready var clue_sprite = $Sprite2D  # Image to display the clue
-#signal textbox_active
 
 # Instance variables
 var textbox_scene = preload("res://textbox.tscn")
-var is_dialog_active = false
-var current_line_index = 0
 var clue_pickup_text_scene = preload("res://clue_pickup_text.tscn")
 
 # Signals for clue interactions
@@ -80,24 +77,40 @@ func show_clue_pickup_text():
 	
 # Starts the dialog for this clue
 func _dialog_start():
-	if is_dialog_active or not lines:
+	if Global.is_dialog_active or not lines:
 		return
-	#lock character movement until the dialogue ends
-	get_tree().paused = true
 	# Instantiate and set up the textbox
+	print("dialogue starting: ", Global.current_line_index)
 	var textbox_instance = textbox_scene.instantiate()
 	add_child(textbox_instance)
-	#textbox_active.emit()
 	var text_container = textbox_instance.get_node("TextboxContainer")
 	text_container.show_clue_container(false)
-	text_container.add_text(lines[current_line_index])
-	is_dialog_active = true
+	text_container.add_text(lines[Global.current_line_index])
+	Global.is_dialog_active = true
+	text_container.next_dialogue.connect(self._populate_dialogue)
+	if (Global.current_line_index > 0):
+		_populate_dialogue()
+
+	
+func _populate_dialogue():
+	var text_container = find_child("TextboxContainer", true, false)
+	print("number of lines: ", lines.size())
+	if Global.current_line_index <= lines.size():
+		Global.current_line_index += 1
+		print("next dialogue")
+		
+	if Global.current_line_index >= lines.size():
+		_dialog_end(text_container)
+		print("end of dialogue")
+		
+	else:
+		text_container.add_text(lines[Global.current_line_index])
 
 
 # Ends the dialog for this clue
 func _dialog_end(textbox_instance):
-	is_dialog_active = false
-	current_line_index = 0
+	Global.is_dialog_active = false
+	Global.current_line_index = 0
 	textbox_instance.hide_skip_label()
 
 	if narrator_lines:
@@ -111,18 +124,10 @@ func _dialog_end(textbox_instance):
 		#clue must have a description to be removed from scene (for the deadbody)
 		if (clue_description != ""):
 			#Remove clue from scene
-			queue_free()
+			_remove_clue()
 
-
-func _unhandled_input(event):
-	if event.is_action_pressed("dialogue_next") and is_dialog_active:
-		current_line_index += 1
-		var textbox_instance = find_child("TextboxContainer", true, false)
-		if current_line_index >= lines.size():
-			_dialog_end(textbox_instance)
-		else:
-			textbox_instance.add_text(lines[current_line_index])
-
+func _remove_clue():
+	queue_free()
 # Show zoom image if specified
 #func _show_zoom_image():
 	#if zoom_image_path:
@@ -140,7 +145,6 @@ func set_clue_data(data: Dictionary):
 	zoom_image_path = data.get("zoom_image", zoom_image_path)
 	clue_description = data.get("description", clue_description)  # Added for description
 	_setup_clue_image()
-
 
 	
 #change cursor when hovering over

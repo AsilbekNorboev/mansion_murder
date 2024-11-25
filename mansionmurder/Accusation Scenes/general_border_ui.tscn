@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://general_border_ui.gd" id="1_ufin5"]
 [ext_resource type="Texture2D" uid="uid://dyt0pbqdororh" path="res://art/TempBorder_updated.png" id="2_vumir"]
 [ext_resource type="Script" path="res://investigate_button.gd" id="3_a27rf"]
-[ext_resource type="AudioStream" uid="uid://dvalpk5jn2i56" path="res://audio/Inventory_open_sfx.wav" id="4_pbeyp"]
-[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="5_glnpu"]
+[ext_resource type="AudioStream" uid="uid://dvalpk5jn2i56" path="res://audio/SFX/Inventory_open_sfx.wav" id="4_pbeyp"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="5_glnpu"]
 
 [node name="GeneralBorderUI" type="CanvasLayer"]
 layer = 2

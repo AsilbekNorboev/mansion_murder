@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://credits.gd" id="1_04k05"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_00fki"]
-[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="3_vddq4"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="3_vddq4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5p36"]
 bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)

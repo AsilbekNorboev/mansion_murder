@@ -4,8 +4,8 @@
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_csjga"]
 [ext_resource type="FontFile" uid="uid://debhhnvyq2u7l" path="res://fonts/GhoulFriAOE.ttf" id="4_fcfhe"]
 [ext_resource type="Texture2D" uid="uid://c7s64igy8xpkt" path="res://art/NPC/Deputy/Deputy_intro.png" id="6_h7jsf"]
-[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="18_kx4gv"]
-[ext_resource type="AudioStream" uid="uid://dgdsahk84hao8" path="res://audio/next_dialogue_sfx.wav" id="19_id6f0"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="18_kx4gv"]
+[ext_resource type="AudioStream" uid="uid://dgdsahk84hao8" path="res://audio/SFX/next_dialogue_sfx.wav" id="19_id6f0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31d8l"]
 bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)

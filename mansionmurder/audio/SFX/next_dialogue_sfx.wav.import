@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dgdsahk84hao8"
-path="res://.godot/imported/next_dialogue_sfx.wav-2b46a94361aa1cc8b614387a42cd490c.sample"
+path="res://.godot/imported/next_dialogue_sfx.wav-b727d0c49e90a3f9d944d7db12936f38.sample"
 
 [deps]
 
-source_file="res://audio/next_dialogue_sfx.wav"
-dest_files=["res://.godot/imported/next_dialogue_sfx.wav-2b46a94361aa1cc8b614387a42cd490c.sample"]
+source_file="res://audio/SFX/next_dialogue_sfx.wav"
+dest_files=["res://.godot/imported/next_dialogue_sfx.wav-b727d0c49e90a3f9d944d7db12936f38.sample"]
 
 [params]
 

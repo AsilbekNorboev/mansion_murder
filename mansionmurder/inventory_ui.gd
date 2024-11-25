@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var clue_container = $ScrollContainer/ClueContainer
 @onready var exit_button = $ExitButton
 
+			
 func add_clue(clue_data: Dictionary):
 	print("Adding clue to inventory:", clue_data)
 
@@ -18,10 +19,11 @@ func _on_exit_button_pressed() -> void:
 	print("exit button pressed")
 	$ButtonClick.play()
 	self.visible = false
+	get_tree().paused = false
 
 
 func _on_switch_button_pressed() -> void:
-	$ButtonClick.play()
+	$InventoryOpenSfx.play()
 	#on click, accusation menu will populate with new suspects you've met
 	$AccusationMenu.add_NPC_Container()
 	if $SwitchButton.text == "Inventory":

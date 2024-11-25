@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cyr6vnfag6yo2" path="res://art/NPC/Chef/Chef-12.png" id="14_jcih7"]
 [ext_resource type="Texture2D" uid="uid://dct5fbf03cmir" path="res://art/NPC/Chef/Chef-13.png" id="15_uujcj"]
 [ext_resource type="Texture2D" uid="uid://wn71042djilq" path="res://art/NPC/Chef/Chef-14.png" id="16_a15ny"]
-[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="18_y46kb"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="18_y46kb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_37hwt"]
 animations = [{

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dw8qjkx7dflok" path="res://art/NPC/Maid/Maid-3.png" id="5_jhv1w"]
 [ext_resource type="Texture2D" uid="uid://dvatrox5o425u" path="res://art/NPC/Maid/Maid-4.png" id="6_j5fxq"]
 [ext_resource type="Texture2D" uid="uid://vilqu11acpnp" path="res://art/NPC/Maid/Maid-5.png" id="7_tnmcm"]
-[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="9_uun62"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="9_uun62"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vm8pg"]
 animations = [{

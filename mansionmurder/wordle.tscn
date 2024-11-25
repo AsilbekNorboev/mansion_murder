@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dg37jkuuhrc24"]
 
 [ext_resource type="Script" path="res://wordle.gd" id="1_3nakt"]
-[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="2_x7tva"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="2_x7tva"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6nwl3"]
 

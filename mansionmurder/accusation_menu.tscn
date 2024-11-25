@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="2_71v37"]
 [ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="2_lnwyg"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_sick6"]
-[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="3_itn42"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="3_itn42"]
 [ext_resource type="Texture2D" uid="uid://dvtrmyhgte871" path="res://art/NPC/Gardener/Gardener-1.png" id="4_es4s4"]
 [ext_resource type="Texture2D" uid="uid://ctmykf6rkt7wl" path="res://art/NPC/Wife/Wife-1.png" id="5_d7jnx"]
 [ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="6_0r2re"]

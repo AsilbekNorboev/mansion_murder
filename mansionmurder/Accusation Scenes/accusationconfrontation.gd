@@ -32,6 +32,7 @@ var tween: Tween
 
 # Initialization
 func _ready():
+	get_tree().paused
 	_hide_textbox()
 	replay_game_button.hide()
 	_detect_NPC()

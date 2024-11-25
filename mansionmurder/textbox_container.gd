@@ -11,6 +11,7 @@ extends MarginContainer
 
 
 signal _on_clue_clicked_text
+signal next_dialogue
 
 func add_clue(clue_data: Dictionary, lines):
 	print("Adding clue to inventory:", clue_data)
@@ -52,10 +53,14 @@ func _ready():
 func hide_textbox():
 	label.text = ""
 	textbox_container.hide()
+	get_tree().paused = false
+
 	
 func show_textbox():
 	textbox_container.show()
-	
+	#lock character movement until the dialogue ends
+	get_tree().paused = true
+
 func add_text(line):
 	$NextDialogueSfx.play()	
 	label.text = line
@@ -67,3 +72,10 @@ func hide_skip_label():
 func narrator_text_color():
 	#change color of narration text
 	($OutlinePanel/MarginContainer/HBoxContainer/Label).modulate = Color(0.467, 0.353, 0.106)
+
+#play next dialogue
+func _unhandled_input(event):
+	if event.is_action_pressed("dialogue_next") and (Global.is_dialog_active or Global.is_narrator_dialog_active):
+		print("key detected")
+		print("current line index: ",Global.current_line_index)
+		emit_signal("next_dialogue")

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Introduction/main_menu.gd" id="1_vt8hd"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="3_377g5"]
 [ext_resource type="FontFile" uid="uid://debhhnvyq2u7l" path="res://fonts/GhoulFriAOE.ttf" id="3_d0pns"]
-[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="5_atchv"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="5_atchv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_01urs"]
 texture = ExtResource("1_c8gkt")

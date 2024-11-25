@@ -16,6 +16,7 @@ func _on_inventory_button_pressed() -> void:
 	$InventoryButton/rustleSFX.play()
 	$InventoryButton.modulate = Color("#ffffff")
 	inventorybuttonpressed.emit()
+	get_tree().paused = true
 	#accusation_menu.add_NPC_Container()
 
 func _on_settings_button_pressed() -> void:

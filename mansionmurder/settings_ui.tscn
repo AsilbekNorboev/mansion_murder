@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://settings_ui.gd" id="1_8pb21"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="3_e6h66"]
-[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="4_ehn7o"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="4_ehn7o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11375"]
 bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)

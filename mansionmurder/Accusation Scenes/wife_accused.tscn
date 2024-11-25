@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ccl3a8i1nrtp8" path="res://art/NPC/Wife/Wife-3.png" id="5_mvpgu"]
 [ext_resource type="Texture2D" uid="uid://br1lr1ad2snsi" path="res://art/NPC/Wife/Wife-4.png" id="6_mn78f"]
 [ext_resource type="Texture2D" uid="uid://ercjt07alluc" path="res://art/NPC/Wife/Wife-5.png" id="7_mvxug"]
-[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="9_0pcuk"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="9_0pcuk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_74sar"]
 animations = [{
