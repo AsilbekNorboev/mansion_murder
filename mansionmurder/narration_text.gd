@@ -39,6 +39,7 @@ func narrator_dialog_start():
 # Ends the dialog for this clue
 func _narrator_dialog_end(textbox_instance):
 	Global.is_narrator_dialog_active = false
+	Global.current_line_index = 0
 	textbox_instance.hide_skip_label()
 
 	#Remove the dialog box from the scene

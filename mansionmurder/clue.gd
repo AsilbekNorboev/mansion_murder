@@ -72,9 +72,10 @@ func show_clue_pickup_text():
 	# Set the position
 	clue_pickup_text_instance.position = Vector2(camera_pos.x+255,camera_pos.y-430)
 	print("clue pickup pos: ",clue_pickup_text_instance.position)
-
-	await clue_pickup_text_instance.show_message("Item has been picked up", display_time)
-	
+	#only clues with description will display this text
+	if (clue_description != ""):
+		await clue_pickup_text_instance.show_message("Item has been picked up", display_time)
+		
 # Starts the dialog for this clue
 func _dialog_start():
 	if Global.is_dialog_active or not lines:
