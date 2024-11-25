@@ -20,7 +20,7 @@ size = Vector2(50, 731)
 [node name="Bedroom" type="Node2D"]
 script = ExtResource("1_x5y1v")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(655, 395)
 texture = ExtResource("2_236vv")
@@ -38,7 +38,8 @@ shape = SubResource("RectangleShape2D_j4bkx")
 [node name="Diary" parent="." instance=ExtResource("4_o0aq8")]
 position = Vector2(212, 602)
 clue_name = "Diary"
-lines = Array[String](["Looks like a diary", "Written on the front: Belongs to Mrs. Burmingham...", "Enrty 09/08/88: Mr. Burmingham had been having an affair...with THE MAID?!?!", "I can't believe it...I must get revenge.", "Clue has been added to inventory, you can now ask suspects about it."])
+lines = Array[String](["Looks like a diary", "Written on the front: Belongs to Mrs. Burmingham...", "Enrty 09/08/88: Mr. Burmingham had been having an affair...with THE MAID?!?!", "I can't believe it...I must get revenge."])
+narrator_lines = Array[String](["Clue has been added to inventory, you can now ask suspects about it."])
 clue_texture = ExtResource("5_txu53")
 clue_description = "Looks like a diaryLooks like a diary"
 

@@ -19,7 +19,7 @@ size = Vector2(50, 731)
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_wkt5y")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(655, 395)
 texture = ExtResource("2_n44tm")
@@ -38,13 +38,15 @@ scale = Vector2(0.66, 0.66)
 visible = false
 position = Vector2(370, 162)
 lines = Array[String](["This seems to be an envelope"])
+narrator_lines = Array[String](["Clue has been added to inventory, you can now ask suspects about it."])
 clue_texture = ExtResource("6_ysihl")
 clue_description = "This seems to be an envelope"
 
 [node name="Dirt" parent="." instance=ExtResource("5_q6yu7")]
 position = Vector2(1120, 285)
 clue_name = "Dirt"
-lines = Array[String](["A patch of dirt...this is incredibly unsanitary, especially in the kitchen", "This is a question for Chef Sordanio", "Clue has been added to inventory, you can now ask suspects about it."])
+lines = Array[String](["A patch of dirt...this is incredibly unsanitary, especially in the kitchen", "This is a question for Chef Sordanio"])
+narrator_lines = Array[String](["Clue has been added to inventory, you can now ask suspects about it."])
 clue_texture = ExtResource("4_k42ji")
 clue_description = "This appears to be a plant from the Garde."
 

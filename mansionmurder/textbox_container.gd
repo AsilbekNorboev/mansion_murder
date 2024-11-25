@@ -63,3 +63,7 @@ func add_text(line):
 	
 func hide_skip_label():
 	maincontainer.get_node("SkipLabel").hide()
+
+func narrator_text_color():
+	#change color of narration text
+	($OutlinePanel/MarginContainer/HBoxContainer/Label).modulate = Color(0.467, 0.353, 0.106)

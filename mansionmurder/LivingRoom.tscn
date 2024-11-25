@@ -79,7 +79,8 @@ scale = Vector2(1.2, 1.2)
 [node name="Knife" parent="." instance=ExtResource("6_1tmqa")]
 position = Vector2(409, 303)
 clue_name = "Knife"
-lines = Array[String](["A knife lay next to the body of the deceased...", "This knife looks like it came straight from the kitchen.", "You might want to have a chat with Chef Sordanio.", "Clue has been added to inventory, you can now ask suspects about it."])
+lines = Array[String](["A knife lay next to the body of the deceased...", "This knife looks like it came straight from the kitchen.", "You might want to have a chat with Chef Sordanio."])
+narrator_lines = Array[String](["Clue has been added to inventory, you can now ask suspects about it."])
 clue_texture = ExtResource("7_jy6q6")
 clue_description = "The knife"
 

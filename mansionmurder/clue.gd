@@ -7,6 +7,7 @@ var cursor = preload("res://art/pointer.png")
 
 @export var clue_name: String = "Example Clue"
 @export var lines: Array[String] = []
+@export var narrator_lines: Array[String] = []
 @export var clue_texture: Texture
 @export var zoom_image_path: String = ""  # Optional zoom image path
 @export var clue_description: String = ""
@@ -98,20 +99,24 @@ func _dialog_end(textbox_instance):
 	is_dialog_active = false
 	current_line_index = 0
 	textbox_instance.hide_skip_label()
+
+	if narrator_lines:
+		$"Narrator Text".narrator_dialog_start()
+		textbox_instance.queue_free() 
 	#Remove the dialog box from the scene
-	textbox_instance.queue_free() 
-	#unlock character movement when the dialogue ends
-	get_tree().paused = false
-	#clue must have a description to be removed from scene (for the deadbody)
-	if (clue_description != ""):
-		#Remove clue from scene
-		queue_free()
+	else:
+		textbox_instance.queue_free() 
+		#unlock character movement when the dialogue ends
+		get_tree().paused = false
+		#clue must have a description to be removed from scene (for the deadbody)
+		if (clue_description != ""):
+			#Remove clue from scene
+			queue_free()
 
 
 func _unhandled_input(event):
 	if event.is_action_pressed("dialogue_next") and is_dialog_active:
 		current_line_index += 1
-		#var textbox_instance = get_node("TextboxContainer")
 		var textbox_instance = find_child("TextboxContainer", true, false)
 		if current_line_index >= lines.size():
 			_dialog_end(textbox_instance)
@@ -137,6 +142,7 @@ func set_clue_data(data: Dictionary):
 	_setup_clue_image()
 
 
+	
 #change cursor when hovering over
 func _on_mouse_entered() -> void:
 		Input.set_custom_mouse_cursor(cursor, Input.CURSOR_ARROW, Vector2(16,16))
