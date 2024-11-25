@@ -1,18 +1,8 @@
 extends CanvasLayer
 
-var volume := 100
-
-
 #waits a few seconds to allow the sound effect of the button to play
 func wait(seconds: float) -> void:
 	OS.delay_msec(seconds * 1000)
-	
-
-func _on_exit_game_pressed() -> void:
-	$ButtonClick.play()
-	wait(.5)
-	get_tree().quit()
-
 
 func _on_return_pressed() -> void:
 	$ButtonClick.play()

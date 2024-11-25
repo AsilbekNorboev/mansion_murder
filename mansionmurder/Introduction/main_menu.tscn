@@ -54,7 +54,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_01urs")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Middle Buttons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -69,7 +69,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Start Game" type="Button" parent="VBoxContainer"]
+[node name="Start Game" type="Button" parent="Middle Buttons"]
 process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
@@ -87,7 +87,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_hdh8a")
 text = "Start Game
 "
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Options" type="Button" parent="Middle Buttons"]
 process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
@@ -104,9 +104,14 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hsv3u")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hdh8a")
 text = "Options"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Bottom Buttons" type="Node" parent="."]
+
+[node name="Exit" type="Button" parent="Bottom Buttons"]
 process_mode = 3
-layout_mode = 2
+offset_left = 748.0
+offset_top = 728.0
+offset_right = 1276.0
+offset_bottom = 831.0
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -120,6 +125,27 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_n5yg6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hsv3u")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hdh8a")
 text = "Exit
+"
+
+[node name="Credits" type="Button" parent="Bottom Buttons"]
+process_mode = 3
+offset_left = 57.0
+offset_top = 729.0
+offset_right = 585.0
+offset_bottom = 832.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_377g5")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ldrga")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n5yg6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hsv3u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdh8a")
+text = "Credits
 "
 
 [node name="Game Title" type="Label" parent="."]
@@ -144,6 +170,7 @@ horizontal_alignment = 1
 stream = ExtResource("5_atchv")
 volume_db = 20.0
 
-[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Middle Buttons/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Middle Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Bottom Buttons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Bottom Buttons/Credits" to="." method="_on_credits_pressed"]

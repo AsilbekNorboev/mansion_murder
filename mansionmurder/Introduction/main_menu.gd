@@ -29,3 +29,9 @@ func _on_exit_pressed() -> void:
 	$ButtonClick.play()
 	wait(.5)
 	get_tree().quit()
+
+
+func _on_credits_pressed() -> void:
+	$ButtonClick.play()
+	wait(.5)
+	get_tree().change_scene_to_file("res://credits.tscn")

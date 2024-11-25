@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://coyusefvwcfkf"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_04k05"]
+[ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_00fki"]
+[ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/button_click.wav" id="3_vddq4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5p36"]
+bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s42sj"]
+bg_color = Color(0.217684, 0.0639309, 0.0400902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koimp"]
+bg_color = Color(0.348751, 0.121991, 0.0866908, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Credits" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_04k05")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -3.0
+offset_top = 3.0
+offset_right = 37.0
+offset_bottom = 43.0
+scale = Vector2(33.0842, 22.3332)
+color = Color(0.121569, 0, 0, 1)
+
+[node name="Credits Text" type="Label" parent="."]
+offset_left = 592.0
+offset_top = 67.0
+offset_right = 832.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_00fki")
+theme_override_font_sizes/font_size = 80
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="descriptions" type="Label" parent="."]
+offset_left = 120.0
+offset_top = 210.0
+offset_right = 1430.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_00fki")
+theme_override_font_sizes/font_size = 40
+text = "Akwawo Ekpu - Programmer/Artist
+
+Helen Michael - Programmer
+
+Mason Mockler - Programmer/Artist
+
+Asilbek Norboev - Programmer"
+
+[node name="Return" type="Button" parent="."]
+offset_left = 123.0
+offset_top = 651.0
+offset_right = 376.0
+offset_bottom = 733.0
+theme_override_fonts/font = ExtResource("2_00fki")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_v5p36")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s42sj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_koimp")
+text = "Main Menu"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vddq4")
+volume_db = 20.0
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

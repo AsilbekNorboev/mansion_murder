@@ -103,6 +103,7 @@ theme_override_font_sizes/font_size = 60
 text = "Controls"
 
 [node name="descriptions" type="Label" parent="Controls Text"]
+layout_mode = 0
 offset_left = 39.0
 offset_top = 75.0
 offset_right = 1349.0
