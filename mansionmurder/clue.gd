@@ -4,7 +4,6 @@ var cursor = preload("res://art/pointer.png")
 # Exported variables for customizing each clue
 @export var display_time: float = 2.0  # Time to show the textbox
 @export var offset: Vector2 = Vector2(0, -50)  # Offset to position the textbox above the clue
-
 @export var clue_name: String = "Example Clue"
 @export var lines: Array[String] = []
 @export var narrator_lines: Array[String] = []
@@ -13,7 +12,6 @@ var cursor = preload("res://art/pointer.png")
 @export var clue_description: String = ""
 @onready var collision_shape = $CollisionShape2D
 @onready var clue_sprite = $Sprite2D  # Image to display the clue
-
 # Instance variables
 var textbox_scene = preload("res://textbox.tscn")
 var clue_pickup_text_scene = preload("res://clue_pickup_text.tscn")
@@ -102,6 +100,9 @@ func _populate_dialogue():
 		
 	if Global.current_line_index >= lines.size():
 		_dialog_end(text_container)
+		if !Global.first_clue_found:
+			print('yes')
+			Global.first_clue_found = true
 		print("end of dialogue")
 		
 	else:
