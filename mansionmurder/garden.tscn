@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://garden.gd" id="1_wpmah"]
 [ext_resource type="Texture2D" uid="uid://cvmep3oqfu663" path="res://art/RoomBackgrounds/garden.png" id="2_j63r0"]
 [ext_resource type="Texture2D" uid="uid://bhj1dj0s15x64" path="res://art/RoomBackgrounds/GardenObjects/benchleft.png" id="3_q3jka"]
-[ext_resource type="PackedScene" path="res://gardener.tscn" id="3_vkqy3"]
+[ext_resource type="PackedScene" uid="uid://cfs683yifn6p0" path="res://gardener.tscn" id="3_vkqy3"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="4_8xh4o"]
 [ext_resource type="Texture2D" uid="uid://bbojh634gudxs" path="res://art/RoomBackgrounds/GardenObjects/benchright.png" id="4_gvh2n"]
 [ext_resource type="Texture2D" uid="uid://ihjdc3iw45j1" path="res://art/RoomBackgrounds/GardenObjects/fountain.png" id="5_so5mk"]
@@ -65,7 +65,7 @@ clue_name = "Gloves"
 lines = Array[String](["A pair of ordinary work-gloves.", "Wait, is that blood stained on the fingertips...?", "This is a question for the gardner James..."])
 narrator_lines = Array[String](["Clue has been added to inventory, you can now ask suspects about it."])
 clue_texture = ExtResource("5_sqbn4")
-clue_description = "a pair of garden gloves stained with blood."
+clue_description = "Garden Gloves"
 
 [node name="key" parent="." instance=ExtResource("4_8xh4o")]
 visible = false

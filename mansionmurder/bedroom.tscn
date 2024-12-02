@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_x5y1v"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_236vv"]
-[ext_resource type="PackedScene" uid="uid://p8q7ed24lfeq" path="res://maid.tscn" id="3_80a53"]
+[ext_resource type="PackedScene" uid="uid://pjj5rypshk1d" path="res://maid.tscn" id="3_80a53"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="4_o0aq8"]
 [ext_resource type="Texture2D" uid="uid://bs8a5mrwnirdd" path="res://art/Clues/Diary.png" id="5_txu53"]
 [ext_resource type="Texture2D" uid="uid://bv8pn1847njgt" path="res://art/Clues/necklace.png" id="6_xcdyy"]
@@ -41,7 +41,7 @@ clue_name = "Diary"
 lines = Array[String](["Looks like a diary", "Written on the front: Belongs to Mrs. Burmingham...", "Enrty 09/08/88: Mr. Burmingham had been having an affair...with THE MAID?!?!", "I can't believe it...I must get revenge."])
 narrator_lines = Array[String](["Clue has been added to inventory, you can now ask suspects about it."])
 clue_texture = ExtResource("5_txu53")
-clue_description = "Looks like a diaryLooks like a diary"
+clue_description = "Diary"
 
 [node name="Necklace" parent="." instance=ExtResource("4_o0aq8")]
 visible = false
