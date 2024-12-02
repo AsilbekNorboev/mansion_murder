@@ -148,8 +148,35 @@ self_modulate = Color(1, 1, 1, 0.0980392)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 22.0
+offset_right = 28.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Instructions" type="Label" parent="."]
+offset_left = 122.0
+offset_top = 212.0
+offset_right = 537.0
+offset_bottom = 1021.0
+theme_override_font_sizes/font_size = 30
+text = "Intructions:
+Solve the puzzle
+ by puttng the
+ peics in the right 
+place.
+Click  on peices 
+to swap them"
+
+[node name="Exit_message" type="Label" parent="."]
+offset_left = 976.0
+offset_top = 332.0
+offset_right = 1189.0
+offset_bottom = 473.0
+theme_override_font_sizes/font_size = 50
+text = "Click ESC 
+to exit"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
