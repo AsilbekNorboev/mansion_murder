@@ -59,10 +59,10 @@ stream = ExtResource("5_glnpu")
 volume_db = 20.0
 
 [node name="Arrow" type="TextureRect" parent="."]
-offset_left = 954.0
-offset_top = 571.0
-offset_right = 1087.0
-offset_bottom = 720.0
+offset_left = 1002.0
+offset_top = 573.0
+offset_right = 1135.0
+offset_bottom = 722.0
 texture = ExtResource("6_iu80u")
 expand_mode = 1
 

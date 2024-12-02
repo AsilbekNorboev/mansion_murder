@@ -38,7 +38,7 @@ shape = SubResource("RectangleShape2D_j4bkx")
 [node name="Diary" parent="." instance=ExtResource("4_o0aq8")]
 position = Vector2(212, 602)
 clue_name = "Diary"
-lines = Array[String](["Looks like a diary", "Written on the front: Belongs to Mrs. Burmingham...", "Enrty 09/08/88: Mr. Burmingham had been having an affair...with THE MAID?!?!", "I can't believe it...I must get revenge."])
+lines = Array[String](["Looks like a diary", "Written on the front: Belongs to Mrs. Burmingham...", "Enrty 09/08/88: Mr. Burmingham had been having an affair...with THE MAID?!?!", "I can't believe it..."])
 narrator_lines = Array[String](["Clue has been added to inventory, you can now ask suspects about it."])
 clue_texture = ExtResource("5_txu53")
 clue_description = "Diary"
