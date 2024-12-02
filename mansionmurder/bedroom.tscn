@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dg4qym28b3db5"]
+[gd_scene load_steps=12 format=3 uid="uid://dg4qym28b3db5"]
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_x5y1v"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_236vv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bs8a5mrwnirdd" path="res://art/Clues/Diary.png" id="5_txu53"]
 [ext_resource type="Texture2D" uid="uid://bv8pn1847njgt" path="res://art/Clues/necklace.png" id="6_xcdyy"]
 [ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="7_jlllh"]
+[ext_resource type="PackedScene" uid="uid://cuosxm5kdfdd7" path="res://letter.tscn" id="8_kblto"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
 size = Vector2(1200, 680)
@@ -78,5 +79,8 @@ polygon = PackedVector2Array(-5, 391, -99, 430, -134, 731, -7, 746)
 
 [node name="Maid" type="CollisionPolygon2D" parent="Colliders"]
 polygon = PackedVector2Array(-553, 421, -483, 423, -481, 480, -544, 493, -558, 490, -567, 479, -557, 458)
+
+[node name="letter" parent="." instance=ExtResource("8_kblto")]
+position = Vector2(958, 275)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
