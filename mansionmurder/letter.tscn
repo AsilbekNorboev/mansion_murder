@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuosxm5kdfdd7"]
+
+[ext_resource type="Texture2D" uid="uid://bkgxam257yav2" path="res://art/Clues/Envelope.png" id="1_pxivr"]
+[ext_resource type="Script" path="res://letter.gd" id="1_vivu8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joii4"]
+size = Vector2(59, 75)
+
+[node name="letter" type="Area2D"]
+process_mode = 3
+script = ExtResource("1_vivu8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pxivr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, -5.5)
+shape = SubResource("RectangleShape2D_joii4")

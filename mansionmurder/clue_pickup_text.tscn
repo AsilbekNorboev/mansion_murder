@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://u3pvjcx1ts0s"]
+[gd_scene load_steps=3 format=3 uid="uid://cnyxhjn6p8j5j"]
 
 [ext_resource type="Script" path="res://clue_pickup_text.gd" id="1_o2yn2"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_erg7y"]
