@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ct0b334pb2lmf"]
+[gd_scene load_steps=15 format=3 uid="uid://ct0b334pb2lmf"]
 
 [ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
 [ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cb412322sexk3" path="res://art/Clues/Knife 2.png" id="7_jy6q6"]
 [ext_resource type="Texture2D" uid="uid://bf40stcykdaba" path="res://art/Clues/Body.png" id="8_d0tdq"]
 [ext_resource type="Texture2D" uid="uid://cvmyer14dijnk" path="res://art/Clues/Deed.png" id="9_gcmtm"]
+[ext_resource type="AudioStream" uid="uid://dok3uujggh42" path="res://audio/SFX/piano.wav" id="9_kus8i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mddni"]
 size = Vector2(1200, 680)
@@ -42,8 +43,17 @@ shape = SubResource("RectangleShape2D_mddni")
 [node name="Upper Left Wall Collider" type="CollisionPolygon2D" parent="Colliders"]
 polygon = PackedVector2Array(30, 203, 72, 204, 119, 182, 185, 414, 270, 225, 578, 219, 581, 186, 577, 56, 55, 58)
 
-[node name="Upper Right Wall Collider" type="CollisionPolygon2D" parent="Colliders"]
+[node name="PianoCollider" type="CollisionPolygon2D" parent="Colliders"]
 polygon = PackedVector2Array(762, 49, 763, 205, 1100, 345, 1174, 366, 1222, 226, 1250, 149, 1256, 53)
+
+[node name="PianoButton" type="Button" parent="Colliders/PianoCollider"]
+z_index = -10
+offset_left = 931.0
+offset_top = 121.0
+offset_right = 939.0
+offset_bottom = 129.0
+rotation = 0.418206
+scale = Vector2(33.1496, 17.1681)
 
 [node name="Lower Wall Collider" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(652.5, 748.5)
@@ -102,4 +112,9 @@ scale = Vector2(1.5, 1.5)
 lines = Array[String](["The body of the deceased, Mr. Birmingham.", "Mrs. Birmingham found him dead this morning..."])
 clue_texture = ExtResource("8_d0tdq")
 
+[node name="Piano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_kus8i")
+volume_db = 1.0
+
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="pressed" from="Colliders/PianoCollider/PianoButton" to="." method="_on_piano_button_pressed"]

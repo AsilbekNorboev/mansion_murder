@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0tac7mqeul18"]
+[gd_scene load_steps=11 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://cq48pb40mr7pc" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bg8q0fe6upe2d" path="res://chef.tscn" id="5_8sl5h"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="5_q6yu7"]
 [ext_resource type="Texture2D" uid="uid://bkgxam257yav2" path="res://art/Clues/Envelope.png" id="6_ysihl"]
+[ext_resource type="AudioStream" uid="uid://cq4chgh3ih35k" path="res://audio/SFX/fish flop.wav" id="7_ccfby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w0s"]
 size = Vector2(1200, 680)
@@ -74,6 +75,14 @@ position = Vector2(133.856, -101.241)
 scale = Vector2(1.18433, 1.20536)
 polygon = PackedVector2Array(-914, 628, -895, 536, -415, 535, -381, 628, -426, 667, -869, 675)
 
+[node name="Fish Button" type="Button" parent="Colliders/Island"]
+z_index = -10
+offset_left = -867.877
+offset_top = 532.822
+offset_right = -859.877
+offset_bottom = 540.822
+scale = Vector2(54.0516, 13.1405)
+
 [node name="Near Door" type="CollisionPolygon2D" parent="Colliders"]
 position = Vector2(0, 3)
 polygon = PackedVector2Array(-1173, 149, -1132, 203, -1084, 337, -1054, 252, -1130, 63, -1201, 70, -1194, 117)
@@ -81,4 +90,9 @@ polygon = PackedVector2Array(-1173, 149, -1132, 203, -1084, 337, -1054, 252, -11
 [node name="Left Island" type="CollisionPolygon2D" parent="Colliders"]
 polygon = PackedVector2Array(-1058, 497, -1112, 750, -1202, 749, -1220, 423, -1066, 451)
 
+[node name="FishFlop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ccfby")
+volume_db = 24.0
+
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="pressed" from="Colliders/Island/Fish Button" to="." method="_on_fish_button_pressed"]
