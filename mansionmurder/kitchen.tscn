@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0tac7mqeul18"]
+[gd_scene load_steps=12 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://cq48pb40mr7pc" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bg8q0fe6upe2d" path="res://chef.tscn" id="5_8sl5h"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="5_q6yu7"]
 [ext_resource type="Texture2D" uid="uid://bkgxam257yav2" path="res://art/Clues/Envelope.png" id="6_ysihl"]
+[ext_resource type="Script" path="res://noncluetextbox.gd" id="7_0ck1s"]
 [ext_resource type="AudioStream" uid="uid://cq4chgh3ih35k" path="res://audio/SFX/fish flop.wav" id="7_ccfby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w0s"]
@@ -70,6 +71,16 @@ position = Vector2(0, -0.79064)
 scale = Vector2(1, 1.20273)
 polygon = PackedVector2Array(-211, 258.405, -1056, 255, -1124, 68, -193, 63)
 
+[node name="KnifeButton" type="Button" parent="Colliders/Back Wall"]
+z_index = -10
+offset_left = -497.0
+offset_top = 158.631
+offset_right = -489.0
+offset_bottom = 166.631
+scale = Vector2(22.0671, 6.35482)
+script = ExtResource("7_0ck1s")
+lines = Array[String](["A knife is missing from this set."])
+
 [node name="Island" type="CollisionPolygon2D" parent="Colliders"]
 position = Vector2(133.856, -101.241)
 scale = Vector2(1.18433, 1.20536)
@@ -95,4 +106,5 @@ stream = ExtResource("7_ccfby")
 volume_db = 24.0
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="pressed" from="Colliders/Back Wall/KnifeButton" to="." method="_on_knife_button_pressed"]
 [connection signal="pressed" from="Colliders/Island/Fish Button" to="." method="_on_fish_button_pressed"]
