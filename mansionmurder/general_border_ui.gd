@@ -15,12 +15,12 @@ func _check_first_clue_found() -> void:
 
 	# First clue found; show the arrow
 	arrow.visible = true
-func _on_investigate_button_pressed():
-	$InvestigateButton.modulate = Color("#000000")
-	await get_tree().create_timer(0.2).timeout
-	$InvestigateButton.modulate = Color("#ffffff")
-	investigate.emit()
-	
+#func _on_investigate_button_pressed():
+	#$InvestigateButton.modulate = Color("#000000")
+	#await get_tree().create_timer(0.2).timeout
+	#$InvestigateButton.modulate = Color("#ffffff")
+	#investigate.emit()
+	#
 func _on_inventory_button_pressed() -> void:
 	arrow.visible = false
 	$InventoryButton.modulate = Color("#000000")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://m7bknevnv735"]
 
 [ext_resource type="Script" path="res://general_border_ui.gd" id="1_ufin5"]
-[ext_resource type="Texture2D" uid="uid://dyt0pbqdororh" path="res://art/TempBorder_updated.png" id="2_vumir"]
+[ext_resource type="Texture2D" uid="uid://blj4kiwxy2rqv" path="res://art/border.png" id="2_e1u3n"]
 [ext_resource type="Script" path="res://investigate_button.gd" id="3_a27rf"]
 [ext_resource type="AudioStream" uid="uid://dvalpk5jn2i56" path="res://audio/SFX/Inventory_open_sfx.wav" id="4_pbeyp"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="5_glnpu"]
@@ -12,10 +12,11 @@ layer = 2
 script = ExtResource("1_ufin5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_vumir")
+texture = ExtResource("2_e1u3n")
 centered = false
 
 [node name="InvestigateButton" type="Button" parent="."]
+visible = false
 offset_left = 44.0
 offset_top = 745.0
 offset_right = 2344.0
@@ -24,15 +25,16 @@ scale = Vector2(0.07, 0.07)
 script = ExtResource("3_a27rf")
 
 [node name="InventoryButton" type="Button" parent="."]
+z_index = -10
 anchors_preset = -1
 anchor_left = 0.763
 anchor_top = 0.897
 anchor_right = 0.763
 anchor_bottom = 0.897
-offset_left = -45.53
-offset_top = -30.905
-offset_right = 96.47
-offset_bottom = 73.095
+offset_left = -3.53003
+offset_top = -23.905
+offset_right = 138.47
+offset_bottom = 80.095
 
 [node name="rustleSFX" type="AudioStreamPlayer" parent="InventoryButton"]
 stream = ExtResource("4_pbeyp")
@@ -40,15 +42,16 @@ volume_db = 20.0
 
 [node name="SettingsButton" type="Button" parent="."]
 process_mode = 3
+z_index = -10
 anchors_preset = -1
 anchor_left = 0.913
 anchor_top = 0.906
 anchor_right = 0.913
 anchor_bottom = 0.906
-offset_left = -68.03
-offset_top = -38.69
-offset_right = 72.97
-offset_bottom = 71.31
+offset_left = -46.03
+offset_top = -37.69
+offset_right = 94.97
+offset_bottom = 72.31
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="SettingsButton"]
 stream = ExtResource("5_glnpu")
