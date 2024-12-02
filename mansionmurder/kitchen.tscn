@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
-[ext_resource type="Texture2D" uid="uid://ud44tx215fxo" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
+[ext_resource type="Texture2D" uid="uid://cq48pb40mr7pc" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
 [ext_resource type="Texture2D" uid="uid://c2b42ow8e6v8e" path="res://art/Clues/Plant.png" id="4_k42ji"]
 [ext_resource type="PackedScene" uid="uid://bg8q0fe6upe2d" path="res://chef.tscn" id="5_8sl5h"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="5_q6yu7"]
@@ -65,9 +65,13 @@ shape = SubResource("RectangleShape2D_l5lok")
 polygon = PackedVector2Array(-31, 642, -85, 655, -202, 360, -208, 276, -191, 61, 7, 69)
 
 [node name="Back Wall" type="CollisionPolygon2D" parent="Colliders"]
-polygon = PackedVector2Array(-217, 260, -1056, 255, -1124, 68, -193, 63, -214, 249)
+position = Vector2(0, -0.79064)
+scale = Vector2(1, 1.20273)
+polygon = PackedVector2Array(-211, 258.405, -1056, 255, -1124, 68, -193, 63)
 
 [node name="Island" type="CollisionPolygon2D" parent="Colliders"]
+position = Vector2(133.856, -101.241)
+scale = Vector2(1.18433, 1.20536)
 polygon = PackedVector2Array(-914, 628, -895, 536, -415, 535, -381, 628, -426, 667, -869, 675)
 
 [node name="Near Door" type="CollisionPolygon2D" parent="Colliders"]
@@ -75,6 +79,6 @@ position = Vector2(0, 3)
 polygon = PackedVector2Array(-1173, 149, -1132, 203, -1084, 337, -1054, 252, -1130, 63, -1201, 70, -1194, 117)
 
 [node name="Left Island" type="CollisionPolygon2D" parent="Colliders"]
-polygon = PackedVector2Array(-1108, 514, -1112, 750, -1202, 749, -1201, 469, -1116, 476, -1108, 506)
+polygon = PackedVector2Array(-1058, 497, -1112, 750, -1202, 749, -1220, 423, -1066, 451)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
