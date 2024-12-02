@@ -18,8 +18,8 @@ config/icon="res://art/icon.svg"
 [autoload]
 
 Global="*res://global.gd"
-Events="*res://main.gd"
 InventoryManager="*res://inventory_manager.gd"
+Events="*res://main.gd"
 
 [display]
 

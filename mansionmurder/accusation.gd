@@ -1,5 +1,14 @@
 extends Control
 
+
+func _ready():
+	# Add a check or connect if you are using a signal for updates
+	if Global.has_signal("npc_added"):
+		Global.npc_added.connect(_on_npc_added)
+	Global.inventory_button_pressed.connect(_on_inventory_button_pressed)
+	
+func _on_inventory_button_pressed():
+	add_NPC_Container()
 func add_NPC_Container():
 	#get_tree().call_group("Suspects", "met_character")
 	if (Global.NPC != ("test NPC")):
@@ -13,7 +22,9 @@ func add_NPC_Container():
 				$NPCContainer/Maid.show()		
 		#var new_filepath = ("$ScrollContainer/NPCContainer/") + (Global.NPC)
 		#new_filepath.hide()
-		
+func _on_npc_added(npc_name: String):
+	print("NPC added: ", npc_name)
+	add_NPC_Container()
 #waits a few seconds to allow the sound effect of the button to play
 func wait(seconds: float) -> void:
 	OS.delay_msec(seconds * 1000)

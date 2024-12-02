@@ -13,6 +13,7 @@ var deputytalksprite = textappear.get_node("Dialogue Sprites/Deputy Dialogue Spr
 var maidtalksprite = textappear.get_node("Dialogue Sprites/Maid Dialogue Sprite")
 var is_dialog_active = false
 var accusation_menu = preload("res://accusation_menu.tscn").instantiate()
+signal npc_added
 
 var active_lines = []
 
@@ -155,7 +156,7 @@ func met_character():
 			print(Global.NPC, " has been added to the suspect list")
 			print(Global.suspect_list)
 			print(Global.suspect_list.size())
-			
+			emit_signal("npc_added", Global.NPC)
 			#Global.NPC = "resettingvariable"
 
 	else:

@@ -6,6 +6,7 @@ signal puzzle_completed(puzzle1)
 @onready var inventory_ui = $InventoryUI
 @onready var clue_node_safe = $Rooms/Bedroom/Safe
 @onready var settings_ui = $SettingsUI
+signal inventory_button_pressed
 
 # CLUES:
 @onready var clue_deed = $Rooms/LivingRoom/Deed
@@ -53,6 +54,7 @@ func _ready():
 func _on_inventory_button_pressed():
 	# Toggle visibility: if it's visible, hide it; if it's hidden, show it
 	$InventoryUI.visible = not $InventoryUI.visible
+	Global.emit_signal("inventory_button_pressed")
 
 func _on_settings_button_pressed():
 	if ($SettingsUI.visible):
