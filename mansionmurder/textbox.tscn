@@ -265,9 +265,13 @@ animations = [{
 bg_color = Color(0.75959, 0.172171, 2.88785e-07, 1)
 
 [node name="textbox" type="CanvasLayer"]
+process_priority = 3
+process_physics_priority = 3
+layer = 3
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
-process_mode = 3
+process_priority = 3
+process_physics_priority = 3
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0

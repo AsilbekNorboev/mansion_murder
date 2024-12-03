@@ -12,7 +12,7 @@ signal inventory_button_pressed
 @onready var clue_deed = $Rooms/LivingRoom/Deed
 @onready var clue_envelope = $Rooms/Kitchen/Envelope
 @onready var clue_dirt = $Rooms/Kitchen/Dirt
-@onready var clue_knife = $Rooms/LivingRoom/Knife
+@onready var clue_knife = $Rooms/LivingRoom/Wordle/TextureRect/Knife
 @onready var clue_safe = $Rooms/Bedroom/Safe
 @onready var clue_necklace = $Rooms/Bedroom/Necklace
 @onready var clue_diary = $Rooms/Bedroom/Diary

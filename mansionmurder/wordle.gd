@@ -1,5 +1,4 @@
 extends CanvasLayer
-
 @onready var buttons = $GridContainer.get_children()
 @onready var result_label: Label = $ResultLabel
 @onready var word_label: Label = $WordLabel
@@ -17,10 +16,11 @@ var wordle: String = ""
 var index = 0  # Position of button text to be updated
 var latest_row_index = 0
 var row_filled = false
-var current_row = 0  # Keep track of which row is being filled
-
+var current_row = 0  # Keep track of which
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$TextureRect/Knife.set_process_input(false)
+	$Button3.visible = true
 	$GridContainer.visible = false# Hide the grid and buttons initially
 	$Instructions.visible = false
 	$Instructions2.visible = false
@@ -29,6 +29,7 @@ func _ready():
 	$Button.text = "start"# Hide hint initially
 	$Button.visible = true # Show the start button
 	$WordLabel.visible = false  # Show the word label\
+	$TextureRect.visible =false
 	print("we readuuu")
 	
 
@@ -148,6 +149,12 @@ func check_win() -> bool:
 		$Instructions3.visible = false  # Hide instructions initially
 		$Hint.visible = false 
 		$ExitMessage.visible = true
+		$Button3.visible = false
+		$ResultLabel.visible = false
+		$ExitMessage.visible = false
+		$TextureRect.visible = true
+		$TextureRect/Knife.set_process_input(true)
+		#$Timer.start(1.0)
 		return true
 
 	return false
@@ -164,3 +171,16 @@ func check_loss():
 
 func _on_button_2_pressed() -> void:
 	print("") # Replace with function body.
+
+
+"""func _on_timer_timeout() -> void:
+	$Button3.visible = false
+	$ResultLabel.visible = false
+	$ExitMessage.visible = false
+	$TextureRect.visible = true
+	$TextureRect/Knife.set_process_input(true)
+	return
+"""
+
+func _on_button_3_pressed() -> void:
+	print("")

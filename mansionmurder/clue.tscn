@@ -18,6 +18,8 @@ texture = ExtResource("2_l68xf")
 shape = SubResource("RectangleShape2D_0a4au")
 
 [node name="Narrator Text" type="Node" parent="."]
+process_priority = 3
+process_physics_priority = 3
 script = ExtResource("3_egiq4")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

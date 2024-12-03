@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dg37jkuuhrc24"]
+[gd_scene load_steps=11 format=3 uid="uid://dg37jkuuhrc24"]
 
 [ext_resource type="Script" path="res://wordle.gd" id="1_3nakt"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="2_x7tva"]
+[ext_resource type="Texture2D" uid="uid://drhkry7ajgl8w" path="res://Drawer_inside.png" id="3_fpvy2"]
+[ext_resource type="Texture2D" uid="uid://ch86s7buaignc" path="res://art/Clues/knife_set.png" id="4_4ehd7"]
+[ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="4_aqeoh"]
+[ext_resource type="Texture2D" uid="uid://cb412322sexk3" path="res://art/Clues/Knife 2.png" id="5_xusy0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6nwl3"]
 
@@ -319,7 +323,6 @@ theme_override_font_sizes/font_size = 72
 text = "x"
 
 [node name="Button2" type="Button" parent="."]
-process_priority = 1
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -327,6 +330,48 @@ anchor_bottom = 1.0
 offset_left = 5.0
 offset_top = 23.0
 offset_right = 5.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 8
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -117.0
+offset_top = 55.0
+offset_right = 1491.0
+offset_bottom = 855.0
+texture = ExtResource("3_fpvy2")
+expand_mode = 1
+
+[node name="Knife" parent="TextureRect" instance=ExtResource("4_aqeoh")]
+process_priority = -1
+process_physics_priority = -1
+position = Vector2(1052, 362)
+scale = Vector2(6, 6)
+priority = 1
+clue_name = "Knife"
+lines = Array[String](["A knife lay next to the body of the deceased...", "This knife looks like it came straight from the kitchen.", "You might want to have a chat with Chef Sordanio."])
+narrator_lines = Array[String](["Clue has been added to inventory, you can now ask suspects about it."])
+clue_texture = ExtResource("5_xusy0")
+clue_description = "The knife"
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect"]
+position = Vector2(564, 355)
+scale = Vector2(5.46875, 4.67188)
+texture = ExtResource("4_4ehd7")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Button3" type="Button" parent="."]
+process_mode = 3
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 707.0
+offset_top = 23.0
+offset_right = -109.0
 offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -354,4 +399,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_lq1so")
 text = "UNLOCK"
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
