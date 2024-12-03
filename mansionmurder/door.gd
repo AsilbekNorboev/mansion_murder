@@ -3,6 +3,7 @@ extends Area2D
 # Exported variable to define the target position (or room)
 @export var target_position: Vector2
 @export var requires_key: bool = false  # Whether the door requires the key
+@export var door_name: String = "door"
 var textbox_scene = preload("res://textbox.tscn")
 
 func _ready():
@@ -23,7 +24,9 @@ func _on_body_entered(body):
 				body.global_position = target_position
 			else:
 				print("YOU NEED KEY")
-				show_textbox("The door is locked. You need a key to open it.")
+				var message = "The %s is locked. You need a key to open it." % door_name
+				print(message)
+				show_textbox(message)
 		else:
 			body.global_position = target_position
 		

@@ -139,6 +139,7 @@ shape = SubResource("RectangleShape2D_f7dp1")
 script = ExtResource("10_mwxc7")
 target_position = Vector2(-200, 400)
 requires_key = true
+door_name = "bedroom"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
 position = Vector2(109.438, 347.5)
