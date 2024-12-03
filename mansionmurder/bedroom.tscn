@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://dg4qym28b3db5"]
+[gd_scene load_steps=14 format=3 uid="uid://dg4qym28b3db5"]
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_x5y1v"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_236vv"]
-[ext_resource type="PackedScene" uid="uid://pjj5rypshk1d" path="res://maid.tscn" id="3_80a53"]
+[ext_resource type="PackedScene" uid="uid://p8q7ed24lfeq" path="res://maid.tscn" id="3_80a53"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="4_o0aq8"]
 [ext_resource type="Texture2D" uid="uid://bs8a5mrwnirdd" path="res://art/Clues/Diary.png" id="5_txu53"]
 [ext_resource type="Texture2D" uid="uid://bv8pn1847njgt" path="res://art/Clues/necklace.png" id="6_xcdyy"]
 [ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="7_jlllh"]
-[ext_resource type="PackedScene" uid="uid://cuosxm5kdfdd7" path="res://letter.tscn" id="8_kblto"]
+[ext_resource type="PackedScene" path="res://letter.tscn" id="8_kblto"]
+[ext_resource type="Script" path="res://door.gd" id="9_uo6w4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
 size = Vector2(1200, 680)
@@ -17,6 +18,9 @@ size = Vector2(1182.5, 70.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1q56j"]
 size = Vector2(50, 731)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bnvr"]
+size = Vector2(105.562, 325)
 
 [node name="Bedroom" type="Node2D"]
 script = ExtResource("1_x5y1v")
@@ -83,4 +87,13 @@ polygon = PackedVector2Array(-553, 421, -483, 423, -481, 480, -544, 493, -558, 4
 [node name="letter" parent="." instance=ExtResource("8_kblto")]
 position = Vector2(958, 275)
 
+[node name="Door3" type="Area2D" parent="."]
+script = ExtResource("9_uo6w4")
+target_position = Vector2(224, 420)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
+position = Vector2(1202.78, 306.5)
+shape = SubResource("RectangleShape2D_8bnvr")
+
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_entered" from="Door3" to="Door3" method="_on_body_entered"]

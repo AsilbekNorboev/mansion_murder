@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0tac7mqeul18"]
+[gd_scene load_steps=14 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://cq48pb40mr7pc" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bkgxam257yav2" path="res://art/Clues/Envelope.png" id="6_ysihl"]
 [ext_resource type="Script" path="res://noncluetextbox.gd" id="7_0ck1s"]
 [ext_resource type="AudioStream" uid="uid://cq4chgh3ih35k" path="res://audio/SFX/fish flop.wav" id="7_ccfby"]
+[ext_resource type="Script" path="res://door.gd" id="9_i58c1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w0s"]
 size = Vector2(1200, 680)
@@ -17,6 +18,9 @@ size = Vector2(1182.5, 70.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5lok"]
 size = Vector2(50, 731)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iygev"]
+size = Vector2(105.125, 289)
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_wkt5y")
@@ -105,6 +109,15 @@ polygon = PackedVector2Array(-1058, 497, -1112, 750, -1202, 749, -1220, 423, -10
 stream = ExtResource("7_ccfby")
 volume_db = 24.0
 
+[node name="Door3" type="Area2D" parent="."]
+script = ExtResource("9_i58c1")
+target_position = Vector2(1056, 390)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
+position = Vector2(109, 298)
+shape = SubResource("RectangleShape2D_iygev")
+
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="pressed" from="Colliders/Back Wall/KnifeButton" to="." method="_on_knife_button_pressed"]
 [connection signal="pressed" from="Colliders/Island/Fish Button" to="." method="_on_fish_button_pressed"]
+[connection signal="body_entered" from="Door3" to="Door3" method="_on_body_entered"]
