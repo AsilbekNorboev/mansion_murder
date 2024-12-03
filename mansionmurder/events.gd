@@ -4,9 +4,11 @@ signal room_entered(room)
 signal puzzle_completed(puzzle1)
 
 @onready var inventory_ui = $InventoryUI
+@onready var suspects_ui = $SuspectsUI
 @onready var clue_node_safe = $Rooms/Bedroom/Safe
 @onready var settings_ui = $SettingsUI
 signal inventory_button_pressed
+signal suspects_button_pressed
 
 # CLUES:
 @onready var clue_deed = $Rooms/LivingRoom/Deed
@@ -34,6 +36,8 @@ func _ready():
 	var general_border_ui = $GeneralBorderUI
 	general_border_ui.inventorybuttonpressed.connect(_on_inventory_button_pressed)
 	general_border_ui.settingsbuttonpressed.connect(_on_settings_button_pressed)
+	general_border_ui.suspectsbuttonpressed.connect(_on_suspects_button_pressed)
+
 	
 	# Connect all clue nodes to the same click handler
 	#ue_node_safe.clue_clicked.connect(self._on_clue_clicked)
@@ -56,6 +60,7 @@ func _on_inventory_button_pressed():
 	$InventoryUI.visible = not $InventoryUI.visible
 	Global.emit_signal("inventory_button_pressed")
 
+
 func _on_settings_button_pressed():
 	if ($SettingsUI.visible):
 		#disable character movement while in settings
@@ -64,6 +69,12 @@ func _on_settings_button_pressed():
 	else:
 		$SettingsUI.visible = not $SettingsUI.visible
 		get_tree().paused = true
+
+func _on_suspects_button_pressed():
+	# Toggle visibility: if it's visible, hide it; if it's hidden, show it
+	#suspects_ui.visible = not suspects_ui.visible
+	#Global.emit_signal("suspects_button_pressed")
+	pass
 
 
 func _on_clue_clicked(clue_data):

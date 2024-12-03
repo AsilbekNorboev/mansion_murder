@@ -16,12 +16,10 @@ func _on_switch_button_pressed() -> void:
 	#on click, accusation menu will populate with new suspects you've met
 	$AccusationMenu.add_NPC_Container()
 	if $SwitchButton.text == "Inventory":
-		$"Inventory Label".visible = true
 		$AccusationMenu.visible = false
 		$ScrollContainer/ClueContainer.visible = true
 		$SwitchButton.text = "Suspects"
 	else:
 		$AccusationMenu.visible = true
-		$"Inventory Label".visible = false
 		$ScrollContainer/ClueContainer.visible = false
 		$SwitchButton.text = "Inventory"

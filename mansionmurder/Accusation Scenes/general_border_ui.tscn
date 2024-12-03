@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://m7bknevnv735"]
 
 [ext_resource type="Script" path="res://general_border_ui.gd" id="1_ufin5"]
-[ext_resource type="Texture2D" uid="uid://blj4kiwxy2rqv" path="res://art/border.png" id="2_e1u3n"]
+[ext_resource type="Texture2D" uid="uid://bc1qj2t2jemis" path="res://art/border.png" id="2_e1u3n"]
 [ext_resource type="Script" path="res://investigate_button.gd" id="3_a27rf"]
 [ext_resource type="AudioStream" uid="uid://dvalpk5jn2i56" path="res://audio/SFX/Inventory_open_sfx.wav" id="4_pbeyp"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="5_glnpu"]
@@ -11,7 +11,7 @@
 layer = 2
 script = ExtResource("1_ufin5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="border art" type="Sprite2D" parent="."]
 texture = ExtResource("2_e1u3n")
 centered = false
 
@@ -66,7 +66,25 @@ offset_bottom = 722.0
 texture = ExtResource("6_iu80u")
 expand_mode = 1
 
-[connection signal="investigate" from="." to="InvestigateButton" method="_on_investigate_clicked"]
+[node name="SuspectsButton" type="Button" parent="."]
+process_mode = 3
+z_index = -10
+anchors_preset = -1
+anchor_left = 0.913
+anchor_top = 0.906
+anchor_right = 0.913
+anchor_bottom = 0.906
+offset_left = -322.03
+offset_top = -35.69
+offset_right = -181.03
+offset_bottom = 74.31
+scale = Vector2(0.815424, 1.00982)
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="SuspectsButton"]
+stream = ExtResource("5_glnpu")
+volume_db = 20.0
+
 [connection signal="pressed" from="InvestigateButton" to="." method="_on_investigate_button_pressed"]
 [connection signal="pressed" from="InventoryButton" to="." method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="SuspectsButton" to="." method="_on_suspects_button_pressed"]

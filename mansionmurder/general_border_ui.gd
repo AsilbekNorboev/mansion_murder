@@ -1,7 +1,8 @@
 extends CanvasLayer
-signal investigate
+#signal investigate
 signal inventorybuttonpressed
 signal settingsbuttonpressed
+signal suspectsbuttonpressed
 @onready var arrow = $Arrow
 #var accusation_menu = preload("res://accusation_menu.tscn").instantiate()
 
@@ -37,3 +38,10 @@ func _on_settings_button_pressed() -> void:
 	await get_tree().create_timer(0.2).timeout
 	$SettingsButton.modulate = Color("#ffffff")
 	settingsbuttonpressed.emit()
+
+
+func _on_suspects_button_pressed() -> void:
+	$SuspectsButton/ButtonClick.play()
+	suspectsbuttonpressed.emit()
+	get_tree().paused = !get_tree().paused
+	

@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://ct0b334pb2lmf"]
 
 [ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
-[ext_resource type="Texture2D" uid="uid://dxj0xnuw2g32j" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
+[ext_resource type="Texture2D" uid="uid://od7cnftlwcae" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
 [ext_resource type="PackedScene" uid="uid://cocv41sdm5dlh" path="res://wife.tscn" id="5_vsfb2"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="6_1tmqa"]
 [ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="6_wqe7p"]
@@ -25,7 +25,7 @@ size = Vector2(19.5, 547)
 size = Vector2(144, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yth5"]
-size = Vector2(276, 43)
+size = Vector2(176, 90.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f7dp1"]
 size = Vector2(112.25, 258.25)
@@ -52,7 +52,7 @@ shape = SubResource("RectangleShape2D_mddni")
 polygon = PackedVector2Array(30, 203, 72, 204, 119, 182, 185, 414, 270, 225, 578, 219, 581, 186, 577, 56, 55, 58)
 
 [node name="PianoCollider" type="CollisionPolygon2D" parent="Colliders"]
-polygon = PackedVector2Array(762, 49, 763, 205, 1100, 345, 1174, 366, 1222, 226, 1250, 149, 1256, 53)
+polygon = PackedVector2Array(762, 49, 763, 205, 1098, 344, 1222, 226, 1250, 149, 1256, 53)
 
 [node name="PianoButton" type="Button" parent="Colliders/PianoCollider"]
 z_index = -10
@@ -76,11 +76,12 @@ position = Vector2(1238, 621)
 shape = SubResource("RectangleShape2D_sasua")
 
 [node name="Couch Collider 1" type="CollisionShape2D" parent="Colliders"]
-position = Vector2(686, 558.5)
+position = Vector2(1110, 574)
 shape = SubResource("RectangleShape2D_x6cs3")
 
 [node name="Couch Collider 2" type="CollisionShape2D" parent="Colliders"]
-position = Vector2(817, 453.5)
+position = Vector2(907, 475)
+scale = Vector2(1, -0.199627)
 shape = SubResource("RectangleShape2D_8yth5")
 
 [node name="Lower Wall Collider Right" type="CollisionPolygon2D" parent="Colliders"]
@@ -124,28 +125,31 @@ clue_texture = ExtResource("8_d0tdq")
 stream = ExtResource("9_kus8i")
 volume_db = 1.0
 
-[node name="Door" parent="." instance=ExtResource("10_bgaxj")]
+[node name="GardenDoor" parent="." instance=ExtResource("10_bgaxj")]
+scale = Vector2(0.998185, 0.809888)
 target_position = Vector2(570, -200)
 
-[node name="Door2" type="Area2D" parent="."]
+[node name="KitchenDoor" type="Area2D" parent="."]
+scale = Vector2(1.06633, 0.947374)
 script = ExtResource("10_mwxc7")
 target_position = Vector2(1536, 390)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenDoor"]
 position = Vector2(1198.12, 367.875)
 shape = SubResource("RectangleShape2D_f7dp1")
 
-[node name="Door3" type="Area2D" parent="."]
+[node name="BedroomDoor" type="Area2D" parent="."]
+scale = Vector2(0.630031, 0.89776)
 script = ExtResource("10_mwxc7")
 target_position = Vector2(-200, 400)
 requires_key = true
 door_name = "bedroom"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedroomDoor"]
 position = Vector2(109.438, 347.5)
 shape = SubResource("RectangleShape2D_xjcg2")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="pressed" from="Colliders/PianoCollider/PianoButton" to="." method="_on_piano_button_pressed"]
-[connection signal="body_entered" from="Door2" to="Door2" method="_on_body_entered"]
-[connection signal="body_entered" from="Door3" to="Door3" method="_on_body_entered"]
+[connection signal="body_entered" from="KitchenDoor" to="KitchenDoor" method="_on_body_entered"]
+[connection signal="body_entered" from="BedroomDoor" to="BedroomDoor" method="_on_body_entered"]
