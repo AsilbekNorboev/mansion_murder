@@ -19,7 +19,7 @@ size = Vector2(1200, 680)
 size = Vector2(1193, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sasua"]
-size = Vector2(30.5, 242)
+size = Vector2(19.5, 547)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6cs3"]
 size = Vector2(144, 45)
@@ -68,7 +68,7 @@ position = Vector2(652.5, 748.5)
 shape = SubResource("RectangleShape2D_6lx2a")
 
 [node name="Left Wall Collider" type="CollisionShape2D" parent="Colliders"]
-position = Vector2(50.75, 627)
+position = Vector2(45.25, 474.5)
 shape = SubResource("RectangleShape2D_sasua")
 
 [node name="Right Wall Collider" type="CollisionShape2D" parent="Colliders"]
@@ -138,6 +138,7 @@ shape = SubResource("RectangleShape2D_f7dp1")
 [node name="Door3" type="Area2D" parent="."]
 script = ExtResource("10_mwxc7")
 target_position = Vector2(-200, 400)
+requires_key = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
 position = Vector2(109.438, 347.5)
