@@ -7,7 +7,7 @@ extends Node
 	
 	"Knife": 
 		["A kitchen knife, of all things. My husband barely knew where the kitchen was—let alone how to use anything in it.",
-		"Just through that blue door on your right...sigh. His first and last encounter with fine cutlery, I suppose."],
+		"Just through that purple door on your right...sigh. His first and last encounter with fine cutlery, I suppose."],
 		
 	"Gloves":
 		["What?! Those gloves? Absolutely not! Those are not mine! I would never wear something so... so ugly!",
