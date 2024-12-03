@@ -265,6 +265,7 @@ animations = [{
 bg_color = Color(0.75959, 0.172171, 2.88785e-07, 1)
 
 [node name="textbox" type="CanvasLayer"]
+process_mode = 3
 process_priority = 3
 process_physics_priority = 3
 layer = 3
@@ -308,6 +309,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Label" type="Label" parent="TextboxContainer/OutlinePanel/MarginContainer/HBoxContainer"]
+process_mode = 3
 custom_minimum_size = Vector2(1, 10)
 layout_mode = 2
 size_flags_horizontal = 3
