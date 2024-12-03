@@ -32,6 +32,7 @@ script = ExtResource("7_dap8u")
 visible = false
 
 [node name="GeneralBorderUI" parent="." instance=ExtResource("4_4sgwi")]
+layer = 5
 
 [node name="SettingsUI" parent="." instance=ExtResource("13_2ogmj")]
 visible = false

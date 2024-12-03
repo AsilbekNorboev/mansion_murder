@@ -107,7 +107,7 @@ clue_texture = ExtResource("9_gcmtm")
 clue_description = "Professor's Deed"
 
 [node name="Mr_Birmingham" parent="." instance=ExtResource("6_1tmqa")]
-position = Vector2(418, 367)
+position = Vector2(458, 432)
 scale = Vector2(1.5, 1.5)
 lines = Array[String](["The body of the deceased, Mr. Birmingham.", "Mrs. Birmingham found him dead this morning..."])
 clue_texture = ExtResource("8_d0tdq")
