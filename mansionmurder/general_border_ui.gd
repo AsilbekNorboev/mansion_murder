@@ -7,7 +7,7 @@ signal settingsbuttonpressed
 
 func _ready() -> void:
 	arrow.visible = false
-	_check_first_clue_found()
+	#_check_first_clue_found()
 
 func _check_first_clue_found() -> void:
 	while not Global.first_clue_found:
@@ -28,7 +28,7 @@ func _on_inventory_button_pressed() -> void:
 	$InventoryButton/rustleSFX.play()
 	$InventoryButton.modulate = Color("#ffffff")
 	inventorybuttonpressed.emit()
-	get_tree().paused = true #who added this
+	get_tree().paused = !get_tree().paused #who added this
 	#accusation_menu.add_NPC_Container()
 
 func _on_settings_button_pressed() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bnyyp3tvt3h7y"]
+[gd_scene load_steps=18 format=3 uid="uid://u6x3gfqncb2n"]
 
 [ext_resource type="Script" path="res://letter_puzzle.gd" id="1_1kdgu"]
 [ext_resource type="Texture2D" uid="uid://cm11uxvsa8prf" path="res://puzzle/tile2.png" id="2_72nwq"]

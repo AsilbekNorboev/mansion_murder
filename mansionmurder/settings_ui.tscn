@@ -137,6 +137,6 @@ text = "Mute
 "
 
 [connection signal="value_changed" from="Volume" to="." method="_on_volume_value_changed"]
-[connection signal="toggled" from="Mute Button" to="." method="_on_mute_toggled"]
+[connection signal="toggled" from="Mute Button" to="." method="_on_mute_button_toggled"]
 [connection signal="pressed" from="Exit Game" to="." method="_on_exit_game_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
