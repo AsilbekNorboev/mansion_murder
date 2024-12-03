@@ -7,7 +7,7 @@ signal settingsbuttonpressed
 
 func _ready() -> void:
 	arrow.visible = false
-	#_check_first_clue_found()
+	_check_first_clue_found()
 
 func _check_first_clue_found() -> void:
 	while not Global.first_clue_found:

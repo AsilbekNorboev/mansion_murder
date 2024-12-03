@@ -12,7 +12,7 @@ signal inventory_button_pressed
 @onready var clue_deed = $Rooms/LivingRoom/Deed
 @onready var clue_envelope = $Rooms/Kitchen/Envelope
 @onready var clue_dirt = $Rooms/Kitchen/Dirt
-@onready var clue_knife = $Rooms/LivingRoom/Wordle/TextureRect/Knife
+@onready var clue_knife = $Rooms/LivingRoom/Knife
 @onready var clue_safe = $Rooms/Bedroom/Safe
 @onready var clue_necklace = $Rooms/Bedroom/Necklace
 @onready var clue_diary = $Rooms/Bedroom/Diary
@@ -41,7 +41,7 @@ func _ready():
 	#clue_deed.clue_clicked.connect(self._on_clue_clicked)
 	clue_envelope.clue_clicked.connect(self._on_clue_clicked)
 	clue_dirt.clue_clicked.connect(self._on_clue_clicked)
-	#clue_knife.clue_clicked.connect(self._on_clue_clicked)
+	clue_knife.clue_clicked.connect(self._on_clue_clicked)
 	#clue_safe.clue_clicked.connect(self._on_clue_clicked)
 	clue_necklace.clue_clicked.connect(self._on_clue_clicked)
 	clue_diary.clue_clicked.connect(self._on_clue_clicked)
@@ -71,8 +71,8 @@ func _on_clue_clicked(clue_data):
 	print("Clue clicked with data:", clue_data)
 	
 	if clue_data not in InventoryManager.get_inventory():
-		if not first_clue_found:
-			first_clue_found = true
+		if !Global.first_clue_found:
+			Global.first_clue_found = true
 			#show_first_clue_message()
 		InventoryManager.add_clue(clue_data)  # Add to inventory manager
 		inventory_ui.add_clue(clue_data)  # Add to UI immediately

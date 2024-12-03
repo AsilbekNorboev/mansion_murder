@@ -100,11 +100,7 @@ func _populate_dialogue():
 		
 	if Global.current_line_index >= lines.size():
 		_dialog_end(text_container)
-		if !Global.first_clue_found:
-			print('yes')
-			Global.first_clue_found = true
 		print("end of dialogue")
-		
 	else:
 		text_container.add_text(lines[Global.current_line_index])
 
