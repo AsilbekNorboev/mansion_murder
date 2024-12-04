@@ -58,7 +58,6 @@ scale = Vector2(1.1904, -0.814272)
 texture = ExtResource("9_hy3d7")
 
 [node name="Chef" type="TextureRect" parent="NPCContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")
@@ -93,7 +92,6 @@ offset_bottom = 85.0
 text = "Accuse"
 
 [node name="Gardener" type="TextureRect" parent="NPCContainer"]
-visible = false
 layout_mode = 2
 offset_left = 5.0
 offset_top = 78.0
@@ -132,7 +130,6 @@ offset_bottom = 85.0
 text = "Accuse"
 
 [node name="Wife" type="TextureRect" parent="NPCContainer"]
-visible = false
 layout_mode = 2
 offset_left = 7.0
 offset_top = 163.0
@@ -172,7 +169,6 @@ offset_bottom = 85.0
 text = "Accuse"
 
 [node name="Maid" type="TextureRect" parent="NPCContainer"]
-visible = false
 layout_mode = 2
 offset_left = 12.0
 offset_top = 262.0

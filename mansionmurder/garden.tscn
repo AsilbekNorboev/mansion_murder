@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://garden.gd" id="1_wpmah"]
 [ext_resource type="Texture2D" uid="uid://cvmep3oqfu663" path="res://art/RoomBackgrounds/garden.png" id="2_j63r0"]
 [ext_resource type="Texture2D" uid="uid://bhj1dj0s15x64" path="res://art/RoomBackgrounds/GardenObjects/benchleft.png" id="3_q3jka"]
-[ext_resource type="PackedScene" path="res://gardener.tscn" id="3_vkqy3"]
+[ext_resource type="PackedScene" uid="uid://cfs683yifn6p0" path="res://gardener.tscn" id="3_vkqy3"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="4_8xh4o"]
 [ext_resource type="Texture2D" uid="uid://bbojh634gudxs" path="res://art/RoomBackgrounds/GardenObjects/benchright.png" id="4_gvh2n"]
 [ext_resource type="Texture2D" uid="uid://ihjdc3iw45j1" path="res://art/RoomBackgrounds/GardenObjects/fountain.png" id="5_so5mk"]
@@ -23,7 +23,7 @@ size = Vector2(479.625, 70.5)
 size = Vector2(923, 78.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y84lb"]
-size = Vector2(327.281, 120)
+size = Vector2(327.281, 52)
 
 [node name="Garden" type="Node2D"]
 script = ExtResource("1_wpmah")
@@ -110,7 +110,7 @@ script = ExtResource("12_qcyt2")
 target_position = Vector2(640, 240)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
-position = Vector2(642.359, 676)
+position = Vector2(642.359, 710)
 shape = SubResource("RectangleShape2D_y84lb")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

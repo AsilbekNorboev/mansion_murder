@@ -72,14 +72,12 @@ func _on_settings_button_pressed():
 
 func _on_suspects_button_pressed():
 	if ($SuspectsUI.visible):
-		print("suspects ui visible")
 		#disable character movement while in settings
-		get_tree().paused = false
+		get_tree().paused = true
 		$SuspectsUI.visible = not $SuspectsUI.visible
 	else:
-		print("suspects ui invisible")
 		$SuspectsUI.visible = not $SuspectsUI.visible
-		get_tree().paused = true
+		get_tree().paused = false
 		
 	## Toggle visibility: if it's visible, hide it; if it's hidden, show it
 	#suspects_ui.visible = not suspects_ui.visible

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://general_border_ui.gd" id="1_ufin5"]
 [ext_resource type="Texture2D" uid="uid://bc1qj2t2jemis" path="res://art/border.png" id="2_e1u3n"]
-[ext_resource type="Script" path="res://investigate_button.gd" id="3_a27rf"]
 [ext_resource type="AudioStream" uid="uid://dvalpk5jn2i56" path="res://audio/SFX/Inventory_open_sfx.wav" id="4_pbeyp"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="5_glnpu"]
 [ext_resource type="Texture2D" uid="uid://dl8h8vlodaioe" path="res://art/down_arrow.png" id="6_iu80u"]
+[ext_resource type="PackedScene" uid="uid://b3hqh46weabti" path="res://accusation_menu.tscn" id="7_sam2x"]
 
 [node name="GeneralBorderUI" type="CanvasLayer"]
 layer = 2
@@ -14,15 +14,6 @@ script = ExtResource("1_ufin5")
 [node name="border art" type="Sprite2D" parent="."]
 texture = ExtResource("2_e1u3n")
 centered = false
-
-[node name="InvestigateButton" type="Button" parent="."]
-visible = false
-offset_left = 44.0
-offset_top = 745.0
-offset_right = 2344.0
-offset_bottom = 2216.0
-scale = Vector2(0.07, 0.07)
-script = ExtResource("3_a27rf")
 
 [node name="InventoryButton" type="Button" parent="."]
 process_mode = 3
@@ -84,7 +75,9 @@ scale = Vector2(0.815424, 1.00982)
 stream = ExtResource("5_glnpu")
 volume_db = 20.0
 
-[connection signal="pressed" from="InvestigateButton" to="." method="_on_investigate_button_pressed"]
+[node name="AccusationMenu" parent="." instance=ExtResource("7_sam2x")]
+visible = false
+
 [connection signal="pressed" from="InventoryButton" to="." method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="SuspectsButton" to="." method="_on_suspects_button_pressed"]

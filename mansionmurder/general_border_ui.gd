@@ -4,7 +4,7 @@ signal inventorybuttonpressed
 signal settingsbuttonpressed
 signal suspectsbuttonpressed
 @onready var arrow = $Arrow
-#var accusation_menu = preload("res://accusation_menu.tscn").instantiate()
+@onready var suspectsUI = preload("res://SuspectsUI.tscn").instantiate()
 
 func _ready() -> void:
 	arrow.visible = false
@@ -16,12 +16,7 @@ func _check_first_clue_found() -> void:
 
 	# First clue found; show the arrow
 	arrow.visible = true
-#func _on_investigate_button_pressed():
-	#$InvestigateButton.modulate = Color("#000000")
-	#await get_tree().create_timer(0.2).timeout
-	#$InvestigateButton.modulate = Color("#ffffff")
-	#investigate.emit()
-	#
+
 func _on_inventory_button_pressed() -> void:
 	arrow.visible = false
 	$InventoryButton.modulate = Color("#000000")
@@ -30,7 +25,6 @@ func _on_inventory_button_pressed() -> void:
 	$InventoryButton.modulate = Color("#ffffff")
 	inventorybuttonpressed.emit()
 	get_tree().paused = !get_tree().paused #who added this
-	#accusation_menu.add_NPC_Container()
 
 func _on_settings_button_pressed() -> void:
 	$SettingsButton/ButtonClick.play()
@@ -39,8 +33,9 @@ func _on_settings_button_pressed() -> void:
 	$SettingsButton.modulate = Color("#ffffff")
 	settingsbuttonpressed.emit()
 
-
 func _on_suspects_button_pressed() -> void:
+	#on click, accusation menu will populate with new suspects you've met
+	suspectsUI.get_node("AccusationMenu").add_NPC_Container()
 	$SuspectsButton/ButtonClick.play()
 	suspectsbuttonpressed.emit()
 	print("suspects button emitted")
