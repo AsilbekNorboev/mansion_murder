@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://daqxhsmjxx3ym"]
+[gd_scene load_steps=8 format=3 uid="uid://daqxhsmjxx3ym"]
 
 [ext_resource type="Script" path="res://safe.gd" id="2_0ujij"]
 [ext_resource type="Texture2D" uid="uid://r54p4cvmnmw7" path="res://art/Clues/safe.png" id="2_irg43"]
+[ext_resource type="Texture2D" uid="uid://cgk2sk823a765" path="res://art/Safe_inside.png" id="4_a8fqw"]
+[ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="5_nlb7l"]
+[ext_resource type="Texture2D" uid="uid://dgetccc0dwoqn" path="res://art/Clues/Gloves 2.png" id="6_x8fww"]
+[ext_resource type="PackedScene" uid="uid://cgrbgr3rgf13v" path="res://safe_puzzle.tscn" id="6_xa15i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af140"]
 size = Vector2(207.5, 275)
 
 [node name="Safe" type="Area2D"]
 process_mode = 3
-position = Vector2(-1.99997, -0.999969)
+position = Vector2(-2, -1)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("2_0ujij")
 
@@ -20,3 +24,37 @@ shape = SubResource("RectangleShape2D_af140")
 position = Vector2(-0.000183105, -2.75012)
 scale = Vector2(3, 3.0534)
 texture = ExtResource("2_irg43")
+
+[node name="Safe_puzzle" parent="." instance=ExtResource("6_xa15i")]
+
+[node name="Button5" parent="Safe_puzzle/GridContainer" index="4"]
+text = "5"
+
+[node name="Button7" parent="Safe_puzzle/GridContainer" index="6"]
+text = "5"
+
+[node name="Button8" parent="Safe_puzzle/GridContainer" index="7"]
+text = "0
+"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(1650, 1130)
+scale = Vector2(1.18869, 1.09253)
+texture = ExtResource("4_a8fqw")
+
+[node name="gloves" parent="Sprite2D2" instance=ExtResource("5_nlb7l")]
+z_index = 10
+position = Vector2(-148.273, -88.0983)
+rotation = -1.5865
+scale = Vector2(8, 8)
+clue_name = "Gloves"
+lines = Array[String](["A pair of ordinary work-gloves.", "Wait, is that blood stained on the fingertips...?", "This is a question for the gardener, James."])
+narrator_lines = Array[String](["Clue has been added to inventory, you can now ask suspects about it."])
+clue_texture = ExtResource("6_x8fww")
+clue_description = "Garden Gloves"
+
+[connection signal="pressed" from="Safe_puzzle/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Safe_puzzle/Button" to="." method="_on_button_pressed"]
+
+[editable path="Safe_puzzle"]
