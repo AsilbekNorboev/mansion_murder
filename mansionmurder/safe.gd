@@ -14,7 +14,7 @@ func _ready():
 	$Safe_puzzle.visible = false
 	$Sprite2D2.visible = false
 	$Safe_puzzle.set_process(false)
-	$Sprite2D2/gloves.position = Vector2(-1480000000.273, -8800000000.098)
+	$Sprite2D2/key.position = Vector2(-1480000000.273, -8800000000.098)
 
 func start_game():
 	$Safe_puzzle/CodeLabel.visible = false
@@ -82,7 +82,7 @@ func _input(event):
 			if event.is_action_pressed("ui_cancel"):
 				$Safe_puzzle.visible = false
 				$Sprite2D2.visible = false
-				$Sprite2D2/gloves.position = Vector2(-1480000000.273, -8800000000.098)
+				$Sprite2D2/key.position = Vector2(-1480000000.273, -8800000000.098)
 				$Sprite2D.visible = true
 				get_tree().paused = false
 			if event.is_action_pressed("ui_up"):
@@ -93,7 +93,7 @@ func _input(event):
 				navigate_left()
 			elif event.is_action_pressed("ui_right"):
 				navigate_right()
-			elif event.is_action_pressed("ui_accept"):
+			elif event.is_action_pressed("enter"):
 				check_code()  # Check the code when confirmed
 		
 
@@ -172,7 +172,7 @@ func check_code():
 	if entered_code == CORRECT_CODE:
 		game_won = true
 		game_won_state()
-		$Sprite2D2/gloves.set_process(true)
+		$Sprite2D2/key.set_process(true)
 	else:
 		$Safe_puzzle/ResultLabel.text = "Incorrect code. Try again."
 		await get_tree().create_timer(1.0).timeout
@@ -213,7 +213,7 @@ func game_won_state():
 	$Safe_puzzle/ResultLabel.visible = true
 	await get_tree().create_timer(1.0).timeout
 	$Safe_puzzle.queue_free()
-	if !$Sprite2D2/gloves:
+	if !$Sprite2D2/key:
 		$Sprite2D2.visible = true
 	else:
 		show_clue()
@@ -221,10 +221,10 @@ func game_won_state():
 	
 func show_clue():
 	$Safe_puzzle.visible = false
-	$Sprite2D2/gloves.position = Vector2(-89.11, -111.502)
+	$Sprite2D2/key.position = Vector2(-89.11, -111.502)
 	$Safe_puzzle.visible = false
 	$Sprite2D2.visible = true
-	$Sprite2D2/gloves.visible = true
+	$Sprite2D2/key.visible = true
 	
 func hide_safe():
 	$Sprite2D.visible = false

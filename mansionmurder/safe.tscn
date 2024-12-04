@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://r54p4cvmnmw7" path="res://art/Clues/safe.png" id="2_irg43"]
 [ext_resource type="Texture2D" uid="uid://cgk2sk823a765" path="res://art/Safe_inside.png" id="4_a8fqw"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="5_nlb7l"]
-[ext_resource type="Texture2D" uid="uid://dgetccc0dwoqn" path="res://art/Clues/Gloves 2.png" id="6_x8fww"]
-[ext_resource type="PackedScene" uid="uid://cgrbgr3rgf13v" path="res://safe_puzzle.tscn" id="6_xa15i"]
+[ext_resource type="Texture2D" uid="uid://b050dsyj47gf1" path="res://art/Clues/Key.png" id="6_2rhvv"]
+[ext_resource type="PackedScene" uid="uid://dtxyawvsvvhwy" path="res://safe_puzzle.tscn" id="6_xa15i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af140"]
 size = Vector2(207.5, 275)
@@ -43,16 +43,14 @@ position = Vector2(1650, 1130)
 scale = Vector2(1.18869, 1.09253)
 texture = ExtResource("4_a8fqw")
 
-[node name="gloves" parent="Sprite2D2" instance=ExtResource("5_nlb7l")]
-z_index = 10
-position = Vector2(-148.273, -88.0983)
-rotation = -1.5865
-scale = Vector2(8, 8)
-clue_name = "Gloves"
-lines = Array[String](["A pair of ordinary work-gloves.", "Wait, is that blood stained on the fingertips...?", "This is a question for the gardener, James."])
-narrator_lines = Array[String](["Clue has been added to inventory, you can now ask suspects about it."])
-clue_texture = ExtResource("6_x8fww")
-clue_description = "Garden Gloves"
+[node name="key" parent="Sprite2D2" instance=ExtResource("5_nlb7l")]
+visible = false
+position = Vector2(445.869, 116.702)
+scale = Vector2(2.10316, 2.28827)
+clue_name = "Key"
+lines = Array[String](["A golden key."])
+clue_texture = ExtResource("6_2rhvv")
+clue_description = "A golden key."
 
 [connection signal="pressed" from="Safe_puzzle/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Safe_puzzle/Button" to="." method="_on_button_pressed"]

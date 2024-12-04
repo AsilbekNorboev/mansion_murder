@@ -18,8 +18,8 @@ signal inventory_button_pressed
 @onready var clue_safe = $Rooms/Bedroom/Safe
 @onready var clue_necklace = $Rooms/Bedroom/Necklace
 @onready var clue_diary = $Rooms/Bedroom/Diary
-@onready var clue_gloves = $Rooms/Garden/Safe/Sprite2D2/gloves
-@onready var clue_key = $Rooms/Garden/key
+@onready var clue_gloves = $Rooms/Garden/gloves
+@onready var clue_key = $Rooms/Garden/Safe/Sprite2D2/key
 
 @onready var clue_scene = preload("res://clue.tscn").instantiate()
 
