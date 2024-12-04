@@ -1,6 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgrbgr3rgf13v"]
-
-[ext_resource type="Script" path="res://safe_puzzle.gd" id="1_140i4"]
+[gd_scene load_steps=7 format=3 uid="uid://cgrbgr3rgf13v"]
 
 [sub_resource type="SystemFont" id="SystemFont_1lvys"]
 subpixel_positioning = 0
@@ -30,7 +28,6 @@ expand_margin_right = 20.0
 
 [node name="Safe_puzzle" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_140i4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
