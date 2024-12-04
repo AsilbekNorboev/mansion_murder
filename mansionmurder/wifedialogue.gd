@@ -4,6 +4,9 @@ extends Node
 	"": 
 		["I can’t believe this is happening... he was everything to me.",
 		"Who would do something like this? Who would hurt him?", "Let me know if you need anything detective, we will catch whoever did this!"],
+		
+	"defult_interogate": ["How could you ask me such a thing, I...I...", 
+	"I'm innocent, I was in my bedroom at 9:30pm"],
 	
 	"Knife": 
 		["A kitchen knife, of all things. My husband barely knew where the kitchen was—let alone how to use anything in it.",

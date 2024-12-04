@@ -31,6 +31,8 @@ func _ready():
 
 	# Add any existing inventory items to the UI
 	for clue_data in InventoryManager.get_inventory():
+		if clue_data["name"] == "defult_interogate":
+			continue
 		inventory_ui.add_clue(clue_data)
 	
 	var general_border_ui = $GeneralBorderUI

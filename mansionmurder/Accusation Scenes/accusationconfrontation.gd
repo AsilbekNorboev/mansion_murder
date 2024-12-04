@@ -11,10 +11,7 @@ const CHAR_RATE = 0.075
 @onready var replay_game_button = $"Replay Game"
 @onready var exit_game_button = $"Exit Game"
 @onready var skip_label = $SkipLabel
-
-
 @onready var animated_sprite = $Sprite
-
 # Signals
 signal dialogue_finished
 
@@ -43,6 +40,9 @@ func _ready():
 	animated_sprite.play()
 
 func _detect_NPC():
+	var npc_clue_list = []
+	
+	
 	if (self.name == "chef_accused"):
 		_queue_text("I didn't do anything, you've got the wrong guy!")
 		
@@ -53,7 +53,32 @@ func _detect_NPC():
 		_queue_text("I am the maid, I'm innocent!")
 		
 	if (self.name == "wife_accused"):
-		_queue_text("I am the killer! You caught me :(")
+		npc_clue_list = _detect_NPC_text("res://wifedialogue.gd")
+		
+		if "Knife" in npc_clue_list:
+			_queue_text("I have the knife")
+		if "Gloves" in npc_clue_list:
+			_queue_text("I have the gloves")
+		
+		_queue_text("I am the wife, I'm guilty!")
+
+		
+
+
+func _detect_NPC_text(dialogue_path):
+	var npcdialog = load(dialogue_path).new()
+	var dialog_dictionary = npcdialog.dialog_dictionary
+	var clue_list = []
+	var dialog = ""
+	for clue_data_index in range(InventoryManager.get_inventory().size()-1, -1, -1):
+		var clue_name = InventoryManager.get_inventory()[clue_data_index]["name"]
+		if clue_name == "defult_interogate":
+			continue
+		if clue_name  in dialog_dictionary.keys():
+			clue_list.append(clue_name)
+	
+	npcdialog.queue_free()
+	return clue_list
 
 func _process(delta):
 	match state:

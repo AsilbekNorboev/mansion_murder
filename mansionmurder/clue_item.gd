@@ -4,6 +4,7 @@ extends TextureRect
 func set_data(data: Dictionary):
 	# Set the name, description, and icon for the clue
 	#$ClueName.text = data["name"]  # Assuming there's a Label node named ClueName
+
 	$Label.text = data["description"]  # Assuming there's a Label node named ClueDescription
 	$TextureRect.texture = data["icon"]  # Assuming there's a TextureRect node named ClueIcon
 

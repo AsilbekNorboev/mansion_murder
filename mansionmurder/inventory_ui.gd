@@ -10,6 +10,7 @@ func _on_exit_button_pressed() -> void:
 	get_tree().paused = false
 
 func add_clue(clue_data: Dictionary):
+	
 	print("Adding clue to inventory:", clue_data)
 
 	var clue_scene = preload("res://clue_item.tscn")  # Path to your clue item scene

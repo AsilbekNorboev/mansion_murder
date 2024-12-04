@@ -14,6 +14,7 @@ func wait(seconds: float) -> void:
 	
 #BUTTONS------------------------------------
 func _on_start_game_pressed() -> void:
+	InventoryManager.add_clue({"name": "defult_interogate", "description": "Location at time of Murder?", "icon": null})
 	$ButtonClick.play()
 	wait(.5)
 	get_tree().change_scene_to_file("res://Introduction/introduction.tscn")
