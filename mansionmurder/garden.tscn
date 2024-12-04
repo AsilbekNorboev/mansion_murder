@@ -106,10 +106,10 @@ position = Vector2(642.359, 710)
 shape = SubResource("RectangleShape2D_y84lb")
 
 [node name="Safe" parent="." instance=ExtResource("12_cy8pl")]
-position = Vector2(244, 190)
+position = Vector2(339, 275)
 
-[node name="Sprite2D2" parent="Safe" index="2"]
-position = Vector2(1038.75, 652.5)
+[node name="Sprite2D2" parent="Safe" index="3"]
+position = Vector2(785, 447.5)
 scale = Vector2(1.19235, 1.09863)
 
 [node name="gloves" parent="Safe/Sprite2D2" index="0"]

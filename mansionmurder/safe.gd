@@ -1,5 +1,4 @@
 extends Area2D
-
 # Preload the puzzle scene
 @onready var collision_shape = $CollisionShape2D
 @onready var safe_puzzle = $Safe_puzzle  # Assuming safe_puzzle is a child node
@@ -62,7 +61,7 @@ func _input(event):
 			var rect = Rect2(collision_shape.position - collision_shape.shape.extents, collision_shape.shape.extents * 2)
 			if rect.has_point(local_mouse_position):
 				$Sprite2D.visible = false
-				if $Safe_puzzle == null:
+				if !$Safe_puzzle:
 					$Sprite2D2.visible = true
 					get_tree().paused = true
 				else:
@@ -73,31 +72,29 @@ func _input(event):
 					game_open()
 					get_tree().paused = true
 					
-	if ($Safe_puzzle != null) and ($Safe_puzzle.visible == true) :
-		# Handle ESC key to toggle the puzzle visibility
+	if safe_puzzle == null:
 		if event.is_action_pressed("ui_cancel"):
-			if $Safe_puzzle:
-				$Safe_puzzle.set_process_input(false)
+			$Sprite2D2.visible = false
+			$Sprite2D.visible = true
+			get_tree().paused = false
+	else:
+		if $Safe_puzzle.visible  == true:
+			if event.is_action_pressed("ui_cancel"):
 				$Safe_puzzle.visible = false
 				$Sprite2D2.visible = false
 				$Sprite2D2/gloves.position = Vector2(-1480000000.273, -8800000000.098)
 				$Sprite2D.visible = true
 				get_tree().paused = false
-		if event.is_action_pressed("ui_up"):
-			increment_number()
-		elif event.is_action_pressed("ui_down"):
-			decrement_number()
-		elif event.is_action_pressed("ui_left"):
-			navigate_left()
-		elif event.is_action_pressed("ui_right"):
-			navigate_right()
-		elif event.is_action_pressed("ui_accept"):
-			check_code()  # Check the code when confirmed
-	else:
-		if event.is_action_pressed("ui_cancel"):
-			$Sprite2D2.visible = false
-			$Sprite2D.visible = true
-			get_tree().paused = false
+			if event.is_action_pressed("ui_up"):
+				increment_number()
+			elif event.is_action_pressed("ui_down"):
+				decrement_number()
+			elif event.is_action_pressed("ui_left"):
+				navigate_left()
+			elif event.is_action_pressed("ui_right"):
+				navigate_right()
+			elif event.is_action_pressed("ui_accept"):
+				check_code()  # Check the code when confirmed
 		
 
 
@@ -224,7 +221,7 @@ func game_won_state():
 	
 func show_clue():
 	$Safe_puzzle.visible = false
-	$Sprite2D2/gloves.position = Vector2(-148.273, -88.098)
+	$Sprite2D2/gloves.position = Vector2(-89.11, -111.502)
 	$Safe_puzzle.visible = false
 	$Sprite2D2.visible = true
 	$Sprite2D2/gloves.visible = true
