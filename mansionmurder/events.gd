@@ -4,11 +4,11 @@ signal room_entered(room)
 signal puzzle_completed(puzzle1)
 
 @onready var inventory_ui = $InventoryUI
-@onready var suspects_ui = $SuspectsUI
+@onready var suspects_ui =  preload("res://SuspectsUI.tscn").instantiate()
 @onready var clue_node_safe = $Rooms/Bedroom/Safe
 @onready var settings_ui = $SettingsUI
 signal inventory_button_pressed
-signal suspects_button_pressed
+#signal suspects_button_pressed
 
 # CLUES:
 @onready var clue_deed = $Rooms/LivingRoom/Deed
@@ -71,10 +71,20 @@ func _on_settings_button_pressed():
 		get_tree().paused = true
 
 func _on_suspects_button_pressed():
-	# Toggle visibility: if it's visible, hide it; if it's hidden, show it
+	if ($SuspectsUI.visible):
+		print("suspects ui visible")
+		#disable character movement while in settings
+		get_tree().paused = false
+		$SuspectsUI.visible = not $SuspectsUI.visible
+	else:
+		print("suspects ui invisible")
+		$SuspectsUI.visible = not $SuspectsUI.visible
+		get_tree().paused = true
+		
+	## Toggle visibility: if it's visible, hide it; if it's hidden, show it
 	#suspects_ui.visible = not suspects_ui.visible
 	#Global.emit_signal("suspects_button_pressed")
-	pass
+	#print("global suspects button emitted")
 
 
 func _on_clue_clicked(clue_data):

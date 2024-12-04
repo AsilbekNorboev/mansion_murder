@@ -2,7 +2,6 @@ extends CanvasLayer
 
 var volume := 100
 
-
 #waits a few seconds to allow the sound effect of the button to play
 func wait(seconds: float) -> void:
 	OS.delay_msec(seconds * 1000)

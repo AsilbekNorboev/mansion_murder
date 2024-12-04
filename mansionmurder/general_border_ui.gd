@@ -43,5 +43,6 @@ func _on_settings_button_pressed() -> void:
 func _on_suspects_button_pressed() -> void:
 	$SuspectsButton/ButtonClick.play()
 	suspectsbuttonpressed.emit()
+	print("suspects button emitted")
 	get_tree().paused = !get_tree().paused
 	

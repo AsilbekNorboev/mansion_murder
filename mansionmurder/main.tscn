@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjfpn8ka3087n"]
+[gd_scene load_steps=14 format=3 uid="uid://cjfpn8ka3087n"]
 
 [ext_resource type="PackedScene" uid="uid://c4yh2d0qnyean" path="res://player.tscn" id="1_dh5pg"]
 [ext_resource type="Script" path="res://events.gd" id="1_yluwg"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dg4qym28b3db5" path="res://bedroom.tscn" id="10_ev8ke"]
 [ext_resource type="PackedScene" uid="uid://c3h24xji8o1et" path="res://garden.tscn" id="12_ikl3x"]
 [ext_resource type="PackedScene" uid="uid://ct67jwpeggu22" path="res://settings_ui.tscn" id="13_2ogmj"]
+[ext_resource type="PackedScene" uid="uid://b58wytml8nsru" path="res://SuspectsUI.tscn" id="13_ef86x"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_yluwg")
@@ -41,6 +42,9 @@ visible = false
 visible = false
 offset = Vector2(0, 50)
 transform = Transform2D(1, 0, 0, 1, 0, 50)
+
+[node name="SuspectsUI" parent="." instance=ExtResource("13_ef86x")]
+visible = false
 
 [node name="Rooms" type="Node" parent="."]
 
