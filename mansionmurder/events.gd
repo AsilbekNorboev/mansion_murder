@@ -15,7 +15,6 @@ signal inventory_button_pressed
 @onready var clue_envelope = $Rooms/Kitchen/Envelope
 @onready var clue_dirt = $Rooms/Kitchen/Dirt
 @onready var clue_knife = $Rooms/LivingRoom/Knife
-#@onready var clue_safe = $Rooms/Bedroom/Safe
 @onready var clue_necklace = $Rooms/Bedroom/Necklace
 @onready var clue_diary = $Rooms/Bedroom/Diary
 @onready var clue_gloves = $Rooms/Garden/gloves
@@ -23,10 +22,13 @@ signal inventory_button_pressed
 
 @onready var clue_scene = preload("res://clue.tscn").instantiate()
 
+	
 var first_clue_found = false
 
 # Preload clue sound effect
-#var clue_sound = preload("res://audio/mixkit-casino-bling-achievement-2067.wav")  # Replace with your sound file path
+var clue_sound = preload("res://audio/SFX/button_click.wav")
+
+#var clue_sound = preload("res://audio/mixkit-casino-bling-achievement-2067.wav")  #Replace with your sound file path
 
 # Add an AudioStreamPlayer for sound effects
 var audio_player: AudioStreamPlayer
@@ -37,7 +39,7 @@ func _ready():
 	# Add an AudioStreamPlayer node if not added in the editor
 	audio_player = AudioStreamPlayer.new()
 	add_child(audio_player)
-	#audio_player.stream = clue_sound  # Assign the sound effect
+	audio_player.stream = clue_sound  # Assign the sound effect
 
 	# Connect all clue nodes to the same click handler
 	clue_scene.clue_clicked.connect(self._on_clue_clicked)
@@ -51,6 +53,11 @@ func _ready():
 
 	# Initially hide the inventory UI
 	$InventoryUI.visible = false
+	#connects the border buttons pressed signal to the corresonding button scenes
+	var general_border_ui = $GeneralBorderUI
+	general_border_ui.inventorybuttonpressed.connect(_on_inventory_button_pressed)
+	general_border_ui.settingsbuttonpressed.connect(_on_settings_button_pressed)
+	general_border_ui.suspectsbuttonpressed.connect(_on_suspects_button_pressed)
 
 func _on_clue_clicked(clue_data):
 	# Play clue sound
@@ -79,3 +86,30 @@ func hide_clue(clue_data):
 		clue_data.queue_free()  # This removes the clue from the scene
 	else:
 		print("Error: Clue data is not a node!")
+		
+#makes the ineventory screen visible
+func _on_inventory_button_pressed():
+	# Toggle visibility: if it's visible, hide it; if it's hidden, show it
+	$InventoryUI.visible = not $InventoryUI.visible
+	Global.emit_signal("inventory_button_pressed")
+
+#makes the settings screen visible
+func _on_settings_button_pressed():
+	if ($SettingsUI.visible):
+		#disable character movement while in settings
+		get_tree().paused = false
+		$SettingsUI.visible = not $SettingsUI.visible
+	else:
+		$SettingsUI.visible = not $SettingsUI.visible
+		get_tree().paused = true
+
+#makes the suspects screen visible
+func _on_suspects_button_pressed():
+	if ($SuspectsUI.visible):
+		#disable character movement while in settings
+		get_tree().paused = true
+		$SuspectsUI.visible = not $SuspectsUI.visible
+	else:
+		$SuspectsUI.visible = not $SuspectsUI.visible
+		get_tree().paused = false
+		

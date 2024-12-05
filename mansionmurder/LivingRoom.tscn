@@ -90,7 +90,7 @@ polygon = PackedVector2Array(807, 741, 807, 692, 1231, 691, 1261, 741)
 position = Vector2(-791, 1)
 polygon = PackedVector2Array(807, 741, 807, 692, 1243, 688, 1261, 741)
 
-[node name="Deputy" parent="." groups=["NPCs"] instance=ExtResource("6_wqe7p")]
+[node name="Deputy" parent="." instance=ExtResource("6_wqe7p")]
 position = Vector2(322, 180)
 scale = Vector2(1.2, 1.2)
 
@@ -102,7 +102,7 @@ narrator_lines = Array[String](["Clue has been added to inventory, you can now a
 clue_texture = ExtResource("7_jy6q6")
 clue_description = "The knife"
 
-[node name="Wife" parent="." groups=["NPCs"] instance=ExtResource("5_vsfb2")]
+[node name="Wife" parent="." instance=ExtResource("5_vsfb2")]
 position = Vector2(256, 274)
 scale = Vector2(0.43, 0.43)
 
