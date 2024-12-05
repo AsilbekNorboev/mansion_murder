@@ -36,7 +36,7 @@ texture = ExtResource("2_n44tm")
 position = Vector2(654, 392)
 shape = SubResource("RectangleShape2D_d0w0s")
 
-[node name="Chef" parent="." instance=ExtResource("5_8sl5h")]
+[node name="Chef" parent="." groups=["NPCs"] instance=ExtResource("5_8sl5h")]
 position = Vector2(823, 352)
 scale = Vector2(0.66, 0.66)
 

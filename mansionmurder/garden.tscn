@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://garden.gd" id="1_wpmah"]
 [ext_resource type="Texture2D" uid="uid://cvmep3oqfu663" path="res://art/RoomBackgrounds/garden.png" id="2_j63r0"]
 [ext_resource type="Texture2D" uid="uid://bhj1dj0s15x64" path="res://art/RoomBackgrounds/GardenObjects/benchleft.png" id="3_q3jka"]
-[ext_resource type="PackedScene" uid="uid://cfs683yifn6p0" path="res://gardener.tscn" id="3_vkqy3"]
+[ext_resource type="PackedScene" path="res://gardener.tscn" id="3_vkqy3"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="4_8xh4o"]
 [ext_resource type="Texture2D" uid="uid://bbojh634gudxs" path="res://art/RoomBackgrounds/GardenObjects/benchright.png" id="4_gvh2n"]
 [ext_resource type="Texture2D" uid="uid://ihjdc3iw45j1" path="res://art/RoomBackgrounds/GardenObjects/fountain.png" id="5_so5mk"]
 [ext_resource type="Texture2D" uid="uid://jrh1dvwnkrv2" path="res://art/RoomBackgrounds/GardenObjects/bushesdown.png" id="6_52ywv"]
 [ext_resource type="Texture2D" uid="uid://etksjd6ba24a" path="res://art/RoomBackgrounds/GardenObjects/bushesup.png" id="7_4v27l"]
-[ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://toolbox.tscn" id="12_cy8pl"]
+[ext_resource type="PackedScene" path="res://toolbox.tscn" id="12_cy8pl"]
 [ext_resource type="Script" path="res://door.gd" id="12_qcyt2"]
 [ext_resource type="Texture2D" uid="uid://bb1jlrlx4hprv" path="res://puzzle/New_glove.png" id="12_sf4hm"]
 
@@ -85,7 +85,7 @@ z_index = -1
 position = Vector2(655, 395)
 texture = ExtResource("2_j63r0")
 
-[node name="Gardener" parent="." instance=ExtResource("3_vkqy3")]
+[node name="Gardener" parent="." groups=["NPCs"] instance=ExtResource("3_vkqy3")]
 position = Vector2(918, 323)
 scale = Vector2(0.6, 0.6)
 
@@ -155,7 +155,6 @@ scale = Vector2(1.838, 2)
 
 [node name="CollisionShape2D" parent="toolbox/Sprite2D2/key" index="1"]
 position = Vector2(0, 2.49991)
-scale = Vector2(1, 1)
 
 [node name="gloves" parent="." instance=ExtResource("4_8xh4o")]
 position = Vector2(915, 189)

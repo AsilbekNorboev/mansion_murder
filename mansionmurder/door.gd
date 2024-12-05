@@ -7,7 +7,7 @@ extends Area2D
 
 # Preload the textbox scene and sound effect
 var textbox_scene = preload("res://textbox.tscn")
-var door_sound = preload("res://audio/SFX/door_open.mp3")  # Replace with your sound file path
+#var door_sound = preload("res://audio/door-open-close-45475-[AudioTrimmer.com].mp3")  # Replace with your sound file path
 
 # AudioStreamPlayer for sound effects
 var audio_player: AudioStreamPlayer
@@ -19,7 +19,7 @@ func _ready():
 	# Add an AudioStreamPlayer node if not added in the editor
 	audio_player = AudioStreamPlayer.new()
 	add_child(audio_player)
-	audio_player.stream = door_sound  # Assign the sound effect
+	#audio_player.stream = door_sound  # Assign the sound effect
 
 func _on_body_entered(body):
 	if body.name == "Player":  # Replace "Player" with your player's node name

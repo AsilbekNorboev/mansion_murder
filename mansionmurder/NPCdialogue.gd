@@ -1,7 +1,7 @@
 extends Area2D
 
 var cursor = preload("res://art/dialogueicon.png")
-
+@export var is_npc: bool = true
 # Loads textbox scene to use its functions later
 var textbox_scene = preload("res://textbox.tscn").instantiate()
 var textappear = textbox_scene.get_node("TextboxContainer")
@@ -33,38 +33,43 @@ var met_this_character = false
 
 func _ready():
 	# Start playing the idle animation as soon as the NPC is ready
+	self.monitorable = true
 	animated_sprite.animation = "idle"
 	animated_sprite.play()
 	
 	# Load the Wife's audio clip and set its volume
-	wife_audio_player.stream = preload("res://audio/NPCnoises/wife_crying.mp3")
+	#wife_audio_player.stream = preload("res://audio/woman-crying-softly-268484-[AudioTrimmer.com].mp3")
 	wife_audio_player.volume_db = 10  # Increase the volume by 10 dB (adjust as needed)
 	add_child(wife_audio_player)  # Add the audio player to the scene
 	
 	# Load the Deputy's audio clip and set its volume
-	deputy_audio_player.stream = preload("res://audio/NPCnoises/deputy_talking.mp3")  # Replace with actual file path
+	#deputy_audio_player.stream = preload("res://audio/muffled-talking-6161-[AudioTrimmer.com].mp3")  # Replace with actual file path
 	deputy_audio_player.volume_db = 10  # Increase the volume by 10 dB (adjust as needed)
 	add_child(deputy_audio_player)  # Add the audio player to the scene
 
-	chef_audio_player.stream = preload("res://audio/NPCnoises/chef_talking.mp3")  # Replace with actual file path
+	#chef_audio_player.stream = preload("res://audio/man-apologizes-103427-[AudioTrimmer.com].mp3")  # Replace with actual file path
 	chef_audio_player.volume_db = 10  # Increase the volume by 10 dB (adjust as needed)
 	add_child(chef_audio_player)  # Add the audio player to the scene
 
-	gardener_audio_player.stream = preload("res://audio/NPCnoises/gardener_talking.mp3") 
+	#gardener_audio_player.stream = preload("res://audio/mamie_gibberish_2-95772-[AudioTrimmer.com].mp3") 
 	gardener_audio_player.volume_db = -5  # Decrease the volume by 5 dB (adjust as needed)
 	add_child(gardener_audio_player)  # Add the audio player to the scene
 
-	maid_audio_player.stream = preload("res://audio/NPCnoises/maid_talking.mp3") 
+	#maid_audio_player.stream = preload("res://audio/mamie_gibberish_1-38387-[AudioTrimmer.com].mp3") 
 	maid_audio_player.volume_db = -5  # Decrease the volume by 5 dB (adjust as needed)
 	add_child(maid_audio_player)  # Add the audio player to the scene
 
 func _input_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click"):
 		print("you clicked the ", self.name)
-		_dialog_start()
-		met_character()
+		print(Global.nearby_objects)
+		if Global.nearby_objects.has(self.name):
+			_dialog_start()
+			met_character()
+		else:
+			print("NOT NEAR ")
+			show_textbox("You need to be closer to talk to this person.")
 
-# On click, add text from the array to populate the textbox scene
 func _dialog_start():
 	current_line_index = 0
 	# Lock character movement until the dialogue ends
@@ -134,6 +139,17 @@ func _dialog_start():
 		textappear.add_text(active_lines[current_line_index])
 		is_dialog_active = true
 
+func show_textbox(message: String):
+	# Instantiate and add the textbox to the scene
+	#var textbox_instance = textbox_scene.instantiate()
+	active_lines = [message]
+	add_child(textbox_scene)
+	textappear.show_clue_container(false)
+	textappear._on_clue_clicked_text.connect(_on_clue_clicked)
+	textappear.clear_clues()
+	textappear.add_text(message)
+	is_dialog_active = true
+	
 func _on_clue_clicked(lines):
 	active_lines = lines
 	current_line_index = 0
