@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MansionMurder"
-run/main_scene="res://Introduction/main_menu.tscn"
+run/main_scene="res://Introduction/logo.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://art/icon.svg"
 
