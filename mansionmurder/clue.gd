@@ -30,7 +30,8 @@ func _setup_clue_image():
 	if clue_texture:
 		clue_sprite.texture = clue_texture
 	else:
-		print("Warning: No texture set for clue ", clue_name)
+		pass
+		#print("Warning: No texture set for clue ", clue_name)
 
 func _input(event):
 	if event.is_action_pressed("click"):
@@ -65,11 +66,9 @@ func show_clue_pickup_text():
 
 	# Calculate the top-right position
 	var camera_pos = get_viewport().get_camera_2d().global_position
-	print("camera pos: ", camera_pos)
 
 	# Set the position
 	clue_pickup_text_instance.position = Vector2(camera_pos.x+255,camera_pos.y-430)
-	print("clue pickup pos: ",clue_pickup_text_instance.position)
 	#only clues with description will display this text
 	if (clue_description != ""):
 		await clue_pickup_text_instance.show_message("Item has been picked up", display_time)
@@ -79,7 +78,7 @@ func _dialog_start():
 	if Global.is_dialog_active or not lines:
 		return
 	# Instantiate and set up the textbox
-	print("dialogue starting: ", Global.current_line_index)
+	#print("dialogue starting: ", Global.current_line_index)
 	var textbox_instance = textbox_scene.instantiate()
 	add_child(textbox_instance)
 	var text_container = textbox_instance.get_node("TextboxContainer")
@@ -93,7 +92,6 @@ func _dialog_start():
 	
 func _populate_dialogue():
 	var text_container = find_child("TextboxContainer", true, false)
-	print("number of lines: ", lines.size())
 	if Global.current_line_index <= lines.size():
 		Global.current_line_index += 1
 		print("next dialogue")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dquggvbpa25bl"]
+[gd_scene load_steps=12 format=3 uid="uid://dquggvbpa25bl"]
 
 [ext_resource type="Script" path="res://Introduction/introduction.gd" id="1_6ckga"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_csjga"]
 [ext_resource type="FontFile" uid="uid://debhhnvyq2u7l" path="res://fonts/GhoulFriAOE.ttf" id="4_fcfhe"]
 [ext_resource type="Texture2D" uid="uid://c7s64igy8xpkt" path="res://art/NPC/Deputy/Deputy_intro.png" id="6_h7jsf"]
+[ext_resource type="AudioStream" uid="uid://b6imcna1rwqpj" path="res://audio/NPCnoises/deputy_talking.mp3" id="6_vs1qs"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="18_kx4gv"]
 [ext_resource type="AudioStream" uid="uid://dgdsahk84hao8" path="res://audio/SFX/next_dialogue_sfx.wav" id="19_id6f0"]
 
@@ -153,6 +154,9 @@ volume_db = 20.0
 [node name="NextDialogueSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_id6f0")
 volume_db = 10.0
+
+[node name="DeputyTalking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vs1qs")
 
 [node name="Deputy" type="Sprite2D" parent="."]
 position = Vector2(490, 516)

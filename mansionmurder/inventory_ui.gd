@@ -10,7 +10,6 @@ func _on_exit_button_pressed() -> void:
 	get_tree().paused = false
 
 func add_clue(clue_data: Dictionary):
-	
 	print("Adding clue to inventory:", clue_data)
 
 	var clue_scene = preload("res://clue_item.tscn")  # Path to your clue item scene
@@ -19,7 +18,15 @@ func add_clue(clue_data: Dictionary):
 	# Assuming your clue item scene has a method to set data
 	clue_item.set_data(clue_data)  # Pass c
 	clue_container.add_child(clue_item)
-	#
+	print("the inventory contains: ")
+	print(clue_container.get_children())
+	
+#calls upon game replay button being hit to reset inventory to empty
+func clear_all_clues():
+	print("the inventory contains: ",InventoryManager)
+	InventoryManager.clue_inventory.clear()
+	
+	
 #func _on_switch_button_pressed() -> void:
 	#$InventoryOpenSfx.play()
 	#if $SwitchButton.text == "Inventory":

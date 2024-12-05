@@ -212,7 +212,7 @@ func wait(seconds: float) -> void:
 func _on_replay_game_pressed() -> void:
 	$ButtonClick.play()
 	wait(.5)
-	get_tree().change_scene_to_file("res://main.tscn")
+	$"Replay Game".reset_game()
 
 func _on_exit_game_pressed() -> void:
 	$ButtonClick.play()

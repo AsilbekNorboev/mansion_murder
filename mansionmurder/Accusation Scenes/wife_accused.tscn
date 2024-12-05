@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://be6glo10et5ru"]
+[gd_scene load_steps=19 format=3 uid="uid://be6glo10et5ru"]
 
 [ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_1diqn"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="3_n3vt2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ccl3a8i1nrtp8" path="res://art/NPC/Wife/Wife-3.png" id="5_mvpgu"]
 [ext_resource type="Texture2D" uid="uid://br1lr1ad2snsi" path="res://art/NPC/Wife/Wife-4.png" id="6_mn78f"]
 [ext_resource type="Texture2D" uid="uid://ercjt07alluc" path="res://art/NPC/Wife/Wife-5.png" id="7_mvxug"]
+[ext_resource type="Script" path="res://Accusation Scenes/replay_game.gd" id="8_4hxyb"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="9_0pcuk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_74sar"]
@@ -126,6 +127,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_aq5al")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cedld")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7p1n2")
 text = "Replay"
+script = ExtResource("8_4hxyb")
 
 [node name="Game Title" type="Label" parent="Replay Game"]
 layout_mode = 1

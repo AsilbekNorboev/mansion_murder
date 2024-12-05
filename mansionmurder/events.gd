@@ -8,7 +8,6 @@ signal puzzle_completed(puzzle1)
 @onready var clue_node_safe = $Rooms/Bedroom/Safe
 @onready var settings_ui = $SettingsUI
 signal inventory_button_pressed
-#signal suspects_button_pressed
 
 # CLUES:
 @onready var clue_deed = $Rooms/LivingRoom/Deed
@@ -64,8 +63,7 @@ func _on_clue_clicked(clue_data):
 	play_clue_sound()
 
 	# Add the clue to the inventory UI
-	print("Clue clicked with data:", clue_data)
-	
+
 	if clue_data not in InventoryManager.get_inventory():
 		if !Global.first_clue_found:
 			Global.first_clue_found = true
