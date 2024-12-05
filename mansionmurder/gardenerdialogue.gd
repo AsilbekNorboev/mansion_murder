@@ -4,9 +4,9 @@ extends Node
 	"":
 		["Well, howdy there, I hear we’ve got a bit of trouble in the house, eh?",
 		 "I'm quite innocent, wouldn't hurt even the flies in my garden...speaking of which I have the best and freshest produce in town. Anyway, did you need something?"],
-	
-	"Knife": 
-		["A knife? From the kitchen? Well, that’s not out of the ordinary.", "I just bring the produce to the chef, fresh as it comes.", "As for knives, well, that's his jurisdiction."],
+		
+	"defult_interogate": 
+		["I was dropping off some fresh produce for the Chef. He was busy cutting fish and had his music blasting. I quickly snuck in, left the basket, and went back to the garden."],
 		
 	"Dirt":
 		["Dirt in the kitchen? Not from me. I take pride in what I bring in—fresh, beautiful produce with no dirt attached.",

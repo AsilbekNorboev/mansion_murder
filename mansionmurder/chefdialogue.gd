@@ -5,7 +5,7 @@ extends Node
 		["I still can't believe he’s gone...he had a presence, I suppose.",
 		"Strange how quickly life can change, isn’t it? One minute, we're serving dinner, and the next… this."],
 		
-	"defult_interogate": ["interogate"],
+	"defult_interogate": ["I was in the kitchen, cutting fish for tomorrow’s special. The music was blasting, and I was chopping so loud, I wouldn’t have heard a thing if someone walked in."],
 
 	
 	"Knife": 
