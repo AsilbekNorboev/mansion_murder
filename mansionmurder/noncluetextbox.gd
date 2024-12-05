@@ -5,12 +5,6 @@ extends Button
 
 # Instance variables
 var textbox_scene = preload("res://textbox.tscn")
-var clue_pickup_text_scene = preload("res://clue_pickup_text.tscn")
-
-func _ready():
-	# Set the texture and other properties when the clue is added to the scene
-	set_process_input(true)
-	
 
 # Starts the dialog for this clue
 func _dialog_start():
@@ -27,7 +21,6 @@ func _dialog_start():
 	text_container.next_dialogue.connect(self._populate_dialogue)
 	if (Global.current_line_index > 0):
 		_populate_dialogue()
-
 	
 func _populate_dialogue():
 	var text_container = find_child("TextboxContainer", true, false)
@@ -38,9 +31,6 @@ func _populate_dialogue():
 		
 	if Global.current_line_index >= lines.size():
 		_dialog_end(text_container)
-		if !Global.first_clue_found:
-			print('yes')
-			Global.first_clue_found = true
 		print("end of dialogue")
 		
 	else:

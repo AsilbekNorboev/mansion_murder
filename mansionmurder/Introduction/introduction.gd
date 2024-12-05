@@ -71,6 +71,7 @@ func _hide_textbox():
 	textbox_container.hide()
 
 func _show_textbox():
+	$DeputyTalking.play()
 	start_symbol.text = "*"
 	textbox_container.show()
 
@@ -78,7 +79,6 @@ func _display_text():
 	if state != State.READY or text_queue.is_empty():
 		return
 	$NextDialogueSfx.play()	
-	$DeputyTalking.play()
 	var current_text = text_queue.pop_front()
 	label.text = current_text
 	label.visible_ratio = 0  # Reset visible ratio for the new text

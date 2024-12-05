@@ -12,7 +12,6 @@ signal clue_clicked(clue_data)
 	
 # Starts the dialog for this clue
 func narrator_dialog_start():
-	print("narration dialogue start")
 	#lock character movement until the dialogue ends
 	get_tree().paused = true
 	narrator_lines = clue_script.narrator_lines
@@ -31,7 +30,6 @@ func narrator_dialog_start():
 	
 	if Global.current_line_index >= narrator_lines.size():
 		_narrator_dialog_end(text_container)
-		print("end of narration dialogue")
 	else:
 		text_container.add_text(narrator_lines[current_line_index])
 
@@ -55,10 +53,8 @@ func _narrator_dialog_end(textbox_instance):
 func _populate_narrator_dialogue():
 	var textbox_instance = find_child("TextboxContainer", true, false)
 	
-	print("number of lines: ", narrator_lines.size())
 	if Global.current_line_index <= narrator_lines.size():
 		Global.current_line_index += 1
-		print("next narrator dialogue")
 		
 	if Global.current_line_index >= narrator_lines.size():
 		_narrator_dialog_end(textbox_instance)

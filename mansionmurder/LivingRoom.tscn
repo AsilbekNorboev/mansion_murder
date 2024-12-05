@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://ct0b334pb2lmf"]
+[gd_scene load_steps=19 format=3 uid="uid://ct0b334pb2lmf"]
 
 [ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
 [ext_resource type="Texture2D" uid="uid://od7cnftlwcae" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
+[ext_resource type="Script" path="res://noncluetextbox.gd" id="3_du1y5"]
 [ext_resource type="PackedScene" uid="uid://cocv41sdm5dlh" path="res://wife.tscn" id="5_vsfb2"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="6_1tmqa"]
 [ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="6_wqe7p"]
@@ -65,6 +66,15 @@ scale = Vector2(33.1496, 17.1681)
 [node name="Lower Wall Collider" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(652.5, 748.5)
 shape = SubResource("RectangleShape2D_6lx2a")
+
+[node name="EntranceDoorButton" type="Button" parent="Colliders/Lower Wall Collider"]
+z_index = -10
+offset_left = -200.0
+offset_top = -68.0
+offset_right = 165.0
+offset_bottom = 11.0
+script = ExtResource("3_du1y5")
+lines = Array[String](["You can't leave yet, there's a mystery to solve!"])
 
 [node name="Left Wall Collider" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(45.25, 474.5)
@@ -143,5 +153,6 @@ shape = SubResource("RectangleShape2D_xjcg2")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="pressed" from="Colliders/PianoCollider/PianoButton" to="." method="_on_piano_button_pressed"]
+[connection signal="pressed" from="Colliders/Lower Wall Collider/EntranceDoorButton" to="." method="_on_entrance_door_button_pressed"]
 [connection signal="body_entered" from="KitchenDoor" to="KitchenDoor" method="_on_body_entered"]
 [connection signal="body_entered" from="BedroomDoor" to="BedroomDoor" method="_on_body_entered"]

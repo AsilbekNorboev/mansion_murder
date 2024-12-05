@@ -76,6 +76,6 @@ func narrator_text_color():
 #play next dialogue
 func _unhandled_input(event):
 	if event.is_action_pressed("dialogue_next") and (Global.is_dialog_active or Global.is_narrator_dialog_active):
-		print("key detected")
-		print("current line index: ",Global.current_line_index)
+		#print("key detected")
+		#print("current line index: ",Global.current_line_index)
 		emit_signal("next_dialogue")
