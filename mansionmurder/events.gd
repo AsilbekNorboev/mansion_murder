@@ -25,30 +25,25 @@ signal inventory_button_pressed
 
 var first_clue_found = false
 
+# Preload clue sound effect
+var clue_sound = preload("res://audio/mixkit-casino-bling-achievement-2067.wav")  # Replace with your sound file path
+
+# Add an AudioStreamPlayer for sound effects
+var audio_player: AudioStreamPlayer
+
 func _ready():
 	$BackgroundLoop.play()
-	clue_scene.main_add_zoom_scene.connect(_on_normal_clue_clicked)
-
-	# Add any existing inventory items to the UI
-	for clue_data in InventoryManager.get_inventory():
-		if clue_data["name"] == "defult_interogate":
-			continue
-		inventory_ui.add_clue(clue_data)
 	
-	var general_border_ui = $GeneralBorderUI
-	general_border_ui.inventorybuttonpressed.connect(_on_inventory_button_pressed)
-	general_border_ui.settingsbuttonpressed.connect(_on_settings_button_pressed)
-	general_border_ui.suspectsbuttonpressed.connect(_on_suspects_button_pressed)
+	# Add an AudioStreamPlayer node if not added in the editor
+	audio_player = AudioStreamPlayer.new()
+	add_child(audio_player)
+	audio_player.stream = clue_sound  # Assign the sound effect
 
-	
 	# Connect all clue nodes to the same click handler
-	#ue_node_safe.clue_clicked.connect(self._on_clue_clicked)
 	clue_scene.clue_clicked.connect(self._on_clue_clicked)
-	#clue_deed.clue_clicked.connect(self._on_clue_clicked)
 	clue_envelope.clue_clicked.connect(self._on_clue_clicked)
 	clue_dirt.clue_clicked.connect(self._on_clue_clicked)
 	clue_knife.clue_clicked.connect(self._on_clue_clicked)
-	#clue_safe.clue_clicked.connect(self._on_clue_clicked)
 	clue_necklace.clue_clicked.connect(self._on_clue_clicked)
 	clue_diary.clue_clicked.connect(self._on_clue_clicked)
 	clue_gloves.clue_clicked.connect(self._on_clue_clicked)
@@ -57,37 +52,10 @@ func _ready():
 	# Initially hide the inventory UI
 	$InventoryUI.visible = false
 
-func _on_inventory_button_pressed():
-	# Toggle visibility: if it's visible, hide it; if it's hidden, show it
-	$InventoryUI.visible = not $InventoryUI.visible
-	Global.emit_signal("inventory_button_pressed")
-
-
-func _on_settings_button_pressed():
-	if ($SettingsUI.visible):
-		#disable character movement while in settings
-		get_tree().paused = false
-		$SettingsUI.visible = not $SettingsUI.visible
-	else:
-		$SettingsUI.visible = not $SettingsUI.visible
-		get_tree().paused = true
-
-func _on_suspects_button_pressed():
-	if ($SuspectsUI.visible):
-		#disable character movement while in settings
-		get_tree().paused = true
-		$SuspectsUI.visible = not $SuspectsUI.visible
-	else:
-		$SuspectsUI.visible = not $SuspectsUI.visible
-		get_tree().paused = false
-		
-	## Toggle visibility: if it's visible, hide it; if it's hidden, show it
-	#suspects_ui.visible = not suspects_ui.visible
-	#Global.emit_signal("suspects_button_pressed")
-	#print("global suspects button emitted")
-
-
 func _on_clue_clicked(clue_data):
+	# Play clue sound
+	play_clue_sound()
+
 	# Add the clue to the inventory UI
 	print("Clue clicked with data:", clue_data)
 	
@@ -100,41 +68,14 @@ func _on_clue_clicked(clue_data):
 
 		# Call the function to hide the clue after it's clicked
 		hide_clue(clue_data)
-		
-#func show_first_clue_message():
-	## Create a PopupPanel node
-	#var popup = PopupPanel.new()
-	#add_child(popup)  # Add it to the scene tree
-	#popup.set_size(Vector2(300, 100))  # Set its size
-	#popup.popup_centered()  # Center the popup
-#
-	## Create a label for the message and add it to the popup
-	#var label = Label.new()
-	#label.text = "You found your first clue! You can now accuse a suspect."
-	##label.autowrap = true  # Ensure text wraps if it's too long
-	#popup.add_child(label)
 
-	# Optionally style the popup or the label for better appearance
+func play_clue_sound():
+	if audio_player and audio_player.stream:
+		audio_player.play()
+
 func hide_clue(clue_data):
 	# Check if the clue is a node and hide it
 	if clue_data is Node:
 		clue_data.queue_free()  # This removes the clue from the scene
 	else:
 		print("Error: Clue data is not a node!")
-
-func _on_normal_clue_clicked():
-	print("Zoom launched in main")
-	clue_scene.add_zoom_scene()
-
-
-	## Adding the zoom scene as a child to main
-	 #new_zoom_node.connect("add_zoom_scene")
-	 ##Assigning variable for ease
-	 #var main_zoom_scene = clue_scene.zoom_scene
-	 #Instantiating the clue scene and grabbing the specified zoom image from it
-	 #main_zoom_scene = load(clue_scene.zoom_image).instantiate()
-	#
-	 #new_zoom_node = main_zoom_scene
-	 #Adding the zoom scene as a child to main
-	 #new_zoom_node.connect("add_zoom_scene")
-	 #new_zoom_node.add_zoom_scene()
