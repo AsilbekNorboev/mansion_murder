@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://tkn36d3r41w1"]
+[gd_scene load_steps=27 format=3 uid="uid://tkn36d3r41w1"]
 
 [ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_diwa1"]
 [ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="3_ctlrr"]
@@ -69,6 +69,27 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tiruv"]
+bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdx3k"]
+bg_color = Color(0.217684, 0.0639309, 0.0400902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqmxc"]
+bg_color = Color(0.348751, 0.121991, 0.0866908, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31d8l"]
 bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)
 corner_radius_top_left = 16
@@ -117,7 +138,38 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_37hwt")
 animation = &"idle"
 
+[node name="Game Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.0
+offset_top = 358.0
+offset_right = 518.0
+offset_bottom = 505.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.133333, 0.0196078, 0.00784314, 1)
+theme_override_constants/shadow_offset_y = 50
+theme_override_constants/outline_size = 100
+theme_override_fonts/font = ExtResource("4_ixwac")
+theme_override_font_sizes/font_size = 90
+text = "Mansion Murder"
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="."]
+visible = false
+offset_left = 592.0
+offset_top = 513.0
+offset_right = 1064.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("3_moqtl")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_tiruv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pdx3k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rqmxc")
+text = "Keep Investigating..."
+
 [node name="Replay Game" type="Button" parent="."]
+visible = false
 offset_left = 704.0
 offset_top = 504.0
 offset_right = 957.0
@@ -129,25 +181,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_cj2ck")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fprus")
 text = "Replay"
 
-[node name="Game Title" type="Label" parent="Replay Game"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -332.5
-offset_top = -146.0
-offset_right = 342.5
-offset_bottom = 1.0
-grow_horizontal = 2
-theme_override_colors/font_outline_color = Color(0.133333, 0.0196078, 0.00784314, 1)
-theme_override_constants/shadow_offset_y = 50
-theme_override_constants/outline_size = 100
-theme_override_fonts/font = ExtResource("4_ixwac")
-theme_override_font_sizes/font_size = 90
-text = "Mansion Murder"
-horizontal_alignment = 1
-
 [node name="Exit Game" type="Button" parent="."]
+visible = false
 offset_left = 706.0
 offset_top = 619.0
 offset_right = 959.0
@@ -232,5 +267,6 @@ text = "Press 'Enter' to skip..."
 stream = ExtResource("18_y46kb")
 volume_db = 20.0
 
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="Replay Game" to="." method="_on_replay_game_pressed"]
 [connection signal="pressed" from="Exit Game" to="." method="_on_exit_game_pressed"]

@@ -12,6 +12,8 @@ const CHAR_RATE = 0.075
 @onready var exit_game_button = $"Exit Game"
 @onready var skip_label = $SkipLabel
 @onready var animated_sprite = $Sprite
+@onready var winlose_text = $"Game Title"
+@onready var return_button = $Return
 # Signals
 signal dialogue_finished
 
@@ -31,7 +33,6 @@ var tween: Tween
 func _ready():
 	get_tree().paused
 	_hide_textbox()
-	replay_game_button.hide()
 	_detect_NPC()
 
 	# Start displaying the first queued dialogue
@@ -51,7 +52,10 @@ func _detect_NPC():
 			_queue_text("Detective: The knife used in the murder came from your kitchen. How do you explain that?")
 			_queue_text("Chef Sordanio: Yeah, the knife’s from my kitchen, but I didn’t use it. I was focused on cutting fish and had the music cranked up. I didn’t hear or see anything out of the ordinary.")
 			_queue_text("Detective: You're telling the truth. You’re not the killer.")
-		else: _queue_text("Detective: I don't have the full story...I need more evidence")
+			
+		else:
+			_queue_text("Detective: I don't have the full story...I need more evidence")
+			_return()
 		
 	#GARDENER CONDITIONS
 	if (self.name == "gardener_accused"):
@@ -70,8 +74,9 @@ func _detect_NPC():
 		if "Gloves" in npc_clue_list and "Dirt" in npc_clue_list:
 			_queue_text("Detective: You're telling the truth. You’re not the killer.")
 			
-		else: _queue_text("Detective: I don't have the full story...I need more evidence")
-		
+		else:
+			_queue_text("Detective: I don't have the full story...I need more evidence")
+			_return()
 		
 	#MAID CONDITIONS
 	if (self.name == "maid_accused"):
@@ -94,8 +99,9 @@ func _detect_NPC():
 			_queue_text("Maid Bertha: Because I didn’t do it! I loved him, but I would never hurt him.")
 			_queue_text("Detective: You're telling the truth. You’re not the killer.")
 			
-		else: _queue_text("Detective: I don't have the full story...I need more evidence")
-
+		else:
+			_queue_text("Detective: I don't have the full story...I need more evidence")
+			_return()
 
 
 	#WIFE CONDITIONS
@@ -112,7 +118,7 @@ func _detect_NPC():
 		if "Diary" in npc_clue_list:
 			_queue_text("Detective: And what about the letter? The ripped-up confession of the affair? That’s your motive, isn’t it?")
 			_queue_text("Mrs. Burmingham: That letter... that was my husband’s. I didn’t want to read it, but when I did, I couldn’t just sit there and do nothing. He had an affair with her... with the maid...!")
-			_queue_text("Detetcive: You tore up the letter. You didn’t want anyone to know the truth.")	
+			_queue_text("Detective: You tore up the letter. You didn’t want anyone to know the truth.")	
 			
 		if "Gloves" in npc_clue_list and "Diary" in npc_clue_list:
 			_queue_text("Detetcive: So you tore up the letter, stole the maid's gloves, and left them in the garden to incriminate the gardener. It was you all along.")
@@ -120,11 +126,27 @@ func _detect_NPC():
 			_queue_text("Detective: But it did, didn’t it? And now, we know the truth.")
 			
 			_queue_text("Mrs. Burmingham: Yes, you've caught me...")
+			#you guessed right! Game ends.
+			_right_guess()
 			
-		else: _queue_text("Detective: I don't have the full story...I need more evidence")
+		else:
+			_queue_text("Detective: I don't have the full story...I need more evidence")
+			_return()
 		
 
+func _wrong_guess():
+	exit_game_button.show()
+	_return().show()
+	winlose_text.text = ("You Lost!")
 
+func _right_guess():
+	exit_game_button.show()
+	replay_game_button.show()
+	winlose_text.text = ("You Won!")
+
+func _return():
+	return_button.show()
+	
 func _detect_NPC_text(dialogue_path):
 	var npcdialog = load(dialogue_path).new()
 	var dialog_dictionary = npcdialog.dialog_dictionary
@@ -151,7 +173,6 @@ func _process(delta):
 					_hide_textbox()
 					change_state(State.READY)
 					skip_label.hide()
-					replay_game_button.show()
 					emit_signal("dialogue_finished")
 				else:
 					change_state(State.READY)  # Prepare to load the next line
@@ -218,3 +239,8 @@ func _on_exit_game_pressed() -> void:
 	$ButtonClick.play()
 	wait(.5)
 	get_tree().quit()
+
+func _on_return_pressed() -> void:
+	$ButtonClick.play()
+	wait(.5)
+	get_tree().change_scene_to_file("res://main.tscn")
