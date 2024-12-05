@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drhkry7ajgl8w"
-path="res://.godot/imported/Drawer_inside.png-507fece44f05ac8cc38818197b1d824a.ctex"
+uid="uid://c0o2gf2fclkbq"
+path="res://.godot/imported/lock.png-eb8c32099fedceec9a7f6de982b8f816.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Drawer_inside.png"
-dest_files=["res://.godot/imported/Drawer_inside.png-507fece44f05ac8cc38818197b1d824a.ctex"]
+source_file="res://art/lock.png"
+dest_files=["res://.godot/imported/lock.png-eb8c32099fedceec9a7f6de982b8f816.ctex"]
 
 [params]
 

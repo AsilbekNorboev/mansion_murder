@@ -41,6 +41,8 @@ func _ready():
 
 func _detect_NPC():
 	var npc_clue_list = []
+	
+	#CHEF CONDITIONS
 	if (self.name == "chef_accused"):
 		npc_clue_list = _detect_NPC_text("res://chefdialogue.gd")
 		_queue_text("Detective: Chef, remidn me, where were you at 9:32 PM?")
@@ -50,41 +52,53 @@ func _detect_NPC():
 			_queue_text("Chef Sordanio: Yeah, the knife’s from my kitchen, but I didn’t use it. I was focused on cutting fish and had the music cranked up. I didn’t hear or see anything out of the ordinary.")
 			_queue_text("Detective: You're telling the truth. You’re not the killer.")
 		else: _queue_text("Detective: I don't have the full story...I need more evidence")
+		
+	#GARDENER CONDITIONS
 	if (self.name == "gardener_accused"):
 		npc_clue_list = _detect_NPC_text("res://gardenerdialogue.gd")
 		_queue_text("Detective: Gardener Jones, remind me again, where were you at 9:32 PM?")
 		_queue_text("Gardner James: I was in the kitchen, dropping off some fresh produce for the Chef. He was busy cutting fish and had his music blasting. I quickly snuck in, left the basket, and went back to the garden.")
+		
 		if "Dirt" in npc_clue_list:
 			_queue_text("Detective: Fresh produce? Then explain the dirt we found in the kitchen—the same dirt from your boots.")
 			_queue_text("Gardner James: The dirt’s from my boots, alright. I must’ve tracked it in when I delivered the basket. But that’s it—I didn’t do anything else. I didn’t kill him")
+			
 		if "Gloves" in npc_clue_list:
 			_queue_text("Detective: The bloody gloves found in your garden—they match the ones used in the murder. Care to explain how they got there?.")
 			_queue_text("Those gloves? They’re not mine. Look at the size—they’re too small. They must belong to a woman.")
+			
 		if "Gloves" in npc_clue_list and "Dirt" in npc_clue_list:
 			_queue_text("Detective: You're telling the truth. You’re not the killer.")
+			
 		else: _queue_text("Detective: I don't have the full story...I need more evidence")
 		
+		
+	#MAID CONDITIONS
 	if (self.name == "maid_accused"):
 		npc_clue_list = _detect_NPC_text("res://maiddialogue.gd")
 		_queue_text("Detective: Maid Bertha, remind me again, where were you at 9:32 PM?")
 		_queue_text("Maid Bertha: 9:32 PM? I was in the bedroom, just cleaning up. You know, tidying up the sheets, putting things in order, just like I told you.")
+		
 		if "Gloves" in npc_clue_list:
 			_queue_text("Detective: Maid Bertha, the bloody gloves used in the murder were found at the scene. They belonged to you, didn’t they?")
 			_queue_text("Maid Bertha: I don’t know. I don’t even know how they ended up there. Someone must have taken them... but I didn’t do it. You have to believe me.")
+			
 		if "Diary" in npc_clue_list:
 			_queue_text("Detective:  The confession of the affair. It was your secret, wasn’t it? Did you kill him to keep it hidden?")
 			_queue_text("Maid Bertha: I was part of the affair, yes. I won’t deny that. But I never saw any letter, and I didn’t kill him!")
 			_queue_text("Detective: But you had the motive. You didn’t want the truth to come out.")
 			_queue_text("Maid Bertha: I was scared of what might happen if people found out, but I swear, I didn’t hurt him! I loved him... as foolish as that might sound now. But I could never kill him.")
+			
 		if "Gloves" in npc_clue_list and "Diary" in npc_clue_list:
 			_queue_text("Detective: The gloves, the affair... it all points to you. But something’s not adding up.")
 			_queue_text("Maid Bertha: Because I didn’t do it! I loved him, but I would never hurt him.")
 			_queue_text("Detective: You're telling the truth. You’re not the killer.")
+			
 		else: _queue_text("Detective: I don't have the full story...I need more evidence")
 
 
 
-		
+	#WIFE CONDITIONS
 	if (self.name == "wife_accused"):
 		npc_clue_list = _detect_NPC_text("res://wifedialogue.gd")
 		_queue_text("You: Mrs. Burmingham, remind me again, where were you at 9:32 PM?")
@@ -94,15 +108,19 @@ func _detect_NPC():
 			_queue_text("Detective: Mrs. Burmingham, the bloody gloves used in the murder were yours. What do you have to say about that?")
 			_queue_text("Mrs. Burmingham: What? Gloves? Those were the maid’s, weren’t they? I—I don’t know how they got there. Maybe she left them behind when she was cleaning up? I didn’t—")
 			_queue_text("Detective: You took the maid’s gloves to frame her. You used them to make it look like she did it, didn’t you?")
+			
 		if "Diary" in npc_clue_list:
 			_queue_text("Detective: And what about the letter? The ripped-up confession of the affair? That’s your motive, isn’t it?")
 			_queue_text("Mrs. Burmingham: That letter... that was my husband’s. I didn’t want to read it, but when I did, I couldn’t just sit there and do nothing. He had an affair with her... with the maid...!")
 			_queue_text("Detetcive: You tore up the letter. You didn’t want anyone to know the truth.")	
+			
 		if "Gloves" in npc_clue_list and "Diary" in npc_clue_list:
 			_queue_text("Detetcive: So you tore up the letter, stole the maid's gloves, and left them in the garden to incriminate the gardener. It was you all along.")
 			_queue_text("Mrs. Burmingham: I didn’t know what else to do. I was... so angry. So hurt. But I never meant for it to go this far.")
 			_queue_text("Detective: But it did, didn’t it? And now, we know the truth.")
+			
 			_queue_text("Mrs. Burmingham: Yes, you've caught me...")
+			
 		else: _queue_text("Detective: I don't have the full story...I need more evidence")
 		
 

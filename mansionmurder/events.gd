@@ -15,7 +15,6 @@ signal inventory_button_pressed
 @onready var clue_envelope = $Rooms/Kitchen/Envelope
 @onready var clue_dirt = $Rooms/Kitchen/Dirt
 @onready var clue_knife = $Rooms/LivingRoom/Knife
-#@onready var clue_safe = $Rooms/Bedroom/Safe
 @onready var clue_necklace = $Rooms/Bedroom/Necklace
 @onready var clue_diary = $Rooms/Bedroom/Diary
 @onready var clue_gloves = $Rooms/Garden/gloves
@@ -54,8 +53,7 @@ func _ready():
 
 	# Initially hide the inventory UI
 	$InventoryUI.visible = false
-
-
+	#connects the border buttons pressed signal to the corresonding button scenes
 	var general_border_ui = $GeneralBorderUI
 	general_border_ui.inventorybuttonpressed.connect(_on_inventory_button_pressed)
 	general_border_ui.settingsbuttonpressed.connect(_on_settings_button_pressed)
@@ -88,13 +86,14 @@ func hide_clue(clue_data):
 		clue_data.queue_free()  # This removes the clue from the scene
 	else:
 		print("Error: Clue data is not a node!")
-
+		
+#makes the ineventory screen visible
 func _on_inventory_button_pressed():
 	# Toggle visibility: if it's visible, hide it; if it's hidden, show it
 	$InventoryUI.visible = not $InventoryUI.visible
 	Global.emit_signal("inventory_button_pressed")
 
-
+#makes the settings screen visible
 func _on_settings_button_pressed():
 	if ($SettingsUI.visible):
 		#disable character movement while in settings
@@ -104,6 +103,7 @@ func _on_settings_button_pressed():
 		$SettingsUI.visible = not $SettingsUI.visible
 		get_tree().paused = true
 
+#makes the suspects screen visible
 func _on_suspects_button_pressed():
 	if ($SuspectsUI.visible):
 		#disable character movement while in settings
@@ -113,7 +113,3 @@ func _on_suspects_button_pressed():
 		$SuspectsUI.visible = not $SuspectsUI.visible
 		get_tree().paused = false
 		
-	## Toggle visibility: if it's visible, hide it; if it's hidden, show it
-	#suspects_ui.visible = not suspects_ui.visible
-	#Global.emit_signal("suspects_button_pressed")
-	#print("global suspects button emitted")

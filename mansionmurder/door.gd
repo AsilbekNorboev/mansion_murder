@@ -7,7 +7,7 @@ extends Area2D
 
 # Preload the textbox scene and sound effect
 var textbox_scene = preload("res://textbox.tscn")
-var door_sound = preload("res://audio/door-open-close-45475-[AudioTrimmer.com].mp3")  # Replace with your sound file path
+var door_sound = preload("res://audio/SFX/door_open.mp3")  # Replace with your sound file path
 
 # AudioStreamPlayer for sound effects
 var audio_player: AudioStreamPlayer
