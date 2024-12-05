@@ -3,9 +3,11 @@ extends CharacterBody2D
 @export var speed = 200 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 
+# Reference to the walking sound node
+@onready var walk_sound = $AudioStreamPlayer2D
+
 func _ready():
 	add_to_group("players")
-	pass
 
 func _physics_process(delta: float) -> void:
 	var velocity = Vector2.ZERO # The player's movement vector.
@@ -31,9 +33,13 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play() # Play the current animation
+		if not walk_sound.playing: # Start walking sound if not already playing
+			walk_sound.play()
 	else:
 		$AnimatedSprite2D.animation = "idle" # Switch to idle if no movement
 		$AnimatedSprite2D.play()
+		if walk_sound.playing: # Stop walking sound if the player is idle
+			walk_sound.stop()
 
 	# Apply movement and update position
 	self.velocity = velocity
