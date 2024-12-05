@@ -28,6 +28,7 @@ expand_margin_right = 20.0
 
 [node name="Safe_puzzle" type="CanvasLayer"]
 process_mode = 3
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -182,7 +183,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0.823529, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0.933333, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxLine_2c3er")
-text = "SAFE COMBINATION"
+text = "LOCK COMBINATION"
 
 [node name="ExitMessage" type="Label" parent="."]
 self_modulate = Color(0.760784, 0.0352941, 0.0745098, 1)

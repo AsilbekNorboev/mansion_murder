@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ct0b334pb2lmf"]
+[gd_scene load_steps=18 format=3 uid="uid://ct0b334pb2lmf"]
 
 [ext_resource type="Script" path="res://living_room.gd" id="1_jghax"]
 [ext_resource type="Texture2D" uid="uid://od7cnftlwcae" path="res://art/RoomBackgrounds/livingroom.png" id="2_xnlll"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dgo8xjdd5ocsn" path="res://deputy.tscn" id="6_wqe7p"]
 [ext_resource type="Texture2D" uid="uid://cb412322sexk3" path="res://art/Clues/Knife 2.png" id="7_jy6q6"]
 [ext_resource type="Texture2D" uid="uid://bf40stcykdaba" path="res://art/Clues/Body.png" id="8_d0tdq"]
-[ext_resource type="Texture2D" uid="uid://cvmyer14dijnk" path="res://art/Clues/Deed.png" id="9_gcmtm"]
 [ext_resource type="AudioStream" uid="uid://dok3uujggh42" path="res://audio/SFX/piano.wav" id="9_kus8i"]
 [ext_resource type="PackedScene" uid="uid://dyejywinb1quf" path="res://door.tscn" id="10_bgaxj"]
 [ext_resource type="Script" path="res://door.gd" id="10_mwxc7"]
@@ -107,14 +106,6 @@ clue_description = "The knife"
 position = Vector2(256, 274)
 scale = Vector2(0.43, 0.43)
 
-[node name="Deed" parent="." instance=ExtResource("6_1tmqa")]
-visible = false
-position = Vector2(803, 191)
-clue_name = "Deed"
-lines = Array[String](["Appears to be the deed"])
-clue_texture = ExtResource("9_gcmtm")
-clue_description = "Professor's Deed"
-
 [node name="Mr_Birmingham" parent="." instance=ExtResource("6_1tmqa")]
 position = Vector2(458, 432)
 scale = Vector2(1.5, 1.5)
@@ -137,7 +128,6 @@ target_position = Vector2(1536, 390)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenDoor"]
 position = Vector2(1164.74, 420.109)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_f7dp1")
 
 [node name="BedroomDoor" type="Area2D" parent="."]

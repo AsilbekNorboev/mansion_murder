@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dg4qym28b3db5"]
+[gd_scene load_steps=15 format=3 uid="uid://dg4qym28b3db5"]
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_x5y1v"]
 [ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_236vv"]
@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="4_o0aq8"]
 [ext_resource type="Texture2D" uid="uid://bs8a5mrwnirdd" path="res://art/Clues/Diary.png" id="5_txu53"]
 [ext_resource type="Texture2D" uid="uid://bv8pn1847njgt" path="res://art/Clues/necklace.png" id="6_xcdyy"]
-[ext_resource type="PackedScene" uid="uid://daqxhsmjxx3ym" path="res://safe.tscn" id="7_jlllh"]
 [ext_resource type="PackedScene" uid="uid://cuosxm5kdfdd7" path="res://letter.tscn" id="8_kblto"]
+[ext_resource type="Texture2D" uid="uid://soutp52r3xgp" path="res://puzzle/Trash.png" id="9_em4rq"]
 [ext_resource type="Script" path="res://door.gd" id="9_uo6w4"]
+[ext_resource type="Texture2D" uid="uid://b5l00ilibg04x" path="res://puzzle/Trash 2.png" id="11_chyv3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bkx"]
 size = Vector2(1200, 680)
@@ -56,10 +57,6 @@ lines = Array[String](["A beautiful necklace with a heart pendant."])
 clue_texture = ExtResource("6_xcdyy")
 clue_description = "A necklace with a heart pendant."
 
-[node name="Safe" parent="." instance=ExtResource("7_jlllh")]
-visible = false
-position = Vector2(855, 209)
-
 [node name="Colliders" type="StaticBody2D" parent="."]
 position = Vector2(1257, -17)
 
@@ -84,9 +81,6 @@ polygon = PackedVector2Array(-5, 391, -99, 430, -134, 731, -7, 746)
 [node name="Maid" type="CollisionPolygon2D" parent="Colliders"]
 polygon = PackedVector2Array(-553, 421, -483, 423, -481, 480, -544, 493, -558, 490, -567, 479, -557, 458)
 
-[node name="letter" parent="." instance=ExtResource("8_kblto")]
-position = Vector2(958, 275)
-
 [node name="Door3" type="Area2D" parent="."]
 script = ExtResource("9_uo6w4")
 target_position = Vector2(224, 420)
@@ -94,6 +88,19 @@ target_position = Vector2(224, 420)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
 position = Vector2(1202.78, 306.5)
 shape = SubResource("RectangleShape2D_8bnvr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(958.17, 304.88)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("9_em4rq")
+
+[node name="letter" parent="." instance=ExtResource("8_kblto")]
+position = Vector2(959, 286)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(958.17, 304.88)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("11_chyv3")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="body_entered" from="Door3" to="Door3" method="_on_body_entered"]

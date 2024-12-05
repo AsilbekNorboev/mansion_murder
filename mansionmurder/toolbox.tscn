@@ -1,31 +1,35 @@
-[gd_scene load_steps=8 format=3 uid="uid://daqxhsmjxx3ym"]
+[gd_scene load_steps=9 format=3 uid="uid://dldlgd6xxxn51"]
 
-[ext_resource type="Script" path="res://safe.gd" id="2_0ujij"]
-[ext_resource type="Texture2D" uid="uid://r54p4cvmnmw7" path="res://art/Clues/safe.png" id="2_irg43"]
-[ext_resource type="Texture2D" uid="uid://cgk2sk823a765" path="res://art/Safe_inside.png" id="4_a8fqw"]
+[ext_resource type="Script" path="res://toolbox.gd" id="2_0ujij"]
+[ext_resource type="Texture2D" uid="uid://il70uws6sjd2" path="res://puzzle/ToolBox.png" id="2_bn0d4"]
+[ext_resource type="Texture2D" uid="uid://c1vid4i0wuuoj" path="res://puzzle/Safe_inside 2.png" id="4_l3pt4"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="5_nlb7l"]
-[ext_resource type="Texture2D" uid="uid://b050dsyj47gf1" path="res://art/Clues/Key.png" id="6_2rhvv"]
 [ext_resource type="PackedScene" uid="uid://dtxyawvsvvhwy" path="res://safe_puzzle.tscn" id="6_xa15i"]
+[ext_resource type="Texture2D" uid="uid://c7epwf5yqi2md" path="res://puzzle/New_Key.png" id="6_ynevn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af140"]
 size = Vector2(207.5, 275)
 
-[node name="Safe" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a6mu"]
+size = Vector2(269.35, 685)
+
+[node name="toolbox" type="Area2D"]
 process_mode = 3
-position = Vector2(-2, -1)
+position = Vector2(-14, -35)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("2_0ujij")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-13.7501, -22.5001)
+position = Vector2(675, 712.5)
 shape = SubResource("RectangleShape2D_af140")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.000183105, -2.75012)
-scale = Vector2(3, 3.0534)
-texture = ExtResource("2_irg43")
+position = Vector2(700, 692.5)
+scale = Vector2(0.3, 0.305)
+texture = ExtResource("2_bn0d4")
 
 [node name="Safe_puzzle" parent="." instance=ExtResource("6_xa15i")]
+visible = false
 
 [node name="Button5" parent="Safe_puzzle/GridContainer" index="4"]
 text = "5"
@@ -38,21 +42,27 @@ text = "0
 "
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
 z_index = 10
-position = Vector2(1650, 1130)
+position = Vector2(1655, 1190)
 scale = Vector2(1.18869, 1.09253)
-texture = ExtResource("4_a8fqw")
+texture = ExtResource("4_l3pt4")
 
 [node name="key" parent="Sprite2D2" instance=ExtResource("5_nlb7l")]
 visible = false
-position = Vector2(445.869, 116.702)
-scale = Vector2(2.10316, 2.28827)
+position = Vector2(-37.8568, -57.2067)
+scale = Vector2(6.434, 7)
 clue_name = "Key"
 lines = Array[String](["A golden key."])
-clue_texture = ExtResource("6_2rhvv")
+clue_texture = ExtResource("6_ynevn")
 clue_description = "A golden key."
+
+[node name="CollisionShape2D" parent="Sprite2D2/key" index="1"]
+position = Vector2(3.92259, -8.17238)
+shape = SubResource("RectangleShape2D_4a6mu")
 
 [connection signal="pressed" from="Safe_puzzle/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Safe_puzzle/Button" to="." method="_on_button_pressed"]
 
 [editable path="Safe_puzzle"]
+[editable path="Sprite2D2/key"]

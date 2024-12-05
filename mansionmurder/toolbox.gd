@@ -211,7 +211,7 @@ func game_won_state():
 	$Safe_puzzle/GridContainer.visible = false
 	$Safe_puzzle/Instruction.visible = false
 	$Safe_puzzle/ResultLabel.visible = true
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	$Safe_puzzle.queue_free()
 	if !$Sprite2D2/key:
 		$Sprite2D2.visible = true

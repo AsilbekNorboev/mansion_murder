@@ -10,3 +10,4 @@ func _on_fish_button_pressed() -> void:
 
 func _on_knife_button_pressed() -> void:
 	$"Colliders/Back Wall/KnifeButton"._dialog_start()
+	

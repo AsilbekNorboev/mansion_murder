@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b050dsyj47gf1" path="res://art/Clues/Key.png" id="2_l68xf"]
 [ext_resource type="Script" path="res://narration_text.gd" id="3_egiq4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a4au"]
-size = Vector2(78, 106)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icc3e"]
+size = Vector2(60.4617, 68.5611)
 
 [node name="Clue" type="Area2D"]
 script = ExtResource("1_0uowy")
@@ -15,7 +15,8 @@ scale = Vector2(1, 1.071)
 texture = ExtResource("2_l68xf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_0a4au")
+position = Vector2(-7.5, -11)
+shape = SubResource("RectangleShape2D_icc3e")
 
 [node name="Narrator Text" type="Node" parent="."]
 process_priority = 3
