@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ddacxdvl6pl6m"]
+[gd_scene load_steps=24 format=3 uid="uid://ddacxdvl6pl6m"]
 
 [ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_m72g6"]
 [ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="3_d8cru"]
@@ -32,6 +32,27 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bffak"]
+bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0vfs"]
+bg_color = Color(0.217684, 0.0639309, 0.0400902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iymrx"]
+bg_color = Color(0.348751, 0.121991, 0.0866908, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aorfh"]
 bg_color = Color(0.254402, 0.0799999, 0.0529581, 1)
@@ -140,12 +161,40 @@ theme_override_font_sizes/font_size = 90
 text = "Mansion Murder"
 horizontal_alignment = 1
 
+[node name="Guilty" type="Button" parent="."]
+process_mode = 3
+visible = false
+offset_left = 701.0
+offset_top = 507.0
+offset_right = 954.0
+offset_bottom = 589.0
+theme_override_fonts/font = ExtResource("3_ujhmh")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_bffak")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l0vfs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_iymrx")
+text = "Guilty!"
+
+[node name="Innocent" type="Button" parent="."]
+process_mode = 3
+visible = false
+offset_left = 706.0
+offset_top = 610.0
+offset_right = 959.0
+offset_bottom = 692.0
+theme_override_fonts/font = ExtResource("3_ujhmh")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_bffak")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l0vfs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_iymrx")
+text = "Innocent!"
+
 [node name="Return" type="Button" parent="."]
 visible = false
-offset_left = 592.0
-offset_top = 513.0
-offset_right = 1064.0
-offset_bottom = 595.0
+offset_left = 599.0
+offset_top = 712.0
+offset_right = 1071.0
+offset_bottom = 794.0
 theme_override_fonts/font = ExtResource("3_ujhmh")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = SubResource("StyleBoxFlat_aorfh")
@@ -252,6 +301,8 @@ text = "Press 'Enter' to skip..."
 stream = ExtResource("9_uun62")
 volume_db = 20.0
 
+[connection signal="pressed" from="Guilty" to="." method="_on_guilty_pressed"]
+[connection signal="pressed" from="Innocent" to="." method="_on_innocent_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="Exit Game" to="." method="_on_exit_game_pressed"]
 [connection signal="pressed" from="Replay Game" to="." method="_on_replay_game_pressed"]

@@ -8,12 +8,18 @@ const CHAR_RATE = 0.075
 @onready var start_symbol = $TextboxContainer/MarginContainer/HBoxContainer/Start
 @onready var end_symbol = $TextboxContainer/MarginContainer/HBoxContainer/End
 @onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Text
-@onready var replay_game_button = $"Replay Game"
-@onready var exit_game_button = $"Exit Game"
 @onready var skip_label = $SkipLabel
 @onready var animated_sprite = $Sprite
 @onready var winlose_text = $"Game Title"
+#buttons
+@onready var replay_game_button = $"Replay Game"
+@onready var exit_game_button = $"Exit Game"
 @onready var return_button = $Return
+@onready var guilty_button = $Guilty
+@onready var innocent_button = $Innocent
+
+@onready var guilty_selected = 0
+
 # Signals
 signal dialogue_finished
 
@@ -31,7 +37,7 @@ var tween: Tween
 
 # Initialization
 func _ready():
-	get_tree().paused
+	#get_tree().paused
 	_hide_textbox()
 	_detect_NPC()
 
@@ -46,8 +52,9 @@ func _detect_NPC():
 	#CHEF CONDITIONS
 	if (self.name == "chef_accused"):
 		npc_clue_list = _detect_NPC_text("res://chefdialogue.gd")
-		_queue_text("Detective: Chef, remidn me, where were you at 9:32 PM?")
+		_queue_text("Detective: Chef, remind me, where were you at 9:32 PM?")
 		_queue_text("Chef Sordanio: 9:32 PM? I was in the kitchen, cutting fish for tomorrow’s special. The music was blasting, and I was chopping so loud, I wouldn’t have heard a thing if someone walked in.")
+		
 		if "Knife" in npc_clue_list:
 			_queue_text("Detective: The knife used in the murder came from your kitchen. How do you explain that?")
 			_queue_text("Chef Sordanio: Yeah, the knife’s from my kitchen, but I didn’t use it. I was focused on cutting fish and had the music cranked up. I didn’t hear or see anything out of the ordinary.")
@@ -61,18 +68,31 @@ func _detect_NPC():
 	if (self.name == "gardener_accused"):
 		npc_clue_list = _detect_NPC_text("res://gardenerdialogue.gd")
 		_queue_text("Detective: Gardener Jones, remind me again, where were you at 9:32 PM?")
-		_queue_text("Gardner James: I was in the kitchen, dropping off some fresh produce for the Chef. He was busy cutting fish and had his music blasting. I quickly snuck in, left the basket, and went back to the garden.")
+		_queue_text("Gardener James: I was in the kitchen, dropping off some fresh produce for the Chef. He was busy cutting fish and had his music blasting. I didn't want to disturb him, so I ducked inside, left the basket, and went back to the garden.")
 		
 		if "Dirt" in npc_clue_list:
 			_queue_text("Detective: Fresh produce? Then explain the dirt we found in the kitchen—the same dirt from your boots.")
-			_queue_text("Gardner James: The dirt’s from my boots, alright. I must’ve tracked it in when I delivered the basket. But that’s it—I didn’t do anything else. I didn’t kill him")
+			_queue_text("Gardener James: The dirt’s from my boots, alright. I must’ve tracked it in when I delivered the basket. But that’s it—I didn’t do anything else. I didn’t kill him")
 			
 		if "Gloves" in npc_clue_list:
 			_queue_text("Detective: The bloody gloves found in your garden—they match the ones used in the murder. Care to explain how they got there?.")
 			_queue_text("Those gloves? They’re not mine. Look at the size—they’re too small. They must belong to a woman.")
 			
 		if "Gloves" in npc_clue_list and "Dirt" in npc_clue_list:
-			_queue_text("Detective: You're telling the truth. You’re not the killer.")
+			#dirt
+			_queue_text("Detective: Fresh produce? Then explain the dirt we found in the kitchen—the same dirt from your boots.")
+			_queue_text("Gardener James: The dirt’s from my boots, alright. I must’ve tracked it in when I delivered the basket. But that’s it—I didn’t do anything else. I didn’t kill him")
+			#gloves
+			_queue_text("Detective: The bloody gloves found in your garden—they match the ones used in the murder. Care to explain how they got there?.")
+			_queue_text("Those gloves? They’re not mine. Look at the size—they’re too small. They must belong to a woman.")
+			
+			_make_final_accusation()
+			if (guilty_selected == 2):
+				_display_text()
+				_queue_text("Detective: You're telling the truth. You’re not the killer.")
+				print("you're not the killer")
+			if (guilty_selected == 1):
+				_wrong_guess()
 			
 		else:
 			_queue_text("Detective: I don't have the full story...I need more evidence")
@@ -92,13 +112,17 @@ func _detect_NPC():
 			_queue_text("Detective:  The confession of the affair. It was your secret, wasn’t it? Did you kill him to keep it hidden?")
 			_queue_text("Maid Bertha: I was part of the affair, yes. I won’t deny that. But I never saw any letter, and I didn’t kill him!")
 			_queue_text("Detective: But you had the motive. You didn’t want the truth to come out.")
-			_queue_text("Maid Bertha: I was scared of what might happen if people found out, but I swear, I didn’t hurt him! I loved him... as foolish as that might sound now. But I could never kill him.")
+			_queue_text("Maid Bertha: I was scared of what might happen if people found out, but I swear, I didn’t hurt him! I loved him... as foolish as that might sound now. But I would never kill him.")
 			
 		if "Gloves" in npc_clue_list and "Diary" in npc_clue_list:
-			_queue_text("Detective: The gloves, the affair... it all points to you. But something’s not adding up.")
-			_queue_text("Maid Bertha: Because I didn’t do it! I loved him, but I would never hurt him.")
-			_queue_text("Detective: You're telling the truth. You’re not the killer.")
-			
+			_make_final_accusation()
+			if (guilty_selected == 2):
+				_queue_text("Detective: The gloves, the affair... it all points to you. But something’s not adding up.")
+				_queue_text("Maid Bertha: Because I didn’t do it! I loved him, but I would never hurt him.")
+				_queue_text("Detective: You're telling the truth. You’re not the killer.")
+			if (guilty_selected == 1):
+				_wrong_guess()
+
 		else:
 			_queue_text("Detective: I don't have the full story...I need more evidence")
 			_return()
@@ -121,14 +145,18 @@ func _detect_NPC():
 			_queue_text("Detective: You tore up the letter. You didn’t want anyone to know the truth.")	
 			
 		if "Gloves" in npc_clue_list and "Diary" in npc_clue_list:
-			_queue_text("Detetcive: So you tore up the letter, stole the maid's gloves, and left them in the garden to incriminate the gardener. It was you all along.")
-			_queue_text("Mrs. Burmingham: I didn’t know what else to do. I was... so angry. So hurt. But I never meant for it to go this far.")
-			_queue_text("Detective: But it did, didn’t it? And now, we know the truth.")
-			
-			_queue_text("Mrs. Burmingham: Yes, you've caught me...")
-			#you guessed right! Game ends.
-			_right_guess()
-			
+			_make_final_accusation()
+			if (guilty_selected == 1):
+				_queue_text("Detetcive: So you tore up the letter, stole the maid's gloves, and left them in the garden to incriminate the gardener. It was you all along.")
+				_queue_text("Mrs. Burmingham: I didn’t know what else to do. I was... so angry. So hurt. But I never meant for it to go this far.")
+				_queue_text("Detective: But it did, didn’t it? And now, we know the truth.")
+				
+				_queue_text("Mrs. Burmingham: Yes, you've caught me...")
+				#you guessed right! Game ends.
+				_right_guess()
+			if (guilty_selected == 2):
+				_queue_text("Of course I'm innocent! What a crude accusation...")
+		
 		else:
 			_queue_text("Detective: I don't have the full story...I need more evidence")
 			_return()
@@ -136,7 +164,7 @@ func _detect_NPC():
 
 func _wrong_guess():
 	exit_game_button.show()
-	_return().show()
+	_return()
 	winlose_text.text = ("You Lost!")
 
 func _right_guess():
@@ -147,6 +175,13 @@ func _right_guess():
 func _return():
 	return_button.show()
 	
+func _make_final_accusation():
+	print("making final accusation")
+	guilty_button.show()
+	innocent_button.show()
+	return_button.show()
+
+	
 func _detect_NPC_text(dialogue_path):
 	var npcdialog = load(dialogue_path).new()
 	var dialog_dictionary = npcdialog.dialog_dictionary
@@ -156,7 +191,7 @@ func _detect_NPC_text(dialogue_path):
 		var clue_name = InventoryManager.get_inventory()[clue_data_index]["name"]
 		if clue_name == "defult_interogate":
 			continue
-		if clue_name  in dialog_dictionary.keys():
+		if clue_name in dialog_dictionary.keys():
 			clue_list.append(clue_name)
 	
 	npcdialog.queue_free()
@@ -174,7 +209,9 @@ func _process(delta):
 					change_state(State.READY)
 					skip_label.hide()
 					emit_signal("dialogue_finished")
+					print("finsihed")
 				else:
+					print("reading")
 					change_state(State.READY)  # Prepare to load the next line
 					_display_text()  # Display the next dialogue line
 
@@ -244,3 +281,19 @@ func _on_return_pressed() -> void:
 	$ButtonClick.play()
 	wait(.5)
 	get_tree().change_scene_to_file("res://main.tscn")
+
+
+func _on_guilty_pressed() -> void:
+	$ButtonClick.play()
+	wait(.5)
+	print("GUILTY")
+	guilty_selected = 1
+	print(guilty_selected)
+
+
+func _on_innocent_pressed() -> void:
+	$ButtonClick.play()
+	wait(.5)
+	print("INNOCENT")
+	guilty_selected = 2
+	print(guilty_selected)
