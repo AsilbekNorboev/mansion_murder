@@ -23,10 +23,13 @@ signal inventory_button_pressed
 
 @onready var clue_scene = preload("res://clue.tscn").instantiate()
 
+	
 var first_clue_found = false
 
 # Preload clue sound effect
-var clue_sound = preload("res://audio/mixkit-casino-bling-achievement-2067.wav")  # Replace with your sound file path
+var clue_sound = preload("res://audio/SFX/button_click.wav")
+
+#var clue_sound = preload("res://audio/mixkit-casino-bling-achievement-2067.wav")  #Replace with your sound file path
 
 # Add an AudioStreamPlayer for sound effects
 var audio_player: AudioStreamPlayer
@@ -51,6 +54,12 @@ func _ready():
 
 	# Initially hide the inventory UI
 	$InventoryUI.visible = false
+
+
+	var general_border_ui = $GeneralBorderUI
+	general_border_ui.inventorybuttonpressed.connect(_on_inventory_button_pressed)
+	general_border_ui.settingsbuttonpressed.connect(_on_settings_button_pressed)
+	general_border_ui.suspectsbuttonpressed.connect(_on_suspects_button_pressed)
 
 func _on_clue_clicked(clue_data):
 	# Play clue sound
@@ -79,3 +88,32 @@ func hide_clue(clue_data):
 		clue_data.queue_free()  # This removes the clue from the scene
 	else:
 		print("Error: Clue data is not a node!")
+
+func _on_inventory_button_pressed():
+	# Toggle visibility: if it's visible, hide it; if it's hidden, show it
+	$InventoryUI.visible = not $InventoryUI.visible
+	Global.emit_signal("inventory_button_pressed")
+
+
+func _on_settings_button_pressed():
+	if ($SettingsUI.visible):
+		#disable character movement while in settings
+		get_tree().paused = false
+		$SettingsUI.visible = not $SettingsUI.visible
+	else:
+		$SettingsUI.visible = not $SettingsUI.visible
+		get_tree().paused = true
+
+func _on_suspects_button_pressed():
+	if ($SuspectsUI.visible):
+		#disable character movement while in settings
+		get_tree().paused = true
+		$SuspectsUI.visible = not $SuspectsUI.visible
+	else:
+		$SuspectsUI.visible = not $SuspectsUI.visible
+		get_tree().paused = false
+		
+	## Toggle visibility: if it's visible, hide it; if it's hidden, show it
+	#suspects_ui.visible = not suspects_ui.visible
+	#Global.emit_signal("suspects_button_pressed")
+	#print("global suspects button emitted")

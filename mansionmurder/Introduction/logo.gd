@@ -21,7 +21,7 @@ func _ready():
 	add_child(color_rect)
 
 	# Setup audio player
-	audio_player.stream = preload("res://audio/mixkit-unlock-game-notification-253.wav")
+	audio_player.stream = preload("res://audio/background_loop.wav")
 	add_child(audio_player)
 
 	# Start with fade in

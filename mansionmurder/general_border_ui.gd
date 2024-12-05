@@ -24,7 +24,7 @@ func _on_inventory_button_pressed() -> void:
 	$InventoryButton/rustleSFX.play()
 	$InventoryButton.modulate = Color("#ffffff")
 	inventorybuttonpressed.emit()
-	get_tree().paused = !get_tree().paused #who added this
+	get_tree().paused = !get_tree().paused
 
 func _on_settings_button_pressed() -> void:
 	$SettingsButton/ButtonClick.play()
