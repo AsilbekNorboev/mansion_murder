@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c0xk8kbvovj4u"]
+
+[node name="Timesheet" type="CanvasLayer"]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer3" type="GridContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer4" type="GridContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

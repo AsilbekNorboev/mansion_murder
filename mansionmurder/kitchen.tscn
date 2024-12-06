@@ -1,14 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0tac7mqeul18"]
+[gd_scene load_steps=18 format=3 uid="uid://b0tac7mqeul18"]
 
 [ext_resource type="Script" path="res://kitchen.gd" id="1_wkt5y"]
 [ext_resource type="Texture2D" uid="uid://cq48pb40mr7pc" path="res://art/RoomBackgrounds/kitchen.png" id="2_n44tm"]
 [ext_resource type="Texture2D" uid="uid://c2b42ow8e6v8e" path="res://art/Clues/Plant.png" id="4_k42ji"]
 [ext_resource type="PackedScene" uid="uid://bg8q0fe6upe2d" path="res://chef.tscn" id="5_8sl5h"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="5_q6yu7"]
-[ext_resource type="Texture2D" uid="uid://bkgxam257yav2" path="res://art/Clues/Envelope.png" id="6_ysihl"]
 [ext_resource type="Script" path="res://noncluetextbox.gd" id="7_0ck1s"]
 [ext_resource type="AudioStream" uid="uid://cq4chgh3ih35k" path="res://audio/SFX/fish flop.wav" id="7_ccfby"]
+[ext_resource type="Texture2D" uid="uid://d2mc85tukgmtn" path="res://puzzle/cabinent.png" id="8_icvlh"]
+[ext_resource type="Texture2D" uid="uid://d4b2ogslkxm4b" path="res://puzzle/Fridge.png" id="8_r7eij"]
+[ext_resource type="Texture2D" uid="uid://vyjri7j55vvj" path="res://puzzle/Card.png" id="9_2wbsa"]
 [ext_resource type="Script" path="res://door.gd" id="9_i58c1"]
+[ext_resource type="Texture2D" uid="uid://cn8yotis1lrnl" path="res://puzzle/List.png" id="11_aynvr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w0s"]
 size = Vector2(1200, 680)
@@ -18,6 +21,18 @@ size = Vector2(1182.5, 70.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5lok"]
 size = Vector2(50, 731)
+
+[sub_resource type="FontFile" id="FontFile_slr0x"]
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iygev"]
 size = Vector2(105.125, 289)
@@ -39,14 +54,6 @@ shape = SubResource("RectangleShape2D_d0w0s")
 [node name="Chef" parent="." instance=ExtResource("5_8sl5h")]
 position = Vector2(823, 352)
 scale = Vector2(0.66, 0.66)
-
-[node name="Envelope" parent="." instance=ExtResource("5_q6yu7")]
-visible = false
-position = Vector2(370, 162)
-lines = Array[String](["This seems to be an envelope"])
-narrator_lines = Array[String](["Clue has been added to inventory, you can now ask suspects about it."])
-clue_texture = ExtResource("6_ysihl")
-clue_description = "This seems to be an envelope"
 
 [node name="Dirt" parent="." instance=ExtResource("5_q6yu7")]
 position = Vector2(1120, 285)
@@ -85,7 +92,66 @@ scale = Vector2(22.0671, 6.35482)
 script = ExtResource("7_0ck1s")
 lines = Array[String](["A knife is missing from this set."])
 
+[node name="Fridge" type="Button" parent="Colliders/Back Wall"]
+self_modulate = Color(1, 1, 1, 0.290196)
+offset_left = -1059.0
+offset_top = 110.0
+offset_right = -910.0
+offset_bottom = 267.0
+
+[node name="fridge inside" type="Sprite2D" parent="Colliders/Back Wall/Fridge"]
+visible = false
+z_index = 10
+position = Vector2(451.5, 293.491)
+scale = Vector2(0.819229, 0.49461)
+texture = ExtResource("8_r7eij")
+
+[node name="drawer" type="Button" parent="Colliders/Back Wall"]
+self_modulate = Color(1, 1, 1, 0.368627)
+offset_left = -497.0
+offset_top = 76.0
+offset_right = -273.0
+offset_bottom = 145.0
+
+[node name="drawer_inside" type="Sprite2D" parent="Colliders/Back Wall/drawer"]
+visible = false
+z_index = 10
+position = Vector2(-87, 284.672)
+scale = Vector2(0.449488, 0.307122)
+texture = ExtResource("8_icvlh")
+
+[node name="card" type="Sprite2D" parent="Colliders/Back Wall/drawer"]
+visible = false
+z_index = 11
+position = Vector2(-402, 147.165)
+rotation = -0.760964
+scale = Vector2(0.460754, 0.444781)
+texture = ExtResource("9_2wbsa")
+
+[node name="Shopping_list" type="Sprite2D" parent="Colliders/Back Wall/drawer"]
+visible = false
+z_index = 11
+position = Vector2(36.4456, 467.481)
+rotation = 1.23046
+scale = Vector2(0.741253, 0.747075)
+skew = -0.015708
+texture = ExtResource("11_aynvr")
+
+[node name="exit" type="Button" parent="Colliders/Back Wall"]
+visible = false
+self_modulate = Color(0.141176, 0.74902, 0.698039, 0.384314)
+z_index = 12
+offset_left = -1170.0
+offset_top = 80.0
+offset_right = -1044.0
+offset_bottom = 165.0
+theme_override_colors/font_disabled_color = Color(0.14902, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_slr0x")
+theme_override_font_sizes/font_size = 50
+text = "X"
+
 [node name="Island" type="CollisionPolygon2D" parent="Colliders"]
+visible = false
 position = Vector2(133.856, -101.241)
 scale = Vector2(1.18433, 1.20536)
 polygon = PackedVector2Array(-914, 628, -895, 536, -415, 535, -381, 628, -426, 667, -869, 675)
@@ -119,5 +185,8 @@ shape = SubResource("RectangleShape2D_iygev")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="pressed" from="Colliders/Back Wall/KnifeButton" to="." method="_on_knife_button_pressed"]
+[connection signal="pressed" from="Colliders/Back Wall/Fridge" to="." method="_on_fridge_pressed"]
+[connection signal="pressed" from="Colliders/Back Wall/drawer" to="." method="_on_drawer_pressed"]
+[connection signal="pressed" from="Colliders/Back Wall/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Colliders/Island/Fish Button" to="." method="_on_fish_button_pressed"]
 [connection signal="body_entered" from="Door3" to="Door3" method="_on_body_entered"]

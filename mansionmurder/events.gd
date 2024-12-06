@@ -42,7 +42,7 @@ func _ready():
 
 	# Connect all clue nodes to the same click handler
 	clue_scene.clue_clicked.connect(self._on_clue_clicked)
-	clue_envelope.clue_clicked.connect(self._on_clue_clicked)
+	#clue_envelope.clue_clicked.connect(self._on_clue_clicked)
 	clue_dirt.clue_clicked.connect(self._on_clue_clicked)
 	clue_knife.clue_clicked.connect(self._on_clue_clicked)
 	clue_necklace.clue_clicked.connect(self._on_clue_clicked)

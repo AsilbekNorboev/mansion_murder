@@ -29,7 +29,6 @@ scale = Vector2(0.3, 0.305)
 texture = ExtResource("2_bn0d4")
 
 [node name="Safe_puzzle" parent="." instance=ExtResource("6_xa15i")]
-visible = false
 
 [node name="Button5" parent="Safe_puzzle/GridContainer" index="4"]
 text = "5"
