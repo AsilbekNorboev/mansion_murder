@@ -180,6 +180,9 @@ func met_character():
 		pass
 	if not self.name in Global.suspect_list:
 		print("I am not in the suspect list already")
+		if !Global.first_suspect_found:
+			Global.first_suspect_found = true
+			print("first suspect found")
 		if (met_this_character == true):    
 			Global.NPC = self.name
 			print("Met ", Global.NPC)

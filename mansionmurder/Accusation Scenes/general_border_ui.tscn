@@ -49,13 +49,18 @@ offset_bottom = 72.31
 stream = ExtResource("5_glnpu")
 volume_db = 20.0
 
-[node name="Arrow" type="TextureRect" parent="."]
-offset_left = 1002.0
-offset_top = 573.0
-offset_right = 1135.0
-offset_bottom = 722.0
+[node name="Inventory Arrow" type="TextureRect" parent="."]
+offset_left = 997.0
+offset_top = 576.0
+offset_right = 1130.0
+offset_bottom = 725.0
 texture = ExtResource("6_iu80u")
 expand_mode = 1
+
+[node name="Suspects Arrow" type="Sprite2D" parent="."]
+position = Vector2(927.1, 648)
+scale = Vector2(0.273047, 0.3)
+texture = ExtResource("6_iu80u")
 
 [node name="SuspectsButton" type="Button" parent="."]
 process_mode = 3

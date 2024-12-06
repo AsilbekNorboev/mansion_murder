@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cdnmgmqgim23v"]
+[gd_scene load_steps=65 format=3 uid="uid://cdnmgmqgim23v"]
 
 [ext_resource type="Script" path="res://textbox_container.gd" id="1_b4rrd"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_at36y"]
@@ -56,6 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://baj4bw02gmaja" path="res://art/NPC/Gardener/Gardener-12.png" id="54_o04nr"]
 [ext_resource type="Texture2D" uid="uid://dlccc013bh4ld" path="res://art/NPC/Gardener/Gardener-13.png" id="55_uby4x"]
 [ext_resource type="Texture2D" uid="uid://csqd10iwmll7q" path="res://art/NPC/Gardener/Gardener-14.png" id="56_lrd3b"]
+[ext_resource type="Texture2D" uid="uid://ck12di45tabmp" path="res://art/PlayerSprites/Detective/Detective-1-Idle.png" id="57_teewc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xuhy"]
 bg_color = Color(0, 0, 0, 1)
@@ -402,6 +403,13 @@ position = Vector2(309, 339)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ms4ue")
 animation = &"idle"
+
+[node name="Detective Dialogue Sprite" type="Sprite2D" parent="TextboxContainer/Dialogue Sprites"]
+visible = false
+z_index = -1
+position = Vector2(1052, 297)
+scale = Vector2(4, 4)
+texture = ExtResource("57_teewc")
 
 [node name="SkipLabel" type="Label" parent="."]
 offset_left = 902.0

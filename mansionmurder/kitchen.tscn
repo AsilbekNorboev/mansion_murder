@@ -83,7 +83,7 @@ polygon = PackedVector2Array(-31, 642, -85, 655, -202, 360, -208, 276, -191, 61,
 [node name="Back Wall" type="CollisionPolygon2D" parent="Colliders"]
 position = Vector2(0, -0.79064)
 scale = Vector2(1, 1.20273)
-polygon = PackedVector2Array(-211, 258.405, -1056, 255, -1124, 68, -193, 63)
+polygon = PackedVector2Array(-211, 258.405, -1056, 255, -1131, 62.1841, -194, 56.364)
 
 [node name="KnifeButton" type="Button" parent="Colliders/Back Wall"]
 z_index = -10
