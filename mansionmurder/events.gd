@@ -25,7 +25,7 @@ signal inventory_button_pressed
 var first_clue_found = false
 
 # Preload clue sound effect
-var clue_sound = preload("res://audio/SFX/button_click.wav")
+var clue_sound = preload("res://audio/ClueSFX.wav")
 
 #var clue_sound = preload("res://audio/mixkit-casino-bling-achievement-2067.wav")  #Replace with your sound file path
 
