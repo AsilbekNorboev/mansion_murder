@@ -154,7 +154,6 @@ theme_override_font_sizes/font_size = 50
 text = "X"
 
 [node name="Island" type="CollisionPolygon2D" parent="Colliders"]
-visible = false
 position = Vector2(133.856, -101.241)
 scale = Vector2(1.18433, 1.20536)
 polygon = PackedVector2Array(-914, 628, -895, 536, -415, 535, -381, 628, -426, 667, -869, 675)
@@ -188,7 +187,11 @@ shape = SubResource("RectangleShape2D_iygev")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="pressed" from="Colliders/Back Wall/KnifeButton" to="." method="_on_knife_button_pressed"]
+[connection signal="mouse_entered" from="Colliders/Back Wall/Fridge" to="." method="_on_fridge_mouse_entered"]
+[connection signal="mouse_exited" from="Colliders/Back Wall/Fridge" to="." method="_on_fridge_mouse_exited"]
 [connection signal="pressed" from="Colliders/Back Wall/Fridge" to="." method="_on_fridge_pressed"]
+[connection signal="mouse_entered" from="Colliders/Back Wall/drawer" to="." method="_on_drawer_mouse_entered"]
+[connection signal="mouse_exited" from="Colliders/Back Wall/drawer" to="." method="_on_drawer_mouse_exited"]
 [connection signal="pressed" from="Colliders/Back Wall/drawer" to="." method="_on_drawer_pressed"]
 [connection signal="pressed" from="Colliders/Back Wall/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Colliders/Island/Fish Button" to="." method="_on_fish_button_pressed"]

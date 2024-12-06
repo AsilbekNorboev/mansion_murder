@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dg4qym28b3db5"]
 
 [ext_resource type="Script" path="res://bedroom.gd" id="1_x5y1v"]
-[ext_resource type="Texture2D" uid="uid://cghn8o5axpknp" path="res://art/RoomBackgrounds/bedroom.png" id="2_236vv"]
+[ext_resource type="Texture2D" uid="uid://ctiams04k8syi" path="res://art/RoomBackgrounds/bedroom.png" id="2_236vv"]
 [ext_resource type="PackedScene" uid="uid://pjj5rypshk1d" path="res://maid.tscn" id="3_80a53"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="4_o0aq8"]
 [ext_resource type="Texture2D" uid="uid://bs8a5mrwnirdd" path="res://art/Clues/Diary.png" id="5_txu53"]

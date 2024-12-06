@@ -10,11 +10,11 @@ signal puzzle_completed(puzzle1)
 signal inventory_button_pressed
 
 # CLUES:
-@onready var clue_deed = $Rooms/LivingRoom/Deed
-@onready var clue_envelope = $Rooms/Kitchen/Envelope
+#@onready var clue_deed = $Rooms/LivingRoom/Deed
+#@onready var clue_envelope = $Rooms/Kitchen/Envelope
 @onready var clue_dirt = $Rooms/Kitchen/Dirt
 @onready var clue_knife = $Rooms/LivingRoom/Knife
-@onready var clue_necklace = $Rooms/Bedroom/Necklace
+#@onready var clue_necklace = $Rooms/Bedroom/Necklace
 @onready var clue_diary = $Rooms/Bedroom/Diary
 @onready var clue_gloves = $Rooms/Garden/gloves
 @onready var clue_key = $Rooms/Garden/toolbox/Sprite2D2/key
@@ -45,7 +45,7 @@ func _ready():
 	#clue_envelope.clue_clicked.connect(self._on_clue_clicked)
 	clue_dirt.clue_clicked.connect(self._on_clue_clicked)
 	clue_knife.clue_clicked.connect(self._on_clue_clicked)
-	clue_necklace.clue_clicked.connect(self._on_clue_clicked)
+	#clue_necklace.clue_clicked.connect(self._on_clue_clicked)
 	clue_diary.clue_clicked.connect(self._on_clue_clicked)
 	clue_gloves.clue_clicked.connect(self._on_clue_clicked)
 	clue_key.clue_clicked.connect(self._on_clue_clicked)
