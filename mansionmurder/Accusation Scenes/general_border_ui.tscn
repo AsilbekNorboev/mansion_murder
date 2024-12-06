@@ -50,6 +50,7 @@ stream = ExtResource("5_glnpu")
 volume_db = 20.0
 
 [node name="Inventory Arrow" type="TextureRect" parent="."]
+visible = false
 offset_left = 997.0
 offset_top = 576.0
 offset_right = 1130.0
@@ -58,6 +59,7 @@ texture = ExtResource("6_iu80u")
 expand_mode = 1
 
 [node name="Suspects Arrow" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(927.1, 648)
 scale = Vector2(0.273047, 0.3)
 texture = ExtResource("6_iu80u")

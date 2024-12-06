@@ -1,5 +1,4 @@
 extends CanvasLayer
-#signal investigate
 signal inventorybuttonpressed
 signal settingsbuttonpressed
 signal suspectsbuttonpressed
@@ -8,11 +7,8 @@ signal suspectsbuttonpressed
 @onready var suspectsUI = preload("res://SuspectsUI.tscn").instantiate()
 
 func _ready() -> void:
-	inventory_arrow.visible = false
-	suspects_arrow.visible = false
 	_check_first_clue_found()
 	_check_first_suspect_found()
-	
 
 func _check_first_clue_found() -> void:
 	while not Global.first_clue_found:
@@ -20,7 +16,6 @@ func _check_first_clue_found() -> void:
 
 	# First clue found; show the arrow
 	inventory_arrow.visible = true
-	
 
 func _check_first_suspect_found() -> void:
 	while not Global.first_suspect_found:
