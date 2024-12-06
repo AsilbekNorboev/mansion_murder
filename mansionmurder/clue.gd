@@ -60,10 +60,9 @@ func show_clue_pickup_text():
 	var clue_pickup_text_instance = clue_pickup_text_scene.instantiate()
 	get_tree().root.add_child(clue_pickup_text_instance)
 	clue_pickup_text_instance.z_index = 100 
-	
+
 	# Get the viewport size
 	var viewport_size = get_viewport().size
-
 	# Calculate the top-right position
 	var camera_pos = get_viewport().get_camera_2d().global_position
 

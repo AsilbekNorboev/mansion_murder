@@ -5,13 +5,11 @@ var cursor = preload("res://art/dialogueicon.png")
 # Loads textbox scene to use its functions later
 var textbox_scene = preload("res://textbox.tscn").instantiate()
 var textappear = textbox_scene.get_node("TextboxContainer")
-var current_line_index = 0
 var cheftalksprite = textappear.get_node("Dialogue Sprites/Chef Dialogue Sprite")
 var wifetalksprite = textappear.get_node("Dialogue Sprites/Wife Dialogue Sprite")
 var gardenertalksprite = textappear.get_node("Dialogue Sprites/Gardener Dialgoue Sprite")
 var deputytalksprite = textappear.get_node("Dialogue Sprites/Deputy Dialogue Sprite")
 var maidtalksprite = textappear.get_node("Dialogue Sprites/Maid Dialogue Sprite")
-var is_dialog_active = false
 var accusation_menu = preload("res://accusation_menu.tscn").instantiate()
 signal npc_added
 
@@ -66,14 +64,70 @@ func _input_event(viewport, event, shape_idx):
 
 # On click, add text from the array to populate the textbox scene
 func _dialog_start():
-	current_line_index = 0
+	show_npc_sprite()
+			
 	# Lock character movement until the dialogue ends
 	get_tree().paused = true
-	if is_dialog_active:
+	if Global.is_dialog_active:
 		return
 	if not dialog:
 		return
-	# Toggle visibility of overlay
+	
+	active_lines = get_default(InventoryManager.get_inventory(), dialog.dialog_dictionary)
+
+	if (textbox_scene.find_parent("*") == null):
+		add_child(textbox_scene)
+					
+		#clue corresponding with characters stuff
+		textappear.show_clue_container(false)
+		textappear._on_clue_clicked_text.connect(_on_clue_clicked)
+		textappear.clear_clues()
+		for clue_data_index in range(InventoryManager.get_inventory().size()-1, -1, -1):
+			var clue_name = InventoryManager.get_inventory()[clue_data_index]["name"]
+			if clue_name in dialog.dialog_dictionary.keys():
+				print("clue name in dialogue dictionary: ", clue_name)
+				textappear.add_clue(InventoryManager.get_inventory()[clue_data_index], dialog.dialog_dictionary[clue_name])
+		
+		#add dialogue textbox
+		textappear.add_text(active_lines[Global.current_line_index])
+		Global.is_dialog_active = true
+		textappear.next_dialogue.connect(self._populate_dialogue)
+		if (Global.current_line_index > 0):
+			_populate_dialogue()
+
+
+func _on_clue_clicked(lines):
+	active_lines = lines
+	Global.current_line_index = 0
+	textappear.add_text(active_lines[Global.current_line_index])
+	textappear.show_clue_container(false)
+
+func _dialog_end(textappear):
+	# Unlock character movement when the dialogue ends
+	get_tree().paused = false
+	# Hide the textbox
+	Global.is_dialog_active = false
+	Global.current_line_index = 0
+	textappear.hide_textbox()
+	# Remove the instantiated textbox from current room scene
+	remove_child(textbox_scene)
+	
+func _populate_dialogue():
+	if Global.current_line_index <= active_lines.size():
+		Global.current_line_index += 1
+		print("next dialogue")
+	# If current line is the last, show the clue container
+	if (Global.current_line_index == active_lines.size()-1):
+		textappear.show_clue_container(true)
+		
+	if Global.current_line_index >= active_lines.size():
+		_dialog_end(textappear)
+		print("end of dialogue")
+	else:
+		textappear.add_text(active_lines[Global.current_line_index])
+
+func show_npc_sprite():
+		# Toggle visibility of overlay
 	textappear.get_node("Overlay").show()
 	# Toggle visibility of text sprites
 	if (self.name == "Chef"):
@@ -117,51 +171,6 @@ func _dialog_start():
 		maid_audio_player.play()
 		if not self.name in Global.suspect_list:
 			met_this_character = true
-
-	active_lines = get_default(InventoryManager.get_inventory(), dialog.dialog_dictionary)
-	
-	if not active_lines:
-		return
-	if (textbox_scene.find_parent("*") == null):
-		add_child(textbox_scene)
-		textappear.show_clue_container(false)
-		textappear._on_clue_clicked_text.connect(_on_clue_clicked)
-		textappear.clear_clues()
-		for clue_data_index in range(InventoryManager.get_inventory().size()-1, -1, -1):
-			var clue_name = InventoryManager.get_inventory()[clue_data_index]["name"]
-			if clue_name in dialog.dialog_dictionary.keys():
-				textappear.add_clue(InventoryManager.get_inventory()[clue_data_index], dialog.dialog_dictionary[clue_name])
-		textappear.add_text(active_lines[current_line_index])
-		is_dialog_active = true
-
-func _on_clue_clicked(lines):
-	active_lines = lines
-	current_line_index = 0
-	textappear.add_text(active_lines[current_line_index])
-	textappear.show_clue_container(false)
-
-func _dialog_end():
-	# Unlock character movement when the dialogue ends
-	get_tree().paused = false
-	# Hide the textbox
-	is_dialog_active = false
-	current_line_index = 0
-	textappear.hide_textbox()
-	# Remove the instantiated textbox from current room scene
-	remove_child(textbox_scene)
-
-func _unhandled_input(event):
-	if event.is_action_pressed("dialogue_next") and is_dialog_active:
-		current_line_index += 1
-		# If current line is the last, show the clue container
-		if current_line_index == active_lines.size()-1:
-			textappear.show_clue_container(true)
-		# If there is no more text, end the dialog
-		if current_line_index == active_lines.size():
-			_dialog_end()
-		# Otherwise, show the next line of text
-		else:
-			textappear.add_text(active_lines[current_line_index])
 
 func get_default(inventory_list, dialog_dictionary):
 	return dialog_dictionary[""]

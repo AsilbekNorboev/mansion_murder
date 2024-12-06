@@ -141,6 +141,7 @@ skew = -0.015708
 texture = ExtResource("11_aynvr")
 
 [node name="exit" type="Button" parent="Colliders/Back Wall"]
+process_mode = 3
 visible = false
 self_modulate = Color(0.141176, 0.74902, 0.698039, 0.384314)
 z_index = 12

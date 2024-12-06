@@ -36,7 +36,6 @@ radius = 27.0
 height = 150.0
 
 [node name="Maid" type="Area2D" groups=["Suspects"]]
-process_mode = 3
 script = ExtResource("1_c5j1j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

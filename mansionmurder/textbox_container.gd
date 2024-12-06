@@ -9,7 +9,6 @@ extends MarginContainer
 @onready var h_box_container: HBoxContainer = $OutlinePanel/MarginContainer/HBoxContainer
 @onready var player_options_label: Label = $OutlinePanel/PlayerOptionsLabel
 
-
 signal _on_clue_clicked_text
 signal next_dialogue
 
@@ -54,7 +53,6 @@ func hide_textbox():
 	label.text = ""
 	textbox_container.hide()
 	get_tree().paused = false
-
 	
 func show_textbox():
 	textbox_container.show()
@@ -76,6 +74,6 @@ func narrator_text_color():
 #play next dialogue
 func _unhandled_input(event):
 	if event.is_action_pressed("dialogue_next") and (Global.is_dialog_active or Global.is_narrator_dialog_active):
-		#print("key detected")
-		#print("current line index: ",Global.current_line_index)
 		emit_signal("next_dialogue")
+		print("Next dialogue")
+		print(Global.current_line_index)

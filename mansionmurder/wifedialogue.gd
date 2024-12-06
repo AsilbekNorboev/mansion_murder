@@ -4,9 +4,13 @@ extends Node
 	"": 
 		["I can’t believe this is happening... he was everything to me.",
 		"Who would do something like this? Who would hurt him?", "Let me know if you need anything detective, we will catch whoever did this!"],
-		
-	"defult_interogate": ["How could you ask me such a thing, I...I...", 
-	"I was in the study, of course, writing thank-you notes for the charity auction. Such a pity—those notes will never be mailed now, will they..."],
+
+	"defult_interogate": 
+		["How could you ask me such a thing, I...I...", 
+		"I was in the study, of course, writing thank-you notes for the charity auction. Such a pity—those notes will never be mailed now, will they..."],
+			
+	"Knife": 
+		["A kitchen knife, of all things. My husband barely knew where the kitchen was—let alone how to use anything in it."],
 		
 	"Gloves":
 		["What?! Those gloves? Absolutely not! Those are not mine! I would never wear something so... so ugly!",
