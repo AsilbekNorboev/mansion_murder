@@ -16,7 +16,6 @@ const CHAR_RATE = 0.075
 @onready var exit_game_button = $"Exit Game"
 @onready var return_button = $Return
 @onready var guilty_button = $Guilty
-@onready var innocent_button = $Innocent
 
 @onready var guilty_selected = 0
 
@@ -67,7 +66,7 @@ func _detect_NPC():
 	#GARDENER CONDITIONS
 	if (self.name == "gardener_accused"):
 		npc_clue_list = _detect_NPC_text("res://gardenerdialogue.gd")
-		_queue_text("Detective: Gardener Jones, remind me again, where were you at 9:32 PM?")
+		_queue_text("Detective: Gardener James, remind me again, where were you at 9:32 PM?")
 		_queue_text("Gardener James: I was in the kitchen, dropping off some fresh produce for the Chef. He was busy cutting fish and had his music blasting. I didn't want to disturb him, so I ducked inside, left the basket, and went back to the garden.")
 		
 		if "Dirt" in npc_clue_list:
@@ -87,13 +86,7 @@ func _detect_NPC():
 			_queue_text("Those gloves? They’re not mine. Look at the size—they’re too small. They must belong to a woman.")
 			
 			_make_final_accusation()
-			if (guilty_selected == 2):
-				_display_text()
-				_queue_text("Detective: You're telling the truth. You’re not the killer.")
-				print("you're not the killer")
-			if (guilty_selected == 1):
-				_wrong_guess()
-			
+						
 		else:
 			_queue_text("Detective: I don't have the full story...I need more evidence")
 			_return()
@@ -116,13 +109,7 @@ func _detect_NPC():
 			
 		if "Gloves" in npc_clue_list and "Diary" in npc_clue_list:
 			_make_final_accusation()
-			if (guilty_selected == 2):
-				_queue_text("Detective: The gloves, the affair... it all points to you. But something’s not adding up.")
-				_queue_text("Maid Bertha: Because I didn’t do it! I loved him, but I would never hurt him.")
-				_queue_text("Detective: You're telling the truth. You’re not the killer.")
-			if (guilty_selected == 1):
-				_wrong_guess()
-
+			
 		else:
 			_queue_text("Detective: I don't have the full story...I need more evidence")
 			_return()
@@ -146,16 +133,6 @@ func _detect_NPC():
 			
 		if "Gloves" in npc_clue_list and "Diary" in npc_clue_list:
 			_make_final_accusation()
-			if (guilty_selected == 1):
-				_queue_text("Detetcive: So you tore up the letter, stole the maid's gloves, and left them in the garden to incriminate the gardener. It was you all along.")
-				_queue_text("Mrs. Burmingham: I didn’t know what else to do. I was... so angry. So hurt. But I never meant for it to go this far.")
-				_queue_text("Detective: But it did, didn’t it? And now, we know the truth.")
-				
-				_queue_text("Mrs. Burmingham: Yes, you've caught me...")
-				#you guessed right! Game ends.
-				_right_guess()
-			if (guilty_selected == 2):
-				_queue_text("Of course I'm innocent! What a crude accusation...")
 		
 		else:
 			_queue_text("Detective: I don't have the full story...I need more evidence")
@@ -178,9 +155,8 @@ func _return():
 func _make_final_accusation():
 	print("making final accusation")
 	guilty_button.show()
-	innocent_button.show()
 	return_button.show()
-
+	
 	
 func _detect_NPC_text(dialogue_path):
 	var npcdialog = load(dialogue_path).new()
@@ -282,18 +258,34 @@ func _on_return_pressed() -> void:
 	wait(.5)
 	get_tree().change_scene_to_file("res://main.tscn")
 
-
 func _on_guilty_pressed() -> void:
 	$ButtonClick.play()
 	wait(.5)
 	print("GUILTY")
-	guilty_selected = 1
-	print(guilty_selected)
+	guilty_button.hide()
+	return_button.hide()
+	
+	if (self.name == "gardener_accused"):
+		_wrong_guess()
+		
+	if (self.name == "maid_accused"):
+		_wrong_guess()
+	
+	if (self.name == "chef_accused"):
+		_wrong_guess()
+		
+	if (self.name == "wife_accused"):
+		_queue_text("Detetcive: So you tore up the letter, stole the maid's gloves, and left them in the garden to incriminate the gardener. It was you all along.")
+		_queue_text("Mrs. Burmingham: I didn’t know what else to do. I was... so angry. So hurt. But I never meant for it to go this far.")
+		_queue_text("Detective: But it did, didn’t it? And now, we know the truth.")
+		_queue_text("Mrs. Burmingham: Yes, you've caught me...")
+		#you guessed right! Game ends.
+		_right_guess()
+		
+	#if (self.name == "maid_accused"):
+		#_queue_text("Detective: The gloves, the affair... it all points to you. But something’s not adding up.")
+		#_queue_text("Maid Bertha: Because I didn’t do it! I loved him, but I would never hurt him.")
+		#_queue_text("Detective: You're telling the truth. You’re not the killer.")
+		#_right_guess()
 
-
-func _on_innocent_pressed() -> void:
-	$ButtonClick.play()
-	wait(.5)
-	print("INNOCENT")
-	guilty_selected = 2
-	print(guilty_selected)
+		
