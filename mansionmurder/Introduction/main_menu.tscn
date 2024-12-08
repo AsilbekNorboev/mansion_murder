@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bndrvu8hfdk7x" path="res://art/Clues/deadbody_zoom_temp.png" id="1_c8gkt"]
 [ext_resource type="Script" path="res://Introduction/main_menu.gd" id="1_vt8hd"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="3_377g5"]
-[ext_resource type="FontFile" uid="uid://debhhnvyq2u7l" path="res://fonts/GhoulFriAOE.ttf" id="3_d0pns"]
+[ext_resource type="Texture2D" uid="uid://d3iax5w6xvvor" path="res://art/gamelogo.png" id="4_pa6hi"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="5_atchv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_01urs"]
@@ -61,10 +61,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -264.0
-offset_top = -91.5
-offset_right = 264.0
-offset_bottom = 235.5
+offset_left = -267.0
+offset_top = 181.5
+offset_right = 333.0
+offset_bottom = 381.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -73,6 +73,7 @@ theme_override_constants/separation = 10
 process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -91,6 +92,7 @@ text = "Start Game
 process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -104,14 +106,19 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hsv3u")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hdh8a")
 text = "Options"
 
+[node name="Game Logo" type="Sprite2D" parent="."]
+position = Vector2(655, 364)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_pa6hi")
+
 [node name="Bottom Buttons" type="Node" parent="."]
 
 [node name="Exit" type="Button" parent="Bottom Buttons"]
 process_mode = 3
-offset_left = 748.0
-offset_top = 728.0
-offset_right = 1276.0
-offset_bottom = 831.0
+offset_left = 987.0
+offset_top = 20.0
+offset_right = 1287.0
+offset_bottom = 100.0
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -129,10 +136,10 @@ text = "Exit
 
 [node name="Credits" type="Button" parent="Bottom Buttons"]
 process_mode = 3
-offset_left = 57.0
-offset_top = 729.0
-offset_right = 585.0
-offset_bottom = 832.0
+offset_left = 20.0
+offset_top = 21.0
+offset_right = 320.0
+offset_bottom = 101.0
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -147,24 +154,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hsv3u")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hdh8a")
 text = "Credits
 "
-
-[node name="Game Title" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -351.5
-offset_top = 168.0
-offset_right = 351.5
-offset_bottom = 315.0
-grow_horizontal = 2
-theme_override_colors/font_outline_color = Color(0.133333, 0.0196078, 0.00784314, 1)
-theme_override_constants/shadow_offset_y = 50
-theme_override_constants/outline_size = 100
-theme_override_fonts/font = ExtResource("3_d0pns")
-theme_override_font_sizes/font_size = 120
-text = "Mansion Murder"
-horizontal_alignment = 1
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_atchv")
