@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bg8q0fe6upe2d"]
 
-[ext_resource type="Script" path="res://NPCdialogue.gd" id="1_58tfy"]
+[ext_resource type="Script" path="res://NPCs/NPCdialogue.gd" id="1_58tfy"]
 [ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="1_gloj1"]
 [ext_resource type="Texture2D" uid="uid://d2pjchcx0kso7" path="res://art/NPC/Chef/Chef-2.png" id="2_tc0dp"]
 [ext_resource type="Texture2D" uid="uid://b7r4djrgj3kfg" path="res://art/NPC/Chef/Chef-3.png" id="3_cq48g"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cyr6vnfag6yo2" path="res://art/NPC/Chef/Chef-12.png" id="12_w8wyu"]
 [ext_resource type="Texture2D" uid="uid://dct5fbf03cmir" path="res://art/NPC/Chef/Chef-13.png" id="13_vb8fw"]
 [ext_resource type="Texture2D" uid="uid://wn71042djilq" path="res://art/NPC/Chef/Chef-14.png" id="14_wvvmy"]
-[ext_resource type="Script" path="res://chefdialogue.gd" id="16_3hr02"]
+[ext_resource type="Script" path="res://NPCs/chefdialogue.gd" id="16_3hr02"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7s561"]
 animations = [{

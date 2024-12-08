@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://cocv41sdm5dlh"]
 
-[ext_resource type="Script" path="res://NPCdialogue.gd" id="1_mnyn3"]
+[ext_resource type="Script" path="res://NPCs/NPCdialogue.gd" id="1_mnyn3"]
 [ext_resource type="Texture2D" uid="uid://ctmykf6rkt7wl" path="res://art/NPC/Wife/Wife-1.png" id="1_mo3gd"]
 [ext_resource type="Texture2D" uid="uid://c4leex18va013" path="res://art/NPC/Wife/Wife-2.png" id="2_cjmus"]
 [ext_resource type="Texture2D" uid="uid://ccl3a8i1nrtp8" path="res://art/NPC/Wife/Wife-3.png" id="3_xpuyd"]
 [ext_resource type="Texture2D" uid="uid://br1lr1ad2snsi" path="res://art/NPC/Wife/Wife-4.png" id="4_c1dsl"]
 [ext_resource type="Texture2D" uid="uid://ercjt07alluc" path="res://art/NPC/Wife/Wife-5.png" id="5_d2kcp"]
-[ext_resource type="Script" path="res://wifedialogue.gd" id="7_2kt63"]
+[ext_resource type="Script" path="res://NPCs/wifedialogue.gd" id="7_2kt63"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nwtxd"]
 animations = [{

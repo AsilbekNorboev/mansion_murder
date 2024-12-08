@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://pjj5rypshk1d"]
 
-[ext_resource type="Script" path="res://NPCdialogue.gd" id="1_c5j1j"]
+[ext_resource type="Script" path="res://NPCs/NPCdialogue.gd" id="1_c5j1j"]
 [ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="1_n7tcw"]
 [ext_resource type="Texture2D" uid="uid://cigmgtqqys4a8" path="res://art/NPC/Maid/Maid-2.png" id="2_g5s3u"]
 [ext_resource type="Texture2D" uid="uid://dw8qjkx7dflok" path="res://art/NPC/Maid/Maid-3.png" id="3_ad2pq"]
 [ext_resource type="Texture2D" uid="uid://dvatrox5o425u" path="res://art/NPC/Maid/Maid-4.png" id="4_lhjom"]
 [ext_resource type="Texture2D" uid="uid://vilqu11acpnp" path="res://art/NPC/Maid/Maid-5.png" id="5_mjidm"]
-[ext_resource type="Script" path="res://maiddialogue.gd" id="7_ma0yu"]
+[ext_resource type="Script" path="res://NPCs/maiddialogue.gd" id="7_ma0yu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4y4mo"]
 animations = [{

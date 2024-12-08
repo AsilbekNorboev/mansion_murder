@@ -50,7 +50,7 @@ func _detect_NPC():
 	
 	#CHEF CONDITIONS
 	if (self.name == "chef_accused"):
-		npc_clue_list = _detect_NPC_text("res://chefdialogue.gd")
+		npc_clue_list = _detect_NPC_text("res://NPCs/chefdialogue.gd")
 		_queue_text("Detective: Chef, remind me, where were you at 9:32 PM?")
 		_queue_text("Chef Sordanio: 9:32 PM? I was in the kitchen, cutting fish for tomorrow’s special. The music was blasting, and I was chopping so loud, I wouldn’t have heard a thing if someone walked in.")
 		
@@ -65,7 +65,7 @@ func _detect_NPC():
 		
 	#GARDENER CONDITIONS
 	if (self.name == "gardener_accused"):
-		npc_clue_list = _detect_NPC_text("res://gardenerdialogue.gd")
+		npc_clue_list = _detect_NPC_text("res://NPCs/gardenerdialogue.gd")
 		_queue_text("Detective: Gardener James, remind me again, where were you at 9:32 PM?")
 		_queue_text("Gardener James: I was in the kitchen, dropping off some fresh produce for the Chef. He was busy cutting fish and had his music blasting. I didn't want to disturb him, so I ducked inside, left the basket, and went back to the garden.")
 		
@@ -93,7 +93,7 @@ func _detect_NPC():
 		
 	#MAID CONDITIONS
 	if (self.name == "maid_accused"):
-		npc_clue_list = _detect_NPC_text("res://maiddialogue.gd")
+		npc_clue_list = _detect_NPC_text("res://NPCs/maiddialogue.gd")
 		_queue_text("Detective: Maid Bertha, remind me again, where were you at 9:32 PM?")
 		_queue_text("Maid Bertha: 9:32 PM? I was in the bedroom, just cleaning up. You know, tidying up the sheets, putting things in order, just like I told you.")
 		
@@ -117,7 +117,7 @@ func _detect_NPC():
 
 	#WIFE CONDITIONS
 	if (self.name == "wife_accused"):
-		npc_clue_list = _detect_NPC_text("res://wifedialogue.gd")
+		npc_clue_list = _detect_NPC_text("res://NPCs/wifedialogue.gd")
 		_queue_text("You: Mrs. Burmingham, remind me again, where were you at 9:32 PM?")
 		_queue_text("Wife: I was in the study, of course, writing thank-you notes for the charity auction. Such a pity—those notes will never be mailed now, will they?")
 		

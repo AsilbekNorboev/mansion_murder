@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://cfs683yifn6p0"]
 
-[ext_resource type="Script" path="res://NPCdialogue.gd" id="1_7w655"]
+[ext_resource type="Script" path="res://NPCs/NPCdialogue.gd" id="1_7w655"]
 [ext_resource type="Texture2D" uid="uid://dvtrmyhgte871" path="res://art/NPC/Gardener/Gardener-1.png" id="1_s2op7"]
 [ext_resource type="Texture2D" uid="uid://4rcbg4cdpsog" path="res://art/NPC/Gardener/Gardener-2.png" id="2_ccm75"]
 [ext_resource type="Texture2D" uid="uid://nk6e7eei3pj3" path="res://art/NPC/Gardener/Gardener-3.png" id="3_g4k46"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://baj4bw02gmaja" path="res://art/NPC/Gardener/Gardener-12.png" id="12_458av"]
 [ext_resource type="Texture2D" uid="uid://dlccc013bh4ld" path="res://art/NPC/Gardener/Gardener-13.png" id="13_pbicj"]
 [ext_resource type="Texture2D" uid="uid://csqd10iwmll7q" path="res://art/NPC/Gardener/Gardener-14.png" id="14_ak1no"]
-[ext_resource type="Script" path="res://gardenerdialogue.gd" id="16_k3wsu"]
+[ext_resource type="Script" path="res://NPCs/gardenerdialogue.gd" id="16_k3wsu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8uu6w"]
 animations = [{

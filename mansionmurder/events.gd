@@ -5,7 +5,6 @@ signal puzzle_completed(puzzle1)
 
 @onready var inventory_ui = $InventoryUI
 @onready var suspects_ui =  preload("res://SuspectsUI.tscn").instantiate()
-@onready var clue_node_safe = $Rooms/Bedroom/Safe
 @onready var settings_ui = $SettingsUI
 signal inventory_button_pressed
 
@@ -21,13 +20,10 @@ signal inventory_button_pressed
 
 @onready var clue_scene = preload("res://clue.tscn").instantiate()
 
-	
 var first_clue_found = false
 
 # Preload clue sound effect
 var clue_sound = preload("res://audio/ClueSFX.wav")
-
-#var clue_sound = preload("res://audio/mixkit-casino-bling-achievement-2067.wav")  #Replace with your sound file path
 
 # Add an AudioStreamPlayer for sound effects
 var audio_player: AudioStreamPlayer
@@ -63,7 +59,6 @@ func _on_clue_clicked(clue_data):
 	play_clue_sound()
 
 	# Add the clue to the inventory UI
-
 	if clue_data not in InventoryManager.get_inventory():
 		if !Global.first_clue_found:
 			Global.first_clue_found = true

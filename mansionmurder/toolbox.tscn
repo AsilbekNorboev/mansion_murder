@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://il70uws6sjd2" path="res://puzzle/ToolBox.png" id="2_bn0d4"]
 [ext_resource type="Texture2D" uid="uid://c1vid4i0wuuoj" path="res://puzzle/Safe_inside 2.png" id="4_l3pt4"]
 [ext_resource type="PackedScene" uid="uid://blpjd2n77ejtj" path="res://clue.tscn" id="5_nlb7l"]
-[ext_resource type="PackedScene" uid="uid://dtxyawvsvvhwy" path="res://safe_puzzle.tscn" id="6_xa15i"]
+[ext_resource type="PackedScene" uid="uid://dtxyawvsvvhwy" path="res://puzzle/safe_puzzle.tscn" id="6_xa15i"]
 [ext_resource type="Texture2D" uid="uid://c7epwf5yqi2md" path="res://puzzle/New_Key.png" id="6_ynevn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af140"]
