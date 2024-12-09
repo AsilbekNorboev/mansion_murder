@@ -10,3 +10,9 @@ var first_clue_found = false
 var first_suspect_found = false
 signal inventory_button_pressed
 signal suspects_button_pressed
+signal chef_button_pressed
+signal wife_button_pressed
+signal gardener_button_pressed
+signal maid_button_pressed
+
+signal removing_self

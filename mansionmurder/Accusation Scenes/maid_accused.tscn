@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ddacxdvl6pl6m"]
+[gd_scene load_steps=25 format=3 uid="uid://ddacxdvl6pl6m"]
 
 [ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_m72g6"]
 [ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="3_d8cru"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dvatrox5o425u" path="res://art/NPC/Maid/Maid-4.png" id="6_j5fxq"]
 [ext_resource type="Texture2D" uid="uid://vilqu11acpnp" path="res://art/NPC/Maid/Maid-5.png" id="7_tnmcm"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="9_uun62"]
+[ext_resource type="Script" path="res://Accusation Scenes/replay_game.gd" id="9_w657p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vm8pg"]
 animations = [{
@@ -128,6 +129,7 @@ shadow_color = Color(0.2484, 0.2484, 0.2484, 0.6)
 shadow_offset = Vector2(1, 1)
 
 [node name="maid_accused" type="CanvasLayer"]
+layer = 10
 script = ExtResource("1_m72g6")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -177,10 +179,10 @@ text = "Guilty!"
 
 [node name="Return" type="Button" parent="."]
 visible = false
-offset_left = 599.0
-offset_top = 712.0
-offset_right = 1071.0
-offset_bottom = 794.0
+offset_left = 600.0
+offset_top = 687.0
+offset_right = 1072.0
+offset_bottom = 769.0
 theme_override_fonts/font = ExtResource("3_ujhmh")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = SubResource("StyleBoxFlat_aorfh")
@@ -214,6 +216,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_k2f6w")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_i0a2w")
 theme_override_styles/normal = SubResource("StyleBoxFlat_m5d54")
 text = "Replay"
+script = ExtResource("9_w657p")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
 visible = false

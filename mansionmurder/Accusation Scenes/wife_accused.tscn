@@ -87,6 +87,7 @@ shadow_color = Color(0.2484, 0.2484, 0.2484, 0.6)
 shadow_offset = Vector2(1, 1)
 
 [node name="wife_accused" type="CanvasLayer"]
+layer = 10
 script = ExtResource("1_1diqn")
 
 [node name="Background" type="ColorRect" parent="."]

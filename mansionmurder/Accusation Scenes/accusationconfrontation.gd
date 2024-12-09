@@ -21,7 +21,6 @@ const CHAR_RATE = 0.075
 
 # Signals
 signal dialogue_finished
-
 # Enums
 enum State {
 	READY,
@@ -36,7 +35,6 @@ var tween: Tween
 
 # Initialization
 func _ready():
-	#get_tree().paused
 	_hide_textbox()
 	_detect_NPC()
 
@@ -57,7 +55,7 @@ func _detect_NPC():
 		if "Knife" in npc_clue_list:
 			_queue_text("Detective: The knife used in the murder came from your kitchen. How do you explain that?")
 			_queue_text("Chef Sordanio: Yeah, the knife’s from my kitchen, but I didn’t use it. I was focused on cutting fish and had the music cranked up. I didn’t hear or see anything out of the ordinary.")
-			_queue_text("Detective: You're telling the truth. You’re not the killer.")
+			_make_final_accusation()
 			
 		else:
 			_queue_text("Detective: I don't have the full story...I need more evidence")
@@ -141,8 +139,9 @@ func _detect_NPC():
 
 func _wrong_guess():
 	exit_game_button.show()
-	_return()
+	replay_game_button.show()
 	winlose_text.text = ("You Lost!")
+	return_button.hide()
 
 func _right_guess():
 	exit_game_button.show()
@@ -185,7 +184,7 @@ func _process(delta):
 					change_state(State.READY)
 					skip_label.hide()
 					emit_signal("dialogue_finished")
-					print("finsihed")
+					print("finished")
 				else:
 					print("reading")
 					change_state(State.READY)  # Prepare to load the next line
@@ -256,7 +255,9 @@ func _on_exit_game_pressed() -> void:
 func _on_return_pressed() -> void:
 	$ButtonClick.play()
 	wait(.5)
-	get_tree().change_scene_to_file("res://main.tscn")
+	#self.visible = false
+	Global.removing_self.emit()
+	#get_tree().change_scene_to_file("res://main.tscn")
 
 func _on_guilty_pressed() -> void:
 	$ButtonClick.play()

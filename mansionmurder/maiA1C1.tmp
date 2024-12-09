@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjfpn8ka3087n"]
+[gd_scene load_steps=14 format=3 uid="uid://cjfpn8ka3087n"]
 
 [ext_resource type="PackedScene" uid="uid://c4yh2d0qnyean" path="res://player.tscn" id="1_dh5pg"]
 [ext_resource type="Script" path="res://events.gd" id="1_yluwg"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c3h24xji8o1et" path="res://rooms/garden.tscn" id="12_ikl3x"]
 [ext_resource type="PackedScene" uid="uid://ct67jwpeggu22" path="res://settings_ui.tscn" id="13_2ogmj"]
 [ext_resource type="PackedScene" uid="uid://b58wytml8nsru" path="res://SuspectsUI.tscn" id="13_ef86x"]
+[ext_resource type="PackedScene" uid="uid://tkn36d3r41w1" path="res://Accusation Scenes/chef_accused.tscn" id="13_rfb8s"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_yluwg")
@@ -69,3 +70,5 @@ position = Vector2(-38, -720)
 position = Vector2(655, 430)
 
 [node name="Accusation Scenes" type="Node" parent="."]
+
+[node name="chef_accused" parent="Accusation Scenes" instance=ExtResource("13_rfb8s")]

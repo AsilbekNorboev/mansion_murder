@@ -6,6 +6,14 @@ signal puzzle_completed(puzzle1)
 @onready var inventory_ui = $InventoryUI
 @onready var suspects_ui =  preload("res://SuspectsUI.tscn").instantiate()
 @onready var settings_ui = $SettingsUI
+
+@onready var chef_accused_scene = preload("res://Accusation Scenes/chef_accused.tscn")
+@onready var gardener_accused_scene = preload("res://Accusation Scenes/gardener_accused.tscn")
+@onready var wife_accused_scene = preload("res://Accusation Scenes/wife_accused.tscn")
+@onready var maid_accused_scene = preload("res://Accusation Scenes/maid_accused.tscn")
+
+var textbox_scene = preload("res://textbox.tscn")
+var accusation_scene
 signal inventory_button_pressed
 
 # CLUES:
@@ -47,13 +55,20 @@ func _ready():
 	clue_key.clue_clicked.connect(self._on_clue_clicked)
 
 	# Initially hide the inventory UI
-	$InventoryUI.visible = false
+	inventory_ui.visible = false
 	#connects the border buttons pressed signal to the corresonding button scenes
 	var general_border_ui = $GeneralBorderUI
 	general_border_ui.inventorybuttonpressed.connect(_on_inventory_button_pressed)
 	general_border_ui.settingsbuttonpressed.connect(_on_settings_button_pressed)
 	general_border_ui.suspectsbuttonpressed.connect(_on_suspects_button_pressed)
+	
+	Global.chef_button_pressed.connect(_on_chef_button_pressed)
+	Global.wife_button_pressed.connect(_on_wife_button_pressed)
+	Global.maid_button_pressed.connect(_on_maid_button_pressed)
+	Global.gardener_button_pressed.connect(_on_gardener_button_pressed)
 
+	Global.removing_self.connect(_on_removing_accusation_scene)
+	
 func _on_clue_clicked(clue_data):
 	# Play clue sound
 	play_clue_sound()
@@ -62,12 +77,13 @@ func _on_clue_clicked(clue_data):
 	if clue_data not in InventoryManager.get_inventory():
 		if !Global.first_clue_found:
 			Global.first_clue_found = true
-			#show_first_clue_message()
+		#show_first_clue_message()
 		InventoryManager.add_clue(clue_data)  # Add to inventory manager
 		inventory_ui.add_clue(clue_data)  # Add to UI immediately
 
 		# Call the function to hide the clue after it's clicked
 		hide_clue(clue_data)
+		
 
 func play_clue_sound():
 	if audio_player and audio_player.stream:
@@ -83,17 +99,17 @@ func hide_clue(clue_data):
 #makes the ineventory screen visible
 func _on_inventory_button_pressed():
 	# Toggle visibility: if it's visible, hide it; if it's hidden, show it
-	$InventoryUI.visible = not $InventoryUI.visible
+	inventory_ui.visible = not inventory_ui.visible
 	Global.emit_signal("inventory_button_pressed")
 
 #makes the settings screen visible
 func _on_settings_button_pressed():
-	if ($SettingsUI.visible):
+	if (settings_ui.visible):
 		#disable character movement while in settings
 		get_tree().paused = false
-		$SettingsUI.visible = not $SettingsUI.visible
+		settings_ui.visible = not settings_ui.visible
 	else:
-		$SettingsUI.visible = not $SettingsUI.visible
+		settings_ui.visible = not settings_ui.visible
 		get_tree().paused = true
 
 #makes the suspects screen visible
@@ -105,4 +121,38 @@ func _on_suspects_button_pressed():
 	else:
 		$SuspectsUI.visible = not $SuspectsUI.visible
 		get_tree().paused = false
-		
+	
+func _on_chef_button_pressed() -> void:
+	var accusation_scene = chef_accused_scene.instantiate()
+	$"Accusation Scenes".add_child(accusation_scene)
+	print(accusation_scene.get_path())
+
+func _on_gardener_button_pressed() -> void:
+	var accusation_scene = gardener_accused_scene.instantiate()
+	$"Accusation Scenes".add_child(accusation_scene)
+	print(accusation_scene.get_path())
+
+func _on_wife_button_pressed() -> void:
+	var accusation_scene = wife_accused_scene.instantiate()
+	$"Accusation Scenes".add_child(accusation_scene)
+	print(accusation_scene.get_path())
+
+	
+func _on_maid_button_pressed() -> void:
+	var accusation_scene = maid_accused_scene.instantiate()
+	$"Accusation Scenes".add_child(accusation_scene)
+	print(accusation_scene.get_path())
+
+func _on_removing_accusation_scene():
+	print("removing accusation scene")
+	
+	if (get_node("Accusation Scenes/chef_accused")):
+		get_node("Accusation Scenes/chef_accused").queue_free()
+	if (get_node("Accusation Scenes/maid_accused")):
+			get_node("Accusation Scenes/maid_accused").queue_free()
+	if (get_node("Accusation Scenes/gardener_accused")):
+		get_node("Accusation Scenes/gardener_accused").queue_free()
+	if (get_node("Accusation Scenes/wife_accused")):
+			get_node("Accusation Scenes/wife_accused").queue_free()
+	else:
+		print("node not found")

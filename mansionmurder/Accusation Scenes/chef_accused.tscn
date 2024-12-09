@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://tkn36d3r41w1"]
+[gd_scene load_steps=31 format=3 uid="uid://tkn36d3r41w1"]
 
 [ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_diwa1"]
 [ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="3_ctlrr"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cyr6vnfag6yo2" path="res://art/NPC/Chef/Chef-12.png" id="14_jcih7"]
 [ext_resource type="Texture2D" uid="uid://dct5fbf03cmir" path="res://art/NPC/Chef/Chef-13.png" id="15_uujcj"]
 [ext_resource type="Texture2D" uid="uid://wn71042djilq" path="res://art/NPC/Chef/Chef-14.png" id="16_a15ny"]
+[ext_resource type="Script" path="res://Accusation Scenes/replay_game.gd" id="18_tjqsy"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="18_y46kb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_37hwt"]
@@ -143,6 +144,7 @@ shadow_color = Color(0.2484, 0.2484, 0.2484, 0.6)
 shadow_offset = Vector2(1, 1)
 
 [node name="chef_accused" type="CanvasLayer"]
+layer = 10
 script = ExtResource("1_diwa1")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -215,6 +217,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_31d8l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cj2ck")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fprus")
 text = "Replay"
+script = ExtResource("18_tjqsy")
 
 [node name="Exit Game" type="Button" parent="."]
 visible = false

@@ -6,8 +6,7 @@ func _ready():
 		Global.npc_added.connect(_on_npc_added)
 	Global.inventory_button_pressed.connect(_on_inventory_button_pressed)
 	Global.suspects_button_pressed.connect(_on_suspects_button_pressed)
-
-		
+	
 func _on_suspects_button_pressed():
 	add_NPC_Container()
 	
@@ -38,22 +37,22 @@ func _on_chef_button_pressed() -> void:
 	$ButtonClick.play()
 	wait(.5)
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Accusation Scenes/chef_accused.tscn")
+	Global.chef_button_pressed.emit()
 
 func _on_gardener_button_pressed() -> void:
 	$ButtonClick.play()
 	wait(.5)
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Accusation Scenes/gardener_accused.tscn")
-
+	Global.gardener_button_pressed.emit()
+	
 func _on_wife_button_pressed() -> void:
 	$ButtonClick.play()
 	wait(.5)
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Accusation Scenes/wife_accused.tscn")
+	Global.wife_button_pressed.emit()
 
 func _on_maid_button_pressed() -> void:
 	$ButtonClick.play()
 	wait(.5)
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Accusation Scenes/maid_accused.tscn")
+	Global.maid_button_pressed.emit()

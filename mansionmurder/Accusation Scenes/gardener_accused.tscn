@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://do22xrru64f48"]
+[gd_scene load_steps=31 format=3 uid="uid://do22xrru64f48"]
 
 [ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_6xnvw"]
 [ext_resource type="Texture2D" uid="uid://dvtrmyhgte871" path="res://art/NPC/Gardener/Gardener-1.png" id="3_tq3nr"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://baj4bw02gmaja" path="res://art/NPC/Gardener/Gardener-12.png" id="14_5epwh"]
 [ext_resource type="Texture2D" uid="uid://dlccc013bh4ld" path="res://art/NPC/Gardener/Gardener-13.png" id="15_ia2au"]
 [ext_resource type="Texture2D" uid="uid://csqd10iwmll7q" path="res://art/NPC/Gardener/Gardener-14.png" id="16_pyxdr"]
+[ext_resource type="Script" path="res://Accusation Scenes/replay_game.gd" id="18_8lg0q"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="18_klk7r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7qqjs"]
@@ -143,6 +144,7 @@ shadow_color = Color(0.2484, 0.2484, 0.2484, 0.6)
 shadow_offset = Vector2(1, 1)
 
 [node name="gardener_accused" type="CanvasLayer"]
+layer = 10
 script = ExtResource("1_6xnvw")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -215,6 +217,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_56o2w")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_w015a")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jh7vw")
 text = "Replay"
+script = ExtResource("18_8lg0q")
 
 [node name="Exit Game" type="Button" parent="."]
 visible = false
