@@ -28,7 +28,6 @@ expand_margin_right = 20.0
 
 [node name="Safe_puzzle" type="CanvasLayer"]
 process_mode = 3
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

@@ -1,34 +1,43 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgd865rpwt2da"]
 
-[ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="1_sixsy"]
 [ext_resource type="Texture2D" uid="uid://cf0kb1ehkj1m1" path="res://art/Clues/testclue.png" id="2_2ynbb"]
+[ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_g4bw4"]
 [ext_resource type="Script" path="res://clue_item.gd" id="2_mfxil"]
 
 [node name="ClueItem" type="TextureRect"]
 offset_left = 10.0
 offset_top = 14.0
-offset_right = 669.0
-offset_bottom = 102.0
-texture = ExtResource("1_sixsy")
+offset_right = 761.0
+offset_bottom = 572.0
 expand_mode = 1
 script = ExtResource("2_mfxil")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 373.0
-offset_bottom = 88.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.886275, 0.482353, 0.0588235, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_g4bw4")
+theme_override_font_sizes/font_size = 60
 text = "A painting of a woman"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 569.0
-offset_top = 1.0
-offset_right = 657.0
-offset_bottom = 90.0
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = -51.5
+offset_right = -41.0
+offset_bottom = 72.5
+grow_horizontal = 0
+grow_vertical = 2
 texture = ExtResource("2_2ynbb")
 expand_mode = 1

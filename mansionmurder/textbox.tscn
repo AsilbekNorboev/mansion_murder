@@ -1,9 +1,10 @@
-[gd_scene load_steps=65 format=3 uid="uid://cdnmgmqgim23v"]
+[gd_scene load_steps=70 format=3 uid="uid://cdnmgmqgim23v"]
 
 [ext_resource type="Script" path="res://textbox_container.gd" id="1_b4rrd"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_at36y"]
 [ext_resource type="AudioStream" uid="uid://dgdsahk84hao8" path="res://audio/SFX/next_dialogue_sfx.wav" id="3_oqodl"]
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="4_hxv45"]
+[ext_resource type="Texture2D" uid="uid://dda2b7dyc1n1h" path="res://art/chef_dialogue.png" id="5_if4k4"]
 [ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="5_s65gi"]
 [ext_resource type="Texture2D" uid="uid://d2pjchcx0kso7" path="res://art/NPC/Chef/Chef-2.png" id="6_6avsv"]
 [ext_resource type="Texture2D" uid="uid://b7r4djrgj3kfg" path="res://art/NPC/Chef/Chef-3.png" id="7_31wke"]
@@ -19,18 +20,22 @@
 [ext_resource type="Texture2D" uid="uid://dct5fbf03cmir" path="res://art/NPC/Chef/Chef-13.png" id="17_wxk43"]
 [ext_resource type="Texture2D" uid="uid://wn71042djilq" path="res://art/NPC/Chef/Chef-14.png" id="18_ujacs"]
 [ext_resource type="Texture2D" uid="uid://4mefy3j2jqvf" path="res://art/NPC/Deputy/Deputy-1.png" id="19_s7d0i"]
+[ext_resource type="Texture2D" uid="uid://ewvok0kw7ru2" path="res://art/deputy_dialogue.png" id="20_4306e"]
 [ext_resource type="Texture2D" uid="uid://q6iqonmc2uhu" path="res://art/NPC/Deputy/Deputy-2.png" id="20_jbyiy"]
+[ext_resource type="Texture2D" uid="uid://dneuhab3l4lc0" path="res://art/maid_dialogue.png" id="20_l46ue"]
 [ext_resource type="Texture2D" uid="uid://rdiym5w3dqs0" path="res://art/NPC/Deputy/Deputy-3.png" id="21_r3evk"]
 [ext_resource type="Texture2D" uid="uid://cokhux5rrwv24" path="res://art/NPC/Deputy/Deputy-4.png" id="22_6wr0g"]
 [ext_resource type="Texture2D" uid="uid://c2ojptm42g1jq" path="res://art/NPC/Deputy/Deputy-5.png" id="23_3xkxc"]
 [ext_resource type="Texture2D" uid="uid://cjuvotg6kisu8" path="res://art/NPC/Deputy/Deputy-6.png" id="24_w0nnt"]
 [ext_resource type="Texture2D" uid="uid://4k5rqayo8njt" path="res://art/NPC/Deputy/Deputy-7.png" id="25_vkvvh"]
+[ext_resource type="Texture2D" uid="uid://l2kmf5p2lx4" path="res://art/wife_dialoguee.png" id="26_e43l1"]
 [ext_resource type="Texture2D" uid="uid://cvyh8unmp6yu5" path="res://art/NPC/Deputy/Deputy-8.png" id="26_v2pbn"]
 [ext_resource type="Texture2D" uid="uid://brs1ctpxyrfsk" path="res://art/NPC/Deputy/Deputy-9.png" id="27_4vbof"]
 [ext_resource type="Texture2D" uid="uid://brxc3qatsmc4" path="res://art/NPC/Deputy/Deputy-10.png" id="28_yk3bd"]
 [ext_resource type="Texture2D" uid="uid://bcr526xg5qjoa" path="res://art/NPC/Deputy/Deputy-11.png" id="29_84e3d"]
 [ext_resource type="Texture2D" uid="uid://bcr0rxe8qn7m" path="res://art/NPC/Deputy/Deputy-12.png" id="30_qcdjg"]
 [ext_resource type="Texture2D" uid="uid://vocicb8uhbxn" path="res://art/NPC/Deputy/Deputy-13.png" id="31_5fhc5"]
+[ext_resource type="Texture2D" uid="uid://3rsl7ps100t3" path="res://art/gardener_dialogue.png" id="32_kl8ww"]
 [ext_resource type="Texture2D" uid="uid://c3ahe60006bnr" path="res://art/NPC/Deputy/Deputy-14.png" id="32_phec8"]
 [ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="33_q6lp3"]
 [ext_resource type="Texture2D" uid="uid://cigmgtqqys4a8" path="res://art/NPC/Maid/Maid-2.png" id="34_stssy"]
@@ -56,7 +61,7 @@
 [ext_resource type="Texture2D" uid="uid://baj4bw02gmaja" path="res://art/NPC/Gardener/Gardener-12.png" id="54_o04nr"]
 [ext_resource type="Texture2D" uid="uid://dlccc013bh4ld" path="res://art/NPC/Gardener/Gardener-13.png" id="55_uby4x"]
 [ext_resource type="Texture2D" uid="uid://csqd10iwmll7q" path="res://art/NPC/Gardener/Gardener-14.png" id="56_lrd3b"]
-[ext_resource type="Texture2D" uid="uid://ck12di45tabmp" path="res://art/PlayerSprites/Detective/Detective-1-Idle.png" id="57_teewc"]
+[ext_resource type="Texture2D" uid="uid://03p3411s6j5f" path="res://art/detective_.png" id="57_ux426"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xuhy"]
 bg_color = Color(0, 0, 0, 1)
@@ -68,6 +73,14 @@ border_color = Color(0.466667, 0.352941, 0.105882, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6ytbd"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_if4k4")
+}],
+"loop": true,
+"name": &"dialogie",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_s65gi")
@@ -120,6 +133,14 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("20_4306e")
+}],
+"loop": true,
+"name": &"dialogue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("19_s7d0i")
 }, {
 "duration": 1.0,
@@ -170,6 +191,14 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("20_l46ue")
+}],
+"loop": true,
+"name": &"dialogue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("33_q6lp3")
 }, {
 "duration": 1.0,
@@ -193,6 +222,14 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("26_e43l1")
+}],
+"loop": true,
+"name": &"dialogue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("38_o83iv")
 }, {
 "duration": 1.0,
@@ -214,6 +251,14 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ms4ue"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_kl8ww")
+}],
+"loop": true,
+"name": &"dialogue",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("43_2414y")
@@ -363,53 +408,54 @@ texture = ExtResource("4_hxv45")
 visible = false
 z_index = -1
 texture_filter = 1
-position = Vector2(238, 345)
-scale = Vector2(2, 2)
+position = Vector2(264, 602)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_6ytbd")
-animation = &"idle"
+animation = &"dialogie"
 
 [node name="Deputy Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
 z_index = -1
 texture_filter = 1
-position = Vector2(337, 283)
-scale = Vector2(4, 4)
+position = Vector2(235, 527)
+scale = Vector2(0.7, 0.671)
 sprite_frames = SubResource("SpriteFrames_je47w")
-animation = &"idle"
+animation = &"dialogue"
 
 [node name="Maid Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
 z_index = -1
 texture_filter = 1
-position = Vector2(334, 441)
-scale = Vector2(5, 5)
+position = Vector2(308, 625)
+rotation = 0.0628319
+scale = Vector2(1.1, 1.1)
 sprite_frames = SubResource("SpriteFrames_d1akk")
-animation = &"idle"
+animation = &"dialogue"
 
 [node name="Wife Dialogue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
 z_index = -1
 texture_filter = 1
-position = Vector2(215, 392)
-scale = Vector2(4, 4)
+position = Vector2(285, 555)
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_rk3b0")
-animation = &"idle"
+animation = &"dialogue"
 
 [node name="Gardener Dialgoue Sprite" type="AnimatedSprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
 z_index = -1
 texture_filter = 1
-position = Vector2(309, 339)
-scale = Vector2(3, 3)
+position = Vector2(332, 450)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_ms4ue")
-animation = &"idle"
+animation = &"dialogue"
 
 [node name="Detective Dialogue Sprite" type="Sprite2D" parent="TextboxContainer/Dialogue Sprites"]
 visible = false
 z_index = -1
-position = Vector2(1052, 297)
-scale = Vector2(4, 4)
-texture = ExtResource("57_teewc")
+position = Vector2(999, 644)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("57_ux426")
 
 [node name="SkipLabel" type="Label" parent="."]
 offset_left = 902.0
@@ -421,7 +467,6 @@ theme_override_font_sizes/font_size = 30
 text = "Press 'Enter' to skip..."
 
 [node name="CloseButton" type="Button" parent="."]
-visible = false
 offset_left = 1173.0
 offset_top = 438.0
 offset_right = 1222.0

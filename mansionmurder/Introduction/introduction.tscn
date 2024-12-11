@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dquggvbpa25bl"]
+[gd_scene load_steps=12 format=3 uid="uid://dquggvbpa25bl"]
 
 [ext_resource type="Script" path="res://Introduction/introduction.gd" id="1_6ckga"]
+[ext_resource type="Texture2D" uid="uid://psf4cpssb2cg" path="res://art/Background_intro 5.png" id="2_amjpr"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_csjga"]
 [ext_resource type="Texture2D" uid="uid://d3iax5w6xvvor" path="res://art/gamelogo.png" id="3_hgsdf"]
 [ext_resource type="AudioStream" uid="uid://b6imcna1rwqpj" path="res://audio/NPCnoises/deputy_talking.mp3" id="6_vs1qs"]
@@ -40,11 +41,25 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.121569, 0, 0, 1)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(656.5, 435)
+scale = Vector2(0.4806, 0.427734)
+texture = ExtResource("2_amjpr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(0.266667, 0.266667, 0.266667, 0.780392)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0605303, 0.0605304, 0.0605303, 1)
+
 [node name="Start Game" type="Button" parent="."]
-offset_left = 553.0
-offset_top = 596.0
-offset_right = 806.0
-offset_bottom = 678.0
+offset_left = 529.0
+offset_top = 638.0
+offset_right = 782.0
+offset_bottom = 720.0
 theme_override_fonts/font = ExtResource("2_csjga")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = SubResource("StyleBoxFlat_31d8l")
@@ -53,8 +68,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_fprus")
 text = "Start Game"
 
 [node name="Game Logo" type="Sprite2D" parent="Start Game"]
-position = Vector2(66, -288)
-scale = Vector2(1.3, 1.3)
+position = Vector2(96, -367.25)
+scale = Vector2(0.801471, 0.978205)
 texture = ExtResource("3_hgsdf")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]

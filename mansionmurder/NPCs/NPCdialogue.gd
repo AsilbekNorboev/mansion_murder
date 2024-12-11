@@ -131,7 +131,7 @@ func show_npc_sprite():
 	textappear.get_node("Overlay").show()
 	# Toggle visibility of text sprites
 	if (self.name == "Chef"):
-		cheftalksprite.animation = "idle"
+		cheftalksprite.animation = "dialogue"
 		cheftalksprite.play()
 		cheftalksprite.show()
 		chef_audio_player.play()
@@ -140,7 +140,7 @@ func show_npc_sprite():
 			met_this_character = true
 
 	if (self.name == "Wife"):
-		wifetalksprite.animation = "idle"
+		wifetalksprite.animation = "dialogue"
 		wifetalksprite.play()
 		wifetalksprite.show()
 		# Play audio when the Wife starts talking
@@ -150,14 +150,14 @@ func show_npc_sprite():
 			met_this_character = true
 
 	if (self.name == "Deputy"):
-		deputytalksprite.animation = "idle"
+		deputytalksprite.animation = "dialogue"
 		deputytalksprite.play()
 		deputytalksprite.show()
 		# Play audio when the Deputy starts talking
 		deputy_audio_player.play()
 
 	if (self.name == "Gardener"):
-		gardenertalksprite.animation = "idle"
+		gardenertalksprite.animation = "dialogue"
 		gardenertalksprite.play()
 		gardenertalksprite.show()
 		gardener_audio_player.play()
@@ -165,7 +165,7 @@ func show_npc_sprite():
 			met_this_character = true
 
 	if (self.name == "Maid"):
-		maidtalksprite.animation = "idle"
+		maidtalksprite.animation = "dialogue"
 		maidtalksprite.play()
 		maidtalksprite.show()
 		maid_audio_player.play()

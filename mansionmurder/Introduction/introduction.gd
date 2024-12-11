@@ -20,12 +20,13 @@ func _ready():
 # On click, add text from the array to populate the textbox scene
 func _dialog_start():
 	#play sprite animation
-	deputytalksprite.animation = "idle"
+	deputytalksprite.animation = "dialogue"
 	deputytalksprite.play()
 	deputytalksprite.show()
 	# Play audio when the Deputy starts talking
 	$DeputyTalking.play()
-		
+	
+
 	print("dialogue starting")
 			
 	add_child(textbox_scene)
@@ -52,6 +53,7 @@ func _dialog_end(textappear):
 	textappear.hide_textbox()
 	# Remove the instantiated textbox from current room scene
 	remove_child(textbox_scene)
+	$Sprite2D.visible = true
 	start_game_button.show()
 	
 func _populate_dialogue():

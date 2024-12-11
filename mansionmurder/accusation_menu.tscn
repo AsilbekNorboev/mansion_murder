@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3hqh46weabti"]
+[gd_scene load_steps=12 format=3 uid="uid://b3hqh46weabti"]
 
 [ext_resource type="Script" path="res://accusation.gd" id="1_b2ae4"]
 [ext_resource type="Texture2D" uid="uid://c6mvgtpca1a4" path="res://art/tan.jpg" id="1_hgcsa"]
-[ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="2_71v37"]
 [ext_resource type="Texture2D" uid="uid://bn3lrq0u13von" path="res://art/whitebox.png" id="2_lnwyg"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="2_sick6"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="3_itn42"]
-[ext_resource type="Texture2D" uid="uid://dvtrmyhgte871" path="res://art/NPC/Gardener/Gardener-1.png" id="4_es4s4"]
-[ext_resource type="Texture2D" uid="uid://ctmykf6rkt7wl" path="res://art/NPC/Wife/Wife-1.png" id="5_d7jnx"]
-[ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="6_0r2re"]
+[ext_resource type="Texture2D" uid="uid://dda2b7dyc1n1h" path="res://art/chef_dialogue.png" id="7_xo1io"]
+[ext_resource type="FontFile" uid="uid://jhmh8t5q2grh" path="res://fonts/Super Mystery.ttf" id="8_2ggcl"]
 [ext_resource type="Texture2D" uid="uid://dau0m6tcnctxx" path="res://art/notebookpage.png" id="9_hy3d7"]
+[ext_resource type="Texture2D" uid="uid://3rsl7ps100t3" path="res://art/gardener_dialogue.png" id="9_j1wcb"]
+[ext_resource type="Texture2D" uid="uid://l2kmf5p2lx4" path="res://art/wife_dialoguee.png" id="10_sibl3"]
+[ext_resource type="Texture2D" uid="uid://dneuhab3l4lc0" path="res://art/maid_dialogue.png" id="11_0f6ce"]
 
 [node name="AccusationMenu" type="Control"]
 layout_mode = 3
@@ -46,9 +47,9 @@ volume_db = 20.0
 layout_mode = 2
 anchors_preset = 0
 offset_left = 4.0
-offset_top = 85.0
+offset_top = 86.0
 offset_right = 4.0
-offset_bottom = 85.0
+offset_bottom = 86.0
 
 [node name="NotebookPage" type="Sprite2D" parent="NPCContainer"]
 z_index = -1
@@ -59,152 +60,160 @@ texture = ExtResource("9_hy3d7")
 
 [node name="Chef" type="TextureRect" parent="NPCContainer"]
 layout_mode = 2
+offset_left = -8.0
+offset_top = 7.0
+offset_right = -8.0
+offset_bottom = 7.0
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="NPCContainer/Chef"]
 layout_mode = 0
-offset_left = 214.0
-offset_top = 3.0
-offset_right = 302.0
-offset_bottom = 92.0
-texture = ExtResource("2_71v37")
+offset_left = 383.0
+offset_top = -24.0
+offset_right = 538.0
+offset_bottom = 214.0
+texture = ExtResource("7_xo1io")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="NPCContainer/Chef"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 3.0
-offset_right = 381.0
-offset_bottom = 91.0
+offset_left = 117.0
+offset_top = 35.0
+offset_right = 489.0
+offset_bottom = 123.0
 theme_override_colors/font_color = Color(0.886275, 0.482353, 0.0588235, 1)
+theme_override_fonts/font = ExtResource("8_2ggcl")
 theme_override_font_sizes/font_size = 30
-text = "The chef"
+text = "THE CHEF"
 vertical_alignment = 1
 
 [node name="ChefButton" type="Button" parent="NPCContainer/Chef"]
+self_modulate = Color(1, 1, 1, 0.419608)
 layout_mode = 0
-offset_left = 447.0
+offset_left = 94.0
 offset_top = 23.0
-offset_right = 672.0
-offset_bottom = 85.0
-text = "Accuse"
+offset_right = 591.0
+offset_bottom = 135.0
 
 [node name="Gardener" type="TextureRect" parent="NPCContainer"]
 layout_mode = 2
-offset_left = 5.0
-offset_top = 78.0
-offset_right = 5.0
-offset_bottom = 78.0
+offset_top = 90.0
+offset_bottom = 90.0
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="NPCContainer/Gardener"]
 layout_mode = 0
-offset_left = 214.0
-offset_top = 3.0
-offset_right = 302.0
-offset_bottom = 92.0
-texture = ExtResource("4_es4s4")
+offset_left = 391.0
+offset_top = -4.0
+offset_right = 534.0
+offset_bottom = 227.0
+texture = ExtResource("9_j1wcb")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="NPCContainer/Gardener"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 3.0
-offset_right = 381.0
-offset_bottom = 91.0
+offset_left = 97.0
+offset_top = 77.0
+offset_right = 469.0
+offset_bottom = 165.0
 theme_override_colors/font_color = Color(0.886275, 0.482353, 0.0588235, 1)
+theme_override_fonts/font = ExtResource("8_2ggcl")
 theme_override_font_sizes/font_size = 30
-text = "The gardener"
+text = "THE GARDENER"
 vertical_alignment = 1
 
 [node name="GardenerButton" type="Button" parent="NPCContainer/Gardener"]
+self_modulate = Color(1, 1, 1, 0.407843)
 layout_mode = 0
-offset_left = 447.0
-offset_top = 23.0
-offset_right = 672.0
-offset_bottom = 85.0
-text = "Accuse"
+offset_left = 89.0
+offset_top = 56.0
+offset_right = 584.0
+offset_bottom = 181.0
 
 [node name="Wife" type="TextureRect" parent="NPCContainer"]
 layout_mode = 2
 offset_left = 7.0
-offset_top = 163.0
+offset_top = 209.0
 offset_right = 7.0
-offset_bottom = 163.0
+offset_bottom = 209.0
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="NPCContainer/Wife"]
 layout_mode = 0
-offset_left = 214.0
-offset_top = 3.0
-offset_right = 302.0
-offset_bottom = 92.0
-texture = ExtResource("5_d7jnx")
+offset_left = 389.0
+offset_top = 24.0
+offset_right = 544.0
+offset_bottom = 262.0
+texture = ExtResource("10_sibl3")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="NPCContainer/Wife"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 3.0
-offset_right = 381.0
-offset_bottom = 91.0
+offset_left = 100.0
+offset_top = 92.0
+offset_right = 472.0
+offset_bottom = 180.0
 theme_override_colors/font_color = Color(0.886275, 0.482353, 0.0588235, 1)
+theme_override_fonts/font = ExtResource("8_2ggcl")
 theme_override_font_sizes/font_size = 30
-text = "The wife
+text = "THE WIFE
 "
 vertical_alignment = 1
 
 [node name="WifeButton" type="Button" parent="NPCContainer/Wife"]
+self_modulate = Color(0, 0, 0, 0.364706)
 layout_mode = 0
-offset_left = 447.0
-offset_top = 23.0
-offset_right = 672.0
-offset_bottom = 85.0
-text = "Accuse"
+offset_left = 82.0
+offset_top = 67.0
+offset_right = 576.0
+offset_bottom = 196.0
 
 [node name="Maid" type="TextureRect" parent="NPCContainer"]
 layout_mode = 2
-offset_left = 12.0
-offset_top = 262.0
-offset_right = 12.0
-offset_bottom = 262.0
+offset_left = 9.0
+offset_top = 418.0
+offset_right = 9.0
+offset_bottom = 418.0
 size_flags_vertical = 3
 texture = ExtResource("2_lnwyg")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="NPCContainer/Maid"]
 layout_mode = 0
-offset_left = 214.0
-offset_top = 3.0
-offset_right = 302.0
-offset_bottom = 92.0
-texture = ExtResource("6_0r2re")
+offset_left = 346.0
+offset_top = -93.0
+offset_right = 578.0
+offset_bottom = 256.0
+texture = ExtResource("11_0f6ce")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="NPCContainer/Maid"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 3.0
-offset_right = 381.0
-offset_bottom = 91.0
+offset_left = 96.0
+offset_top = -10.0
+offset_right = 427.0
+offset_bottom = 118.0
 theme_override_colors/font_color = Color(0.886275, 0.482353, 0.0588235, 1)
+theme_override_fonts/font = ExtResource("8_2ggcl")
 theme_override_font_sizes/font_size = 30
-text = "The maid"
+text = "THE MAID
+"
 vertical_alignment = 1
 
 [node name="MaidButton" type="Button" parent="NPCContainer/Maid"]
+self_modulate = Color(1, 1, 1, 0.388235)
 layout_mode = 0
-offset_left = 447.0
-offset_top = 23.0
-offset_right = 672.0
-offset_bottom = 85.0
-text = "Accuse"
+offset_left = 81.0
+offset_top = -10.0
+offset_right = 573.0
+offset_bottom = 121.0
+alignment = 2
 
 [connection signal="pressed" from="NPCContainer/Chef/ChefButton" to="." method="_on_chef_button_pressed"]
 [connection signal="pressed" from="NPCContainer/Gardener/GardenerButton" to="." method="_on_gardener_button_pressed"]

@@ -74,9 +74,13 @@ func _input(event):
 					
 	if safe_puzzle == null:
 		if event.is_action_pressed("ui_cancel"):
-			$Sprite2D2.visible = false
-			$Sprite2D.visible = true
-			get_tree().paused = false
+			if $Sprite2D.visible == false:
+				$Sprite2D2.visible = false
+				$Sprite2D.visible = true
+				get_tree().paused = false
+			else:
+				return
+		
 	else:
 		if $Safe_puzzle.visible  == true:
 			if event.is_action_pressed("ui_cancel"):
@@ -241,3 +245,4 @@ func _on_button_2_pressed() -> void:
 
 func _on_buttonblock_pressed() -> void:
 	print("")
+	
