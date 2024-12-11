@@ -303,7 +303,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextPanel" type="Panel" parent="TextboxContainer/OutlinePanel/MarginContainer"]
-visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/OutlinePanel/MarginContainer"]
@@ -322,6 +321,7 @@ autowrap_mode = 3
 clip_text = true
 
 [node name="PlayerOptionsLabel" type="Label" parent="TextboxContainer/OutlinePanel"]
+visible = false
 layout_mode = 2
 offset_left = 808.0
 offset_top = 20.0

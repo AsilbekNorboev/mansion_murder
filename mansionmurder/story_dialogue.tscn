@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1dgpuamhkvq7"]
+
+[ext_resource type="Script" path="res://story_dialogue.gd" id="1_pg6iu"]
+[ext_resource type="PackedScene" uid="uid://cdnmgmqgim23v" path="res://textbox.tscn" id="2_o4kl8"]
+
+[node name="StoryDialogue" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1310.0
+offset_bottom = -865.0
+mouse_filter = 1
+script = ExtResource("1_pg6iu")
+
+[node name="textbox" parent="." instance=ExtResource("2_o4kl8")]
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
