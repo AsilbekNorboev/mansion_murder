@@ -1,8 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://be6glo10et5ru"]
+[gd_scene load_steps=22 format=3 uid="uid://be6glo10et5ru"]
 
 [ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_1diqn"]
+[ext_resource type="Texture2D" uid="uid://psf4cpssb2cg" path="res://art/Background_intro 5.png" id="2_av21q"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="3_n3vt2"]
 [ext_resource type="Texture2D" uid="uid://ctmykf6rkt7wl" path="res://art/NPC/Wife/Wife-1.png" id="3_q0o2r"]
+[ext_resource type="Texture2D" uid="uid://d3iax5w6xvvor" path="res://art/gamelogo.png" id="3_v3e8j"]
+[ext_resource type="Texture2D" uid="uid://l2kmf5p2lx4" path="res://art/wife_dialoguee.png" id="4_8lrq3"]
 [ext_resource type="FontFile" uid="uid://debhhnvyq2u7l" path="res://fonts/GhoulFriAOE.ttf" id="4_bsbwu"]
 [ext_resource type="Texture2D" uid="uid://c4leex18va013" path="res://art/NPC/Wife/Wife-2.png" id="4_cto62"]
 [ext_resource type="Texture2D" uid="uid://ccl3a8i1nrtp8" path="res://art/NPC/Wife/Wife-3.png" id="5_mvpgu"]
@@ -90,7 +93,13 @@ shadow_offset = Vector2(1, 1)
 layer = 10
 script = ExtResource("1_1diqn")
 
+[node name="backgroundsprite" type="Sprite2D" parent="."]
+position = Vector2(651, 430)
+scale = Vector2(0.472182, 0.415039)
+texture = ExtResource("2_av21q")
+
 [node name="Background" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.572549)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -98,7 +107,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.121569, 0, 0, 1)
 
+[node name="logo" type="Sprite2D" parent="."]
+position = Vector2(666, 240)
+scale = Vector2(0.644118, 0.625641)
+texture = ExtResource("3_v3e8j")
+
+[node name="npcsprite" type="Sprite2D" parent="."]
+position = Vector2(406, 544)
+scale = Vector2(0.947253, 0.787149)
+texture = ExtResource("4_8lrq3")
+
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(264, 411)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_74sar")
@@ -174,7 +194,8 @@ theme_override_constants/shadow_offset_y = 50
 theme_override_constants/outline_size = 100
 theme_override_fonts/font = ExtResource("4_bsbwu")
 theme_override_font_sizes/font_size = 90
-text = "Mansion Murder"
+text = "
+"
 horizontal_alignment = 1
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]

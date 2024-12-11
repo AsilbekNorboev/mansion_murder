@@ -40,8 +40,9 @@ func _ready():
 
 	# Start displaying the first queued dialogue
 	_display_text()
-	animated_sprite.animation = "dialogue"
-	animated_sprite.play()
+	$npcsprite.visible = true
+	#animated_sprite.animation = "dialogue"
+	#animated_sprite.play()
 
 func _detect_NPC():
 	var npc_clue_list = []

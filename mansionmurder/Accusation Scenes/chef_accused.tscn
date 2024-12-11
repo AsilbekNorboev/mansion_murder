@@ -1,72 +1,22 @@
-[gd_scene load_steps=31 format=3 uid="uid://tkn36d3r41w1"]
+[gd_scene load_steps=20 format=3 uid="uid://tkn36d3r41w1"]
 
 [ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_diwa1"]
-[ext_resource type="Texture2D" uid="uid://u8g84dr156v7" path="res://art/NPC/Chef/Chef-1.png" id="3_ctlrr"]
+[ext_resource type="Texture2D" uid="uid://psf4cpssb2cg" path="res://art/Background_intro 5.png" id="2_qf6q0"]
+[ext_resource type="Texture2D" uid="uid://dda2b7dyc1n1h" path="res://art/chef_dialogue.png" id="3_i4nro"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="3_moqtl"]
+[ext_resource type="Texture2D" uid="uid://d3iax5w6xvvor" path="res://art/gamelogo.png" id="4_5otjg"]
 [ext_resource type="FontFile" uid="uid://debhhnvyq2u7l" path="res://fonts/GhoulFriAOE.ttf" id="4_ixwac"]
-[ext_resource type="Texture2D" uid="uid://d2pjchcx0kso7" path="res://art/NPC/Chef/Chef-2.png" id="4_ksbsd"]
-[ext_resource type="Texture2D" uid="uid://b7r4djrgj3kfg" path="res://art/NPC/Chef/Chef-3.png" id="5_l1dgh"]
-[ext_resource type="Texture2D" uid="uid://bt21upprpmejs" path="res://art/NPC/Chef/Chef-4.png" id="6_v21rk"]
-[ext_resource type="Texture2D" uid="uid://cramiw43ec8l" path="res://art/NPC/Chef/Chef-5.png" id="7_x4ulu"]
-[ext_resource type="Texture2D" uid="uid://oy83kkgucp12" path="res://art/NPC/Chef/Chef-6.png" id="8_qe0ba"]
-[ext_resource type="Texture2D" uid="uid://cj5tn2n4jcdwk" path="res://art/NPC/Chef/Chef-7.png" id="9_t34iq"]
-[ext_resource type="Texture2D" uid="uid://gprogagptd4c" path="res://art/NPC/Chef/Chef-8.png" id="10_roma0"]
-[ext_resource type="Texture2D" uid="uid://y5px765aihxm" path="res://art/NPC/Chef/Chef-9.png" id="11_xnhfe"]
-[ext_resource type="Texture2D" uid="uid://c4m0d22bnvrbl" path="res://art/NPC/Chef/Chef-10.png" id="12_3gypd"]
-[ext_resource type="Texture2D" uid="uid://xbhy2m0mmuqc" path="res://art/NPC/Chef/Chef-11.png" id="13_oto1h"]
-[ext_resource type="Texture2D" uid="uid://cyr6vnfag6yo2" path="res://art/NPC/Chef/Chef-12.png" id="14_jcih7"]
-[ext_resource type="Texture2D" uid="uid://dct5fbf03cmir" path="res://art/NPC/Chef/Chef-13.png" id="15_uujcj"]
-[ext_resource type="Texture2D" uid="uid://wn71042djilq" path="res://art/NPC/Chef/Chef-14.png" id="16_a15ny"]
 [ext_resource type="Script" path="res://Accusation Scenes/replay_game.gd" id="18_tjqsy"]
 [ext_resource type="AudioStream" uid="uid://b7io6qwmbrmpm" path="res://audio/SFX/button_click.wav" id="18_y46kb"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_37hwt"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_y23og"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_ctlrr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ksbsd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_l1dgh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_v21rk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_x4ulu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_qe0ba")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_t34iq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_roma0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_xnhfe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_3gypd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_oto1h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_jcih7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_uujcj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_a15ny")
+"texture": ExtResource("3_i4nro")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"dialogue",
 "speed": 5.0
 }]
 
@@ -147,7 +97,13 @@ shadow_offset = Vector2(1, 1)
 layer = 10
 script = ExtResource("1_diwa1")
 
+[node name="backgroundsprite" type="Sprite2D" parent="."]
+position = Vector2(651, 430)
+scale = Vector2(0.472182, 0.415039)
+texture = ExtResource("2_qf6q0")
+
 [node name="Background" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.572549)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -155,11 +111,15 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.121569, 0, 0, 1)
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(282, 502)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_37hwt")
-animation = &"idle"
+[node name="npcsprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(340, 582)
+sprite_frames = SubResource("SpriteFrames_y23og")
+animation = &"dialogue"
+
+[node name="logo" type="Sprite2D" parent="."]
+position = Vector2(668, 240)
+scale = Vector2(0.644118, 0.625641)
+texture = ExtResource("4_5otjg")
 
 [node name="Game Title" type="Label" parent="."]
 anchors_preset = 5
@@ -175,7 +135,6 @@ theme_override_constants/shadow_offset_y = 50
 theme_override_constants/outline_size = 100
 theme_override_fonts/font = ExtResource("4_ixwac")
 theme_override_font_sizes/font_size = 90
-text = "Mansion Murder"
 horizontal_alignment = 1
 
 [node name="Guilty" type="Button" parent="."]

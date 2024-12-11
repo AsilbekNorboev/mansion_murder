@@ -1,8 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://ddacxdvl6pl6m"]
+[gd_scene load_steps=28 format=3 uid="uid://ddacxdvl6pl6m"]
 
 [ext_resource type="Script" path="res://Accusation Scenes/accusationconfrontation.gd" id="1_m72g6"]
+[ext_resource type="Texture2D" uid="uid://psf4cpssb2cg" path="res://art/Background_intro 5.png" id="2_oe73s"]
 [ext_resource type="Texture2D" uid="uid://bnlqq6vr68o00" path="res://art/NPC/Maid/Maid-1.png" id="3_d8cru"]
+[ext_resource type="Texture2D" uid="uid://d3iax5w6xvvor" path="res://art/gamelogo.png" id="3_lovjq"]
 [ext_resource type="FontFile" uid="uid://baj24rh36onis" path="res://fonts/Born2bSportyFS.otf" id="3_ujhmh"]
+[ext_resource type="Texture2D" uid="uid://dneuhab3l4lc0" path="res://art/maid_dialogue.png" id="4_5ff1t"]
 [ext_resource type="Texture2D" uid="uid://cigmgtqqys4a8" path="res://art/NPC/Maid/Maid-2.png" id="4_hhcjl"]
 [ext_resource type="FontFile" uid="uid://debhhnvyq2u7l" path="res://fonts/GhoulFriAOE.ttf" id="4_kc8sc"]
 [ext_resource type="Texture2D" uid="uid://dw8qjkx7dflok" path="res://art/NPC/Maid/Maid-3.png" id="5_jhv1w"]
@@ -132,7 +135,13 @@ shadow_offset = Vector2(1, 1)
 layer = 10
 script = ExtResource("1_m72g6")
 
+[node name="backgroundsprite" type="Sprite2D" parent="."]
+position = Vector2(651, 430)
+scale = Vector2(0.472182, 0.415039)
+texture = ExtResource("2_oe73s")
+
 [node name="Background" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.572549)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -140,7 +149,19 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.121569, 0, 0, 1)
 
+[node name="logo" type="Sprite2D" parent="."]
+position = Vector2(662, 238)
+scale = Vector2(0.644118, 0.625641)
+texture = ExtResource("3_lovjq")
+
+[node name="npcsprite" type="Sprite2D" parent="."]
+position = Vector2(384.251, 564.122)
+rotation = 0.0628319
+scale = Vector2(1.22617, 1.09366)
+texture = ExtResource("4_5ff1t")
+
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(375, 529)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_vm8pg")
@@ -160,7 +181,6 @@ theme_override_constants/shadow_offset_y = 50
 theme_override_constants/outline_size = 100
 theme_override_fonts/font = ExtResource("4_kc8sc")
 theme_override_font_sizes/font_size = 90
-text = "Mansion Murder"
 horizontal_alignment = 1
 
 [node name="Guilty" type="Button" parent="."]
