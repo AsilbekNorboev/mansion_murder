@@ -1,114 +1,75 @@
 extends CanvasLayer
 
-# Constants
-const CHAR_RATE = 0.01
-
-# Nodes
-@onready var textbox_container = $TextboxContainer
-@onready var start_symbol = $TextboxContainer/MarginContainer/HBoxContainer/Start
-@onready var end_symbol = $TextboxContainer/MarginContainer/HBoxContainer/End
-@onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Text
+# Loads textbox scene to use its functions later
+var textbox_scene = preload("res://textbox.tscn").instantiate()
+var textappear = textbox_scene.get_node("TextboxContainer")
+var deputytalksprite = textappear.get_node("Dialogue Sprites/Deputy Dialogue Sprite")
+var accusation_menu = preload("res://accusation_menu.tscn").instantiate()
 @onready var start_game_button = $"Start Game"
-@onready var skip_label = $SkipLabel
-#@onready var animated_sprite = $Deputy
 
-# Signals
-signal dialogue_finished
+@onready var dialog = $Dialogue
+var active_lines = []
 
-# Enums
-enum State {
-	READY,
-	READING,
-	FINISHED
-}
+var text_node
 
-# Variables
-var state: State = State.READY
-var text_queue: Array = []
-var tween: Tween
 
-# Initialization
 func _ready():
-	_hide_textbox()
 	start_game_button.hide()
-	
-	# Add dialogue lines
-	_queue_text("Ah, Detective! Chief Officer here, your charming guide through this delightful disaster we call Mansion Murder.Our victim, Mr. Burmingham, was found dead this evening in his own home.")
-	_queue_text("Move around using the arrow keys or WASD. This is a Click game so to interact with anything just click with your mouse")
-	_queue_text("Some clues come with puzzles—because what's a mystery without a little brain strain? Complete the puzzle, and voilà, another clue for your growing collection of detective swag.")
-	_queue_text("Once Invenory is full you can accuse suspects. Good luck, detective! Come find me, and let’s get this grim little party started!")
+	_dialog_start()
 
-	# Start displaying the first queued dialogue
-	_display_text()
-
-func _process(delta):
-	match state:
-		State.READING:
-			if Input.is_action_just_pressed("dialogue_next"):
-				_finish_dialogue()
-		State.FINISHED:
-			if Input.is_action_just_pressed("dialogue_next"):
-				if text_queue.is_empty():
-					_hide_textbox()
-					change_state(State.READY)
-					skip_label.hide()
-					start_game_button.show()
-					emit_signal("dialogue_finished")
-				else:
-					change_state(State.READY)  # Prepare to load the next line
-					_display_text()  # Display the next dialogue line
-
-# Public Functions
-func _queue_text(new_text: String):
-	text_queue.push_back(new_text)
-
-# Private Functions
-func _hide_textbox():
-	start_symbol.text = ""
-	end_symbol.text = ""
-	label.text = ""
-	label.visible_ratio = 0
-	textbox_container.hide()
-
-func _show_textbox():
+# On click, add text from the array to populate the textbox scene
+func _dialog_start():
+	#play sprite animation
+	deputytalksprite.animation = "idle"
+	deputytalksprite.play()
+	deputytalksprite.show()
+	# Play audio when the Deputy starts talking
 	$DeputyTalking.play()
-	start_symbol.text = "*"
-	textbox_container.show()
+		
+	print("dialogue starting")
+			
+	add_child(textbox_scene)
+	print("textbox scene added")
+					
+	text_node = textbox_scene.get_node("TextboxContainer")
+	
+	active_lines = get_default(InventoryManager.get_inventory(), dialog.dialog_dictionary)
+	#add dialogue textbox
+	text_node.add_text(active_lines[Global.current_line_index])
+	Global.is_dialog_active = true
+	textappear.next_dialogue.connect(self._populate_dialogue)
+	if (Global.current_line_index > 0):
+		_populate_dialogue()
 
-func _display_text():
-	if state != State.READY or text_queue.is_empty():
-		return
-	$NextDialogueSfx.play()	
-	var current_text = text_queue.pop_front()
-	label.text = current_text
-	label.visible_ratio = 0  # Reset visible ratio for the new text
-	_show_textbox()
-	change_state(State.READING)
-
-	# Create a new tween for each dialogue line
-	tween = create_tween()  # Create a new tween
-	tween.tween_property(label, "visible_ratio", 1, current_text.length() * CHAR_RATE)
-	tween.finished.connect(_on_Tween_tween_completed)
-
-func _finish_dialogue():
-	# Stop all animations on the tween
-	if tween and tween.is_running():
-		tween.stop()
-	label.visible_ratio = 1
-	end_symbol.text = "v"
-	change_state(State.FINISHED)
-
-# State Management
-func change_state(next_state: State):
-	state = next_state
-
-# Handle Tween Completion
-func _on_Tween_tween_completed(object, key):
-	end_symbol.text = "v"
-	change_state(State.FINISHED)
+func get_default(inventory_list, dialog_dictionary):
+	return dialog_dictionary[""]
 
 
-#waits a few seconds to allow the sound effect of the button to play
+func _dialog_end(textappear):
+	# Hide the textbox
+	Global.is_dialog_active = false
+	Global.current_line_index = 0
+	textappear.hide_textbox()
+	# Remove the instantiated textbox from current room scene
+	remove_child(textbox_scene)
+	start_game_button.show()
+	
+func _populate_dialogue():
+	print("populating dialogue")
+	if Global.current_line_index <= active_lines.size():
+		Global.current_line_index += 1
+		print("next dialogue")
+	# If current line is the last, show the clue container
+	if (Global.current_line_index == active_lines.size()-1):
+		textappear.show_clue_container(true)
+		
+	if Global.current_line_index >= active_lines.size():
+		_dialog_end(textappear)
+		print("end of dialogue")
+	else:
+		textappear.add_text(active_lines[Global.current_line_index])
+		
+##waits a few seconds to allow the sound effect of the button to play
 func wait(seconds: float) -> void:
 	OS.delay_msec(seconds * 1000)
 	
