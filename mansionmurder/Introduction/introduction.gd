@@ -31,9 +31,10 @@ func _dialog_start():
 			
 	add_child(textbox_scene)
 	print("textbox scene added")
-					
-	text_node = textbox_scene.get_node("TextboxContainer")
 	
+	text_node = textbox_scene.get_node("TextboxContainer")
+	#hide clue prompt
+	text_node.get_node("OutlinePanel/PlayerOptionsLabel").hide()
 	active_lines = get_default(InventoryManager.get_inventory(), dialog.dialog_dictionary)
 	#add dialogue textbox
 	text_node.add_text(active_lines[Global.current_line_index])

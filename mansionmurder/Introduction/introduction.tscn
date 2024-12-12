@@ -68,8 +68,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_fprus")
 text = "Start Game"
 
 [node name="Game Logo" type="Sprite2D" parent="Start Game"]
-position = Vector2(96, -367.25)
-scale = Vector2(0.801471, 0.978205)
+position = Vector2(90, -302)
+scale = Vector2(1.229, 1.5)
 texture = ExtResource("3_hgsdf")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]

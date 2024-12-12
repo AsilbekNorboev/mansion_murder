@@ -47,17 +47,17 @@ scale = Vector2(0.8, 1)
 value = 100.0
 
 [node name="Mute Button" type="CheckBox" parent="."]
-offset_left = 156.0
-offset_top = 344.0
-offset_right = 1466.0
-offset_bottom = 368.0
+offset_left = 157.0
+offset_top = 328.0
+offset_right = 1467.0
+offset_bottom = 352.0
 scale = Vector2(2.6, 2.2)
 
 [node name="Exit Game" type="Button" parent="."]
-offset_left = 469.0
-offset_top = 649.0
-offset_right = 722.0
-offset_bottom = 731.0
+offset_left = 476.0
+offset_top = 630.0
+offset_right = 729.0
+offset_bottom = 712.0
 theme_override_fonts/font = ExtResource("3_e6h66")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = SubResource("StyleBoxFlat_11375")
@@ -66,10 +66,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qoytx")
 text = "Exit Game"
 
 [node name="Return" type="Button" parent="."]
-offset_left = 123.0
-offset_top = 651.0
-offset_right = 376.0
-offset_bottom = 733.0
+offset_left = 130.0
+offset_top = 632.0
+offset_right = 383.0
+offset_bottom = 714.0
 theme_override_fonts/font = ExtResource("3_e6h66")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = SubResource("StyleBoxFlat_11375")
@@ -94,9 +94,9 @@ horizontal_alignment = 1
 
 [node name="Controls Text" type="Label" parent="."]
 offset_left = 132.0
-offset_top = 397.0
+offset_top = 379.0
 offset_right = 1442.0
-offset_bottom = 466.0
+offset_bottom = 448.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_e6h66")
 theme_override_font_sizes/font_size = 60

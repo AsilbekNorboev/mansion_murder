@@ -150,6 +150,7 @@ grow_vertical = 2
 color = Color(0.121569, 0, 0, 1)
 
 [node name="logo" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(662, 238)
 scale = Vector2(0.644118, 0.625641)
 texture = ExtResource("3_lovjq")
@@ -166,22 +167,6 @@ position = Vector2(375, 529)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_vm8pg")
 animation = &"idle"
-
-[node name="Game Title" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -157.0
-offset_top = 358.0
-offset_right = 518.0
-offset_bottom = 505.0
-grow_horizontal = 2
-theme_override_colors/font_outline_color = Color(0.133333, 0.0196078, 0.00784314, 1)
-theme_override_constants/shadow_offset_y = 50
-theme_override_constants/outline_size = 100
-theme_override_fonts/font = ExtResource("4_kc8sc")
-theme_override_font_sizes/font_size = 90
-horizontal_alignment = 1
 
 [node name="Guilty" type="Button" parent="."]
 process_mode = 3
@@ -309,6 +294,24 @@ text = "Press 'Enter' to skip..."
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_uun62")
 volume_db = 20.0
+
+[node name="WinLoseText" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.0
+offset_top = 358.0
+offset_right = 518.0
+offset_bottom = 505.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.133333, 0.0196078, 0.00784314, 1)
+theme_override_constants/shadow_offset_y = 50
+theme_override_constants/outline_size = 100
+theme_override_fonts/font = ExtResource("4_kc8sc")
+theme_override_font_sizes/font_size = 90
+text = "Text"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Guilty" to="." method="_on_guilty_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

@@ -108,6 +108,7 @@ grow_vertical = 2
 color = Color(0.121569, 0, 0, 1)
 
 [node name="logo" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(666, 240)
 scale = Vector2(0.644118, 0.625641)
 texture = ExtResource("3_v3e8j")
@@ -180,7 +181,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7p1n2")
 text = "Replay"
 script = ExtResource("8_4hxyb")
 
-[node name="Game Title" type="Label" parent="."]
+[node name="WinLoseText" type="Label" parent="."]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -194,8 +196,7 @@ theme_override_constants/shadow_offset_y = 50
 theme_override_constants/outline_size = 100
 theme_override_fonts/font = ExtResource("4_bsbwu")
 theme_override_font_sizes/font_size = 90
-text = "
-"
+text = "Text"
 horizontal_alignment = 1
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]

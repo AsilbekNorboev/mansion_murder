@@ -10,7 +10,7 @@ const CHAR_RATE = 0.075
 @onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Text
 @onready var skip_label = $SkipLabel
 @onready var animated_sprite = $Sprite
-@onready var winlose_text = $"Game Title"
+@onready var winlose_text = $"WinLoseText"
 #buttons
 @onready var replay_game_button = $"Replay Game"
 @onready var exit_game_button = $"Exit Game"
@@ -141,6 +141,7 @@ func _detect_NPC():
 func _wrong_guess():
 	exit_game_button.show()
 	replay_game_button.show()
+	winlose_text.show()
 	winlose_text.text = ("You Lost!")
 	return_button.hide()
 
