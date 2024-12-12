@@ -1,22 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfqxwe3ihlqi1"]
 
 [ext_resource type="Script" path="res://Introduction/logo.gd" id="1_10kef"]
-[ext_resource type="Texture2D" uid="uid://bbxnwcvmciaxm" path="res://art/Logo 2.png" id="2_k8gv4"]
+[ext_resource type="Texture2D" uid="uid://cx82ajwyw6tr7" path="res://art/Logo.png" id="1_wvvqp"]
 
 [node name="logo" type="CanvasLayer"]
 script = ExtResource("1_10kef")
 
 [node name="black screen" type="ColorRect" parent="."]
-offset_left = -16.0
-offset_top = -26.0
 offset_right = 1310.0
-offset_bottom = 883.0
+offset_bottom = 865.0
 color = Color(0, 0, 0, 1)
 
 [node name="mystery machine studios" type="TextureRect" parent="."]
-offset_left = -42.0
-offset_top = -46.0
-offset_right = 3360.0
-offset_bottom = 2371.0
+offset_left = 112.0
+offset_top = 118.0
+offset_right = 2844.0
+offset_bottom = 2166.0
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_k8gv4")
+texture = ExtResource("1_wvvqp")
