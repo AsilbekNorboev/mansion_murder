@@ -9,4 +9,4 @@ func set_data(data: Dictionary):
 	$TextureRect.texture = data["icon"]  # Assuming there's a TextureRect node named ClueIcon
 
 	# Ensure the clue item has a consistent minimum size
-	self.set_custom_minimum_size(Vector2(690, 100))  # Example size for each clue item
+	self.set_custom_minimum_size(Vector2(150, 100))  # Example size for each clue item

@@ -14,7 +14,7 @@ func set_data(data: Dictionary, lines):
 	clue_lines = lines 
 	self.gui_input.connect(_on_gui_input)
 	# Ensure the clue item has a consistent minimum size
-	self.set_custom_minimum_size(Vector2(400, 150))  # Example size for each clue item
+	self.set_custom_minimum_size(Vector2(50, 50))  # Example size for each clue item
 
 
 func _on_gui_input(event: InputEvent) -> void:
